@@ -8049,6 +8049,2067 @@ The tree that we are looking at is considered a binary tree because it has one r
 There are different types of binary trees and there is also something called a `binary search tree`, which we'll look into in a bit. For now, I want to create a `TreeNode` class that will allow us to construct nodes into a binary tree. We'll do that next.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# TreeNode Class & Manual Tree Creation
+
+In this lesson, we will create a `TreeNode` class that will allow us to create a binary tree in JavaScript. We will create our tree manually for now by creating instances of the `TreeNode` class and assigning them to the `left` and `right` properties of other nodes. Later, we will create a `BinaryTree` class that will allow us to create a binary tree by passing in values.
+
+I'm going to set this up as a challenge. If you just want to follow along without trying it yourself, that is absolutely fine. You know what a binary tree is and you know how to create a class. If you want to try it yourself, here are the instructions.
+
+## Instructions
+
+Create a class called `TreeNode`. This will represent a node in the tree. It will have a `value` property and a `left` and `right` property that will point to the left and right child nodes respectively. They will be initialized to `null` when the node is created.
+
+Then use that class to create the following binary tree:
+
+<img src="../../assets/images/tree5.png" width="500" alt="" />
+
+### Hints
+
+- The constructor will take a `value` parameter.
+- Initialize the `left` and `right` properties to `null` in the constructor.
+- Create an instance for each node in the tree and assign the appropriate values to the `left` and `right` properties.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+class TreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+const a = new TreeNode('a');
+const b = new TreeNode('b');
+const c = new TreeNode('c');
+const d = new TreeNode('d');
+const e = new TreeNode('e');
+const f = new TreeNode('f');
+
+a.left = b;
+a.right = c;
+b.left = d;
+b.right = e;
+c.right = f;
+```
+
+### Explanation
+
+- Create the `TreeNode` class with a constructor that takes a `value` parameter.
+- Initialize the `left` and `right` properties to `null`. This is because we don't know what the left and right children will be when we create the node. We will assign them later.
+- Create an instance of the `TreeNode` class for each node in the tree.
+- Assign the appropriate values to the `left` and `right` properties.
+
+The code above implements exactly what we see in the diagram.
+
+</details>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Depth First Traversal
+
+Now we are going to get into some algorithms that involve binary trees. This one is called `Depth First Traversal`. This is a traversal algorithm where the algorithm starts at a `root` node, which we know is the one at the top of the tree with no parent, and explores as far as possible along each branch before backtracking.
+
+So if we look at the following tree:
+
+<img src=".../../assets/images/depth-first.png" width="500" alt="" />
+
+We would start at `a` and then go to `b`. From here, we would go to `d` because we are going as far as possible along each branch before backtracking. `d` is as far as we can go on this path because it is a `leaf node`, which means it has no children. So now we can move over to `e`. If `e` had a child, we would move down, but since it doesn't, we're going to move over to `c`. From `c`, we can move down in depth to `f`.
+
+So this pattern would be `a`, `b`, `d`, `e`, `c`, `f`.
+
+Now we want to implement this algorithm. We are going to use a `stack` to implement this algorithm because we want to keep track of the nodes we have visited. Remember a stack is a `LIFO` data structure, which means `Last In First Out`. So the last node we visit will be the first node we pop off the stack. When a node is popped off or removed from the stack, we can say that node has been `visited`. When a node is popped off the stack, it will be put in a variable called `current`. We will then check if `current` has a right child. If it does, we will add it to the stack. If it doesn't, we will check if it has a left child. If it does, we will add it to the stack. If it doesn't, we will pop the next node off the stack and repeat the process.
+
+Let's implement this in JavaScript. We will use the same `Node` class we used in the previous lesson. We will first use a standard array as our stack, but then I wan to implement the `Stack` class that we created a few lessons ago.
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function depthFirstTraversal(root) {
+  if (!root) {
+    return [];
+  }
+
+  const result = [];
+  const stack = [];
+
+  stack.push(root);
+
+  while (stack.length > 0) {
+    const current = stack.pop();
+    result.push(current.data);
+
+    if (current.right) {
+      stack.push(current.right);
+    }
+
+    if (current.left) {
+      stack.push(current.left);
+    }
+  }
+
+  return result;
+}
+
+module.exports = {
+  Node,
+  depthFirstTraversal,
+};
+```
+
+We did exactly what I described above. We first check if the `root` node exists. If it doesn't, we return an empty array.
+
+We then create a `result` array and a `stack` array. We then push the `root` node onto the stack.
+
+We then start a `while` loop that will run as long as the `stack` array has a length greater than `0`. Inside the `while` loop, we pop the last node off the stack and add it to the `result` array.
+
+We then check if the `current` node has a right child. If it does, we add it to the stack. We then check if the `current` node has a left child. If it does, we add it to the stack.
+
+We then repeat the process until the `stack` array has a length of `0`. We then return the `result` array.
+
+## Using the Stack Class
+
+Now, let's refactor this code to use the `Stack` class we created a few lessons ago. You can do this as a challenge, or you can look at the code below. I will also add a test to make sure the code works.
+
+```js
+const Stack = require('./stack');
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function depthFirstTraversal(root) {
+  if (!root) {
+    return [];
+  }
+
+  const result = [];
+  const stack = new Stack();
+
+  stack.push(root);
+
+  while (!stack.isEmpty()) {
+    const current = stack.pop();
+    result.push(current.data);
+
+    if (current.right) {
+      stack.push(current.right);
+    }
+
+    if (current.left) {
+      stack.push(current.left);
+    }
+  }
+
+  return result;
+}
+```
+
+This code is very similar, except we used a pre-defined `Stack` class instead of a standard array. We also used the `isEmpty()` method instead of checking the length of the array.
+
+## Test Cases
+
+```js
+const { Node, depthFirstTraversal } = require('./depth-first-traversal');
+
+describe('Depth First Traversal', () => {
+  test('Should perform depth-first traversal on the binary tree', () => {
+    // Create a binary tree:      a
+    //                          /   \
+    //                         b     c
+    //                        / \    /
+    //                       d   e  f
+
+    const root = new Node('a');
+    const nodeB = new Node('b');
+    const nodeC = new Node('c');
+    const nodeD = new Node('d');
+    const nodeE = new Node('e');
+    const nodeF = new Node('f');
+
+    root.left = nodeB;
+    root.right = nodeC;
+    nodeB.left = nodeD;
+    nodeB.right = nodeE;
+    nodeC.left = nodeF;
+
+    expect(depthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
+  });
+
+  test('Should return an empty array for an empty tree', () => {
+    expect(depthFirstTraversal(null)).toEqual([]);
+  });
+
+  test('Should handle a tree with only the root node', () => {
+    const root = new Node('root');
+    expect(depthFirstTraversal(root)).toEqual(['root']);
+  });
+});
+```
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Recursive Depth First Traversal
+
+## Instructions
+
+Write a function called `recDepthFirstTraversal` that takes the root node of a binary tree as input and returns an array containing the nodes visited in depth-first order. You can use the last lesson as a reference, but you must use recursion to solve this problem.
+
+Depth-first traversal is an algorithm that starts at the root node and explores as far as possible along each branch before backtracking. The nodes are visited in the order they are encountered during the traversal.
+
+The `Node` class is provided for you:
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
+
+You can assume that the binary tree is not empty.
+
+### Example
+
+```js
+const root = new Node('a');
+root.left = new Node('b');
+root.right = new Node('c');
+root.left.left = new Node('d');
+root.left.right = new Node('e');
+root.right.left = new Node('f');
+
+depthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
+```
+
+### Hints
+
+- You can implement the depth-first traversal recursively using a helper function that is called on the left and right subtrees of the current node.
+- The base case is when the node is `null`, in which case we simply return from the function.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function recDepthFirstTraversal(root) {
+  const result = [];
+
+  function traverse(node) {
+    if (node !== null) {
+      result.push(node.data);
+      traverse(node.left);
+      traverse(node.right);
+    }
+  }
+
+  traverse(root);
+  return result;
+}
+```
+
+### Explanation
+
+- Initialize an empty array called `result` to store the nodes visited in depth-first order.
+- Define a helper function called `traverse` that takes in a node as input.
+- If the node is not `null`, push the node's data to the `result` array.
+- Call `traverse` on the left subtree of the current node.
+- Call `traverse` on the right subtree of the current node.
+- Call `traverse` on the root node to start the traversal.
+- Return the `result` array.
+
+</details>
+
+### Test Cases
+
+```js
+const { Node, recDepthFirstTraversal } = require('./recursive-depth-traversal');
+
+// Test tree:
+//      a
+//     / \
+//    b   c
+//   / \   \
+//  d   e   f
+
+const root = new Node('a');
+root.left = new Node('b');
+root.right = new Node('c');
+root.left.left = new Node('d');
+root.left.right = new Node('e');
+root.right.left = new Node('f');
+
+test('Depth First Traversal', () => {
+  expect(depthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Breadth-First Traversal
+
+Now, let's explore another traversal algorithm for binary trees called `Breadth-First Traversal`. Unlike depth-first traversal, which explores as far as possible along each branch before backtracking, breadth-first traversal explores all the nodes at the current depth level before moving to the next level.
+
+To illustrate this algorithm, let's consider the same binary tree we used in the depth-first traversal example:
+
+<img src=".../../assets/images/breadth-first.png" width="500" alt="" />
+
+For breadth-first traversal, we start at the root node `a` and visit its children, `b` and `c`, in order. Then, we move down to the next level and visit the children of `b` and `c`, which are `d`, `e`, and `f`. We continue this pattern, visiting all nodes at the current level before moving to the next level.
+
+So the order of traversal in this example would be `a`, `b`, `c`, `d`, `e`, `f`.
+
+To implement the breadth-first traversal algorithm, we'll use a queue data structure. A queue is a `FIFO` (First In First Out) data structure, which means the first node we add to the queue will be the first node we remove from the queue. We'll start by pushing the root node onto the queue and then iterate through the queue, adding the children of each node to the queue as we visit them.
+
+Let's implement the breadth-first traversal in JavaScript:
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function breadthFirstTraversal(root) {
+  if (!root) {
+    return [];
+  }
+
+  const result = [];
+  const queue = [];
+
+  queue.push(root);
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    result.push(current.data);
+
+    if (current.left) {
+      queue.push(current.left);
+    }
+
+    if (current.right) {
+      queue.push(current.right);
+    }
+  }
+
+  return result;
+}
+
+module.exports = {
+  Node,
+  breadthFirstTraversal,
+};
+```
+
+In this implementation, we first check if the `root` node exists. If it doesn't, we return an empty array.
+
+We then create a `result` array and a `queue` array. We push the `root` node onto the queue.
+
+We then start a `while` loop that runs as long as the `queue` array has a length greater than `0`.
+
+Inside the loop, we dequeue the first node from the queue (using `shift()`) and add it to the `result` array.
+
+We then enqueue the left and right children of the current node, if they exist. We continue this process until the `queue` array is empty, and then we return the `result` array.
+
+## Using the Queue Class
+
+Now, let's refactor this code to use the `Queue` class. You can do this as a challenge, or you can look at the code below. I will also add tests to ensure the code works correctly.
+
+```js
+const Queue = require('./queue');
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function breadthFirstTraversal(root) {
+  if (!root) {
+    return [];
+  }
+
+  const result = [];
+  const queue = new Queue();
+
+  queue.enqueue(root);
+
+  while (!queue.isEmpty()) {
+    const current = queue.dequeue();
+    result.push(current.data);
+
+    if (current.left) {
+      queue.enqueue(current.left);
+    }
+
+    if (current.right) {
+      queue.enqueue(current.right);
+    }
+  }
+
+  return result;
+}
+
+module.exports = {
+  Node,
+  breadthFirstTraversal,
+};
+```
+
+In this refactored code, we used the `Queue` class instead of a standard array for the queue data structure. We also used the `isEmpty()` method instead of checking the length of the array. We then added tests to ensure that the breadth-first traversal algorithm works correctly.
+
+## Test Cases
+
+```js
+describe('Breadth-First Traversal', () => {
+  test('Should perform breadth-first traversal on the binary tree', () => {
+    // Create a binary tree:      a
+    //                          /   \
+    //                         b     c
+    //                        / \    /
+    //                       d   e  f
+
+    const root = new Node('a');
+    const nodeB = new Node('b');
+    const nodeC = new Node('c');
+    const nodeD = new Node('d');
+    const nodeE = new Node('e');
+    const nodeF = new Node('f');
+
+    root.left = nodeB;
+    root.right = nodeC;
+    nodeB.left = nodeD;
+    nodeB.right = nodeE;
+    nodeC.left = nodeF;
+
+    expect(breadthFirstTraversal(root)).toEqual(['a', 'b', 'c', 'd', 'e', 'f']);
+  });
+
+  test('Should return an empty array for an empty tree', () => {
+    expect(breadthFirstTraversal(null)).toEqual([]);
+  });
+
+  test('Should handle a tree with only the root node', () => {
+    const root = new Node('root');
+    expect(breadthFirstTraversal(root)).toEqual(['root']);
+  });
+});
+```
+
+There is not really a straightforward way to solve this problem recursively without using a queue data structure. You could use a stack data structure, but you would have to keep track of the current level of the tree and the next level of the tree. This would make the code more complicated and less efficient. So in my opinion, this is the best way to do breadth-first traversal.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Binary Tree Maximum Depth
+
+## Instructions
+
+Write a function called `maxDepth` that takes the root of a binary tree as input and returns the maximum depth of the tree. The maximum depth is defined as the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+### Function Signature
+
+```js
+/**
+ * Returns the maximum depth of the binary tree.
+ * @param {Node} root - The root node of the binary tree.
+ * @returns {number} - The maximum depth of the binary tree.
+ */
+function maxDepth(root: Node): number;) {}
+```
+
+### Examples
+
+```js
+// Explanation: The binary tree is as follows:
+//     3
+//    / \
+//   9  20
+//     /  \
+//    15   7
+// The maximum depth is 3, which is the path 3 -> 20 -> 7.
+
+// Explanation: The binary tree is as follows:
+//     1
+//      \
+//       2
+// The maximum depth is 2, which is the path 1 -> 2.
+
+// Input: root = []
+// Output: 0
+// Explanation: An empty tree has a maximum depth of 0.
+```
+
+### Hints
+
+- You can solve this problem using a depth-first traversal approach.
+- Use recursion to explore the left and right subtrees of each node and return the maximum depth between them.
+
+### Binary Tree Node
+
+Here's the definition of the binary tree node:
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function maxDepth(root) {
+  if (!root) {
+    return 0;
+  }
+
+  const leftDepth = maxDepth(root.left);
+  const rightDepth = maxDepth(root.right);
+
+  return Math.max(leftDepth, rightDepth) + 1;
+}
+```
+
+### Explanation
+
+- Check if the root node is `null`. If it is, return `0` since the tree is empty.
+- Recursively calculate the maximum depth of the left and right subtrees of the current node.
+- Return the maximum depth between the left and right subtrees plus `1` to account for the current node.
+
+</details>
+
+### Test Cases
+
+```js
+const { Node, maxDepth } = require('./maximum-depth');
+
+describe('Binary Tree Maximum Depth', () => {
+  test('Should calculate the maximum depth of a binary tree', () => {
+    // Create the binary tree:    3
+    //                           / \
+    //                          9  20
+    //                             / \
+    //                            15  7
+
+    const root = new Node(3);
+    const node9 = new Node(9);
+    const node20 = new Node(20);
+    const node15 = new Node(15);
+    const node7 = new Node(7);
+
+    root.left = node9;
+    root.right = node20;
+    node20.left = node15;
+    node20.right = node7;
+
+    expect(maxDepth(root)).toBe(3);
+  });
+
+  test('Should handle a tree with a single root node', () => {
+    const root = new Node(1);
+    expect(maxDepth(root)).toBe(1);
+  });
+
+  test('Should calculate the maximum depth of a binary tree with only left children', () => {
+    // Create the binary tree:    1
+    //                           /
+    //                          2
+    //                         /
+    //                        3
+    //                       /
+    //                      4
+
+    const root = new Node(1);
+    const node2 = new Node(2);
+    const node3 = new Node(3);
+    const node4 = new Node(4);
+
+    root.left = node2;
+    node2.left = node3;
+    node3.left = node4;
+
+    expect(maxDepth(root)).toBe(4);
+  });
+});
+
+```
+
+The test cases ensure that the `maxDepth` function correctly calculates the maximum depth of various binary trees, including edge cases of empty trees and trees with a single root node.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Binary Search Tree (BST)
+
+Now that you know what a binary tree data structure is, we are going to look at `binary search trees` or `BST`. A binary search tree (BST) is a specific type of binary tree that follows a particular ordering and sorting property. 
+
+While the ordering rule is commonly associated with numeric values, it's important to note that binary search trees can handle various types of data, not just numbers. One of the key advantages of binary search trees are that they're versatile enough to accommodate any data type that can be compared for ordering.
+
+For instance, consider a binary search tree that stores strings representing names in alphabetical order. The tree's structure ensures that names are organized in a way that allows for efficient searches, insertions, and deletions. Similarly, binary search trees can be used for custom objects, where the ordering is determined by specific attributes or properties of the objects such as the price of a product. So we'll be using numeric values just for simplicity and so you can wrap your head around it.
+
+Let's look at the following tree and go over the rules for a BST:
+
+<img src="../../assets/images/binary-search-tree1.png" alt="" />
+
+1. Each node has at most two child nodes, referred to as the left child and the right child.
+2. The left child's value is less than the parent node's value.
+3. The right child's value is greater than or equal to the parent node's value.
+
+The image above is a valid BST. Everything on the left is less than it's parent and everything on the right is greater than the parent.
+
+This does not only apply to immediate child nodes. Let's look at the image on the following image:
+
+<img src="../../assets/images/binary-search-tree.png" alt="" />
+
+If we look at the tree on the right-hand side, it is a valid binary tree, but it is not a valid binary search tree. The reason being that 3 is on the right side of 4, but 3 is less than 4. Everything on the right side of a node must be greater than or equal to the node's value.
+
+This ordering makes searching very efficient. Let's say we are searching for the value 7. We start at the root node of 9. 7 is less than 9, so we move to the left child node of 4. 7 is greater than 4, so we move to the right child node of 4 and we find 7.
+
+The time complexity of search, insertion, and deletion operations in a binary search tree is `O(log n)`, where `n` is the number of nodes in the tree. This is because the search space is reduced by half at each step. This type of searching is much more efficient than a linear search, which instead goes through each element one by one and has a time complexity of `O(n)`.
+
+### Operations on a Binary Search Tree
+
+These are the three main operations on a binary search tree. I'm just going to give you a quick summary on the process for all three. It most likely won't be completely cleat until we actually code it out.
+
+1. **Insertion**: To insert a new node into a binary search tree, we start at the root and compare the new node's value with the current node's value. If the value is less, we move to the left subtree; if it is greater or equal, we move to the right subtree. This process continues recursively until we find an empty spot, where we insert the new node.
+
+2. **Search**: Searching for a value in a binary search tree follows a similar process as insertion. Starting at the root, we compare the value with the current node's value. If it matches, the search is successful. If it is less, we move to the left subtree; if it is greater, we move to the right subtree. This process continues recursively until we find the value or reach a null reference, indicating that the value is not in the tree.
+
+3. **Deletion**: Deleting a node in a binary search tree involves several cases, depending on the node's children. If the node to be deleted has no children (a leaf node), it can be simply removed. If it has one child, that child replaces the deleted node. If it has two children, it can be replaced by either the largest node in its left subtree (called its predecessor) or the smallest node in its right subtree (called its successor). This process maintains the binary search tree property.
+
+Binary search trees are used in various applications where efficient search and retrieval of data are essential. However, it's crucial to ensure that the tree remains balanced to avoid degradation of its performance. There are different balancing techniques like `AVL` trees and `Red-Black` trees to achieve this.
+
+There are online tools that you can use to create a binary search tree and visualize the operations on it such as https://www.cs.usfca.edu/~galles/visualization/BST.html and http://btv.melezinek.cz/binary-search-tree.html.
+
+In the next lesson, let's implement a binary search tree in JavaScript.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Binary Search Tree Implementation
+
+In this lesson, we will implement a binary search tree in JavaScript. We will start by creating a `Node` class, which will represent each node in the tree. Each node will have a `value`, a `left` property, and a `right` property. The `left` and `right` properties will point to other nodes, or be `null` if there is no left or right child.
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
+
+Next, we will create a `BinarySearchTree` class. This class will have a `root` property, which will point to the root node of the tree. Initially, the root node will be `null`.
+
+```js
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+}
+```
+
+## `insert` Method
+
+Next, we will implement the `insert` method. This method will take a value as an argument, and insert a new node with that value into the tree.
+
+```js
+insert(value) {
+  const newNode = new Node(value);
+
+  if (this.root === null) {
+    this.root = newNode;
+  } else {
+    let currentNode = this.root;
+
+    while (true) {
+      if (value < currentNode.value) {
+        if (!currentNode.left) {
+          currentNode.left = newNode;
+          return this;
+        }
+
+        currentNode = currentNode.left;
+      } else {
+
+        if (!currentNode.right) {
+          currentNode.right = newNode;
+          return this;
+        }
+
+        currentNode = currentNode.right;
+      }
+    }
+  }
+}
+```
+
+We start by creating a new node with the given value.
+
+If the tree is empty, we set the root node to be the new node. Otherwise, we start at the root node, and traverse the tree until we find a node without a left or right child.
+
+If the new value is less than the current node's value, we move on to the left child. If the new value is greater than or equal to the current node's value, we move on to the right child.
+
+We continue this process until we find a node without a left or right child, and then we insert the new node at that location.
+
+## `lookup` Method
+
+Next, we will implement the `lookup` method. This method will take a value as an argument, and return the node with that value if it exists in the tree. If the value does not exist in the tree, we will return `null`.
+
+```js
+lookup(value) {
+    let currentNode = this.root;
+
+    if (!currentNode) {
+      return null;
+    }
+
+    while (currentNode) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      }
+      else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      }
+      else if (value === currentNode.value) {
+        return currentNode;
+      }
+    }
+
+    return null;
+  }
+```
+
+We set the current node to be the root node.
+
+If the tree is empty, we return `null`. Otherwise, we traverse the tree until we find a node with the given value.
+
+If the value is less than the current node's value, we move on to the left child. If the value is greater than the current node's value, we move on to the right child. If the value is equal to the current node's value, we return the current node.
+
+If we reach a node that does not have a left or right child, we return `null`.
+
+## `remove` Method
+
+Next, we will implement the `remove` method. This method will take a value as an argument, and remove the node with that value from the tree.
+
+```js
+remove(value) {
+  const removeNode = (node, value) => {
+    if (node === null) {
+      return null;
+    }
+
+    if (value < node.value) {
+      node.left = removeNode(node.left, value);
+      return node;
+    }
+    else if (value > node.value) {
+      node.right = removeNode(node.right, value);
+      return node;
+    }
+    else {
+      // Case 1: Node with no child or only one child
+      if (node.left === null) {
+        return node.right;
+      } else if (node.right === null) {
+        return node.left;
+      }
+
+      // Case 2: Node with two children
+      // Find the smallest value in the right subtree (successor)
+      let tempNode = node.right;
+      while (tempNode.left !== null) {
+        tempNode = tempNode.left;
+      }
+
+      // Case 3: Node is the root node
+      // Replace the node's value with the successor's value
+      node.value = tempNode.value;
+
+      node.right = removeNode(node.right, tempNode.value);
+      return node;
+    }
+  };
+
+  // Start at the root
+  this.root = removeNode(this.root, value);
+}
+```
+
+This one is pretty tough. We start by creating a helper function called `removeNode`. This function will take a node and a value as arguments, and return the node with the given value removed from the tree.
+
+If the node is `null`, we return `null`. Otherwise, we traverse the tree until we find the node with the given value.
+
+If the value is less than the current node's value, we move on to the left child. If the value is greater than the current node's value, we move on to the right child. If the value is equal to the current node's value, we have found the node we want to remove.
+
+There are three cases we need to consider:
+
+1. The node has no children or only one child
+2. The node has two children
+3. The node is the root node
+
+### Case 1: Node with no child or only one child
+
+If the node has no children or only one child, we can simply return the node's left or right child. This will remove the node from the tree.
+
+### Case 2: Node with two children
+
+If the node has two children, we need to find the smallest value in the right subtree. This value will be the node's successor. We will replace the node's value with the successor's value, and then remove the successor from the tree.
+
+### Case 3: Node is the root node
+
+If the node is the root node, we need to replace the root node with the successor. We will replace the root node's value with the successor's value, and then remove the successor from the tree.
+
+## `printTree` Method
+
+Finally, we will implement the `printTree` method. This method will print the tree in a human-readable format.
+
+```js
+ printTree() {
+    const printNode = (node) => {
+      if (node === null) {
+        return;
+      }
+      printNode(node.left);
+      console.log(node.value);
+      printNode(node.right);
+    };
+    printNode(this.root);
+  }
+```
+
+## Binary Search Tree Runtime Analysis
+
+BST's are very efficient data structures. They are very fast at inserting, looking up, and deleting values and have a runtime of O(log n) for each of these operations except for printing the tree, which has a runtime of O(n). This is because we have to visit every node in the tree to print it.
+
+| Operation | Runtime  |
+| --------- | -------- |
+| Insert    | O(log n) |
+| Lookup    | O(log n) |
+| Delete    | O(log n) |
+| Print     | O(n)     |
+
+## Binary Search Tree Example
+
+<img src="../../assets/images/binary-search-tree1.png" width="600" />
+
+```js
+const bst = new BinarySearchTree();
+bst.insert(9);
+bst.insert(4);
+bst.insert(11);
+bst.insert(2);
+bst.insert(7);
+bst.insert(15);
+bst.insert(5);
+bst.insert(8);
+```
+
+This will create the tree.
+
+We can use the `lookup` method to find a node in the tree. Let's find the node with the value 4 and log it.
+
+```js
+console.log(bst.lookup(4));
+```
+
+This will log the following:
+
+```js
+{
+  value: 4,
+  left: { value: 2, left: null, right: null },
+  right: { value: 7, left: [Node], right: [Node] }
+}
+```
+
+You can see that the node with the value 4 has a left child with the value 2, and a right child with the value 7.
+
+Let's remove the node with the value 7 from the tree.
+
+```js
+bst.remove(7);
+```
+
+Now lookup 4 again:
+
+```js
+console.log(bst.lookup(4));
+```
+
+This will log the following:
+
+```js
+{
+  value: 4,
+  left: { value: 2, left: null, right: null },
+  right: { value: 8, left: [Node], right: null }
+}
+```
+
+You can see that the node with the value 4 now has a right child with the value 8 instead of 7. So it essentially replaced the node with the one that was to the right of it.
+
+Let's print the tree to make sure it looks like the one we created.
+
+```js
+bst.printTree();
+```
+
+This will print it in order minus the node with the value 7, which we removed.
+
+```
+2
+4
+5
+8
+9
+11
+15
+```
+
+I know this may have been very overwhelming, but don't expect to master this in a day. It takes time and practice. I recommend you go through this article again and try to understand it better. I also recommend you try to implement this data structure yourself as well as others without looking at the videos or documentation.
+
+### Test Cases
+
+Here is the testing suite that you can use for the binary search tree data structure.
+
+```js
+const { Node, BinarySearchTree } = require('./binary-search-tree');
+
+describe('BinarySearchTree', () => {
+  let bst;
+
+  beforeEach(() => {
+    bst = new BinarySearchTree();
+  });
+
+  test('should insert values correctly', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(2);
+
+    expect(bst.root.value).toBe(10);
+    expect(bst.root.left.value).toBe(5);
+    expect(bst.root.right.value).toBe(15);
+    expect(bst.root.left.left.value).toBe(2);
+  });
+
+  test('should find existing nodes using lookup', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+
+    expect(bst.lookup(10).value).toBe(10);
+    expect(bst.lookup(5).value).toBe(5);
+    expect(bst.lookup(15).value).toBe(15);
+  });
+
+  test('should return null for non-existing nodes using lookup', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+
+    expect(bst.lookup(2)).toBeNull();
+    expect(bst.lookup(8)).toBeNull();
+    expect(bst.lookup(20)).toBeNull();
+  });
+
+  test('should remove nodes correctly', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(2);
+    bst.insert(7);
+
+    bst.remove(2);
+    expect(bst.lookup(2)).toBeNull();
+
+    bst.remove(5);
+    expect(bst.lookup(5)).toBeNull();
+
+    bst.remove(15);
+    expect(bst.lookup(15)).toBeNull();
+
+    bst.remove(10);
+    expect(bst.lookup(10)).toBeNull();
+
+    bst.remove(7);
+    expect(bst.lookup(7)).toBeNull();
+  });
+
+  test('should handle removing root node correctly', () => {
+    bst.insert(10);
+    bst.insert(5);
+    bst.insert(15);
+
+    bst.remove(10);
+    expect(bst.root.value).toBe(15);
+  });
+
+  test('should print tree in-order', () => {
+    const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {}); // Spy on console.log and mock the implementation
+
+    const bst = new BinarySearchTree();
+    bst.insert(8);
+    bst.insert(3);
+    bst.insert(10);
+    bst.insert(1);
+    bst.insert(6);
+    bst.insert(14);
+    bst.insert(4);
+    bst.insert(7);
+    bst.insert(13);
+
+    bst.printTree();
+
+    // Expect the console.log to be called with the correct values in in-order traversal
+    expect(consoleSpy).toHaveBeenNthCalledWith(1, 1);
+    expect(consoleSpy).toHaveBeenNthCalledWith(2, 3);
+    expect(consoleSpy).toHaveBeenNthCalledWith(3, 4);
+    expect(consoleSpy).toHaveBeenNthCalledWith(4, 6);
+    expect(consoleSpy).toHaveBeenNthCalledWith(5, 7);
+    expect(consoleSpy).toHaveBeenNthCalledWith(6, 8);
+    expect(consoleSpy).toHaveBeenNthCalledWith(7, 10);
+    expect(consoleSpy).toHaveBeenNthCalledWith(8, 13);
+    expect(consoleSpy).toHaveBeenNthCalledWith(9, 14);
+
+    // Restore the original console.log implementation
+    consoleSpy.mockRestore();
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Validate Binary Search Tree
+
+## Instructions
+
+Write a function called `isValidBST` that takes in the following parameters:
+
+- `root` - The root/current node of a binary tree.
+
+The function should return a boolean indicating whether the binary tree is a valid binary search tree (BST).
+
+You want to check ALL subtrees, not just the right and left of the root node. I would suggest creating a helper function to call recursively that takes in a `min` and `max` value. Make sure that anything on the left of the node is less than the max (parent node) and anything on the right is more than the min (parent node).
+
+### Binary Tree Node
+
+Here's the definition of the binary tree node:
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
+
+### Valid Binary Search Tree (BST)
+
+A binary search tree (BST) is a binary tree where each node has a value, and all the nodes in the left subtree have values less than the current node's value, while all the nodes in the right subtree have values greater than the current node's value. Additionally, the left and right subtrees must also be valid binary search trees.
+
+### Function Signature
+
+```js
+/**
+ * Returns a boolean indicating whether the binary tree is a valid binary search tree (BST).
+ * @param {Node} root - The root node of the binary tree.
+ * @param {number} min - The minimum value of the valid range for the current node's value.
+ * @param {number} max - The maximum value of the valid range for the current node's value.
+ * @returns {boolean} - A boolean indicating whether the binary tree is a valid binary search tree (BST).
+ */
+function isValidBST(
+  root: Node,
+  min: number = null,
+  max: number = null
+): boolean {}
+```
+
+### Examples
+
+```js
+// Input: root = [2,1,3]
+// Output: true
+// Explanation: The binary tree is as follows:
+//     2
+//    / \
+//   1   3
+// This is a valid binary search tree.
+
+// Input: root = [5,1,4,null,null,3,6]
+// Output: false
+// Explanation: The binary tree is as follows:
+//      5
+//     / \
+//    1   4
+//       / \
+//      3   6
+// The node with a value of 4 has its left child with a value of 3, which violates the BST property, so it is not a valid BST.
+```
+
+### Hints
+
+- You can solve this problem using a depth-first traversal approach.
+- Use recursion to explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+function isValidBST(root, min = null, max = null) {
+  if (!root) {
+    return true;
+  }
+
+  if (
+    (min !== null && root.value <= min) ||
+    (max !== null && root.value >= max)
+  ) {
+    return false;
+  }
+
+  return (
+    isValidBST(root.left, min, root.value) &&
+    isValidBST(root.right, root.value, max)
+  );
+}
+```
+
+### Explanation
+
+The solution to this problem is to use a depth-first traversal approach to recursively explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
+
+- Check if the current node is `null`. If it is, return `true` because an empty tree is a valid binary search tree.
+- Check if the current node's value is less than or equal to the `min` value or greater than or equal to the `max` value. If it is, return `false` because the current node's value is not within the valid range based on its position in the binary search tree.
+- Recursively call the `isValidBST` function on the current node's left subtree, passing in the `min` value and the current node's value as the `max` value.
+- Recursively call the `isValidBST` function on the current node's right subtree, passing in the current node's value as the `min` value and the `max` value.
+- If the current node's value is within the valid range based on its position in the binary search tree and both the left and right subtrees are valid binary search trees, return `true`. Otherwise, return `false`.
+
+### Try It Out
+
+Let's test out our solution with the following binary search tree:
+
+```js
+/*
+
+     8
+    / \
+   4   10
+  / \
+ 2   6
+
+*/
+```
+
+```js
+const root = new Node(8);
+const node4 = new Node(4); // left
+const node10 = new Node(10); // right
+const node2 = new Node(2); // left
+const node6 = new Node(6); // right
+
+root.left = node4;
+root.right = node10;
+node4.left = node2;
+node4.right = node6;
+
+console.log(isValidBST(root));
+```
+
+</details>
+
+### Test Cases
+
+```js
+const { Node, isValidBST } = require('./validate-bst');
+
+describe('isValidBST', () => {
+  it('should return true for a valid binary search tree', () => {
+    const root = new Node(8);
+    const node4 = new Node(4);
+    const node10 = new Node(10);
+    const node2 = new Node(2);
+    const node6 = new Node(6);
+
+    root.left = node4;
+    root.right = node10;
+    node4.left = node2;
+    node4.right = node6;
+
+    const result = isValidBST(root);
+    expect(result).toBe(true);
+  });
+
+  it('should return false for an invalid binary search tree', () => {
+    const root = new Node(8);
+    const node4 = new Node(4);
+    const node10 = new Node(10);
+    const node2 = new Node(2);
+    const node12 = new Node(12);
+
+    root.left = node4;
+    root.right = node10;
+    node4.left = node2;
+    node4.right = node12;
+
+    const result = isValidBST(root);
+    expect(result).toBe(false);
+  });
+});
+
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Graph
+
+A `graph` is a versatile data structure that is similar to a tree. It consists of nodes (also called vertices) and edges (also called links). Each node represents an entity, and each edge represents a connection or relationship between two nodes. Graphs are used to represent many real-world applications: social networks, maps, routing algorithms, and more.
+
+You may hear the phrase "graph theory" in computer science. Graph theory is the study of graphs and their properties. It's a vast field of study with many applications in computer science and other fields.
+
+## Visual Representation of a Graph
+
+Here is a visual representation of a few graphs:
+
+<img src="../../assets/images/graph.png"  alt="" />
+
+The circles represent `nodes`, also called `vertex` or `vertices` (plural) and the lines connecting the nodes represent `edges`. If you think of a social network, you can think of the users as nodes and the connections or friendships between users as edges.
+
+## Types of Graphs
+
+Graphs can be categorized into several types based on their properties:
+
+- **Undirected Graph**: In an undirected graph, the edges have no direction. If there is an edge between node A and node B, it implies a connection between both nodes in both directions. The top one is an undirected graph.
+
+- **Directed Graph (Digraph)**: In a directed graph, each edge has a specific direction. An edge from node A to node B indicates a one-way connection from A to B. The bottom one is a directed graph.
+
+- **Weighted Graph**: In a weighted graph, each edge has a weight or cost associated with it. These weights represent the strength of the relationship or the distance between nodes.
+
+- **Cyclic Graph**: A cyclic graph contains at least one cycle, which means there is a closed path in the graph. I will give you an example of a cycle in a minute.
+
+- **Acyclic Graph**: An acyclic graph is a graph that does not contain any cycles.
+
+- **Connected Graph**: A connected graph is one where there is a path between any two nodes. In other words, every node in the graph can be reached from any other node.
+
+- **Disconnected Graph**: A disconnected graph is one that consists of two or more separate subgraphs, and there is no path between nodes in different subgraphs.
+
+## Graph cycles
+
+A cycle is a closed path in a graph. In other words, a cycle is a path that starts and ends at the same node. Here is an example of a cycle in a graph:
+
+<img src="../../assets/images/graph-cycle.png"  alt="" />
+
+A cycle starts and ends at the same node. In this example, the cycle is `b -> c -> e -> d -> b`. The cycle can be of any length, and it can contain any number of nodes.
+
+So that is the gist of a graph. In the next lesson, we will learn about 2 ways to represent a graph and those are an adjacency matrix and adjacency list.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Adjacency Matrix & Adjacency List
+
+There are two main ways to implement a graph: an `adjacency matrix` and an `adjacency list`. In this lesson, we'll look at both of these approaches.
+
+## Adjacency Matrix
+
+An adjacency matrix is a two-dimensional array that stores the edges between two vertices as boolean values. The rows and columns of the matrix represent the vertices of the graph.
+
+Let's look at an example:
+
+<img src="../../assets/images/adjacency-matrix.png" width="700"  alt="" />
+
+At the top we have a graph with some vertices and edges. At the bottom we have the adjacency matrix representation of the graph. The rows and columns represent the vertices of the graph. If we look at the vertex with the value of 1, we can see that it has edges to vertices 2 and 4. So we put a 1 in the first row for 2 and 4. This is an undirected graph, so it goes the other way as well. So we can put a 1 in the 2 row and the 4 row for 1. If this were a directed graph, we would only put a 1 in the 1 row for 2 and 4.
+
+The formula to see if a vertex `i` is connected to vertex `j` is `matrix[i][j]`. `i` is the row and `j` is the column. So `matrix[1][2]` is 1, which means that vertex 1 is connected to vertex 2. `matrix[2][1]` is also 1, which means that vertex 2 is connected to vertex 1.
+
+To represent this adjacency matrix with a two dimensional array in JavaScript, we can do this:
+
+```JavaScript
+[
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 1, 0],
+  [0, 1, 0, 1, 1],
+  [1, 1, 1, 0, 1],
+  [0, 0, 1, 1, 0]
+];
+```
+
+## Adjacency List
+
+An adjacency list is a collection of linked lists or arrays that lists all of the other vertices that are connected. Let's look at an example that uses linked lists. Every vertex has a linked list of all the vertices that it is connected to:
+
+<img src="../../assets/images/adjacency-list.png"  alt="" />
+
+If you wanted to represent this list with a JavaScript object, you could do this:
+
+```JavaScript
+{
+  1: [2, 4],
+  2: [1, 3, 4],
+  3: [2, 4, 5],
+  4: [1, 2, 3, 5],
+  5: [3, 4]
+};
+```
+
+## Which one is better?
+
+The answer is: it depends. It depends on the type of graph and the type of operations you want to perform on the graph. If you have a graph with a lot of edges, then the adjacency matrix might be better. If you have a graph with a lot of vertices, then the adjacency list might be better. If you want to be able to quickly tell if there is an edge between two vertices, then the adjacency matrix might be better. If you want to be able to quickly iterate over all the edges of a vertex, then the adjacency list might be better. I think overall, in my own opinion, the adjacency list is easier and more commonly used. But it really depends on the situation.
+
+In the next lesson, we will take what we have learned about graphs and implement a graph class in JavaScript.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Graph Implementation
+
+We are now going to create a graph class in JavaScript. Again, you can do this in any language you want. We will use an adjacency list in the form of an object.
+
+### Constructor
+
+```JavaScript
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+}
+```
+
+### `addVertex` Method
+
+We will have a method called `addVertex` that takes a name of a vertex as a parameter. We will set the adjacency list at that vertex to be an empty array.
+
+```JavaScript
+addVertex(vertex) {
+  this.adjacencyList[vertex] = [];
+}
+```
+
+### `addEdge` Method
+
+We will also have a method called `addEdge` that takes two vertices as parameters. We will find in the adjacency list the key of vertex1 and push vertex2 to the array. Then we will find in the adjacency list the key of vertex2 and push vertex1 to the array.
+
+```JavaScript
+addEdge(vertex1, vertex2) {
+  this.adjacencyList[vertex1].push(vertex2);
+  this.adjacencyList[vertex2].push(vertex1);
+}
+```
+
+### `printAdjacencyList` Method
+
+Let's create a method to give us a visual representation of our adjacency list so that we can see all of the vertices and their edges/connections.
+
+```JS
+printAdjacencyList() {
+    for (const vertex in this.adjacencyList) {
+      console.log(`${vertex} -> ${this.adjacencyList[vertex].join(', ')}`);
+    }
+  }
+```
+
+Let's try adding some vertices and edges.
+
+```JS
+g.addVertex('Tokyo');
+g.addVertex('Dallas');
+g.addVertex('Aspen');
+
+g.addEdge('Tokyo', 'Dallas');
+g.addEdge('Dallas', 'Aspen');
+g.addEdge('Aspen', 'Tokyo');
+
+g.printAdjacencyList();
+```
+
+When you run you should see something like this:
+
+```text
+Tokyo -> Dallas, Aspen
+Dallas -> Tokyo, Aspen
+Aspen -> Dallas, Tokyo
+```
+
+### `removeEdge` Method
+
+We will also have a method called `removeEdge` that takes two vertices as parameters. We will reassign the key of vertex1 to be an array that does not contain vertex2. We will reassign the key of vertex2 to be an array that does not contain vertex1.
+
+```JavaScript
+removeEdge(vertex1, vertex2) {
+  this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+    (v) => v !== vertex2
+  );
+  this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+    (v) => v !== vertex1
+  );
+}
+```
+
+### `removeVertex` Method
+
+We will also have a method called `removeVertex` that takes a vertex as a parameter. We will loop as long as there are any other vertices in the adjacency list for that vertex. Inside the loop, we will call `removeEdge` and pass in the vertex we are removing and any values in the adjacency list for that vertex. Then we will delete the key in the adjacency list for that vertex.
+
+```JavaScript
+removeVertex(vertex) {
+  while (this.adjacencyList[vertex].length) {
+    const adjacentVertex = this.adjacencyList[vertex].pop();
+    this.removeEdge(vertex, adjacentVertex);
+  }
+  delete this.adjacencyList[vertex];
+}
+```
+
+## Try It Out
+
+Let's test out our graph class.
+
+```JavaScript
+g.addVertex('Tokyo');
+g.addVertex('Dallas');
+g.addVertex('Aspen');
+g.addEdge('Tokyo', 'Dallas');
+g.addEdge('Dallas', 'Aspen');
+g.addEdge('Tokyo', 'Aspen');
+
+g.removeEdge('Dallas', 'Aspen');
+g.removeVertex('Aspen');
+
+g.printAdjacencyList();
+```
+
+We created a graph with three vertices. We added edges between Tokyo and Dallas, Dallas and Aspen, and Tokyo and Aspen. We removed the edge between Dallas and Aspen. We removed the vertex Aspen.
+
+You should see:
+
+```text
+Tokyo -> Dallas
+Dallas -> Tokyo
+```
+
+## Test Cases
+
+```JavaScript
+describe('Graph', () => {
+  let g;
+
+  beforeEach(() => {
+    g = new Graph();
+  });
+
+  test('Should add vertices to the graph', () => {
+    g.addVertex('Tokyo');
+    g.addVertex('Dallas');
+    g.addVertex('Aspen');
+
+    expect(g.adjacencyList).toEqual({
+      Tokyo: [],
+      Dallas: [],
+      Aspen: [],
+    });
+  });
+
+  test('Should add edges between vertices in the graph', () => {
+    g.addVertex('Tokyo');
+    g.addVertex('Dallas');
+    g.addVertex('Aspen');
+    g.addEdge('Tokyo', 'Dallas');
+    g.addEdge('Dallas', 'Aspen');
+
+    expect(g.adjacencyList).toEqual({
+      Tokyo: ['Dallas'],
+      Dallas: ['Tokyo', 'Aspen'],
+      Aspen: ['Dallas'],
+    });
+  });
+
+  test('Should remove edges between vertices in the graph', () => {
+    g.addVertex('Tokyo');
+    g.addVertex('Dallas');
+    g.addVertex('Aspen');
+    g.addEdge('Tokyo', 'Dallas');
+    g.addEdge('Dallas', 'Aspen');
+    g.removeEdge('Dallas', 'Aspen');
+
+    expect(g.adjacencyList).toEqual({
+      Tokyo: ['Dallas'],
+      Dallas: ['Tokyo'],
+      Aspen: [],
+    });
+  });
+
+  test('Should remove vertices and associated edges from the graph', () => {
+    g.addVertex('Tokyo');
+    g.addVertex('Dallas');
+    g.addVertex('Aspen');
+    g.addEdge('Tokyo', 'Dallas');
+    g.addEdge('Dallas', 'Aspen');
+    g.removeVertex('Aspen');
+
+    expect(g.adjacencyList).toEqual({
+      Tokyo: ['Dallas'],
+      Dallas: ['Tokyo'],
+    });
+  });
+});
+```
+
+In the next lesson, we will look at graph traversal.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Graph Traversal
+
+There are a few ways to traverse a graph. The two most common ways are **depth-first traversal** and **breadth-first traversal**.
+
+We have already looked at these using trees, but the same concepts apply to graphs.
+
+## Depth-First Traversal
+
+In depth-first traversal, we start at a vertex/node. In a tree, you would start at the root node. In a graph, you can start at any vertex. We then explore as far along each branch as possible before backtracking. We continue this process until we have visited all of the vertices in the graph.
+
+One common way to implement depth-first traversal is to use a `stack`. We start by pushing the starting vertex onto the stack. We then pop the vertex off the stack and visit it. We then push all of its neighbors onto the stack. We continue this process until the stack is empty.
+
+So take this graph for example:
+
+<img src="../../assets/images/graph-depth-first.png">
+
+We have 5 vertices labeled `a` through `e` with 6 edges connecting them. We are going to traverse this graph using depth-first traversal. We could start at any vertex, but let's start at `a` and walk through the process.
+
+- We start at vertex `a` and put it on the stack and mark it as visited
+
+- From here, we can go to vertex `b` or `c`. Let's go to `b`. We put `b` on the stack and mark it as visited
+
+- From `b`, we can go to `e`. We put `e` on the stack and mark it as visited
+
+- From `e`, let's go to `c`. We put `c` on the stack and mark it as visited
+
+- At this point, in both our stack and in the visited table, we have `a`, `b`, `e`, and `c`. `c` does not have any neighbors that we haven't already visited, so we pop it off the stack
+
+- We look at the top of the stack and see that `e` is next. Does `e` have any neighbors that we haven't already visited? Yes, `d`. We put `d` on the stack and mark it as visited
+
+- `d` is now at the top of the stack and does not have any neighbors that we haven't already visited, so we pop it off the stack
+
+- Now `e` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack
+
+- Now `b` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack
+
+- Now `a` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack
+
+- The stack is now empty, so we are done
+
+## Breadth-First Traversal
+
+Now let's explore another graph traversal technique called breadth-first traversal. In contrast to depth-first traversal, which explores as far as possible along each branch before backtracking, breadth-first traversal visits all the vertices at the current level before moving on to the next level.
+
+In order to implement breadth-first traversal, we utilize a queue data structure. Starting from a given vertex, we enqueue it into the queue and mark it as visited. Then, while the queue is not empty, we perform the following steps:
+
+- Dequeue a vertex from the front of the queue.
+- Visit the dequeued vertex.
+- Enqueue all its unvisited neighbors into the queue and mark them as visited.
+
+By following these steps, we will traverse the graph level by level until all vertices have been visited.
+
+Let's apply breadth-first traversal to the same graph we used for depth-first traversal:
+
+<img src="../../assets/images/graph-breadth-first.png">
+
+- We start at vertex `a` and enqueue it into the queue
+
+- Then we dequeue `a` from the front of the queue and mark it as visited.
+
+- Now we enqueue all of `a`'s unvisited neighbors into the queue. `a` has three neighbors: `b`, `c`, and `d`. We enqueue them in that order. The queue now looks like this: `b`, `c`, `d`. With the `b` to the right because that is the start.
+
+- Now we dequeue `b` from the front of the queue. We visit `b` and enqueue all of its unvisited neighbors into the queue. 
+
+- `b` has one unvisited neighbor: `e`. We enqueue `e` into the queue. The queue now looks like this: `c`, `d`, `e`.
+
+- We dequeue `c` from the front of the queue. We visit `c` and enqueue all of its unvisited neighbors into the queue. `c` has no unvisited neighbors, so we do not enqueue anything. The queue now looks like this: `d`, `e`.
+
+- We dequeue `d` from the front of the queue. We visit `d` and enqueue all of its unvisited neighbors into the queue. `d` has no unvisited neighbors, so we do not enqueue anything. The queue now looks like this: `e`.
+
+- We dequeue `e` from the front of the queue. We visit `e` and enqueue all of its unvisited neighbors into the queue. `e` has no unvisited neighbors, so we do not enqueue anything. The queue is now empty, so we are done.
+
+The order in which we visited the vertices is: `a`, `b`, `c`, `d`, `e`.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Graph Depth-First Traversal
+
+## Instructions
+
+Write a function called `depthFirstTraversal` that performs a Depth First Traversal of a graph starting from a specified vertex and returns an array containing the vertices visited in the order they were traversed. Use the `Graph` class as well as the `Stack` class from the previous lessons.
+
+## Function Signature
+
+```js
+/**
+ * Returns an array containing the vertices visited in the order they were traversed.
+ * @param {Graph} graph - The graph to traverse.
+ * @param {string} startingVertex - The vertex to start the traversal from.
+ * @returns {string[]} - The vertices visited in the order they were traversed.
+ */
+function depthFirstTraversal(graph: Graph, startingVertex: string): string[];
+```
+
+## Example
+
+```js
+// Example Graph
+// A --- B
+// |     |
+// |     |
+// C --- D
+// |     |
+// |     |
+// E --- F
+
+const graph = new Graph();
+
+// Add vertices
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addVertex('D');
+graph.addVertex('E');
+graph.addVertex('F');
+
+// Add edges
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'C');
+graph.addEdge('B', 'D');
+graph.addEdge('C', 'D');
+graph.addEdge('C', 'E');
+graph.addEdge('D', 'F');
+graph.addEdge('E', 'F');
+
+depthFirstTraversal(g, 'A');
+// ['A', 'C', 'E', 'F', 'D', 'B'];
+```
+
+## Hints
+
+- The `Graph` class has an `adjacencyList` property that stores the vertices and their neighbors.
+- The `Stack` class has a `push` method that adds an element to the top of the stack and a `pop` method that removes the top element from the stack.
+- Use a results array to store the vertices visited in the order they were traversed
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+#### Using an adjacency list:
+
+```js
+function depthFirstTraversal(graph, startingVertex) {
+  if (!graph.adjacencyList[startingVertex]) {
+    return [];
+  }
+
+  const visited = {};
+  const stack = [startingVertex];
+  const result = [];
+
+  visited[startingVertex] = true;
+
+  while (stack.length) {
+    const currentVertex = stack.pop();
+    result.push(currentVertex);
+
+    graph.adjacencyList[currentVertex].forEach((neighbor) => {
+      if (!visited[neighbor]) {
+        visited[neighbor] = true;
+        stack.push(neighbor);
+      }
+    });
+  }
+
+  return result;
+}
+```
+
+### Explanation
+
+- Check if the starting vertex exists in the graph's adjacency list. If it doesn't, return an empty array.
+- Initialize an empty object called `visited` to store the vertices visited.
+- Initialize a stack with the starting vertex.
+- Initialize an empty array called `result` to store the vertices visited in the order they were traversed.
+- Mark the starting vertex as visited.
+- While the stack is not empty:
+  - Pop a vertex from the stack and push it to the `result` array.
+  - For each neighbor of the vertex:
+    - If the neighbor has not been visited:
+      - Mark the neighbor as visited.
+      - Push the neighbor to the stack.
+- Return the `result` array.
+
+</details>
+
+## Test Cases
+
+```js
+describe('Graph Depth-First Traversal', () => {
+  test('should perform depth-first traversal correctly', () => {
+    const g = new Graph();
+    g.addVertex('A');
+    g.addVertex('B');
+    g.addVertex('C');
+    g.addVertex('D');
+    g.addVertex('E');
+    g.addVertex('F');
+    g.addVertex('G');
+
+    g.addEdge('A', 'B');
+    g.addEdge('A', 'C');
+    g.addEdge('B', 'D');
+    g.addEdge('C', 'E');
+    g.addEdge('D', 'E');
+    g.addEdge('D', 'F');
+    g.addEdge('E', 'G');
+    g.addEdge('F', 'G');
+
+    const result = depthFirstTraversal(g, 'A').sort();
+    const expected = ['A', 'B', 'C', 'D', 'E', 'F', 'G'].sort();
+    expect(result).toEqual(expected);
+  });
+
+  test('should handle loops correctly', () => {
+    const g = new Graph();
+    g.addVertex('X');
+    g.addVertex('Y');
+    g.addVertex('Z');
+
+    g.addEdge('X', 'Y');
+    g.addEdge('Y', 'Z');
+    g.addEdge('Z', 'X');
+
+    const result = depthFirstTraversal(g, 'X').sort();
+    const expected = ['X', 'Y', 'Z'].sort();
+    expect(result).toEqual(expected);
+  });
+
+  test('should return an empty array for an empty graph', () => {
+    const g = new Graph();
+
+    expect(depthFirstTraversal(g, 'A')).toEqual([]);
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Graph Breadth First Traversal
+
+## Instructions
+
+Write a function called `breadthFirstTraversal` that performs a Breadth First Traversal of a graph starting from a specified vertex and returns an array containing the vertices visited in the order they were traversed. Use the `Queue` class from the previous lessons.
+
+## Function Signature
+
+```js
+/**
+ * Performs a Breadth First Traversal of a graph.
+ * @param {Graph} graph - The graph to traverse.
+ * @param {string} startingVertex - The vertex to start the traversal from.
+ * @returns {string[]} - The vertices visited in the order they were traversed.
+ */
+function breadthFirstTraversal(graph: Graph, startingVertex: string): string[];
+```
+
+## Example
+
+```js
+// Example Graph
+// A --- B
+// |     |
+// |     |
+// C --- D
+// |     |
+// |     |
+// E --- F
+
+const graph = new Graph();
+
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addVertex('D');
+graph.addVertex('E');
+graph.addVertex('F');
+
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'C');
+graph.addEdge('B', 'D');
+graph.addEdge('C', 'D');
+graph.addEdge('C', 'E');
+graph.addEdge('D', 'F');
+graph.addEdge('E', 'F');
+
+const result = breadthFirstTraversal(graph, 'A');
+
+console.log(result);
+// [ 'A', 'B', 'C', 'D', 'E', 'F' ]
+```
+
+## Hints
+
+- You can use the provided `Queue` class to keep track of the vertices to be visited in a breadth-first order.
+- Start by enqueuing the `startingVertex` onto the queue and mark it as visited.
+- Use a visited set to keep track of the visited vertices to avoid enqueuing the same vertex multiple times.
+- In the traversal loop, dequeue a vertex from the queue, add it to the result array, and enqueue all its neighbors that have not been visited yet.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function breadthFirstTraversal(graph, startingVertex) {
+  const visited = new Set();
+  const result = [];
+  const queue = new Queue();
+
+  queue.enqueue(startingVertex);
+  visited.add(startingVertex);
+
+  while (!queue.isEmpty()) {
+    const currentVertex = queue.dequeue();
+    result.push(currentVertex);
+
+    for (const neighbor of graph.adjacencyList[currentVertex]) {
+      if (!visited.has(neighbor)) {
+        queue.enqueue(neighbor);
+        visited.add(neighbor);
+      }
+    }
+  }
+
+  return result;
+}
+```
+
+### Explanation
+
+- Create a `visited` set to keep track of the visited vertices, a `result` array to store the vertices visited in the order they were traversed, and a `queue` to keep track of the vertices to be visited in a breadth-first order.
+- Enqueue the `startingVertex` onto the queue and mark it as visited.
+- In a loop, dequeue a vertex from the queue, add it to the result array, and enqueue all its neighbors that have not been visited yet.
+- Continue this process until the queue becomes empty.
+- Return the result array.
+
+</details>
+
+## Test
+
+```js
+const Graph = require('./graph');
+const Queue = require('./queue');
+const breadthFirstTraversal = require('./graph-breadth-first');
+
+describe('Breadth First Traversal', () => {
+  it('should traverse a graph in breadth-first order', () => {
+    const graph = new Graph();
+
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+    graph.addVertex('E');
+    graph.addVertex('F');
+    graph.addVertex('G');
+
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B', 'D');
+    graph.addEdge('B', 'E');
+    graph.addEdge('C', 'F');
+    graph.addEdge('C', 'G');
+
+    const result = breadthFirstTraversal(graph, 'A');
+    expect(result).toEqual(['A', 'B', 'C', 'D', 'E', 'F', 'G']);
+  });
+
+  it('should handle disconnected components in the graph', () => {
+    const graph = new Graph();
+
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+
+    graph.addEdge('A', 'B');
+    graph.addEdge('C', 'D');
+
+    const result = breadthFirstTraversal(graph, 'A');
+    expect(result).toEqual(['A', 'B']);
+  });
+});
+
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# What Are Sorting Algorithms?
+
+In this section, we're going to get into `sorting algorithms`. This stuff tends to get pretty advanced so I'm going to be teaching as if you've never heard the words `sorting algorithm` before. If you have, that's great, but I want everyone to be able to follow along.
+
+We looked at `Binary search trees` in the last section. So you know that in order to use a `Binary search tree`, you need to insert the data in a sorted order. But how do you sort the data? Well, you use a `sorting algorithm`.
+
+A `sorting algorithm` is an algorithm that puts elements of a list in a certain order. The most frequently used orders are numerical order and alphabetical order. Efficient sorting is important for optimizing the use of other algorithms such as `searching` (as in a binary tree search) and `merging`. Both require input data to be in sorted lists.
+
+### Efficiency of Sorting Algorithms
+
+There are many different sorting algorithms and each has its own advantages and limitations. As I said, sorting is a basic building block that many other algorithms are built on. Therefore, it is important to know how sorting algorithms work and their relative efficiency.
+
+Efficiency in an algorithm is defined in terms of the `time complexity` and `space complexity`, which we've already talked about. As a reminder, `time complexity` is a measure of the amount of time it takes for the algorithm to run. `Space complexity` is a measure of the amount of memory space it takes for the algorithm to run.
+
+Sorting algorithm performance can be classified by:
+
+- `Best case` complexity: the minimum possible number of operations required to sort the data.
+- `Average case` complexity: the average number of operations required to sort the data.
+- `Worst case` complexity: the maximum number of operations required to sort the data.
+- `Memory usage`: the amount of memory space required to sort the data.
+
+These are expressed using `Big O notation`, which we've also talked about.
+
+### Types of Sorting Algorithms
+
+There are many different types of sorting algorithms. We're going to look at the most common ones in the next few sections. Here is an overview of the ones we'll be looking at:
+
+- `Bubble sort`
+- `Selection sort`
+- `Insertion sort`
+- `Merge sort`
+- `Quick sort`
+- `Heap sort`
+- `Radix sort`
+
+I will go over these in detail in the next few sections.
+
+Strategies for sorting:
+
+- Recursion - Recursion can be used in sorting algorithms. We know that recursion is when a function calls itself with a smaller version of the input. We'll see how this can be used in sorting algorithms.
+
+- Divide and conquer - A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem. This is very similar to recursion. We'll see how this can be used in sorting algorithms.
+
+- In-place sorting - An in-place sorting algorithm uses constant extra space for producing the output (modifies the given array only to produce the sorted array). It sorts the list only by modifying the order of the elements within the list. We'll see how this can be used in sorting algorithms.
+
+Let's jump right in and look at the first sorting algorithm, `Bubble sort` in the next lesson.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Bubble Sort Algorithm
+
+In this lesson, we're going to look at the `Bubble sort` algorithm. This is one of the simplest sorting algorithms. It's also one of the least efficient. But it's a good place to start because it's easy to understand. It is also a very common interview question.
+
+## What is Bubble Sort?
+
+The `Bubble sort` sorting algorithm is comparison-based. Each pair of adjacent elements are compared with eachother and the elements are swapped if they are not in order. This is repeated until the list is sorted.
+
+The algorithm gets its name from the way that smaller or larger elements "bubble" to the top of the list. Because it only uses comparisons to operate on elements, it is a `comparison sort`. Although the algorithm is simple, it is too slow and impractical for most problems even when compared to other sorting algorithms such as `insertion sort`. It can be practical if the input is usually in sort order but may occasionally have some out-of-order elements nearly in position.
+
+## How Does Bubble Sort Work?
+
+Let`s look at an example. We have the following array of numbers:
+
+```text
+[5, 4, 2, 1]
+```
+
+I have an image that can help you visualize this process:
+
+![Bubble Sort](../../assets/images/bubble-sort.png)
+
+We start by comparing the first two elements in the array. If the first element is larger than the second element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 4, so we swap them:
+
+```text
+[4, 5, 2, 1]
+```
+
+Next, we compare the second and third elements in the array. If the second element is larger than the third element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 2, so we swap them:
+
+```text
+[4, 2, 5, 1]
+```
+
+Next, we compare the third and fourth elements in the array. If the third element is larger than the fourth element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 1, so we swap them:
+
+```text
+[4, 2, 1, 5]
+```
+
+We have now completed one pass through the array. We repeat this process until the array is sorted. In this case, we need to repeat the process three more times:
+
+```text
+[2, 4, 1, 5]
+[2, 1, 4, 5]
+[1, 2, 4, 5]
+```
+
+### Complexity & Efficiency
+
+- Worst-case time complexity: O(n^2)
+- Best-case time complexity: O(n)
+- Average-case time complexity: O(n^2)
+- Space complexity: O(1)
+
+The worst-case time complexity is O(n^2) because we have to iterate through the array n times and for each iteration, we have to iterate through the array n times. This is because we have to compare each element with all the other elements in the array. What really makes bubble sorts inefficient is that it swaps elements multiple times per iteration. For example, in the first iteration, it swaps 5 and 4. Then, it swaps 5 and 2. Then, it swaps 5 and 1. It does this for each iteration. This is why the best-case time complexity is O(n). If the array is already sorted, we don't need to swap any elements.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
