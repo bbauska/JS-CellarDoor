@@ -1,5 +1,8 @@
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+---
 # JS-CellarDoor: JavaScript Cellar Door Examples to learn JS with.
+Last Updated: 1/4/2024 7:29pm
+---
+
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 # Challenge: Count Vowels
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -10094,26 +10097,847 @@ We have now completed one pass through the array. We repeat this process until t
 The worst-case time complexity is O(n^2) because we have to iterate through the array n times and for each iteration, we have to iterate through the array n times. This is because we have to compare each element with all the other elements in the array. What really makes bubble sorts inefficient is that it swaps elements multiple times per iteration. For example, in the first iteration, it swaps 5 and 4. Then, it swaps 5 and 2. Then, it swaps 5 and 1. It does this for each iteration. This is why the best-case time complexity is O(n). If the array is already sorted, we don't need to swap any elements.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Bubble Sort Algorithm
 
+You've learned about a simple sorting algorithm called Bubble Sort. Let's put your knowledge to the test and implement the Bubble Sort algorithm in JavaScript. Obviously if you have never done anything like this and all you have to go on is the last lesson, then you may have an issue doing this on your own. That's absolutely fine. You can either try and come back or just follow along. Either way, you will learn something.
+
+## Instructions
+
+Implement a function called `bubbleSort` that takes an array of numbers as an argument and returns a sorted array using the Bubble Sort algorithm.
+
+### Function Signature
+
+```js
+/**
+ * Sorts an array using the Bubble Sort algorithm.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {number[]} - The sorted array.
+ */
+function bubbleSort(array: number[]): number[]
+```
+
+### Examples
+
+```js
+console.log(bubbleSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
+console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+### Constraints
+
+- The input array can contain any number of elements.
+- The elements in the input array are unique and positive integers.
+
+### Notes
+
+- The Bubble Sort algorithm works by repeatedly stepping through the list of elements, comparing each pair of adjacent items, and swapping them if they are in the wrong order. This process is repeated for each element in the list until no swaps are needed.
+
+### Hints
+
+- There are a ton of ways to do this, but one is to use 2 loops. One to iterate the array and one to do the swap. You can set the current element as a temp variable, assign the next element to the current and then assign the temp value to the next element
+
+# Solutions
+
+<details>
+  <summary>Click For Solution 1</summary>
+
+```js
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+```
+
+### Explanation
+
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop through the entire array.
+- Inside the `for` loop, start another `for` loop. The condition of the `for` loop is `j < arr.length - i - 1`. This will loop through the array, but it will stop before the last element. This is because the last element will be sorted after the first pass through the array.
+- Inside the inner `for` loop, check if the current element is greater than the next element. If it is, then swap the elements.
+- We swap the elements by creating a temporary variable called `temp` and setting it to the current element. Then we set the current element to the next element. Finally, we set the next element to `temp`.
+- Outside of the inner `for` loop, return the sorted array.
+
+To have this make a bit more sense, put this console log inside the inner `for` loop:
+
+```js
+console.log(arr[j], arr[j + 1]);
+```
+
+Run this code and look at the console.
+
+```js
+const bubbleSort = require('./bubble-sort');
+
+const array = [5, 4, 2, 1];
+
+const result = bubbleSort(array);
+
+console.log(result);
+```
+
+This will display every comparison that is made. You can see that the largest element will "bubble" to the top of the array. You can compare it with our image.
+
+<img src="../../assets/images/bubble-sort-console.png" />
+
+</details>
+
+<details>
+  <summary>Click For Solution 2</summary>
+
+This solution is similar, but it uses a `while` loop instead of a `for` loop. It also uses a variable called `swapped` to keep track of whether or not we have swapped any elements. This variable will be used to determine when we can stop looping.
+
+```js
+function bubbleSort(arr) {
+  let swapped = false;
+
+  while (!swapped) {
+    swapped = true;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        const temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swapped = false;
+      }
+    }
+  }
+
+  return arr;
+}
+```
+
+### Explanation
+
+- Declare a variable called `swapped` and setting it to `false`. This variable will keep track of whether or not we have swapped any elements. We will use this variable to determine when we can stop looping.
+- Start a `while` loop. The condition of the `while` loop is `!swapped`. This means that the loop will continue to run as long as `swapped` is `false`. This is the same as saying that the loop will continue to run as long as we have swapped any elements.
+- Inside the `while` loop, set `swapped` to `true`. This will ensure that the loop will run at least once.
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This means that the loop will continue to run as long as `i` is less than the length of the array.
+- Inside the `for` loop, check if the current element is greater than the next element. If it is, then swap the elements and set `swapped` to `false`. This will ensure that the loop will run again.
+- Outside of the `for` loop, return the sorted array.
+
+</details>
+
+### Test Cases
+
+```js
+test('Sort an array in ascending order', () => {
+  const unsortedArray = [5, 2, 8, 1, 3];
+  const sortedArray = [1, 2, 3, 5, 8];
+  expect(bubbleSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with repeated values', () => {
+  const unsortedArray = [4, 1, 3, 4, 2, 2];
+  const sortedArray = [1, 2, 2, 3, 4, 4];
+  expect(bubbleSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an already sorted array', () => {
+  const sortedArray = [1, 2, 3, 4, 5];
+  expect(bubbleSort(sortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with one element', () => {
+  const singleElementArray = [42];
+  expect(bubbleSort(singleElementArray)).toEqual(singleElementArray);
+});
+
+test('Sort an empty array', () => {
+  const emptyArray = [];
+  expect(bubbleSort(emptyArray)).toEqual(emptyArray);
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Insertion Sort Algorithm
+
+Insertion sort is similar to how you would sort playing cards. You start with an empty left hand and the cards face down on the table. Then you remove one card at a time from the table and insert it into the correct position in the left hand. To find the correct position for a card, you compare it with each of the cards already in the hand. At all times, the cards held in the left hand are sorted.
+
+An array is split into two parts: `sorted` and `unsorted`. Initially, the sorted part just has one element (the first element). Then, we pick an element from the unsorted part and insert it into the sorted part at the correct position. We do this until the unsorted part becomes empty.
+
+Let's look at an example:
+
+![Insertion Sort](../../assets/images/insertion-sort.png)
+
+```text
+[4, 3, 2, 10, 12, 1, 5, 6]
+```
+
+The first element is already sorted. So, we pick the second element (3) and compare it with the first element (4). Since 3 is smaller than 4, we swap them. Now, the first two elements are sorted.
+
+```text
+[3, 4, 2, 10, 12, 1, 5, 6]
+```
+
+Next, we pick the third element (2) and compare it with the first element (3). Since 2 is smaller than 3, we swap them. Then, we compare 2 with 4 and swap them. Now, the first three elements are sorted.
+
+```text
+[2, 3, 4, 10, 12, 1, 5, 6]
+```
+
+We continue this process until the unsorted part becomes empty.
+
+### Complexity & Efficiency
+
+- Worst-case time complexity: O(n^2)
+- Best-case time complexity: O(n^2)
+- Average-case time complexity: O(n^2)
+- Space complexity: O(1)
+
+Compared to a bubble sort, insertion sort requires less number of swaps, so it is slightly more efficient, especially when the array is partially sorted. However, it still has a time complexity of O(n<sup>2</sup>) because we still have to compare each element with all the other elements in the sorted part.
+
+Online Sorting: Insertion sort is well-suited for "online" sorting, where new elements are continuously added to a sorted list. It efficiently adds new elements to the sorted portion, while something like selection sort, which we'll look at next, requires a full traversal of the unsorted portion for each new element.
+
+In the next lesson, we will implement insertion sort in JavaScript.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Insertion Sort Algorithm
+
+Now that you've learned about the Insertion Sort algorithm, let's put your knowledge to the test and implement the Insertion Sort algorithm in JavaScript.
+
+## Instructions
+
+Implement a function called `insertionSort` that takes an array of numbers as an argument and returns a sorted array using the Insertion Sort algorithm.
+
+### Function Signature
+
+```js
+/**
+ * Sorts an array using the Insertion Sort algorithm.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {number[]} - The sorted array.
+ */
+function insertionSort(arr: number[]): number[]
+```
+
+### Examples
+
+```js
+console.log(insertionSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
+console.log(insertionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+### Constraints
+
+- The input array can contain any number of elements.
+- The elements in the input array are unique and positive integers.
+
+### Notes
+
+- The Insertion Sort algorithm builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
+### Hints
+
+- Divide & conquer: The main idea of this algorithm is to divide the array into a "sorted" and an "unsorted" part. Initially, the first element is considered as the "sorted" part. Then, one by one, elements from the "unsorted" part are moved to the "sorted" part while keeping the "sorted" part sorted.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    const currentElement = arr[i];
+    let j = i - 1;
+
+    while (j >= 0 && arr[j] > currentElement) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    arr[j + 1] = currentElement;
+  }
+
+  return arr;
+}
+```
+
+### Explanation
+
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop through the entire array, starting from the second element.
+- Inside the `for` loop, declare a variable called `currentElement` and set it to the element at index `i`. This is the element that we want to insert into the correct position.
+- Declare a variable called `j` and set it to `i - 1`. This is the index of the last element in the "sorted" part of the array.
+- Start a `while` loop. The condition of the `while` loop is `j >= 0` (making sure we're not going out of bounds) and `arr[j] > currentElement` (checking if the current element is greater than the element at index `j`).
+- Inside the `while` loop, shift the element at index `j` one position to the right (by assigning `arr[j]` to `arr[j + 1]`).
+- Decrement `j` by 1 to move to the previous element in the "sorted" part.
+- After the `while` loop, insert the `currentElement` at the correct position in the "sorted" part of the array (by assigning `currentElement` to `arr[j + 1]`).
+- Outside of the `for` loop, return the sorted array.
+
+</details>
+```
+
+### Test Cases
+
+```js
+test('Sort an array in ascending order', () => {
+  const unsortedArray = [5, 2, 8, 1, 3];
+  const sortedArray = [1, 2, 3, 5, 8];
+  expect(insertionSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with repeated values', () => {
+  const unsortedArray = [4, 1, 3, 4, 2, 2];
+  const sortedArray = [1, 2, 2, 3, 4, 4];
+  expect(insertionSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an already sorted array', () => {
+  const sortedArray = [1, 2, 3, 4, 5];
+  expect(insertionSort(sortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with one element', () => {
+  const singleElementArray = [42];
+  expect(insertionSort(singleElementArray)).toEqual(singleElementArray);
+});
+
+test('Sort an empty array', () => {
+  const emptyArray = [];
+  expect(insertionSort(emptyArray)).toEqual(emptyArray);
+});
+```
+
+Feel free to customize the test cases according to your needs!
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Selection Sort Algorithm
+
+The selection sort algorithm is a simple sorting algorithm that works by repeatedly selecting the minimum (or maximum) element from the unsorted part of the array and swapping it with the first unsorted element. This gradually builds up a sorted portion of the array.
+
+Let's look at an example:
+
+![Selection Sort](../../assets/images/selection-sort.png)
+
+```text
+[4,3,2,10,12,1,5,6]
+```
+
+We start by selecting the smallest element in the array, which is 1. We then swap it with the first element in the array.
+
+[1,3,2,10,12,4,5,6]
+
+We then select the next smallest element in the array, which is 2. We then swap it with the second element in the array.
+
+[1,2,3,10,12,4,5,6]
+
+We then select the next smallest element in the array, which is 3. 3 is already in the correct position, so we don't need to swap it.
+
+[1,2,3,10,12,4,5,6]
+
+We then select the next smallest element in the array, which is 4. We then swap it with the fourth element in the array.
+
+[1,2,3,4,12,10,5,6]
+
+We then select the next smallest element in the array, which is 5. We then swap it with the fifth element in the array.
+
+[1,2,3,4,5,10,12,6]
+
+We then select the next smallest element in the array, which is 6. We then swap it with the sixth element in the array.
+
+[1,2,3,4,5,6,12,10]
+
+We then select the next smallest element in the array, which is 10. We then swap it with the seventh element in the array.
+
+[1,2,3,4,5,6,10,12]
+
+12 is already in the correct position, so we don't need to swap it.
+
+[1,2,3,4,5,6,10,12]
+
+The array is now sorted.
+
+### The Process
+
+- Initialization: The algorithm divides the array into two parts: a sorted portion and an unsorted portion. The sorted portion starts as an empty set, and the unsorted portion includes all the elements of the array.
+
+- Selection of Minimum: In each iteration, the algorithm searches through the unsorted portion to find the minimum element.
+
+- Swap and Grow Sorted Portion: Once the minimum element is found, it is swapped with the first element of the unsorted portion. This effectively grows the sorted portion of the array.
+
+- Repeat: The algorithm then considers the next element in the unsorted portion as the new "first" element and repeats the process of finding the minimum element, swapping, and growing the sorted portion.
+
+- Termination: The algorithm continues this process until the entire array is sorted. The sorted portion gradually expands, and the unsorted portion shrinks until it becomes empty.
+
+- Time Complexity: Selection sort has a time complexity of O(n^2), where n is the number of elements in the array. This makes it inefficient for large arrays, but it's simple to implement and performs a fixed number of swaps, which can be advantageous in certain situations.
+
+In the next lesson, we'll look at implementing a selection sort.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Selection Sort Implementation
+
+You've learned about the Selection Sort algorithm. Now it's time to put your knowledge into practice and implement the Selection Sort algorithm in JavaScript.
+
+## Instructions
+
+Implement a function called `selectionSort` that takes an array of numbers as an argument and returns a sorted array using the Selection Sort algorithm.
+
+### Function Signature
+
+```js
+/**
+ * Sorts an array using the Selection Sort algorithm.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {number[]} - The sorted array.
+ */
+function selectionSort(array: number[]): number[]
+```
+
+### Examples
+
+```js
+console.log(selectionSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
+console.log(selectionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+### Constraints
+
+- The input array can contain any number of elements.
+- The elements in the input array are unique and positive integers.
+
+### Notes
+
+- The Selection Sort algorithm works by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning. This process continues until the whole array is sorted.
+
+### Hints
+
+- Outer Loop: The main idea of this algorithm is to divide the array into two parts: the "sorted" part and the "unsorted" part. The outer loop will iterate through the unsorted part and select the minimum element in each iteration.
+- Inner Loop: The inner loop will find the minimum element in the unsorted part and swap it with the first element in the unsorted part. This effectively moves the minimum element to the sorted part.
+- Current Minimum: Keep track of the index of the current minimum element found in the inner loop. You will need this index to perform the swap.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let minIndex = i;
+
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+    if (minIndex !== i) {
+      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+    }
+  }
+
+  return arr;
+}
+```
+
+### Explanation
+
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length - 1`. This will loop through the entire array, except for the last element (since the last element will be sorted automatically).
+- Inside the outer `for` loop, declare a variable called `minIndex` and set it to `i`. This will keep track of the index of the minimum element found in the inner loop.
+- Start an inner `for` loop. The condition of the inner `for` loop is `j = i + 1` and `j < arr.length`. This will loop through the unsorted part of the array.
+- Inside the inner `for` loop, check if the element at index `j` is less than the element at index `minIndex`. If it is, update `minIndex` to `j`.
+- After the inner `for` loop, check if `minIndex` is not equal to `i`. If it's not equal, swap the elements at indices `i` and `minIndex`.
+- Outside of both loops, return the sorted array.
+
+</details>
+
+### Test Cases
+
+```js
+test('Sort an array in ascending order', () => {
+  const unsortedArray = [5, 2, 8, 1, 3];
+  const sortedArray = [1, 2, 3, 5, 8];
+  expect(selectionSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with repeated values', () => {
+  const unsortedArray = [4, 1, 3, 4, 2, 2];
+  const sortedArray = [1, 2, 2, 3, 4, 4];
+  expect(selectionSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an already sorted array', () => {
+  const sortedArray = [1, 2, 3, 4, 5];
+  expect(selectionSort(sortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with one element', () => {
+  const singleElementArray = [42];
+  expect(selectionSort(singleElementArray)).toEqual(singleElementArray);
+});
+
+test('Sort an empty array', () => {
+  const emptyArray = [];
+  expect(selectionSort(emptyArray)).toEqual(emptyArray);
+});
+```
+
+Feel free to customize the test cases according to your needs!
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Merge Sort Algorithm
+
+The merge sort algorithm is a very efficient divide and conquer algorithm. It works by continuously splitting the array in half until it can no longer be divided. Then, it merges each subarray while sorting them in the process. This process continues until the whole array is sorted.
+
+This is the most efficient solution that we've looked at so far. It has a time complexity of O(n log n), which signifies that its performance grows in a linearithmic fashion with the input size. This is different from O(log n), where the growth is purely logarithmic. So it isn't as fast as O(log n) but it's faster than O(n), especially for large data sets. It's definitely faster than the other algorithms we've looked at, which had complexities of O(n^2).
+
+Let's look at an example:
+
+<img src="../../assets/images/merge-sort.png" width="600" />
+
+```js
+[5, 3, 7, 1];
+```
+
+The first step is to split the array in half. We get two subarrays:
+
+```js
+[5, 3][(7, 1)];
+```
+
+We split each subarray in half again:
+
+```js
+[5][3][7][1];
+```
+
+Now that we can not go any further, we start merging each subarray while sorting them in the process:
+
+```js
+[3, 5][(1, 7)];
+```
+
+We merge the two subarrays again:
+
+```js
+[1, 3, 5, 7];
+```
+
+And we are done!
+
+In the next lesson, we will implement a merge sort algorithm in JavaScript.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+## Challenge: Merge Sort Implementation
+
+Now that you're familiar with the Merge Sort algorithm, it's time to implement it in JavaScript. This algorithm is particularly efficient for large datasets, as it employs a divide-and-conquer strategy.
+
+## Instructions
+
+Implement a function called `mergeSort` that takes an array of numbers as an argument and returns a sorted array using the Merge Sort algorithm.
+
+### Function Signature
+
+```js
+/**
+ * Sorts an array using the Merge Sort algorithm.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {number[]} - The sorted array.
+ */
+function mergeSort(array: number[]): number[]
+```
+
+### Examples
+
+```js
+console.log(mergeSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
+console.log(mergeSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+### Constraints
+
+- The input array can contain any number of elements.
+- The elements in the input array are unique and positive integers.
+
+### Notes
+
+- The Merge Sort algorithm divides the input array into smaller sub-arrays, sorts them separately, and then merges them back together in the correct order.
+
+### Hints
+
+- Divide & Conquer: The key idea behind this algorithm is to recursively divide the array into two halves until the base case is reached (when the array has only one or zero elements). Then, merge the smaller arrays back together while sorting them.
+- Merge Function: Implement a helper function called `merge` that takes two sorted arrays and merges them into a single sorted array. This function is crucial for the merge step of the algorithm.
+- Recursive Sorting: In the main `mergeSort` function, divide the array into two halves and recursively sort each half. Then, use the `merge` function to merge the sorted halves.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
+
+  return merge(left, right);
+}
+
+function merge(left, right) {
+  const merged = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      merged.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      merged.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+
+  return merged.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+}
+```
+
+### Explanation
+
+- The `mergeSort` function is the main sorting function that implements the merge sort algorithm.
+- If the length of the array is 1 or less, it is already sorted, so we return the array as is.
+- Otherwise, we calculate the midpoint of the array using `Math.floor(arr.length / 2)`.
+- We recursively call `mergeSort` on the left half and the right half of the array.
+- Finally, we merge the sorted left and right halves using the `merge` function.
+
+- The `merge` function takes two sorted arrays as input and merges them into a single sorted array.
+- We initialize an empty array called `merged` to store the merged elements.
+- We also initialize two indices: `leftIndex` for the left array and `rightIndex` for the right array.
+- We iterate through both arrays while comparing the elements at the current indices.
+- If the element from the left array is smaller, we push it into the `merged` array and increment `leftIndex`.
+- If the element from the right array is smaller, we push it into the `merged` array and increment `rightIndex`.
+- After the loop, we concatenate any remaining elements from both arrays (if any).
+- We return the merged array.
+
+### Test Cases
+
+```js
+test('Sort an array in ascending order', () => {
+  const unsortedArray = [5, 2, 8, 1, 3];
+  const sortedArray = [1, 2, 3, 5, 8];
+  expect(mergeSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with repeated values', () => {
+  const unsortedArray = [4, 1, 3, 4, 2, 2];
+  const sortedArray = [1, 2, 2, 3, 4, 4];
+  expect(mergeSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an already sorted array', () => {
+  const sortedArray = [1, 2, 3, 4, 5];
+  expect(mergeSort(sortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with one element', () => {
+  const singleElementArray = [42];
+  expect(mergeSort(singleElementArray)).toEqual(singleElementArray);
+});
+
+test('Sort an empty array', () => {
+  const emptyArray = [];
+  expect(mergeSort(emptyArray)).toEqual(emptyArray);
+});
+```
+
+Feel free to customize the test cases according to your needs!
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+## Quick Sort Algorithm
+
+The Quick Sort algorithm is a highly efficient divide-and-conquer sorting algorithm. It works by selecting a "pivot" element from the array and partitioning the other elements into two subarrays according to whether they are less than or greater than the pivot. The subarrays are then sorted recursively.
+
+Quick Sort offers an average time complexity of O(n log n), making it one of the fastest sorting algorithms available. It's especially efficient for larger datasets. Quick sort has a better space complexity than a merge sort because merge Sort requires additional memory space to create temporary arrays during the merging process. When merging two subarrays, a temporary array is needed to hold the merged elements before they are placed back into the original array. This additional memory usage can be a drawback for Merge Sort, especially when dealing with very large arrays.
+
+### Example
+
+Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and choosing the pivot as `6`.
+
+<img src="../../assets/images/quicksort.png" width="600" />
+
+
+- Choose the pivot element (6) and partition the array:
+
+   ```plaintext
+   Pivot: 6
+   [20, 13, 3, 2, 10, 12, 1, 5, | 6]
+   ```
+
+- Partition the array into two subarrays:
+
+   ```plaintext
+   [3, 2, 1, 5] | [6, 20, 13, 10]
+            
+   ```
+- Left: Choose (3) pivot
+
+ ```plaintext
+   [2, 1] [3 5] 
+            
+   ```
+
+- Right: Choose (10) pivot
+
+ ```plaintext
+   [6] [10, 20, 13] 
+            
+   ```
+ At this point, 6 is done as there is only one element. This is our recursive case.
+
+ - Left: Choose (2) pivot and (5) pivot
+
+ ```plaintext
+   [1] [2] [3] [5]
+            
+ ```
+
+ These are all done.
+
+ - Right: choose (13) pivot
+
+ ```plaintext
+   [10] [13, 20]
+            
+ ```
+
+ 10 is done. Now, (20) as pivot
+
+  ```plaintext
+   [13] [20]
+            
+ ```
+
+ Now there is no more than 1 value per array element and we can combine into one array: [1,2,3,5,6,10,13,20]
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Quick Sort Implementation
+
+Now that you're familiar with the Quick Sort algorithm, it's time to implement it in JavaScript. This algorithm is highly efficient and employs a divide-and-conquer strategy to sort an array.
+
+## Instructions
+
+Implement a function called `quickSort` that takes an array of numbers as an argument and returns a sorted array using the Quick Sort algorithm.
+
+### Function Signature
+
+```js
+/**
+ * Sorts an array using the Quick Sort algorithm.
+ * @param {number[]} array - The array to be sorted.
+ * @returns {number[]} - The sorted array.
+ */
+function quickSort(array: number[]): number[]
+```
+
+### Examples
+
+```js
+console.log(quickSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
+console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
+```
+
+### Constraints
+
+- The input array can contain any number of elements.
+- The elements in the input array are unique and positive integers.
+
+### Notes
+
+- The Quick Sort algorithm involves selecting a pivot element, partitioning the array, and recursively sorting the subarrays on either side of the pivot.
+- While Quick Sort's average-case time complexity is O(n log n), it can have a worst-case time complexity of O(n^2) if not optimized. Optimized pivot selection methods, such as choosing the median of three random elements, help mitigate this worst-case scenario.
+
+### Hints
+
+- Pivot Selection: The choice of pivot significantly affects the efficiency of Quick Sort. Common pivot selection strategies include choosing the first, last, or middle element, or using the median of three random elements.
+- Partitioning: Implement a partitioning step that rearranges the elements such that elements less than the pivot are on the left, and elements greater than the pivot are on the right.
+- Recursion: Recursively apply the Quick Sort algorithm to the subarrays on either side of the pivot.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivot = arr[arr.length - 1];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}
+```
+
+### Explanation
+
+- The `quickSort` function is the main sorting function that implements the quick sort algorithm.
+- If the length of the array is 1 or less, it is already sorted, so we return the array as is.
+- Otherwise, we choose a pivot element (in this case, the last element of the array).
+- We create two arrays: `left` to store elements less than the pivot, and `right` to store elements greater than the pivot.
+- We iterate through the array and partition the elements into the `left` and `right` arrays based on their relationship to the pivot.
+- Finally, we recursively apply `quickSort` to the `left` and `right` arrays, and then concatenate them along with the pivot to get the sorted array.
+
+### Test Cases
+
+```js
+test('Sort an array in ascending order', () => {
+  const unsortedArray = [5, 2, 8, 1, 3];
+  const sortedArray = [1, 2, 3, 5, 8];
+  expect(quickSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with repeated values', () => {
+  const unsortedArray = [4, 1, 3, 4, 2, 2];
+  const sortedArray = [1, 2, 2, 3, 4, 4];
+  expect(quickSort(unsortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an already sorted array', () => {
+  const sortedArray = [1, 2, 3, 4, 5];
+  expect(quickSort(sortedArray)).toEqual(sortedArray);
+});
+
+test('Sort an array with one element', () => {
+  const singleElementArray = [42];
+  expect(quickSort(singleElementArray)).toEqual(singleElementArray);
+});
+
+test('Sort an empty array', () => {
+  const emptyArray = [];
+  expect(quickSort(emptyArray)).toEqual(emptyArray);
+});
+```
+
+Feel free to customize the test cases according to your needs!
+```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
+the end...
+Created 1/4/2024 6:28pm
+Last Updated 1/4/2024 7:29pm
