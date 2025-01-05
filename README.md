@@ -8,10 +8,45 @@ output:
 ---
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~ readme.md for JS-Cellardoor.bauska.org ~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+  <li>01 <a href="js01">Challenge: Count Vowels</a></li>
+  <li>02 <a href="js02">Challenge: Palindrome</a></li>
+  <li>03 <a href="js03">Challenge: Reverse String</a></li>
+  <li>04 <a href="js04">Challenge: Title Case</a></li>
+  <li>05 <a href="js05">Challenge: Find Max Number</a></li>
+  <li>06 <a href="js06">Challenge: Remove Duplicates</a></li>
+  <li>07 <a href="js07">Challenge: Count Occurrences</a></li>
+  <li>08 <a href="js08">Challenge: Calculator</a></li>
+  <li>09 <a href="js09">Challenge: Get Sum</a></li>
+  <li>10 <a href="js10">Challenge: Hello World Sample Challenge</a></li>
+  <li>11 <a href="js11">Challenge: Array Intersection</a></li>
+  <li>12 <a href="js12">Challenge: Display Likes</a></li>
+  <li>13 <a href="js13">Challenge: Find The Missing Number</a></li>
+  <li>14 <a href="js14">Challenge: Find Missing Letter</a></li>
+  <li>15 <a href="js15">Challenge: Are all characters unique?</a></li>
+  <li>16 <a href="js16">Challenge: Dice Game Simulation</a></li>
+  <li>17 <a href="js17">Challenge: Format Phone Number</a></li>
+  <li>18 <a href="js18">Challenge: Validate Email</a></li>
+  <li>19 <a href="js19">What Are High Order Array Methods?</a></li>
+  <li>20 <a href="js20">Challenge: Sum of Squares of Even Numbers</a></li>
+  <li>21 <a href="js21">Challenge: Calculate Total Sales</a></li>
+  <li>22 <a href="js22">Challenge: Highest Scoring Word</a></li>
+  <li>23 <a href="js23"></a></li>
+  <li>24 <a href="js24"></a></li>
+  <li>25 <a href="js25"></a></li>
+  <li>26 <a href="js26"></a></li>
+  <li>27 <a href="js27"></a></li>
+  <li>28 <a href="js28"></a></li>
+  <li>29 <a href="js29"></a></li>
+  <li>30 <a href="js30"></a></li>
+
+
+</ul>
 
 <!-- 102 in table of contents -->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 01. Challenge: Count Vowels
+<h1 id="js01">01. Challenge: Count Vowels</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 ## Instructions
 
@@ -96,7 +131,7 @@ test('Counting vowels in a string', () => {
 });
 ```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 02. Challenge: Palindrome
+<h1 id="js02">02. Challenge: Palindrome</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 A palindrome is a word, phrase, number, or other sequence of characters which reads the 
 same backward or forward. An example of a palindrome is "madam".
@@ -241,7 +276,7 @@ test('Checking for palindrome strings', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 03. Challenge: Reverse String
+<h1 id="js03">03. Challenge: Reverse String</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -346,7 +381,7 @@ test('Reversing a string', () => {
 
 ```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 04. Challenge: Title Case
+<h1 id="js04">04. Challenge: Title Case</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -441,7 +476,7 @@ test('Converting string to title case', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 05. Challenge: Find Max Number
+<h1 id="js05">05. Challenge: Find Max Number</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -534,7 +569,7 @@ test('Finding the maximum number in an array', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 06. Challenge: Remove Duplicates
+<h1 id="js06">06. Challenge: Remove Duplicates</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -637,7 +672,7 @@ test('Removing duplicates from an array', () => {
 });
 ```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 07. Challenge: Count Occurrences
+<h1 id="js07">07. Challenge: Count Occurrences</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -760,7 +795,7 @@ test('Count Occurrences of a Character', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 08. Challenge: Calculator
+<h1 id="js08">08. Challenge: Calculator</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -901,7 +936,7 @@ test('Performing arithmetic operations using the calculator function', () => {
 });
 ```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 09. Challenge: Get Sum
+<h1 id="js09">09. Challenge: Get Sum</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 This is another very basic practice challenge just to get you into the hang of things.
@@ -974,7 +1009,7 @@ test('Calculating the sum of two numbers', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 10. Challenge: Hello World Sample Challenge
+<h1 id="js10">10. Challenge: Hello World Sample Challenge</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 This is a practice challenge to show you how things are set up and how to test, etc.
@@ -1040,7 +1075,7 @@ test("Returning 'Hello, World!' as a string", () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 11. Challenge: Array Intersection
+<h1 id="js11">11. Challenge: Array Intersection</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1154,7 +1189,7 @@ test('Finding array intersection', () => {
 });
 ```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 12. Challenge: Display Likes
+<h1 id="js12">12. Challenge: Display Likes</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1249,7 +1284,7 @@ test('Display Likes', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 13. Challenge: Find The Missing Number
+<h1 id="js13">13. Challenge: Find The Missing Number</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1352,7 +1387,7 @@ test('Finding the missing number', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 14. Challenge: Find Missing Letter
+<h1 id="js14">14. Challenge: Find Missing Letter</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1456,7 +1491,7 @@ test('Find Missing Letter', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 15. Challenge: Are all characters unique?
+<h1 id="js15">15. Challenge: Are all characters unique?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1578,7 +1613,7 @@ test('Unique Characters in a String', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 16. Challenge: Dice Game Simulation
+<h1 id="js16">16. Challenge: Dice Game Simulation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1687,7 +1722,7 @@ test('Dice Game Simulation', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 17. Challenge: Format Phone Number
+<h1 id="js17">17. Challenge: Format Phone Number</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1801,7 +1836,7 @@ test('Format Phone Number', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 18. Challenge: Validate Email
+<h1 id="js18">18. Challenge: Validate Email</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -1917,7 +1952,7 @@ test('Invalid Email Addresses', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 19. What Are High Order Array Methods?
+<h1 id="js19">19. What Are High Order Array Methods?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Most of the challenges that we have done so far have used loops. Loops are one of the biggest fundamentals in computer science in general. It's important that you know how to use them. For the next batch of challenges, I want to utilize some of the high order array methods in JavaScript, such as `map` and `filter`. These methods are very useful and can help you write cleaner code. Using loops is usually a bit more efficient, but the difference is negligible unless you are dealing with a very very large data set. In everyday code, it's better to write clean code that is easy to read and understand.
@@ -2016,7 +2051,7 @@ Here are some other high order array methods that you might see:
 - `includes` - returns `true` if the array contains a certain element
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 20. Challenge: Sum of Squares of Even Numbers
+<h1 id="js20">20. Challenge: Sum of Squares of Even Numbers</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2107,7 +2142,7 @@ test('Sum of even squares', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 21. Challenge: Calculate Total Sales
+<h1 id="js21">21. Challenge: Calculate Total Sales</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2245,7 +2280,7 @@ Feel free to adjust the challenge or the test cases as needed. If you have any f
 questions or need additional assistance, please let me know!
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 22. Challenge: Highest Scoring Word
+<h1 id="js22">22. Challenge: Highest Scoring Word</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2376,7 +2411,7 @@ test('Finding the highest scoring word', () => {
 Remember to use the provided test cases to verify your solution
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 23. Challenge: Valid Anagrams
+<h1 id="js23">23. Challenge: Valid Anagrams</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2451,7 +2486,7 @@ test('Checking for Valid Anagrams', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 24. Challenge: Hashtag Generator
+<h1 id="js24">24. Challenge: Hashtag Generator</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2551,7 +2586,7 @@ function generateHashtag(str) {
 </details>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 25. Challenge: Valid IPv4 Addresses
+<h1 id="js25">25. Challenge: Valid IPv4 Addresses</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2634,7 +2669,7 @@ test('Checking Valid IPv4 Addresses', () => {
 You can use this template for your challenge to validate IPv4 addresses in dot-decimal format!
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 26. Challenge: Car Mileage Analysis
+<h1 id="js26">26. Challenge: Car Mileage Analysis</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2797,7 +2832,7 @@ test('Analyzing Car Mileage Data', () => {
 Feel free to add more test cases to verify the correctness of your `analyzeCarMileage` function.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 27. Challenge: Password Validation
+<h1 id="js27">27. Challenge: Password Validation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -2889,7 +2924,7 @@ test('Password Validation', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 28. Challenge: Find Missing Letter Refactor
+<h1 id="js28">28. Challenge: Find Missing Letter Refactor</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -3032,7 +3067,7 @@ test('Find Missing Letter', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 29. Recursion Intro (countDown)
+<h1 id="js29">29. Recursion Intro (countDown)</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 For the next few challenges, we're going to be looking at and using `recursion`, which is a popular topic in computer science. I know a lot of people struggle with recursion, so I'm going to try and explain it in really simple terms and we'll start off with some really simple examples and break them down. Understanding at least the basic concpet of recursion is important and it's something that is often asked about in job interviews.
@@ -3095,7 +3130,7 @@ We are calling the same function with a smaller number each time. This is recurs
 In the next batch of challenges, we will be using recursion to solve some problems.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 30. Unwinding
+<h1 id="js30">30. Unwinding</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We talked about the basics of recursion and looked at a simple example in the last lesson. In this lesson, I want to look at a key concept in recursion called "unwinding".
@@ -3138,11 +3173,11 @@ As I said above, the call stack is a LIFO (last in, first out) data structure, w
 
 When we first call `sumUpTo(5)`, it is added to the call stack. Then, `sumUpTo(4)` is added to the call stack and so on...
 
-<img src="../../assets/images/recursion-stack-1.png" width="500" />
+<img src="../images/recursion-stack-1.png" width="500" />
 
 Once `sumUpTo(1)` is called, it returns 1 and is removed from the call stack. Then, `sumUpTo(2)` returns 3 and is removed from the call stack. This continues until `sumUpTo(5)` returns 15 and is removed from the call stack.
 
-<img src="../../assets/images/recursion-stack-2.png" width="500" />
+<img src="../images/recursion-stack-2.png" width="500" />
 
 We can see this by logging the function calls and the return values:
 
@@ -3161,7 +3196,7 @@ function sumUpTo(n) {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 31. Challenge: Reverse String Recursion
+<h1 id="js31">31. Challenge: Reverse String Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -3260,7 +3295,7 @@ test('Reversing a string', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 32. Challenge: Fibonacci Sequence Using Recursion
+<h1 id="js32">32. Challenge: Fibonacci Sequence Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We looked at a very simple example of recursion in the last lesson. Now I want to look at a very popular example that is often used with recursion: the Fibonacci sequence. This could very well be a question you get asked in an interview, so it's important to understand how it works. You can also use loops to solve this problem, but recursion is a more elegant solution. Later we will also look at using a binary tree to solve this problem.
@@ -3386,7 +3421,7 @@ describe('fibonacci', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 33. Challenge: Factorial Using Recursion
+<h1 id="js33">33. Challenge: Factorial Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Description
@@ -3499,7 +3534,7 @@ test('Factorial of 10 should be 3628800', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 34. Power
+<h1 id="js34">34. Power</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -3597,7 +3632,7 @@ test('Calculate Power of Base to Exponent', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 35. Challenge: Array Sum Using Recursion
+<h1 id="js35">35. Challenge: Array Sum Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Description
@@ -3690,7 +3725,7 @@ test('Calculate Sum of Array Using Recursion', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 36. Challenge: Number Range Using Recursion
+<h1 id="js36">36. Challenge: Number Range Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -3769,7 +3804,7 @@ test('Calculating the range of numbers', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 37. Challenge: Flatten Array
+<h1 id="js37">37. Challenge: Flatten Array</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -3861,7 +3896,7 @@ test('Flatten Nested Arrays', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 38. Challenge: Permutations
+<h1 id="js38">38. Challenge: Permutations</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -3968,7 +4003,7 @@ test('Permutations', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 39. What Is Time Complexity?
+<h1 id="js39">39. What Is Time Complexity?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 So we have done quite a few challenges. I want to talk a little bit about concepts such as time complexity, runtime, space complexity and Big O notation. This is stuff that you may be asked about in a technical interview, so it's important to at least have a basic understanding of it.
@@ -3996,7 +4031,7 @@ As I said, there are several types of time complexity, but we are going to focus
 
 Let's look at a chart to help us visualize these different types of time complexity.
 
-![Big O Chart](../../assets/images/time-complexity.webp)
+![Big O Chart](../images/time-complexity.webp)
 
 We are going to go through most of these by example, but for now, I'll give you a quick explanation of each one.
 
@@ -4031,7 +4066,7 @@ If we look at the chart, we can see that the logarithmic line is almost flat. It
 In the next lesson, I want to talk about `Big O notation` and how we can use it to describe the time complexity of a function.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 40. Big O Notation
+<h1 id="js40">40. Big O Notation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We talked about time complexity in the last lesson. Time complexity represents how the runtime changes as the input grows.
@@ -4097,7 +4132,7 @@ Just about every operation in your code has some kind of time complexity, not ju
 So now that you know about the main time complexities and Big O notation, in the next lesson, I want to give you can example of `constant` time.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 41. Constant Time Complexity `O(1)`
+<h1 id="js41">41. Constant Time Complexity `O(1)`</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We have established that `constant` time complexity is when the runtime is always the same, no matter how big the input is. `Linear` time complexity is when the runtime scales linearly with the input. To describe this in Big O notation, we use `O(1)` (pronounced "O of 1" or "big O of 1").
@@ -4149,7 +4184,7 @@ You should see that the runtime is still in the same general range.
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 42. Linear Time Complexity `O(n)`
+<h1 id="js42">42. Linear Time Complexity `O(n)`</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We have established that linear time complexity is when the runtime scales linearly with the input. As the input size increases, the runtime of the algorithm also increases in a linear fashion. This behavior is denoted by Big O notation as O(n), where n represents the size of the input.
@@ -4303,7 +4338,7 @@ This part is `O(n)` because it depends on the input. The more times the loop run
 So the overall complexity of the function is `O(n)` because the `O(1)` parts are insignificant compared to the `O(n)` part.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 43. Quadratic Time Complexity `O(n^2)`
+<h1 id="js43">43. Quadratic Time Complexity `O(n^2)`</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Quadratic time complexity is when the runtime scales quadratically with the input. As the input size increases, the runtime of the algorithm also increases in a quadratic fashion (i.e. the runtime is proportional to the square of the input size). So if the input size is 1, the runtime is 1 step. If the input size is 10, the runtime is 100 steps. If the input size is 100, the runtime is 10,000 steps. And so on.
@@ -4370,7 +4405,7 @@ console.timeEnd('Sum Array 2');
 You may have to right click in the `Output` in VS Code and select "Stop Code Run" because it will take a long time to run `Sum Array 2`.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 44. Logarithmic Time Complexity `O(log n)`
+<h1 id="js44">44. Logarithmic Time Complexity `O(log n)`</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Logarithmic time complexity is when the runtime grows logarithmically with the input size. As the input size increases, the runtime of the algorithm increases, but at a much slower rate compared to linear or quadratic time complexities. In a logarithmic time algorithm, the number of operations scales logarithmically with the input size.
@@ -4436,7 +4471,7 @@ Find Power 2: 0.005ms
 The runtime for `findPower` with an exponent of 1 billion is slightly faster than the runtime for an exponent of 100. This is because the algorithm is already highly efficient, and the difference in runtime is not significant. Remember, there are many other factors that can affect the runtime of an algorithm, such as the hardware and software environment.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 45. What Is Space Complexity?
+<h1 id="js45">45. What Is Space Complexity?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Space complexity refers to the amount of memory or storage space that an algorithm or function consumes based on the size of its input. It measures how the memory usage of an algorithm scales with the size of the input data. The goal is to optimize memory usage and minimize the additional memory required during the execution of an algorithm or program. 
@@ -4553,7 +4588,7 @@ The space complexity of the function is `O(1)`, which is `constant`. This is bec
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 46. Challenge: Maximum Subarray Sum - O(n^2) Solution
+<h1 id="js46">46. Challenge: Maximum Subarray Sum - O(n^2) Solution</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -4644,7 +4679,7 @@ test('Finding maximum subarray sum using O(n^2) solution', () => {
 Please note that the provided solution has a time complexity of O(n^2) due to the nested loops.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 47. Sliding Window Technique
+<h1 id="js47">47. Sliding Window Technique</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 The sliding window technique is a powerful algorithmic approach used to solve various array or string-related problems efficiently. It involves maintaining a "window" that slides through an array or string, allowing you to track and process a subset of elements without the need for nested loops.
@@ -4681,7 +4716,7 @@ Let's talk a little bit about how this works:
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 48. Challenge: Maximum Subarray Sum - O(n) Solution
+<h1 id="js48">48. Challenge: Maximum Subarray Sum - O(n) Solution</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -4785,7 +4820,7 @@ test('Finding maximum subarray sum using O(n^2) solution', () => {
 Please note that the provided solution has a time complexity of O(n^2) due to the nested loops.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 49. What Are Data Structures?
+<h1 id="js49">49. What Are Data Structures?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now that we've done some challenges and looked at time complexity and Big O notation, I want to start to look at data structures. Data structures are used in every programming language. All a data structure is is a way of storing and organizing data so that it can be used effectively. They're not only used for storing data but they're also used for accessing and manipulating data. If we have a list of 1000 items, and we want to find a specific item in that list, we can use a data structure to store the data in a way that makes it easy to find the item we're looking for.
@@ -4828,14 +4863,14 @@ Data structures can be linear or non-linear. A linear data structure is a struct
 In the next lesson, we'll look at hash tables including maps and sets.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 50. Hash Table (Hash Map) Intro
+<h1 id="js50">50. Hash Table (Hash Map) Intro</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In computing, a `hash table` (hash map) is a data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index, also called a hash code, into an array of buckets or slots, where the desired value can be found along with it's index.
 
 Here is a visual representation of a hash table:
 
-<img src="../../assets/images/hash-table.png" width="600" />
+<img src="../images/hash-table.png" width="600" />
 
 We have our keys on the left, which are names of people, and we have our stored values on the right, which in this case, are their phone numbers. In the middle is the hash function.
 
@@ -4878,7 +4913,7 @@ Here are some of the methods that are available on a hash table:
 We will get to implementing our own custom hash table, but first I want to look at `maps` and `sets` in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 51. Maps
+<h1 id="js51">51. Maps</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Maps were added as a data structure to JavaScript in the `ES2015` update. In JavaScript, a `map` is a collection of key-value pairs. Maps are also known as dictionaries, hashmaps, and associative arrays in other programming languages. Maps are used to store data in a way that uniquely identifies each element in the collection. This is done by using a key, which is a unique identifier for each element in the collection. The key is used to retrieve the associated value.
@@ -5023,7 +5058,7 @@ Now let's try some challenges!
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 52. Challenge: Word Frequency Counter
+<h1 id="js52">52. Challenge: Word Frequency Counter</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -5140,7 +5175,7 @@ test('Counting word frequencies in a string', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 53. Challenge: Phone Number Directory
+<h1 id="js53">53. Challenge: Phone Number Directory</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -5228,7 +5263,7 @@ test('Building a phone number directory from an array of phone numbers', () => {
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 54. Challenge: Anagram Grouping
+<h1 id="js54">54. Challenge: Anagram Grouping</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Anagrams are words or phrases formed by rearranging the letters of another word or phrase. 
@@ -5338,7 +5373,7 @@ test('Grouping anagrams', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 55. Sets
+<h1 id="js55">55. Sets</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now we are going to move on to `sets`. A set is a collection of unique values. A set can contain any data type. You can loop through a set in insertion order. Insertion order is the order in which the values were added to the set. A set is similar to an array, but a set is not indexed and does not contain duplicate values.
@@ -5472,7 +5507,7 @@ Let's try some challenges using sets.
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 56. Challenge: Symmetric Difference Challenge
+<h1 id="js56">56. Challenge: Symmetric Difference Challenge</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -5561,7 +5596,7 @@ test('Symmetric Difference of Two Arrays', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 57. Challenge: Two Sum
+<h1 id="js57">57. Challenge: Two Sum</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -5661,9 +5696,8 @@ describe('Two Sum', () => {
 });
 ```
 
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 58. Challenge: Longest Consecutive Sequence
+<h1 id="js58">58. Challenge: Longest Consecutive Sequence</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -5751,7 +5785,7 @@ test('Longest Consecutive Sequence', () => {
 **Note**: You need to define the `longestConsecutiveSequence` function as shown in the example. The test cases verify that the function correctly returns the length of the longest consecutive sequence in the input array.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 59. Custom Hash Table (Hash Map)
+<h1 id="js59">59. Custom Hash Table (Hash Map)</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We looked at the built-in `Map` class, which is a hash table, but now I want to implement our own custom hash table from scratch. This is not going to be a very advanced implementation. It can get much more complex where it can handle collisions better and dynamically resize, but this will be a good starting point.
@@ -5874,7 +5908,7 @@ You should see something like this:
 
 Remember this image?
 
-![hash table](../../assets/images/hash-table.png)
+![hash table](../images/hash-table.png)
 
 It looks very similar to what we have done here. We have an array with 8 items. We have 4 items in the array and 4 empty items. The items in the array are also arrays. Each of those arrays has a key-value pair inside of it. The key is the name and the value is the phone number.
 
@@ -6066,7 +6100,7 @@ Now we will do a couple challenges using this class.
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 60. Challenge: Word Frequency Counter using HashTable
+<h1 id="js60">60. Challenge: Word Frequency Counter using HashTable</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -6160,7 +6194,7 @@ test('Counting instances of a word in a string', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 61. Challenge: HashTable getValues Method
+<h1 id="js61">61. Challenge: HashTable getValues Method</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -6239,9 +6273,8 @@ describe('HashTable', () => {
 });
 ```
 
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 62. Challenge: Anagram Grouping Challenge
+<h1 id="js62">62. Challenge: Anagram Grouping Challenge</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -6334,14 +6367,14 @@ test('Grouping anagrams from an array of words', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 63. Stack
+<h1 id="js63">63. Stack</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 A `stack` is a linear data structure that works in a specific way and that is `Last In, First Out` or `LIFO`. This means that the last element added to the stack will be the first element removed from the stack. Think of a stack of plates. The last plate added to the stack will be the first plate removed from the stack.
 
 To give you a better idea, we can look at this image:
 
-<img src="../../assets/images/stack1.png" alt="" width="500" />
+<img src="../images/stack1.png" alt="" width="500" />
 
 In this case, each element is just a number, but it could be anything. We start with a stack with 1 element, we push another one on labeled 2. After that, another one labeled 3, and so on. In this case, the last element added to the stack is 5. We use the term `push` when we add on top of the stack.
 
@@ -6362,7 +6395,7 @@ The call stack can be used to debug code and find issues. I'm not going to go ov
 In the next lesson, we will create our own stack class.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 64. Stack Implementation
+<h1 id="js64">64. Stack Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now that we know fundamentally how a stack works, we're going to implement one in JavaScript. We will create a `Stack` Class that has methods such as `push`, `pop` and `peek`.
@@ -6486,7 +6519,7 @@ console.log(stack.pop());
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 65. Challenge: Reverse String Using a Stack
+<h1 id="js65">65. Challenge: Reverse String Using a Stack</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -6577,7 +6610,7 @@ test('Reversing a string', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 66. Challenge: Balanced Parenthesis
+<h1 id="js66">66. Challenge: Balanced Parenthesis</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -6681,14 +6714,14 @@ describe('balancedParenthesis', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 67. Queue
+<h1 id="js67">67. Queue</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 A `queue` is a linear data structure that works in a specific way and that is `First In, First Out` or `FIFO`. This means that the first element added to the queue will be the first element removed from the queue. Think of a line at a grocery store. The first person in line will be the first person to be served.
 
 To give you a better idea, we can look at this image:
 
-<img src="../../assets/images/queue1.png" alt="" width="500" />
+<img src="../images/queue1.png" alt="" width="500" />
 
 When we add to the queue, we use the term `enqueue`. When we remove from the queue, we use the term `dequeue`.
 
@@ -6700,7 +6733,7 @@ We know that in JavaScript, Arrays have a `push` and `shift` method. We can use 
 
 A great example of a queue is the event loop. The event loop is a fundamental concept in JavaScript and serves as a message queue.
 
-<img src="../../assets/images/event-loop.png" alt="" width="500" />
+<img src="../images/event-loop.png" alt="" width="500" />
 
 This is a diagram of the entire JavaScript runtime. The call stack is the first thing we talked about. The call stack is a stack data structure that keeps track of function calls in the order they are made and allows for their orderly execution and return.
 
@@ -6709,7 +6742,7 @@ The event loop is a queue that waits for the call stack to be empty and then pus
 Again, I go over this stuff in my Modern JS From the Beginning course. I also have a series on YouTube called "JavaScript: Under The Hood" where I go over the event loop and other JavaScript engine internals. I just wanted to give you a good example where a queue is used.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 68. Queue Implementation
+<h1 id="js68">68. Queue Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In the last lesson, we looked at how a queue data structure works. It is `First-in, First-out` or `FIFO`. The first element added to the queue will be the first element removed from the queue. We can use an array as a queue, but we can also create our own queue class and that's what I want to do here.
@@ -6880,7 +6913,7 @@ describe('Queue', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 69. Challenge Reverse a String Using a Queue
+<h1 id="js69">69. Challenge Reverse a String Using a Queue</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -6961,7 +6994,7 @@ test('Reversing a string', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 70. Challenge: Is Palindrome Using Queue and Stack
+<h1 id="js70">70. Challenge: Is Palindrome Using Queue and Stack</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -7048,14 +7081,14 @@ test('Checking for palindrome strings', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 71. Linked List
+<h1 id="js71">71. Linked List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 A `linked list` is a linear data structure that is made up of a series of nodes. Each node contains a `value` and a `pointer`. A pointer can mean a lot of different things in programming, in the case of a linked list, it is a reference to another node in the list.
 
 The first node in the list is called the `head`. The last node in the list is called the `tail`. The tail's pointer points to `null` to indicate that it is the last node in the list. We looked at a queue, which also has a head and a tail, but they serve different purposes. In a queue, the head refers to the front of the queue, where elements are `dequeued` (removed) from and the tail is where elements are `enqueued` (added). In a linked list, the head refers to the first node in the list and the tail refers to the last node and always points to `null`. Elements can be added or removed from both the head and the tail.
 
-<img src="../../assets/images/linked-list1.png" alt="" width="500" />
+<img src="../images/linked-list1.png" alt="" width="500" />
 
 As you can see in this image, we have a linked list with 4 nodes. Each node has a number as the value and a pointer that points to the next node. The last node or the `tail` points to `null`. 
 
@@ -7084,7 +7117,7 @@ Linked lists offer several advantages and use cases:
 In the next lesson, we will implement a linked list in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 72. Linked List Implementation
+<h1 id="js72">72. Linked List Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In the last lesson, we talked about what a linked list is and how it works. In this lesson, we'll implement one in JavaScript.
@@ -7236,7 +7269,7 @@ The `removeFrom` method will remove the node at the specified index. It takes in
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 73. Challenge: Reverse String Using Linked List
+<h1 id="js73">73. Challenge: Reverse String Using Linked List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -7315,7 +7348,7 @@ test('Reversing a string', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 74. Working With Pointers
+<h1 id="js74">74. Working With Pointers</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Before we move on to the next challenge, I want to talk more about `pointers` and how they work. In general, pointers are variables that store the memory address of another variable. This concept is more abstract in JavaScript and not as prevalent as in languages like C and C++, where special types and characters are used to declare and work with pointers, such as the `*` character for declaring a pointer variable and the `&` character to get the address of a variable.
@@ -7368,7 +7401,7 @@ There are different patterns when it comes to pointers. One of the most common p
 
 The idea of this pattern is that the pointers start at the same point, but one pointer moves faster than the other. The faster pointer moves at twice the speed of the slower pointer. When the faster pointer reaches the end of the list, the slower pointer will be at the middle node.
 
-<img src="../../assets/images/fastslow.png" width="500" alt="" />
+<img src="../images/fastslow.png" width="500" alt="" />
 
 let's look at a quick example:
 
@@ -7393,7 +7426,7 @@ When the `fast` pointer reaches the end of the list, the `slow` pointer will be 
 In the next lesson, we are going to implement a find middle function using the `LinkedList` class that we created.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 75. Challenge: Find Middle
+<h1 id="js75">75. Challenge: Find Middle</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In the last lesson, we looked at pointers and the fast and slow pattern. This is when you use two pointers to traverse an iterable data structure at different speeds. We want to do this to find the middle node of a linked list.
@@ -7529,7 +7562,7 @@ describe('findMiddle', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 76. Doubly Linked List
+<h1 id="js76">76. Doubly Linked List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 So we've talked about a linked list and what we have been dealing with is the most common type of linked list and that is a `singly linked list`. Where each node points to the next. Well there are other types of linked lists as well such as the `doubly linked list`. I don't want to get too far into this because it does start to get really advanced, but I at least want to introduce you to the concept of a doubly linked list.
@@ -7546,7 +7579,7 @@ Each node in a doubly linked list contains three parts:
 
 The first node in the list is the `head`, and the last node is the `tail`. Both the `head` and `tail` pointers can be used to efficiently access the beginning and end of the list.
 
-<img src="../../assets/images/doubly-linked-list.png" alt="" width="500" />
+<img src="../images/doubly-linked-list.png" alt="" width="500" />
 
 This image depicts a doubly linked list with four nodes. Each node has pointers to the previous and next nodes. The `head` node's `prev` pointer points to `null` because there is no previous node. Similarly, the `tail` node's `next` pointer points to `null`.
 
@@ -7566,7 +7599,7 @@ Doubly linked lists offer several advantages, building upon the features of a si
 In the next lesson, we will implement a doubly linked list in JavaScript and explore how its features can be utilized.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 77. Doubly Linked List Implementation
+<h1 id="js77">77. Doubly Linked List Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In this lesson, we will create a doubly linked list class in JavaScript. If you want to try this on your own, going on the knowledge that you have of a linked list and what I have explained about a doubly linked list, go ahead and try to implement this on your own. If you get stuck, you can always come back and watch this lesson.
@@ -7992,7 +8025,7 @@ describe('DoublyLinkedList', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 78. Challenge: Find Pair Sum
+<h1 id="js78">78. Challenge: Find Pair Sum</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 You are given an array of integers and a target sum. Implement a function called `findPairSum` that finds and returns a pair of distinct elements from the array whose sum is equal to the target sum. If no such pair exists, return `null`. You should use the `DoublyLinkedList` class/constructor to efficiently implement this function.
@@ -8076,14 +8109,14 @@ describe('findPair', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 79. Tree
+<h1 id="js79">79. Tree</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 A `tree` is a data structure that represents a hierarchical relationship between elements. Trees are widely used in various applications. Things like file systems and organization charts, implementing search algorithms (e.g., binary search tree), and providing efficient data access and manipulation such as in a heap. If you're a web developer, then you're familiar with the DOM (Document Object Model). That is actually an example of a tree structure.
 
 Here is a visual representation of a tree:
 
-<img src="../../assets/images/tree1.png" width="500" alt="" />
+<img src="../images/tree1.png" width="500" alt="" />
 
 The circles represent what are called `nodes`. These nodes contain data or information. In this example, each node just contains a number, but in a real-world application, it could be anything.
 
@@ -8125,7 +8158,7 @@ The height of a tree is the same as the height of it's root node. This tree has 
 
 A `binary tree` is a special type of tree that has one root node and each node can have at most two child nodes, often referred to as the `left child` and the `right child` or just left and right. 
 
-<img src="../../assets/images/binarytree.png" width="500" alt="" />
+<img src="../images/binarytree.png" width="500" alt="" />
 
 The tree that we are looking at is considered a binary tree because it has one root node and each node has at most two child nodes. Node 4 would be the left child of node 2, and node 5 would be the right child of node 2. There is also a clear path between the root and any one node. Sometimes you'll see trees that are split up and there are 3 nodes off by themselves. Or you may see a tree where the nodes are jut connected in a cirlce and there is no clear root. Those are not binary trees.
 
@@ -8133,7 +8166,7 @@ The tree that we are looking at is considered a binary tree because it has one r
 There are different types of binary trees and there is also something called a `binary search tree`, which we'll look into in a bit. For now, I want to create a `TreeNode` class that will allow us to construct nodes into a binary tree. We'll do that next.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 80. TreeNode Class & Manual Tree Creation
+<h1 id="js80">80. TreeNode Class & Manual Tree Creation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In this lesson, we will create a `TreeNode` class that will allow us to create a binary tree in JavaScript. We will create our tree manually for now by creating instances of the `TreeNode` class and assigning them to the `left` and `right` properties of other nodes. Later, we will create a `BinaryTree` class that will allow us to create a binary tree by passing in values.
@@ -8146,7 +8179,7 @@ Create a class called `TreeNode`. This will represent a node in the tree. It wil
 
 Then use that class to create the following binary tree:
 
-<img src="../../assets/images/tree5.png" width="500" alt="" />
+<img src="../images/tree5.png" width="500" alt="" />
 
 ### Hints
 
@@ -8194,14 +8227,14 @@ The code above implements exactly what we see in the diagram.
 </details>
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 81. Depth First Traversal
+<h1 id="js81">81. Depth First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now we are going to get into some algorithms that involve binary trees. This one is called `Depth First Traversal`. This is a traversal algorithm where the algorithm starts at a `root` node, which we know is the one at the top of the tree with no parent, and explores as far as possible along each branch before backtracking.
 
 So if we look at the following tree:
 
-<img src=".../../assets/images/depth-first.png" width="500" alt="" />
+<img src=".../images/depth-first.png" width="500" alt="" />
 
 We would start at `a` and then go to `b`. From here, we would go to `d` because we are going as far as possible along each branch before backtracking. `d` is as far as we can go on this path because it is a `leaf node`, which means it has no children. So now we can move over to `e`. If `e` had a child, we would move down, but since it doesn't, we're going to move over to `c`. From `c`, we can move down in depth to `f`.
 
@@ -8348,7 +8381,7 @@ describe('Depth First Traversal', () => {
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 82. Challenge: Recursive Depth First Traversal
+<h1 id="js82">82. Challenge: Recursive Depth First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -8456,14 +8489,14 @@ test('Depth First Traversal', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 83. Breadth-First Traversal
+<h1 id="js83">83. Breadth-First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now, let's explore another traversal algorithm for binary trees called `Breadth-First Traversal`. Unlike depth-first traversal, which explores as far as possible along each branch before backtracking, breadth-first traversal explores all the nodes at the current depth level before moving to the next level.
 
 To illustrate this algorithm, let's consider the same binary tree we used in the depth-first traversal example:
 
-<img src=".../../assets/images/breadth-first.png" width="500" alt="" />
+<img src=".../images/breadth-first.png" width="500" alt="" />
 
 For breadth-first traversal, we start at the root node `a` and visit its children, `b` and `c`, in order. Then, we move down to the next level and visit the children of `b` and `c`, which are `d`, `e`, and `f`. We continue this pattern, visiting all nodes at the current level before moving to the next level.
 
@@ -8614,7 +8647,7 @@ describe('Breadth-First Traversal', () => {
 There is not really a straightforward way to solve this problem recursively without using a queue data structure. You could use a stack data structure, but you would have to keep track of the current level of the tree and the next level of the tree. This would make the code more complicated and less efficient. So in my opinion, this is the best way to do breadth-first traversal.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 84. Challenge: Binary Tree Maximum Depth
+<h1 id="js84">84. Challenge: Binary Tree Maximum Depth</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -8766,7 +8799,7 @@ describe('Binary Tree Maximum Depth', () => {
 The test cases ensure that the `maxDepth` function correctly calculates the maximum depth of various binary trees, including edge cases of empty trees and trees with a single root node.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 85. Binary Search Tree (BST)
+<h1 id="js85">85. Binary Search Tree (BST)</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now that you know what a binary tree data structure is, we are going to look at `binary search trees` or `BST`. A binary search tree (BST) is a specific type of binary tree that follows a particular ordering and sorting property. 
@@ -8777,7 +8810,7 @@ For instance, consider a binary search tree that stores strings representing nam
 
 Let's look at the following tree and go over the rules for a BST:
 
-<img src="../../assets/images/binary-search-tree1.png" alt="" />
+<img src="../images/binary-search-tree1.png" alt="" />
 
 1. Each node has at most two child nodes, referred to as the left child and the right child.
 2. The left child's value is less than the parent node's value.
@@ -8787,7 +8820,7 @@ The image above is a valid BST. Everything on the left is less than it's parent 
 
 This does not only apply to immediate child nodes. Let's look at the image on the following image:
 
-<img src="../../assets/images/binary-search-tree.png" alt="" />
+<img src="../images/binary-search-tree.png" alt="" />
 
 If we look at the tree on the right-hand side, it is a valid binary tree, but it is not a valid binary search tree. The reason being that 3 is on the right side of 4, but 3 is less than 4. Everything on the right side of a node must be greater than or equal to the node's value.
 
@@ -8812,7 +8845,7 @@ There are online tools that you can use to create a binary search tree and visua
 In the next lesson, let's implement a binary search tree in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 86. Binary Search Tree Implementation
+<h1 id="js86">86. Binary Search Tree Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In this lesson, we will implement a binary search tree in JavaScript. We will start by creating a `Node` class, which will represent each node in the tree. Each node will have a `value`, a `left` property, and a `right` property. The `left` and `right` properties will point to other nodes, or be `null` if there is no left or right child.
@@ -9019,7 +9052,7 @@ BST's are very efficient data structures. They are very fast at inserting, looki
 
 ## Binary Search Tree Example
 
-<img src="../../assets/images/binary-search-tree1.png" width="600" />
+<img src="../images/binary-search-tree1.png" width="600" />
 
 ```js
 const bst = new BinarySearchTree();
@@ -9209,7 +9242,7 @@ describe('BinarySearchTree', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 87. Challenge: Validate Binary Search Tree
+<h1 id="js87">87. Challenge: Validate Binary Search Tree</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -9402,7 +9435,7 @@ describe('isValidBST', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 88. Graph
+<h1 id="js88">88. Graph</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 A `graph` is a versatile data structure that is similar to a tree. It consists of nodes (also called vertices) and edges (also called links). Each node represents an entity, and each edge represents a connection or relationship between two nodes. Graphs are used to represent many real-world applications: social networks, maps, routing algorithms, and more.
@@ -9413,7 +9446,7 @@ You may hear the phrase "graph theory" in computer science. Graph theory is the 
 
 Here is a visual representation of a few graphs:
 
-<img src="../../assets/images/graph.png"  alt="" />
+<img src="../images/graph.png"  alt="" />
 
 The circles represent `nodes`, also called `vertex` or `vertices` (plural) and the lines connecting the nodes represent `edges`. If you think of a social network, you can think of the users as nodes and the connections or friendships between users as edges.
 
@@ -9439,14 +9472,14 @@ Graphs can be categorized into several types based on their properties:
 
 A cycle is a closed path in a graph. In other words, a cycle is a path that starts and ends at the same node. Here is an example of a cycle in a graph:
 
-<img src="../../assets/images/graph-cycle.png"  alt="" />
+<img src="../images/graph-cycle.png"  alt="" />
 
 A cycle starts and ends at the same node. In this example, the cycle is `b -> c -> e -> d -> b`. The cycle can be of any length, and it can contain any number of nodes.
 
 So that is the gist of a graph. In the next lesson, we will learn about 2 ways to represent a graph and those are an adjacency matrix and adjacency list.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 89. Adjacency Matrix & Adjacency List
+<h1 id="js89">89. Adjacency Matrix & Adjacency List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 There are two main ways to implement a graph: an `adjacency matrix` and an `adjacency list`. In this lesson, we'll look at both of these approaches.
@@ -9457,7 +9490,7 @@ An adjacency matrix is a two-dimensional array that stores the edges between two
 
 Let's look at an example:
 
-<img src="../../assets/images/adjacency-matrix.png" width="700"  alt="" />
+<img src="../images/adjacency-matrix.png" width="700"  alt="" />
 
 At the top we have a graph with some vertices and edges. At the bottom we have the adjacency matrix representation of the graph. The rows and columns represent the vertices of the graph. If we look at the vertex with the value of 1, we can see that it has edges to vertices 2 and 4. So we put a 1 in the first row for 2 and 4. This is an undirected graph, so it goes the other way as well. So we can put a 1 in the 2 row and the 4 row for 1. If this were a directed graph, we would only put a 1 in the 1 row for 2 and 4.
 
@@ -9479,7 +9512,7 @@ To represent this adjacency matrix with a two dimensional array in JavaScript, w
 
 An adjacency list is a collection of linked lists or arrays that lists all of the other vertices that are connected. Let's look at an example that uses linked lists. Every vertex has a linked list of all the vertices that it is connected to:
 
-<img src="../../assets/images/adjacency-list.png"  alt="" />
+<img src="../images/adjacency-list.png"  alt="" />
 
 If you wanted to represent this list with a JavaScript object, you could do this:
 
@@ -9500,7 +9533,7 @@ The answer is: it depends. It depends on the type of graph and the type of opera
 In the next lesson, we will take what we have learned about graphs and implement a graph class in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 90. Graph Implementation
+<h1 id="js90">90. Graph Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 We are now going to create a graph class in JavaScript. Again, you can do this in any language you want. We will use an adjacency list in the form of an object.
@@ -9696,7 +9729,7 @@ describe('Graph', () => {
 In the next lesson, we will look at graph traversal.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 91. Graph Traversal
+<h1 id="js91">91. Graph Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 There are a few ways to traverse a graph. The two most common ways are **depth-first traversal** and **breadth-first traversal**.
@@ -9711,7 +9744,7 @@ One common way to implement depth-first traversal is to use a `stack`. We start 
 
 So take this graph for example:
 
-<img src="../../assets/images/graph-depth-first.png">
+<img src="../images/graph-depth-first.png">
 
 We have 5 vertices labeled `a` through `e` with 6 edges connecting them. We are going to traverse this graph using depth-first traversal. We could start at any vertex, but let's start at `a` and walk through the process.
 
@@ -9751,7 +9784,7 @@ By following these steps, we will traverse the graph level by level until all ve
 
 Let's apply breadth-first traversal to the same graph we used for depth-first traversal:
 
-<img src="../../assets/images/graph-breadth-first.png">
+<img src="../images/graph-breadth-first.png">
 
 - We start at vertex `a` and enqueue it into the queue
 
@@ -9772,7 +9805,7 @@ Let's apply breadth-first traversal to the same graph we used for depth-first tr
 The order in which we visited the vertices is: `a`, `b`, `c`, `d`, `e`.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 92. Challenge: Graph Depth-First Traversal
+<h1 id="js92">92. Challenge: Graph Depth-First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -9936,7 +9969,7 @@ describe('Graph Depth-First Traversal', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 93. Challenge: Graph Breadth First Traversal
+<h1 id="js93">93. Challenge: Graph Breadth First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
@@ -10086,7 +10119,7 @@ describe('Breadth First Traversal', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 94. What Are Sorting Algorithms?
+<h1 id="js94">94. What Are Sorting Algorithms?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In this section, we're going to get into `sorting algorithms`. This stuff tends to get pretty advanced so I'm going to be teaching as if you've never heard the words `sorting algorithm` before. If you have, that's great, but I want everyone to be able to follow along.
@@ -10135,7 +10168,7 @@ Strategies for sorting:
 Let's jump right in and look at the first sorting algorithm, `Bubble sort` in the next lesson.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 95. Bubble Sort Algorithm
+<h1 id="js95">95. Bubble Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 In this lesson, we're going to look at the `Bubble sort` algorithm. This is one of the simplest sorting algorithms. It's also one of the least efficient. But it's a good place to start because it's easy to understand. It is also a very common interview question.
@@ -10156,7 +10189,7 @@ Let`s look at an example. We have the following array of numbers:
 
 I have an image that can help you visualize this process:
 
-![Bubble Sort](../../assets/images/bubble-sort.png)
+![Bubble Sort](../images/bubble-sort.png)
 
 We start by comparing the first two elements in the array. If the first element is larger than the second element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 4, so we swap them:
 
@@ -10194,7 +10227,7 @@ We have now completed one pass through the array. We repeat this process until t
 The worst-case time complexity is O(n^2) because we have to iterate through the array n times and for each iteration, we have to iterate through the array n times. This is because we have to compare each element with all the other elements in the array. What really makes bubble sorts inefficient is that it swaps elements multiple times per iteration. For example, in the first iteration, it swaps 5 and 4. Then, it swaps 5 and 2. Then, it swaps 5 and 1. It does this for each iteration. This is why the best-case time complexity is O(n). If the array is already sorted, we don't need to swap any elements.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 96. Challenge: Bubble Sort Algorithm
+<h1 id="js96">96. Challenge: Bubble Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 You've learned about a simple sorting algorithm called Bubble Sort. Let's put your knowledge to the test and implement the Bubble Sort algorithm in JavaScript. Obviously if you have never done anything like this and all you have to go on is the last lesson, then you may have an issue doing this on your own. That's absolutely fine. You can either try and come back or just follow along. Either way, you will learn something.
@@ -10282,7 +10315,7 @@ console.log(result);
 
 This will display every comparison that is made. You can see that the largest element will "bubble" to the top of the array. You can compare it with our image.
 
-<img src="../../assets/images/bubble-sort-console.png" />
+<img src="../images/bubble-sort-console.png" />
 
 </details>
 
@@ -10355,7 +10388,7 @@ test('Sort an empty array', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 97. Insertion Sort Algorithm
+<h1 id="js97">97. Insertion Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Insertion sort is similar to how you would sort playing cards. You start with an empty left hand and the cards face down on the table. Then you remove one card at a time from the table and insert it into the correct position in the left hand. To find the correct position for a card, you compare it with each of the cards already in the hand. At all times, the cards held in the left hand are sorted.
@@ -10364,7 +10397,7 @@ An array is split into two parts: `sorted` and `unsorted`. Initially, the sorted
 
 Let's look at an example:
 
-![Insertion Sort](../../assets/images/insertion-sort.png)
+![Insertion Sort](../images/insertion-sort.png)
 
 ```text
 [4, 3, 2, 10, 12, 1, 5, 6]
@@ -10398,7 +10431,7 @@ Online Sorting: Insertion sort is well-suited for "online" sorting, where new el
 In the next lesson, we will implement insertion sort in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 98. Challenge: Insertion Sort Algorithm
+<h1 id="js98">98. Challenge: Insertion Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now that you've learned about the Insertion Sort algorithm, let's put your knowledge to the test and implement the Insertion Sort algorithm in JavaScript.
@@ -10508,14 +10541,14 @@ test('Sort an empty array', () => {
 Feel free to customize the test cases according to your needs!
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 99. Selection Sort Algorithm
+<h1 id="js99">99. Selection Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 The selection sort algorithm is a simple sorting algorithm that works by repeatedly selecting the minimum (or maximum) element from the unsorted part of the array and swapping it with the first unsorted element. This gradually builds up a sorted portion of the array.
 
 Let's look at an example:
 
-![Selection Sort](../../assets/images/selection-sort.png)
+![Selection Sort](../images/selection-sort.png)
 
 ```text
 [4,3,2,10,12,1,5,6]
@@ -10572,7 +10605,7 @@ The array is now sorted.
 In the next lesson, we'll look at implementing a selection sort.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 100. Challenge: Selection Sort Implementation
+<h1 id="js100">100. Challenge: Selection Sort Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 You've learned about the Selection Sort algorithm. Now it's time to put your knowledge into practice and implement the Selection Sort algorithm in JavaScript.
@@ -10684,7 +10717,7 @@ test('Sort an empty array', () => {
 Feel free to customize the test cases according to your needs!
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 101. Merge Sort Algorithm
+<h1 id="js101">101. Merge Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 The merge sort algorithm is a very efficient divide and conquer algorithm. It works by continuously splitting the array in half until it can no longer be divided. Then, it merges each subarray while sorting them in the process. This process continues until the whole array is sorted.
@@ -10693,7 +10726,7 @@ This is the most efficient solution that we've looked at so far. It has a time c
 
 Let's look at an example:
 
-<img src="../../assets/images/merge-sort.png" width="600" />
+<img src="../images/merge-sort.png" width="600" />
 
 ```js
 [5, 3, 7, 1];
@@ -10871,7 +10904,7 @@ Quick Sort offers an average time complexity of O(n log n), making it one of the
 
 Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and choosing the pivot as `6`.
 
-<img src="../../assets/images/quicksort.png" width="600" />
+<img src="../images/quicksort.png" width="600" />
 
 
 - Choose the pivot element (6) and partition the array:
@@ -10927,7 +10960,7 @@ Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and 
 
  Now there is no more than 1 value per array element and we can combine into one array: [1,2,3,5,6,10,13,20]
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# 102. Challenge: Quick Sort Implementation
+<h1 id="js102">102. Challenge: Quick Sort Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now that you're familiar with the Quick Sort algorithm, it's time to implement it in JavaScript. This algorithm is highly efficient and employs a divide-and-conquer strategy to sort an array.
@@ -11040,9 +11073,9 @@ test('Sort an empty array', () => {
 ```
 
 Feel free to customize the test cases according to your needs!
-```
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<h1 id="js103"></h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 the end...
