@@ -1,10 +1,15 @@
 ---
-Filename: # JS-CellarDoor: JavaScript Cellar Door Examples to learn JS with.
-Last Updated: 1/4/2024 7:29pm
+title: "JS-CellarDoor"
+author: "Brian Bauska (bbauska)"
+date created: "1/4/2024 6+pm"
+date last editted: "1/4/2024 7+pm"
+output:
+  markdown:
 ---
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# Challenge: Count Vowels
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~ readme.md for JS-Cellardoor.bauska.org ~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# 01. Challenge: Count Vowels
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 ## Instructions
 
@@ -89,7 +94,7 @@ test('Counting vowels in a string', () => {
 });
 ```
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# Challenge: Palindrome
+# 02. Challenge: Palindrome
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 A palindrome is a word, phrase, number, or other sequence of characters which reads the 
 same backward or forward. An example of a palindrome is "madam".
@@ -234,7 +239,8 @@ test('Checking for palindrome strings', () => {
 ```
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-# Challenge: Reverse String
+# 03. Challenge: Reverse String
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 ## Instructions
 
