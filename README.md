@@ -46,7 +46,7 @@ countVowels('mississippi'); // 4
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -141,7 +141,7 @@ to use the `replace` method with a regular expression of `/[^a-z0-9]/g`.
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 Using `replace` with a regular expression is the easiest way to solve this challenge.
@@ -168,7 +168,7 @@ the two strings will not be equal, so we return `false`.
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 If you do not want to use a regular expression to strip out non-alphanumeric characters, 
@@ -281,7 +281,7 @@ reverseString('') // ''
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 This solution uses a for loop to reverse the string.
@@ -307,7 +307,7 @@ function reverseString(str) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 This solution uses built-in methods to reverse the string.
@@ -381,7 +381,7 @@ titleCase('HERE IS MY HANDLE HERE IS MY SPOUT'); // Here Is My Handle Here Is My
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```php
@@ -405,7 +405,7 @@ function titleCase(str) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 ```js
@@ -475,7 +475,7 @@ findMaxNumber([1, 2, 3, 4, 5, 10, 9, 8, 7, 6]); // 10
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 This is the easy way to do it. There is a method called `Math.max()` that will return 
@@ -494,7 +494,7 @@ There is not too much explanation needed here.
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 Here is another way of solving it using a `for` loop.
@@ -572,7 +572,7 @@ removeDuplicates([1, 2, 3, 4, 5, true, 1, 'hello' 2, 3, 'hello', true]); // [1, 
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 Using a for loop
@@ -601,7 +601,7 @@ function removeDuplicates(arr) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 Using a Set
@@ -678,7 +678,7 @@ countOccurrences('hello', 'z'); // 0
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```JavaScript
@@ -726,7 +726,7 @@ function countOccurrences(str, char) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 ```JavaScript
@@ -801,7 +801,7 @@ calculator(10, 5, '/') // 2
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 #### Using a switch:
@@ -841,7 +841,7 @@ function calculator(num1, num2, operator) {
 
 </details>
 
-<details>
+<details open>
  <summary>Click For Solution 2</summary>
 
 #### Using an if statement:
@@ -941,7 +941,7 @@ getSum(10, 5) // 15
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```JS
@@ -1011,7 +1011,7 @@ I will put any constraints here. They will vary depending on the challenge.
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```JS
@@ -1084,7 +1084,7 @@ arrayIntersection([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]); // should return [1, 2, 3, 
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```js
@@ -1111,7 +1111,7 @@ function arrayIntersection(arr1, arr2) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 In this solution, we will use a Set. A Set is a data structure that stores unique values. 
@@ -1199,7 +1199,7 @@ displayLikes(['Alex', 'Jacob', 'Mark', 'Max', 'Jill']) // 'Alex, Jacob and 3 oth
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -1290,7 +1290,7 @@ findMissingNumber([10, 5, 1, 2, 4, 6, 8, 3, 9]); // 7
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -1390,7 +1390,7 @@ findMissingLetter(['t', 'u', 'v', 'w', 'x', 'z']); // => "y"
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1 </summary>
 
 ```js
@@ -1418,7 +1418,7 @@ function findMissingLetter(arr) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2 </summary>
 
 ```js
@@ -1497,7 +1497,7 @@ areAllCharactersUnique('a'); // true
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 Using a `Set`:
@@ -1530,7 +1530,7 @@ function areAllCharactersUnique(str) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 Using an object:
@@ -1624,7 +1624,7 @@ console.log(diceGameSimulation(3));
 
 ## Solution
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -1725,7 +1725,7 @@ formatPhoneNumber([3, 4, 5, 5, 0, 1, 2, 5, 2, 7]); // => "(345) 501-2527"
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```js
@@ -1746,7 +1746,7 @@ function formatPhoneNumber(numbers) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 ```js
@@ -1766,7 +1766,7 @@ function formatPhoneNumber(numbers) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 3</summary>
 
 One line arrow function:
@@ -1832,7 +1832,7 @@ validateEmail('john@gmail'); // false
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 Using a regular expression:
@@ -1858,7 +1858,7 @@ The regular expression is a bit complicated, but it is a good example of how pow
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 Not using regular expression:
@@ -2052,7 +2052,7 @@ sumOfEvenSquares([]); // 0
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -2177,7 +2177,7 @@ calculateTotalSalesWithTax(
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 This solution calculates the total sales amount including tax by iterating through the 
@@ -2289,7 +2289,7 @@ highestScoringWord('take me to semynak'); // 'semynak'
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```js
@@ -2327,7 +2327,7 @@ function highestScoringWord(str) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 This solution looks a bit cleaner than the previous one, but it's not as efficient (difference is negligible). It uses the `reduce` method to calculate the score for each word, and the `Math.max` method to find the highest score.
@@ -2410,7 +2410,7 @@ validAnagrams('astronomer', 'moonstarer'); // true
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -2493,7 +2493,7 @@ generateHashtag(""); // false
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```js
@@ -2528,7 +2528,7 @@ function generateHashtag(str) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 ```js
@@ -2591,7 +2591,7 @@ isValidIPv4('123.045.067.089'); // false
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -2712,7 +2712,7 @@ console.log(analysis);
 
 ## Solution
 
-<details>
+<details open>
   <summary>Click to view solution</summary>
 
 ```js
@@ -2842,7 +2842,7 @@ validatePassword('HelloWorld'); // should return false (no digit)
 
 ## Solution
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -2930,7 +2930,7 @@ findMissingLetter(['t', 'u', 'v', 'w', 'x', 'z']); // => "y"
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1 </summary>
 
 This solution uses the `map` and `find` methods.
@@ -2962,7 +2962,7 @@ function findMissingLetter(arr) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2 </summary>
 
 This solution uses the `filter` method.
@@ -2991,7 +2991,7 @@ function findMissingLetter(arr) {
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 3 </summary>
 
 This solution uses the `reduce` method.
@@ -3197,7 +3197,7 @@ reverseString('racecar'); // should return 'racecar'
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -3322,7 +3322,7 @@ fibonacci(10); // 55
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -3438,7 +3438,7 @@ factorial(10); // 3628800 (10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 362880
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution </summary>
 
 ```js
@@ -3537,7 +3537,7 @@ power(3, 4); // 81 (3^4 = 3 * 3 * 3 * 3 = 81)
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -3639,7 +3639,7 @@ arraySum([]); // should return 0 (empty array)
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -3723,7 +3723,7 @@ numberRange(7, 7); // should return [7] (only one number)
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -3811,7 +3811,7 @@ flattenArray([1, [2, [3, [4, [5]]]]]); // should return [1, 2, 3, 4, 5]
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -3900,7 +3900,7 @@ permutations('dog'); // ['dog', 'dgo', 'odg', 'ogd', 'gdo', 'god']
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -4596,7 +4596,7 @@ console.log(maxSubarraySum(arr2, k2)); // Output: -9
 
 ### Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```javascript
@@ -4722,7 +4722,7 @@ console.log(maxSubarraySum(arr2, k2)); // Output: -9
 
 ### Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```javascript
@@ -5067,7 +5067,7 @@ wordFrequencyCounter(
 
 ### Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -5182,7 +5182,7 @@ console.log(phoneNumberDirectory(phoneNumbers));
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -5275,7 +5275,7 @@ anagramGrouping(['listen', 'silent', 'enlist', 'hello', 'world']);
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -5514,7 +5514,7 @@ symmetricDifference([1, 2, 3], [4, 5, 6]);
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -5603,7 +5603,7 @@ console.log(twoSum([3, 3], 6));
 
 ### Solution
 
-<details>
+<details open>
   <summary>Click to reveal solution</summary>
 
 ```javascript
@@ -5701,7 +5701,7 @@ longestConsecutiveSequence([0, 3, 7, 2, 5, 8, 4, 6, 9, 1]); // Output: 10 (The l
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -6111,7 +6111,7 @@ console.log(wordInstanceCounter('Hello, Hello, Hello!', 'hello')); // Output: 3
 
 ### Solution
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -6189,7 +6189,7 @@ console.log(myHashTable.getValues()); // Expected output: ['Alice', 30, 'New Yor
 
 ### Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -6274,7 +6274,7 @@ anagramGrouping(['listen', 'silent', 'hello', 'world', 'act', 'cat']);
 
 ## Solution
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -6525,7 +6525,7 @@ reverseStringStack('Greetings from Earth'); // htraE morf sgniteerG
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -6619,7 +6619,7 @@ isBalanced(')('); // false
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```JS
@@ -6919,7 +6919,7 @@ reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -7000,7 +7000,7 @@ isPalindromeQueueStack('A man, a plan, a canal: Panama'); // true
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -7271,7 +7271,7 @@ reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -7450,9 +7450,8 @@ findMiddle(list); // returns 4
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
-
 
 ```js
 function findMiddle(list) {
@@ -7476,9 +7475,11 @@ function findMiddle(list) {
 }
 ```
 
-<details>
-  <summary>Click For Solution</summary>
+</details>
 
+<details open>
+  <summary>Click For Solution</summary>
+  
 ### Explanation
 
 We will use the `fast and slow pointer pattern` to find the middle node of the linked list.
@@ -8026,7 +8027,7 @@ console.log(pair); // Should print: [2, 10]
 
 ## Solution
 
-<details>
+<details open>
 <summary>Click to reveal solution</summary>
 
 ```javascript
@@ -8155,7 +8156,7 @@ Then use that class to create the following binary tree:
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -8390,7 +8391,7 @@ depthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -8674,7 +8675,7 @@ class Node {
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -9285,7 +9286,7 @@ function isValidBST(
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -9833,7 +9834,7 @@ depthFirstTraversal(g, 'A');
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 #### Using an adjacency list:
@@ -9998,7 +9999,7 @@ console.log(result);
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -10235,7 +10236,7 @@ console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 2
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution 1</summary>
 
 ```js
@@ -10285,7 +10286,7 @@ This will display every comparison that is made. You can see that the largest el
 
 </details>
 
-<details>
+<details open>
   <summary>Click For Solution 2</summary>
 
 This solution is similar, but it uses a `while` loop instead of a `for` loop. It also uses a variable called `swapped` to keep track of whether or not we have swapped any elements. This variable will be used to determine when we can stop looping.
@@ -10439,7 +10440,7 @@ console.log(insertionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -10471,7 +10472,7 @@ function insertionSort(arr) {
 - After the `while` loop, insert the `currentElement` at the correct position in the "sorted" part of the array (by assigning `currentElement` to `arr[j + 1]`).
 - Outside of the `for` loop, return the sorted array.
 
-&lt;/details&gt;
+</details>
 
 ### Test Cases
 
@@ -10615,7 +10616,7 @@ console.log(selectionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -10771,7 +10772,7 @@ console.log(mergeSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -10822,6 +10823,8 @@ function merge(left, right) {
 - If the element from the right array is smaller, we push it into the `merged` array and increment `rightIndex`.
 - After the loop, we concatenate any remaining elements from both arrays (if any).
 - We return the merged array.
+
+</details>
 
 ### Test Cases
 
@@ -10969,7 +10972,7 @@ console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
 
 ## Solutions
 
-<details>
+<details open>
   <summary>Click For Solution</summary>
 
 ```js
@@ -10993,6 +10996,8 @@ function quickSort(arr) {
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
 ```
+
+</details>
 
 ### Explanation
 
