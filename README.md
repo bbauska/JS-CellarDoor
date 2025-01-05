@@ -6003,14 +6003,2054 @@ Now we will do a couple challenges using this class.
 
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Word Frequency Counter using HashTable
+
+## Instructions
+
+Write a function called `wordInstanceCounter` that takes a string and a word as input and returns the number of instances of that word in the string. This function should count the occurrences of the specified word, ignoring case and excluding punctuation.
+
+### Function Signature
+
+```js
+/**
+ * Returns the number of instances of the specified word in the input string.
+ * @param {string} str - The input string containing words.
+ * @param {string} word - The word to count instances of.
+ * @returns {number} - The number of instances of the specified word.
+ */
+function wordInstanceCounter(str: string, word: string): number
+```
+
+### Examples
+
+```js
+console.log(
+  wordInstanceCounter('The quick brown fox jumps over the lazy dog.', 'the')
+); // Output: 2
+console.log(
+  wordInstanceCounter(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'ipsum'
+  )
+); // Output: 1
+console.log(wordInstanceCounter('Hello, world!', 'hello')); // Output: 1
+console.log(wordInstanceCounter('Hello, Hello, Hello!', 'hello')); // Output: 3
+```
+
+### Constraints
+
+- The input string will only contain letters, spaces, and punctuation marks.
+
+### Hints
+
+- You can use a `HashTable` to store the word frequencies, where the word is the key, and the count is the value. Loop through each word, update the count in the `HashTable`, and return the count of the specified word.
+
+### Solution
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function wordInstanceCounter(str, word) {
+  const words = str.toLowerCase().split(/\W+/);
+  const wordFrequency = new HashTable();
+  const targetWord = word.toLowerCase();
+  let count = 0;
+
+  for (const currentWord of words) {
+    if (currentWord === '') continue;
+
+    if (wordFrequency.has(currentWord)) {
+      wordFrequency.set(currentWord, wordFrequency.get(currentWord) + 1);
+    } else {
+      wordFrequency.set(currentWord, 1);
+    }
+
+    if (currentWord === targetWord) {
+      count = wordFrequency.get(currentWord);
+    }
+  }
+
+  return count;
+}
+```
+
+</details>
+
+### Test Cases
+
+```js
+test('Counting instances of a word in a string', () => {
+  expect(
+    wordInstanceCounter('The quick brown fox jumps over the lazy dog.', 'the')
+  ).toBe(2);
+  expect(
+    wordInstanceCounter(
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'ipsum'
+    )
+  ).toBe(1);
+  expect(wordInstanceCounter('Hello, world!', 'hello')).toBe(1);
+  expect(wordInstanceCounter('Hello, Hello, Hello!', 'hello')).toBe(3);
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: HashTable getValues Method
+
+## Instructions
+
+Extend the existing `HashTable` class with a new method called `getValues()`. This method should return an array containing all the values stored in the hash table, irrespective of the keys.
+
+Add the `getValues()` method to the `HashTable.js` file.
+
+### Examples
+
+```javascript
+const myHashTable = new HashTable();
+
+myHashTable.set('name', 'Alice');
+myHashTable.set('age', 30);
+myHashTable.set('city', 'New York');
+
+console.log(myHashTable.getValues()); // Expected output: ['Alice', 30, 'New York']
+```
+
+### Hints
+
+- You need to iterate through all buckets in the storage array and all key-value pairs within each bucket.
+- Create an array to store the values, iterate through each bucket, and then iterate through each key-value pair. Push each value to the array.
+- After iterating through all the key-value pairs, return the array of values.
+
+### Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+ getValues() {
+    const values = [];
+
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i]) {
+        for (const [key, value] of this.storage[i]) {
+          values.push(value);
+        }
+      }
+    }
+
+    return values;
+  }
+```
+
+</details>
+
+### Test Cases
+
+```js
+const HashTable = require('./HashTable');
+
+describe('HashTable', () => {
+  let hashTable;
+
+  beforeEach(() => {
+    hashTable = new HashTable();
+  });
+
+  test('Get values from hash table', () => {
+    hashTable.set('name', 'Alice');
+    hashTable.set('age', 30);
+    hashTable.set('city', 'New York');
+
+    const values = hashTable.getValues();
+    expect(values).toEqual(expect.arrayContaining(['Alice', 30, 'New York']));
+    expect(values).toHaveLength(3);
+  });
+
+  test('Get values from an empty hash table', () => {
+    const values = hashTable.getValues();
+    expect(values).toEqual([]);
+  });
+});
+```
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Anagram Grouping Challenge
+
+## Instructions
+
+Create a function called `anagramGrouping` to use the `HashTable` class that we created. The function should take an array of words as input and return an array of arrays, where each inner array represents a group of anagrams.
+
+### Function Signature
+
+```js
+/**
+ * Groups anagrams from the input array of words using a HashTable.
+ * @param {string[]} words - An array of words.
+ * @returns {string[][]} - An array of arrays, each representing a group of anagrams.
+ */
+function anagramGrouping(words: string[]): string[][];
+```
+
+### Examples
+
+```js
+anagramGrouping(['listen', 'silent', 'hello', 'world', 'act', 'cat']);
+// Output: [['listen', 'silent'], ['act', 'cat'], ['hello'], ['world']]
+```
+
+### Hints
+
+- You can use the provided `HashTable` class to implement efficient anagram grouping.
+- Convert each word to a sorted string of characters to identify anagrams.
+- For each sorted string, store anagrams in the HashTable with the sorted string as the key.
+
+## Solution
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+const HashTable = require('./HashTable');
+
+function anagramGrouping(words) {
+  const anagramGroups = new HashTable();
+
+  for (const word of words) {
+    const sortedChars = word.split('').sort().join('');
+    if (anagramGroups.get(sortedChars)) {
+      anagramGroups.get(sortedChars).push(word);
+    } else {
+      anagramGroups.set(sortedChars, [word]);
+    }
+  }
+
+  return anagramGroups.getValues();
+}
+
+module.exports = anagramGrouping;
+```
+
+### Explanation
+
+This is very similar to the anagram grouping where we used maps.
+
+- Replace the `Map` with a `HashTable` to efficiently group anagrams.
+- Iterate through each word in the input array and create a sorted version of the word's characters.
+- This sorted string is used as a key in the `HashTable`. If the key already exists in the `HashTable`, we append the current word to the list of anagrams. If the key does not exist, we create a new entry in the `HashTable` with the key and an array containing the current word.
+- After iterating through all the words, use the `getValues` method of the `HashTable` to obtain an array of arrays, where each inner array represents a group of anagrams.
+- Return the array of anagram groups.
+
+</details>
+
+### Test Cases
+
+```js
+test('Grouping anagrams from an array of words', () => {
+  const result1 = anagramGrouping([
+    'listen',
+    'silent',
+    'hello',
+    'world',
+    'act',
+    'cat',
+  ]);
+  expect(result1).toEqual(
+    expect.arrayContaining([
+      expect.arrayContaining(['listen', 'silent']),
+      expect.arrayContaining(['act', 'cat']),
+      expect.arrayContaining(['hello']),
+      expect.arrayContaining(['world']),
+    ])
+  );
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Stack
+
+A `stack` is a linear data structure that works in a specific way and that is `Last In, First Out` or `LIFO`. This means that the last element added to the stack will be the first element removed from the stack. Think of a stack of plates. The last plate added to the stack will be the first plate removed from the stack.
+
+To give you a better idea, we can look at this image:
+
+<img src="../../assets/images/stack1.png" alt="" width="500" />
+
+In this case, each element is just a number, but it could be anything. We start with a stack with 1 element, we push another one on labeled 2. After that, another one labeled 3, and so on. In this case, the last element added to the stack is 5. We use the term `push` when we add on top of the stack.
+
+If we want to remove an element from the stack, we remove the last one added, which is 5. We can't remove 3 or 2 or 1. We can only remove 5. Once we remove 5, we can then remove 4, 3, 2, and 1. The term for removing from the top of the stack is `pop`.
+
+We know that in JavaScript, Arrays have a `push` and `pop` method. We can use an array as a stack. We can also create our own stack class that only exposes the push and pop methods or we can create our own `push` and `pop` methods via a class.
+
+## Call Stack
+
+A great example of a stack is the call stack. The call stack is a fundamental concept in programming and serves as an execution context for function calls.
+
+The JavaScript engine in the browser has a call stack. In fact, you can view it in your browser dev tools. It is a stack data structure that keeps track of function calls in the order they are made and allows for their orderly execution and return.
+
+When a function is called, a new frame is added to the top of the call stack. This frame contains information such as the function's arguments, local variables, and the position in the code where the function was called from. The function's execution begins, and if it calls other functions, their frames are added on top of the stack, forming a stack of nested function calls as you can see here.
+
+The call stack can be used to debug code and find issues. I'm not going to go over it too much here. We go over this stuff in my Modern JS From the Beginning course. I also have a series on YouTube called "JavaScript: Under The Hood" where I go over the call stack and other JavaScript engine internals. I just wanted to give you a good example where a stack is used.
+
+In the next lesson, we will create our own stack class.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Stack Implementation
+
+Now that we know fundamentally how a stack works, we're going to implement one in JavaScript. We will create a `Stack` Class that has methods such as `push`, `pop` and `peek`.
+
+## Stack Class & Constructor
+
+Let's start by creating a class called `Stack`. In the constructor, we'll create a property called `maxSize` and set it to 100. This is the maximum number of elements that can be in the stack. We'll also create a property called `stack` and set it to an empty array. This is where we'll store the elements in the stack. Finally, we'll create a property called `top` and set it to `-1`. This is the index of the top element in the stack. We are using -1 because the stack is empty. The first element will be at index 0.
+
+```js
+class Stack {
+  constructor() {
+    this.maxSize = 100;
+    this.stack = [];
+    this.top = -1;
+  }
+}
+```
+
+## `push` Method
+
+Create the `push` method to add to the stack. It will take in a `value` (element). First, check if the stack is full. If it is, return `false`. Increment the top index by `1`. Set the element at the top index of the stack to the value. Return `true`.
+
+```js
+ push(value) {
+    if (this.isFull()) {
+      return false;
+    }
+    this.top++;
+    this.stack[this.top] = value;
+
+    return true;
+  }
+```
+
+## `isFull` Method
+
+Of course we need to add the method to check if the stack is full. It will return `true` if the top index is equal to the maximum size minus 1. Otherwise, it will return `false`.
+
+```js
+isFull() {
+    return this.top === this.maxSize - 1;
+  }
+```
+
+Let's also add a method to check if the stack is empty. It will return `true` if the top index is equal to `-1`. Otherwise, it will return `false`.
+
+```js
+isEmpty() {
+    return this.top === -1;
+  }
+```
+
+Now we can test it out a little bit. In the run file, create a new instance of the `Stack` class. Push a few elements to the stack. Then, log the stack to the console.
+
+```js
+const stack = new Stack();
+
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+console.log(stack);
+```
+
+You should see something like this:
+
+```js
+Stack {
+  maxSize: 100,
+  stack: [ 1, 2, 3 ],
+  top: 2
+}
+```
+
+## `pop` Method
+
+Now let's create the `pop` method. It will remove the top element from the stack. It is important to know that `pop` and just about any method of any structure can be implemented in many ways. Sometimes the actual data will not be removed from the array (this.stack). It will just go by what is in the top of the stack. I want the actual data to be removed, so I will use the built in `pop` method on the array.
+
+First, check if the stack is empty. If it is, return `null`. Then decrement the top by 1 and then return the result from `this.stack.pop()`.
+
+```js
+pop() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    this.top--;
+
+    return this.stack.pop();
+  }
+```
+
+## `peek` Method
+
+Finally, let's create the `peek` method. It will return the top element of the stack. First, check if the stack is empty. If it is, return `null`. Return the element at the top index of the stack.
+
+```js
+peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.stack[this.top];
+  }
+```
+
+Now let's test some more.
+
+```js
+const stack = new Stack();
+
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+console.log(stack);
+
+console.log(stack.pop());
+console.peek();
+console.log(stack.pop());
+console.peek();
+console.log(stack.pop());
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Reverse String Using a Stack
+
+## Instructions
+
+Write a function called `reverseStringStack` that takes in a string and returns the reversed version of the string. Be sure to use the `Stack` class that we created.
+
+I am going to have you do the reverse string challenge using a bunch of different data structures. It may seem like overkill, which it is, but it will help you understand how each data structure works.
+
+### Function Signature
+
+```js
+/**
+ * Returns the reverse of a string.
+ * @param {string} str - The string to reverse.
+ * @returns {string} - The reverse of the string.
+ */
+function reverseStringStack(str: string): string;
+```
+
+### Constraints
+
+- The string will only contain lowercase letters and spaces
+
+### Examples
+
+```js
+reverseStringStack('hello'); // olleh
+reverseStringStack('Howdy'); // ydwoH
+reverseStringStack('Greetings from Earth'); // htraE morf sgniteerG
+```
+
+### Hints
+
+- Push each character onto the stack
+- Pop the characters from the stack to construct the reversed string
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+const Stack = require('./stack');
+
+function reverseString(str) {
+  const stack = new Stack();
+
+  // Push each character onto the stack
+  for (let i = 0; i < str.length; i++) {
+    stack.push(str[i]);
+  }
+
+  let reversedString = '';
+
+  // Pop the characters from the stack to construct the reversed string
+  while (!stack.isEmpty()) {
+    reversedString += stack.pop();
+  }
+
+  return reversedString;
+}
+```
+
+### Explanation
+
+- Initialize a new `Stack` instance.
+- Iterate through the string and pushed each character onto the stack.
+- Initialize a variable called `reversedString` and set it to an empty string.
+- Iterate through the stack and pop each character off and added it to the `reversedString` variable.
+- Return the `reversedString` variable.
+
+### Time & Space Complexity
+
+The time complexity of the function `reverseString(str)` is `O(n)`, where n is the length of the input string str. This is because the function loops through the entire string once to push each character onto the stack, and then loops through the stack to pop the characters and construct the reversed string. Both operations take linear time with respect to the length of the input string.
+
+The space complexity of the function is also `O(n)`, where n is the length of the input string str. This is because the function uses a stack to store each character of the input string, and the size of the stack is directly proportional to the length of the input string. Therefore, the space complexity grows linearly with the size of the input.
+
+</details>
+
+### Test Cases
+
+```js
+test('Reversing a string', () => {
+  expect(reverseStringStack('Hello')).toBe('olleH');
+  expect(reverseStringStack('JavaScript')).toBe('tpircSavaJ');
+  expect(reverseStringStack('12345')).toBe('54321');
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Balanced Parenthesis
+
+## Instructions
+
+We are going to try one more Stack challenge. Write a function called `isBalanced` that takes in a string and checks if the parenthesis are balanced.
+
+The function should return true if the parenthesis are balanced and false if they are not. Use the stack implementation you created in the previous exercise.
+
+### Function Signature
+
+```js
+/**
+ * Returns true if the parenthesis in a string are balanced.
+ * @param {string} str - The string to check.
+ * @returns {boolean} - Whether the parenthesis in the string are balanced.
+ */
+function isBalanced(str: string): boolean;
+```
+
+### Examples
+
+```JS
+isBalanced('()'); // true
+isBalanced('()()'); // true
+isBalanced('(()())'); // true
+isBalanced('(()'); // false
+isBalanced(')('); // false
+```
+
+### Constraints
+
+- The string will only contain parenthesis and no other characters
+
+### Hints
+
+- Push each opening parenthesis onto the stack
+- Pop the stack when a closing parenthesis is encountered
+- If the stack is empty when a closing parenthesis is encountered, the parenthesis are unbalanced
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```JS
+const Stack = require('./stack');
+
+function isBalanced(str) {
+const stack = new Stack();
+
+for (let i = 0; i < str.length; i++) {
+  if (str[i] === '(') {
+    stack.push(str[i]);
+  } else if (str[i] === ')') {
+    if (stack.isEmpty()) {
+      return false;
+    }
+    stack.pop();
+  }
+}
+
+return stack.isEmpty();
+}
+```
+
+### Explanation
+
+- Bring in our Stack implementation and initialize a new stack.
+- Iterate over each character of the input string str and check if the current character `str[i]` is an opening parenthesis (i.e., '('). If it is, the opening parenthesis is pushed onto the stack using `stack.push(str[i])`.
+- If the current character is a closing parenthesis (i.e., ')'), check if the stack is empty using stack.`isEmpty()`. If the stack is empty at this point, it means there is a closing parenthesis without a corresponding opening parenthesis, so return false indicating that the parentheses are unbalanced.
+- If the stack is not empty, it means there is a matching opening parenthesis for the current closing parenthesis. Therefore, remove the top element using `stack.pop()`, which represents the successful pairing of opening and closing parentheses.
+- After iterating over all the characters in the string, check if the stack is empty using `stack.isEmpty()`. If the stack is empty, it means all opening parentheses have been matched and popped from the stack, indicating balanced parentheses. In this case, return true.
+- If the stack is not empty after the iteration, it means there are unmatched opening parentheses remaining, indicating unbalanced parentheses. In this case, return `false`.
+
+</details>
+
+### Test Cases
+
+```js
+describe('balancedParenthesis', () => {
+  test('should return true for balanced parentheses', () => {
+    expect(balancedParenthesis('()')).toBe(true);
+    expect(balancedParenthesis('(())')).toBe(true);
+    expect(balancedParenthesis('(()())')).toBe(true);
+    expect(balancedParenthesis('((()))')).toBe(true);
+    expect(balancedParenthesis('()()()')).toBe(true);
+    expect(balancedParenthesis('()((()))()')).toBe(true);
+    expect(balancedParenthesis('((()()(())))')).toBe(true);
+  });
+
+  test('should return false for unbalanced parentheses', () => {
+    expect(balancedParenthesis(')(')).toBe(false);
+    expect(balancedParenthesis('((')).toBe(false);
+    expect(balancedParenthesis('))')).toBe(false);
+    expect(balancedParenthesis('())')).toBe(false);
+    expect(balancedParenthesis('(()(()')).toBe(false);
+    expect(balancedParenthesis('(()())(')).toBe(false);
+    expect(balancedParenthesis('((()()(()))')).toBe(false);
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Queue
+
+A `queue` is a linear data structure that works in a specific way and that is `First In, First Out` or `FIFO`. This means that the first element added to the queue will be the first element removed from the queue. Think of a line at a grocery store. The first person in line will be the first person to be served.
+
+To give you a better idea, we can look at this image:
+
+<img src="../../assets/images/queue1.png" alt="" width="500" />
+
+When we add to the queue, we use the term `enqueue`. When we remove from the queue, we use the term `dequeue`.
+
+We start with a queue with an element labeled 1, we enqueue another one labeled 2. After that, another one labeled 3, and so on. In this case, the first element added to the queue is 1. It is also the first element removed from the queue. We dequeue 1, then 2, then 3, and so on.
+
+We know that in JavaScript, Arrays have a `push` and `shift` method. We can use an array as a queue. We can also create our own queue class that only exposes the enqueue and dequeue methods or we can create our own `enqueue` and `dequeue` methods via a class.
+
+## Event Loop
+
+A great example of a queue is the event loop. The event loop is a fundamental concept in JavaScript and serves as a message queue.
+
+<img src="../../assets/images/event-loop.png" alt="" width="500" />
+
+This is a diagram of the entire JavaScript runtime. The call stack is the first thing we talked about. The call stack is a stack data structure that keeps track of function calls in the order they are made and allows for their orderly execution and return.
+
+The event loop is a queue that waits for the call stack to be empty and then pushes messages from the queue to the call stack for execution.
+
+Again, I go over this stuff in my Modern JS From the Beginning course. I also have a series on YouTube called "JavaScript: Under The Hood" where I go over the event loop and other JavaScript engine internals. I just wanted to give you a good example where a queue is used.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Queue Implementation
+
+In the last lesson, we looked at how a queue data structure works. It is `First-in, First-out` or `FIFO`. The first element added to the queue will be the first element removed from the queue. We can use an array as a queue, but we can also create our own queue class and that's what I want to do here.
+
+## Queue Class & Constructor
+
+Let's start by creating a class called `Queue`. In the constructor, we'll create a property called `queue` and set it to an empty array. We'll also create a property called `head` and set it to 0. We'll create a property called `tail` and set it to 0. Finally, we'll create a property called `maxSize` and set it to 100 by default.
+
+```js
+class Queue {
+  constructor() {
+    this.queue = [];
+    this.head = 0;
+    this.tail = 0;
+    this.maxSize = 100;
+  }
+}
+```
+
+## `getLength` Method
+
+Create the `getLength` method and return the difference of the tail and head indexes.
+
+```js
+getLength() {
+    return this.tail - this.head;
+  }
+```
+
+## `isEmpty` Method
+
+Create the `isEmpty` method and return the boolean of the length of the queue being equal to 0.
+
+```js
+isEmpty() {
+    return this.getLength() === 0;
+  }
+```
+
+## `isFull` Method
+
+Create the `isFull` method and return the boolean of the length of the queue being equal to the maxSize.
+
+```js
+isFull() {
+    return this.getLength() === this.maxSize;
+  }
+```
+
+## `enqueue` Method
+
+Create the `enqueue` method. It will take in a value (element). First, check if the queue is full. If it is, return false. Set the tail index of the queue to the value. Increment the tail index by 1. Return true.
+
+```JS
+ enqueue(element) {
+    if (this.isFull()) {
+      return false;
+    }
+    this.queue[this.tail] = element;
+    this.tail++;
+    return true;
+  }
+```
+
+## `dequeue` Method
+
+Create the `dequeue` method. Get the item in the head index of the queue and store it in a variable. Increment the head by 1. Return the variable.
+
+```js
+ dequeue() {
+    const item = this.queue[this.head];
+    this.head++;
+    return item;
+  }
+
+```
+
+## `peek` Method
+
+Create the `peek` method and return the item in the head index of the queue.
+
+```js
+ peek() {
+    return this.queue[this.head];
+  }
+```
+
+Now you can run the test and/or test it yourself with the following code:
+
+```js
+const queue = new Queue();
+console.log(queue.isEmpty()); // true
+console.log(queue.isFull()); // false
+console.log(queue.enqueue(1)); // true
+console.log(queue.enqueue(2)); // true
+console.log(queue.enqueue(3)); // true
+console.log(queue.peek()); // 1
+console.log(queue.dequeue()); // 1
+console.log(queue.peek()); // 2
+console.log(queue.getLength()); // 2
+```
+
+## Test Cases
+
+```js
+describe('Queue', () => {
+  let queue;
+
+  beforeEach(() => {
+    queue = new Queue();
+  });
+
+  afterEach(() => {
+    queue = null;
+  });
+
+  test('enqueue should add an element to the queue', () => {
+    queue.enqueue(1);
+    expect(queue.getLength()).toBe(1);
+    expect(queue.peek()).toBe(1);
+  });
+
+  test('dequeue should remove and return the front element from the queue', () => {
+    queue.enqueue(1);
+    queue.enqueue(2);
+    expect(queue.dequeue()).toBe(1);
+    expect(queue.getLength()).toBe(1);
+    expect(queue.peek()).toBe(2);
+  });
+
+  test('peek should return the front element without removing it', () => {
+    queue.enqueue(1);
+    queue.enqueue(2);
+    expect(queue.peek()).toBe(1);
+    expect(queue.getLength()).toBe(2);
+  });
+
+  test('getLength should return the number of elements in the queue', () => {
+    expect(queue.getLength()).toBe(0);
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    expect(queue.getLength()).toBe(3);
+    queue.dequeue();
+    expect(queue.getLength()).toBe(2);
+  });
+
+  test('isEmpty should return true if the queue is empty', () => {
+    expect(queue.isEmpty()).toBe(true);
+    queue.enqueue(1);
+    expect(queue.isEmpty()).toBe(false);
+    queue.dequeue();
+    expect(queue.isEmpty()).toBe(true);
+  });
+
+  test('isFull should return true if the queue is full', () => {
+    const maxSize = 3;
+    const fullQueue = new Queue();
+    fullQueue.maxSize = maxSize;
+    fullQueue.enqueue(1);
+    fullQueue.enqueue(2);
+    fullQueue.enqueue(3);
+    expect(fullQueue.isFull()).toBe(true);
+    fullQueue.dequeue();
+    expect(fullQueue.isFull()).toBe(false);
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge Reverse a String Using a Queue
+
+## Instructions
+
+Write a function called `reverseStringQueue` that takes in a string and returns the reverse of that string.
+
+The function should return the reversed string, but I want you to use the `Queue` class to do it.
+
+### Function Signature
+
+```js
+/**
+ * Returns the reverse of a string.
+ * @param {string} str - The string to reverse.
+ * @returns {string} - The reverse of the string.
+ */
+function reverseStringQueue(str: string): string;
+```
+
+### Examples
+
+```js
+reverseStringQueue('hello'); // olleh
+reverseStringQueue('Howdy'); // ydwoH
+reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
+```
+
+### Constraints
+
+- The string will only contain lowercase letters and spaces
+
+### Hints
+
+- Enqueue all the characters in the string into the queue
+- Dequeue all the characters from the queue and add them to a new string
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+const Queue = require('./queue');
+
+const reverseStringWithQueue = (str) => {
+  const queue = new Queue();
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    queue.enqueue(str[i]);
+  }
+
+  let reversedString = '';
+  while (!queue.isEmpty()) {
+    reversedString += queue.dequeue();
+  }
+
+  return reversedString;
+};
+```
+
+### Explanation
+
+- Bring in our queue class and initialize a new queue
+- Iterate over the str and enqueue each character into the queue.
+- Create an empty string and dequeue each character from the queue and add it to the string.
+- Return the string.
+
+</details>
+
+### Test Cases
+
+```js
+test('Reversing a string', () => {
+  expect(reverseStringQueue('Hello')).toBe('olleH');
+  expect(reverseStringQueue('JavaScript')).toBe('tpircSavaJ');
+  expect(reverseStringQueue('12345')).toBe('54321');
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Is Palindrome Using Queue and Stack
+
+## Instructions
+
+We are going to revisit the Palindrome challenge, but we are going to use BOTH the `Queue` and `Stack` data structures to solve it.
+
+Create a function called `isPalindromeQueueStack` that takes in a string and checks if it is a palindrome.
+
+The function should return `true` if the string is a palindrome, and `false` if it is not. Again, use the `Queue` and `Stack` data structures to solve this problem. If you don't get it on your own, that's fine. This is a tough one. Just make sure you understand the solution.
+
+### Function Signature
+
+```js
+/**
+ * Checks if a string is a palindrome.
+ * @param {string} str - The string to check.
+ * @returns {boolean} - True if the string is a palindrome, false if it is not.
+ */
+function isPalindromeQueueStack(str: string): boolean;
+```
+
+### Examples
+
+```js
+isPalindromeQueueStack('racecar'); // true
+isPalindromeQueueStack('hello'); // false
+isPalindromeQueueStack('A man, a plan, a canal: Panama'); // true
+```
+
+### Hints
+
+- Remove all non-alphanumeric characters from the string
+- Enqueue and push the characters of the string into the queue and stack respectively
+- Dequeue and pop the characters from the queue and stack respectively
+- Compare the characters from the queue and stack
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function isPalindromeQueueStack(str) {
+  const formattedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  const charQueue = new Queue();
+  const charStack = new Stack();
+
+  for (let i = 0; i < formattedStr.length; i++) {
+    const char = formattedStr.charAt(i);
+    charQueue.enqueue(char);
+    charStack.push(char);
+  }
+
+  while (!charQueue.isEmpty()) {
+    if (charQueue.dequeue() !== charStack.pop()) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+
+### Explanation
+
+- Remove all non-alphanumeric characters from the string and convert it to lowercase.
+- Create a `Queue` and a `Stack` to hold the characters of the string.
+- Iterate through the string and enqueue and push each character into the queue and stack respectively.
+- Check if the queue is empty. If it is not, dequeue and pop the characters from the queue and stack respectively and compare them. If they are not equal, return `false`.
+- If we make it through the entire string without returning `false`, return `true`.
+
+</details>
+
+### Test Cases
+
+```js
+test('Checking for palindrome strings', () => {
+  expect(isPalindromeQueueStack('racecar')).toBe(true);
+  expect(isPalindromeQueueStack('Hello')).toBe(false);
+  expect(isPalindromeQueueStack('A man, a plan, a canal, Panama')).toBe(true);
+  expect(isPalindromeQueueStack('12321')).toBe(true);
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Linked List
+
+A `linked list` is a linear data structure that is made up of a series of nodes. Each node contains a `value` and a `pointer`. A pointer can mean a lot of different things in programming, in the case of a linked list, it is a reference to another node in the list.
+
+The first node in the list is called the `head`. The last node in the list is called the `tail`. The tail's pointer points to `null` to indicate that it is the last node in the list. We looked at a queue, which also has a head and a tail, but they serve different purposes. In a queue, the head refers to the front of the queue, where elements are `dequeued` (removed) from and the tail is where elements are `enqueued` (added). In a linked list, the head refers to the first node in the list and the tail refers to the last node and always points to `null`. Elements can be added or removed from both the head and the tail.
+
+<img src="../../assets/images/linked-list1.png" alt="" width="500" />
+
+As you can see in this image, we have a linked list with 4 nodes. Each node has a number as the value and a pointer that points to the next node. The last node or the `tail` points to `null`. 
+
+Unlike arrays, linked lists do not store elements in contiguous memory locations. Instead, each node in a linked list contains a pointer to the next node. This can be very efficient in certain ways, such as inserting and deleting data. It just involves changing a few pointers and can have an O(1) time complexity. However, there are also use cases where they're not very efficient and I'll talk more about that next.
+
+Just know that the basic building block of a linked list is the node, which typically contains two parts:
+
+1. **Data**: It holds the value or payload that represents the information being stored in the linked list.
+2. **Next**: It is a reference to the next node in the sequence. This reference connects one node to the next, forming the link between nodes.
+
+## Advantages of Linked Lists
+
+Linked lists offer several advantages and use cases:
+
+- **Dynamic Size**: Linked lists can easily grow or shrink in size as elements are added or removed, as they do not require contiguous memory allocation.
+- **Insertion and Deletion**: Inserting or deleting elements at the beginning or end of a linked list is efficient, as it involves updating the references in the affected nodes.
+- **Flexible Memory Allocation**: Linked lists can be used when the memory allocation is not known in advance or needs to be managed dynamically.
+- **Implementation of Other Data Structures**: Linked lists serve as a foundation for implementing other complex data structures, such as stacks, queues, and graphs.
+
+## Drawbacks of Linked Lists
+
+- **Sequential Access**: Unlike arrays, linked lists do not offer direct random access to elements. Accessing a specific element requires traversing the list from the beginning until the desired node is reached.
+- **Additional Memory Overhead**: Linked lists require additional memory to store the references between nodes, which can result in higher memory usage compared to arrays for the same number of elements.
+- **Reverse Traversal**: While singly linked lists (with references to the next node only) can be traversed in one direction, reverse traversal or accessing the previous node requires a doubly linked list (with references to both the next and previous nodes).
+
+In the next lesson, we will implement a linked list in JavaScript.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Linked List Implementation
+
+In the last lesson, we talked about what a linked list is and how it works. In this lesson, we'll implement one in JavaScript.
+
+## `Node` Class & Constructor
+
+Before we create the linked list class, we need to create a node class. The node class will be used to create the nodes that make up the linked list. Each node will have a data property and a next property. The data property will store the data that the node holds. The next property will point to the next node in the linked list.
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+```
+
+## `LinkedList` Class & Constructor
+
+Now that we have a node class, we can create the linked list class. The linked list class will have a head property and a tail property. The head property will point to the first node in the linked list. The tail property will point to the last node in the linked list. When we start out, the head and tail properties will both be null.
+
+```js
+class LinkedList() {
+   constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+}
+```
+
+## `add` Method
+
+The `add` method will add a new node to the end of the linked list. It takes in a `data` value and will get passed into the node constructor. It then checks to see if the head property is null. If it is, it sets the head property to the new node. If it isn't, it sets the next property of the tail node to the new node. It then sets the tail property to the new node.
+
+The time complexity of this method is O(1) because it doesn't have to loop through the linked list to add the new node. It just has to set the next property of the tail node to the new node and then set the tail property to the new node.
+
+```js
+add(data) {
+  const node = new Node(data);
+
+  if (this.head === null) {
+    this.head = node;
+  } else {
+    this.tail.next = node;
+  }
+
+  this.tail = node;
+}
+```
+
+## `printAll` Method
+
+I want to be able to test this out, so let's add a method that will print out all of the nodes in the linked list. The `printAll` method will start at the head node and loop through each node until it reaches the tail node. It will print out the data of each node as it loops through.
+
+```js
+  printAll() {
+    let current = this.head;
+
+    while (current !== null) {
+      console.log(current.data);
+      current = current.next;
+    }
+  }
+```
+
+We can now test this out by creating a new linked list and adding some nodes to it.
+
+```js
+const list = new LinkedList();
+
+list.add(1);
+list.add(2);
+list.add(3);
+list.add(4);
+
+list.printAll();
+```
+
+## `get` Method
+
+The `get` method will return the data of the node at the specified index. It takes in an `index` value and loops through the linked list until it reaches the node at the specified index. It then returns the data of that node. The time complexity of this method is O(n) because it has to loop through the linked list to find the node at the specified index. Arrays are better for this because they have constant time access. The time complexity of accessing an element in an array is O(1).
+
+```js
+ get(index) {
+    let current = this.head;
+    let i = 0;
+
+    while (i < index) {
+      current = current.next;
+      i++;
+    }
+
+    return current.data;
+  }
+
+```
+
+## `insertAt` Method
+
+The `insertAt` method will insert a new node at the specified index. It takes in an `index` value and a `data` value. It then checks to see if the index is 0. If it is, it creates a new node and sets the next property of the new node to the head node. It then sets the head property to the new node. If the index is not 0, it loops through the linked list until it reaches the node at the specified index. It then creates a new node and sets the next property of the new node to the node at the specified index. It then sets the next property of the previous node to the new node. The time complexity of this method is O(n) because it has to loop through the linked list to find the node at the specified index. Arrays are better for this because they have constant time access. The time complexity of accessing an element in an array is O(1).
+
+```js
+ insertAt(index, data) {
+    if (index === 0) {
+      const node = new Node(data);
+      node.next = this.head;
+      this.head = node;
+    } else {
+      let current = this.head;
+      let previous = null;
+      let i = 0;
+
+      while (i < index) {
+        previous = current;
+        current = current.next;
+        i++;
+      }
+
+      const node = new Node(data);
+      node.next = current;
+      previous.next = node;
+    }
+  }
+```
+
+## `removeFrom` Method
+
+The `removeFrom` method will remove the node at the specified index. It takes in an `index` value and checks to see if the index is 0. If it is, it sets the head property to the next property of the head node. If it isn't, it loops through the linked list until it reaches the node at the specified index. It then sets the next property of the previous node to the next property of the current node.
+
+```js
+  removeFrom(index) {
+    if (index === 0) {
+      this.head = this.head.next;
+    } else {
+      let current = this.head;
+      let previous = null;
+      let i = 0;
+
+      while (i < index) {
+        previous = current;
+        current = current.next;
+        i++;
+      }
+
+      previous.next = current.next;
+    }
+  }
+}
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Reverse String Using Linked List
+
+## Instructions
+
+Write a function called `reverseStringLinkedList` that takes in a string and returns the reverse of that string.
+
+The function should return the reversed string, but I want you to use the `LinkedList` class to do it.
+
+### Function Signature
+
+```js
+/**
+ * Returns the reverse of a string.
+ * @param {string} str - The string to reverse.
+ * @returns {string} - The reverse of the string.
+ */
+function reverseStringLinkedList(str: string): string;
+```
+
+### Examples
+
+```js
+reverseStringQueue('hello'); // olleh
+reverseStringQueue('Howdy'); // ydwoH
+reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
+```
+
+### Hints
+
+- Loop through the string and add each character to the linked list.
+- Loop through the linked list and build the reversed string.
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+```js
+function reverseStringLinkedList(str) {
+  const list = new LinkedList();
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    list.add(str[i]);
+  }
+
+  let reversedString = '';
+  let current = list.head;
+
+  while (current !== null) {
+    reversedString += current.data;
+    current = current.next;
+  }
+
+  return reversedString;
+}
+```
+
+### Explanation
+
+- Initialize a new `LinkedList` instance.
+- Iterate through the string and add each character to the linked list.
+- Initialize a variable called `reversedString` and set it to an empty string and a variable called `current` and set it to the head of the linked list.
+- Iterate through the linked list and build the reversed string by adding each node's data to the `reversedString` variable and then setting `current` to the next node.
+- Return the `reversedString` variable.
+
+</details>
+
+### Test Cases
+
+```js
+test('Reversing a string', () => {
+  expect(reverseStringLinkedList('Hello')).toBe('olleH');
+  expect(reverseStringLinkedList('JavaScript')).toBe('tpircSavaJ');
+  expect(reverseStringLinkedList('12345')).toBe('54321');
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Working With Pointers
+
+Before we move on to the next challenge, I want to talk more about `pointers` and how they work. In general, pointers are variables that store the memory address of another variable. This concept is more abstract in JavaScript and not as prevalent as in languages like C and C++, where special types and characters are used to declare and work with pointers, such as the `*` character for declaring a pointer variable and the `&` character to get the address of a variable.
+
+In JavaScript, pointers are not explicitly used, but the underlying mechanism is still present when dealing with objects and arrays. It is different with primitive values, so I want to give you an example of both.
+
+Let's start with primitive, which are strings, numbers, booleans, null, undefined and symbols.
+
+Let's examine a simple example:
+
+```JavaScript
+let a = 1;
+let b = a;
+console.log(b); // 1
+```
+
+In this example, we have two variables, `a` is set to `1` and `b` is set to `a`. If we log `b` it is `1`. If we change the value of `a`, `b` is not affected. This is because primitive values in JavaScript are assigned by value, not by reference. When you assign a to b, the actual value of a (which is 1) is copied into b. As a result, b becomes an independent copy of the value stored in a, and any subsequent changes made to a will not impact the value stored in b. This behavior is consistent with primitive data types like numbers, strings, and booleans, where each variable holds its own distinct value in memory.
+
+```JavaScript
+let a = 1;
+let b = a;
+a = 2;
+console.log(b); // 1
+```
+
+Objects and arrays, on the other hand, behave differently. When you assign an object or an array to another variable, you are actually copying the reference to the object or array, not the actual value. This means that both variables will point to the same memory location where the object or array is stored. Consequently, if you modify the contents of the object or array using one variable, the changes will be reflected when accessing the object or array through the other variable. 
+
+Let's look at an example:
+
+```js
+const c = {name: 'John'};
+const d = c;
+console.log(d.name); // John
+```
+
+`d` now points to the same area in memory as `c`. If we log `d.name`, we get John. 
+
+If I change the value of `c.name` to Brad and then log `d.name`, you will see that `d.name` is now Brad as well. This is because we copy the reference not the actual value.
+
+```js
+const c = {name: 'John'};
+const d = c;
+c.name = 'Brad';
+console.log(d.name); // Brad
+```
+
+## Fast and Slow Pointer Pattern
+
+There are different patterns when it comes to pointers. One of the most common patterns is the `fast and slow pointer` pattern. This pattern is used to solve problems where you need to find a certain node or element in a linked list or array. Remember, nodes are objects, so they are passed by reference.
+
+The idea of this pattern is that the pointers start at the same point, but one pointer moves faster than the other. The faster pointer moves at twice the speed of the slower pointer. When the faster pointer reaches the end of the list, the slower pointer will be at the middle node.
+
+<img src="../../assets/images/fastslow.png" width="500" alt="" />
+
+let's look at a quick example:
+
+```JavaScript
+function findMiddle(head) {
+  let slow = head;  // slow pointer
+  let fast = head;  // fast pointer
+
+  while (fast !== null && fast.next !== null) {
+    fast = fast.next.next; // moves two nodes at a time
+    slow = slow.next; // moves one node at a time
+  }
+
+  return slow; // returns the middle node
+}
+```
+
+This `findMiddle` function takes in the head of a linked list and returns the middle node. The function uses two pointers, `slow` and `fast`, to traverse the linked list. The `slow` pointer moves one node at a time because of the `slow.next` assignment, while the `fast` pointer moves two nodes at a time because of the `fast.next.next` assignment.
+
+When the `fast` pointer reaches the end of the list, the `slow` pointer will be at the middle node.
+
+In the next lesson, we are going to implement a find middle function using the `LinkedList` class that we created.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Challenge: Find Middle
+
+In the last lesson, we looked at pointers and the fast and slow pattern. This is when you use two pointers to traverse an iterable data structure at different speeds. We want to do this to find the middle node of a linked list.
+
+## Instructions
+
+Write a function called `findMiddle` that takes in a linked list.
+
+The function should return the middle node of the linked list. If the list has an even number of nodes, return the second middle node in the list.
+
+There are a number of ways we could have formatted this. You could add `findMiddle` as a method on the `LinkedList` class, or you could write it as a standalone function. We chose to write it as a standalone function because it's easier to test this way. The function will take in the list instance.
+
+### Function Signature
+
+```js
+/**
+ * Returns the middle node of the linked list.
+ * @param {LinkedList} list - The linked list.
+ * @returns {(Node|null)} - The middle node of the linked list.
+ */
+function findMiddle(list: LinkedList): Node;
+```
+
+### Examples
+
+```js
+const list = new LinkedList();
+list.add(1);
+list.add(2);
+list.add(3); // Middle node
+list.add(4);
+list.add(5);
+
+findMiddle(list); // returns 3
+```
+
+```js
+const list = new LinkedList();
+list.add(1);
+list.add(2);
+list.add(3);
+list.add(4); // Second middle node
+list.add(5);
+list.add(6);
+
+findMiddle(list); // returns 4
+```
+
+### Hints
+
+- Use two pointers to solve this problem
+- One pointer should move at twice the speed of the other pointer
+- When the faster pointer reaches the end of the list, the slower pointer will be at the middle node
+
+## Solutions
+
+<details>
+  <summary>Click For Solution</summary>
+
+
+```js
+function findMiddle(list) {
+  let slow = list.head;
+  let fast = list.head;
+  let prev = null;
+
+  while (fast !== null && fast.next !== null) {
+    fast = fast.next.next;
+    prev = slow;
+    slow = slow.next;
+  }
+
+  if (fast === null) {
+    // Even number of nodes
+    return prev.next;
+  } else {
+    // Odd number of nodes
+    return slow;
+  }
+}
+```
+
+<details>
+  <summary>Click For Solution</summary>
+
+### Explanation
+
+We will use the `fast and slow pointer pattern` to find the middle node of the linked list.
+
+- Set both pointers to the head of the list.
+- Run a while loop to traverse the list. The loop condition is that the fast pointer is not null and the next node of the fast pointer is not null. This ensures that the fast pointer is always ahead of the slow pointer.
+- Inside the loop, move the fast pointer two nodes at a time by assigning `fast = fast.next.next`. Then move the slow pointer one node at a time by assigning `slow = slow.next`.
+- After the loop, check if the fast pointer is null. If it is null, then the list has an even number of nodes. In this case, return the second middle node, which is the next node of the slow pointer. If the fast pointer is not null, then the list has an odd number of nodes. In this case, return the slow pointer.
+
+### Time & Space Complexity
+
+The time complexity of the function `findMiddle(list)` is `O(n)`, where n is the number of nodes in the linked list. This is because the function uses a two-pointer approach to find the middle node of the linked list. The fast pointer moves twice as fast as the slow pointer, effectively iterating through the entire linked list once.
+
+The space complexity of the function is `O(1)`. Regardless of the size of the linked list, the function only uses a constant amount of additional space to store the slow, fast, and prev pointers. It doesn't use any additional data structures or recursion, so the space complexity remains constant.
+
+</details>
+
+## Test Cases
+
+```js
+describe('findMiddle', () => {
+  test('should return the middle node for a linked list with an odd number of nodes', () => {
+    const list = new LinkedList();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+
+    const middleNode = findMiddle(list);
+    expect(middleNode.data).toBe(3);
+  });
+
+  test('should return the second middle node for a linked list with an even number of nodes', () => {
+    const list = new LinkedList();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.add(4);
+    list.add(5);
+    list.add(6);
+
+    const middleNode = findMiddle(list);
+    expect(middleNode.data).toBe(4);
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Doubly Linked List
+
+So we've talked about a linked list and what we have been dealing with is the most common type of linked list and that is a `singly linked list`. Where each node points to the next. Well there are other types of linked lists as well such as the `doubly linked list`. I don't want to get too far into this because it does start to get really advanced, but I at least want to introduce you to the concept of a doubly linked list.
+
+Like a linked list, a `doubly linked list` is a linear data structure made up of a sequence of nodes, but in a doubly linked list, each node contains two pointers: one to the next node and one to the previous node in the sequence. This bidirectional linking allows for more flexibility in traversal and manipulation of the list.
+
+## Structure of a Doubly Linked List
+
+Each node in a doubly linked list contains three parts:
+
+1. **Previous**: A pointer to the previous node in the sequence, enabling traversal in reverse order.
+2. **Data**: It holds the value or payload representing the information stored in the node.
+3. **Next**: A pointer to the next node in the sequence, facilitating forward traversal.
+
+The first node in the list is the `head`, and the last node is the `tail`. Both the `head` and `tail` pointers can be used to efficiently access the beginning and end of the list.
+
+<img src="../../assets/images/doubly-linked-list.png" alt="" width="500" />
+
+This image depicts a doubly linked list with four nodes. Each node has pointers to the previous and next nodes. The `head` node's `prev` pointer points to `null` because there is no previous node. Similarly, the `tail` node's `next` pointer points to `null`.
+
+## Advantages of Doubly Linked Lists
+
+Doubly linked lists offer several advantages, building upon the features of a singly linked list:
+
+- **Bidirectional Traversal**: Doubly linked lists allow traversing in both forward and reverse directions efficiently, as each node has pointers to both the next and previous nodes.
+- **Efficient Insertion and Deletion**: Insertion or deletion of nodes at the beginning, end, or middle of the list can be more efficient than with singly linked lists, as both the previous and next pointers need to be updated.
+- **Reverse Traversal**: Accessing nodes in reverse order becomes possible without the need to reconstruct the list.
+
+## Drawbacks of Doubly Linked Lists
+
+- **Memory Overhead**: Each node in a doubly linked list requires extra memory to store two pointers instead of one. This can lead to increased memory consumption compared to both arrays and singly linked lists.
+- **Complexity**: The bidirectional pointers increase the complexity of implementation and maintenance compared to singly linked lists. When inserting or deleting a node in a doubly linked list, you need to update both the previous and next pointers of the affected nodes. This is necessary to maintain the integrity of the list. 
+
+In the next lesson, we will implement a doubly linked list in JavaScript and explore how its features can be utilized.
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Doubly Linked List Implementation
+
+In this lesson, we will create a doubly linked list class in JavaScript. If you want to try this on your own, going on the knowledge that you have of a linked list and what I have explained about a doubly linked list, go ahead and try to implement this on your own. If you get stuck, you can always come back and watch this lesson.
+
+I am going to switch it up a bit and instead of using classes, I am going to use a constructor function and some methods on the prototype.
+
+## `Node` Function
+
+We will first create a `Node` function that will be used to create nodes for our doubly linked list. The `Node` function will take in a value and set the `value` property to the value that is passed in. It will also set the `next` and `prev` properties to `null`.
+
+```js
+function Node(data) {
+  this.data = data;
+  this.next = null;
+  this.prev = null;
+}
+```
+
+## `DoublyLinkedList` Function
+
+Next, we will create a `DoublyLinkedList` function that will be used to create doubly linked lists. The `DoublyLinkedList` function will set the `head` and `tail` properties to `null` and the `length` property to `0`.
+
+```js
+function DoublyLinkedList() {
+  this.head = null;
+  this.tail = null;
+  this.length = 0;
+}
+```
+
+## `append` Method
+
+We will add a method called `append` to the `DoublyLinkedList` prototype. This method will add a node to the end of the doubly linked list.
+
+```js
+DoublyLinkedList.prototype.append = function (data) {
+  const newNode = new Node(data);
+
+  if (!this.head) {
+    this.head = newNode;
+    this.tail = newNode;
+  } else {
+    newNode.prev = this.tail;
+    this.tail.next = newNode;
+    this.tail = newNode;
+  }
+
+  this.length++;
+};
+```
+
+We create a new node with the data that is passed in. If the `head` property is `null`, then we set the `head` and `tail` properties to the new node. Otherwise, we set the `prev` property of the new node to the current `tail` node. We then set the `next` property of the current `tail` node to the new node. Finally, we set the `tail` property to the new node.
+
+Let's try out what we have so far. Add this to your run file or the bottom of the current file:
+
+```js
+const DoublyLinkedList = require('./doubly-linked-list');
+
+const list = new DoublyLinkedList();
+
+list.append(1);
+list.append(2);
+list.append(3);
+
+console.log(list);
+```
+
+You should see something like this:
+
+```js
+DoublyLinkedList {
+  head: <ref *1> Node {
+    data: 1,
+    next: Node { data: 2, next: [Node], prev: [Circular *1] },
+    prev: null
+  },
+  tail: <ref *2> Node {
+    data: 3,
+    next: null,
+    prev: Node { data: 2, next: [Circular *2], prev: [Node] }
+  },
+  length: 3
+}
+```
+
+This shows us that we have a doubly linked list with a `head` and `tail` node. The `head` node has a `next` node and the `tail` node has a `prev` node. The `prev` of the first node and the `next` of the last node are both `null`.
+
+## `printAll` Method
+
+Let's create a method to print out all of the data in the list. We will add a method called `printAll` to the `DoublyLinkedList` prototype.
+
+```js
+DoublyLinkedList.prototype.printAll = function () {
+  let current = this.head;
+
+  while (current) {
+    console.log(current.data);
+    current = current.next;
+  }
+};
+```
+
+You can test this with the following:
+
+```js
+const list = new DoublyLinkedList();
+
+list.append(1);
+list.append(2);
+list.append(3);
+
+list.printAll();
+```
+
+You should see something like this:
+
+```bash
+1
+2
+3
+```
+
+## `prepend` Method
+
+Let's add a function to add a node to the beginning of the list. We will call this function `prepend`. It will take in a value and add a node to the beginning of the list.
+
+```js
+DoublyLinkedList.prototype.prepend = function (data) {
+  const newNode = new Node(data);
+
+  if (!this.head) {
+    this.head = newNode;
+    this.tail = newNode;
+  } else {
+    newNode.next = this.head;
+    this.head.prev = newNode;
+    this.head = newNode;
+  }
+
+  this.length++;
+};
+```
+
+We create a new node with the data that is passed in. If the `head` property is `null`, then we set the `head` and `tail` properties to the new node. Otherwise, we set the `next` property of the new node to the current `head` node. We then set the `prev` property of the current `head` node to the new node. Finally, we set the `head` property to the new node.
+
+You can try with:
+
+```js
+const list = new DoublyLinkedList();
+
+list.append(1);
+list.append(2);
+list.append(3);
+list.prepend('Hello');
+
+list.printAll();
+```
+
+You should see something like this:
+
+```bash
+Hello
+1
+2
+3
+```
+
+## `insert` Method
+
+Let's add a function to insert a node at a specific index. We will call this function `insert`. It will take in an index and a value and insert a node at that index.
+
+```js
+DoublyLinkedList.prototype.insert = function (index, data) {
+  if (index < 0 || index > this.length) {
+    return null;
+  }
+
+  if (index === 0) {
+    return this.prepend(data);
+  }
+
+  if (index === this.length) {
+    return this.append(data);
+  }
+
+  const newNode = new Node(data);
+  let currentNode = this.head;
+
+  for (let i = 0; i < index - 1; i++) {
+    currentNode = currentNode.next;
+  }
+
+  newNode.next = currentNode.next;
+  newNode.prev = currentNode;
+  currentNode.next.prev = newNode;
+  currentNode.next = newNode;
+
+  this.length++;
+};
+```
+
+We first check if the index is valid. If it is, we check if the index is `0`. If it is, we call the `prepend` method. We then check if the index is the same as the length of the list. If it is, we call the `append` method. Otherwise, we create a new node with the data that is passed in.
+
+We then loop through the list until we get to the node before the index. We set the `next` property of the new node to the `next` property of the current node. We set the `prev` property of the new node to the current node. We set the `prev` property of the node after the new node to the new node. We set the `next` property of the current node to the new node.
+
+You can try with:
+
+```js
+const list = new DoublyLinkedList();
+
+list.append(1);
+list.append(2);
+list.append(3);
+list.prepend('Hello');
+list.insert(2, 'World');
+
+list.printAll();
+```
+
+You should see something like this:
+
+```bash
+Hello
+1
+World
+2
+3
+```
+
+## `get` Method
+
+Let's add a function to get a node at a specific index. We will call this function `get`. It will take in an index and return the node at that index.
+
+```js
+DoublyLinkedList.prototype.get = function (index) {
+  if (index < 0 || index >= this.length) {
+    return null;
+  }
+
+  let currentNode = this.head;
+  for (let i = 0; i < index; i++) {
+    currentNode = currentNode.next;
+  }
+
+  return currentNode;
+};
+```
+
+We first check if the index is valid. If it is, we loop through the list until we get to the node at the index and return it.
+
+You can try with:
+
+```js
+console.log(list.get(0));
+```
+
+You should see something like this:
+
+```js
+<ref *2> Node {
+  data: 'Hello',
+  next: <ref *1> Node {
+    data: 1,
+    next: Node { data: 'World', next: [Node], prev: [Circular *1] },
+    prev: [Circular *2]
+  },
+  prev: null
+}
+```
+
+## `remove` Method
+
+Let's add a function to remove a node at a specific index. We will call this function `remove`. It will take in an index and remove the node at that index.
+
+```js
+DoublyLinkedList.prototype.remove = function (data) {
+  if (!this.head) return;
+
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.data === data) {
+      if (currentNode === this.head) {
+        this.head = currentNode.next;
+        if (this.head) {
+          this.head.prev = null;
+        }
+      } else if (currentNode === this.tail) {
+        this.tail = currentNode.prev;
+        this.tail.next = null;
+      } else {
+        currentNode.prev.next = currentNode.next;
+        currentNode.next.prev = currentNode.prev;
+      }
+
+      this.length--;
+      return true;
+    }
+
+    currentNode = currentNode.next;
+  }
+
+  return false;
+};
+```
+
+We first check if the list is empty by checking if the `head` is `null`. If it is, we return.
+
+If it is not empty, we continue and set the `currentNode` to the `head`.
+
+We then loop through the list until we find the node with the data that we want to remove. If we find it, we check if it is the `head` node. If it is, we set the `head` to the `next` node. We also check if the `head` is not `null`. If it is not, we set the `prev` of the `head` to `null` because it is now the first node.
+
+If the node is not the `head`, we check if it is the `tail` node. If it is, we set the `tail` to the `prev` node. We also set the `next` of the `tail` to `null` because it is now the last node.
+
+If the node is neither the `head` nor the `tail`, we set the `next` of the `prev` node to the `next` node. We also set the `prev` of the `next` node to the `prev` node.
+
+We then decrement the `length` and return `true`.
+
+If we do not find the node, we return `false`.
+
+You can test this out with the following code:
+
+```js
+const list = new DoublyLinkedList();
+
+list.append(1);
+list.append(2);
+list.append(3);
+list.prepend('Hello');
+list.insert(2, 'World');
+list.remove(4);
+
+list.printAll();
+```
+
+You should now see something like this:
+
+```bash
+Hello
+1
+World
+2
+3
+```
+
+## Test Cases
+
+```js
+describe('DoublyLinkedList', () => {
+  let list;
+
+  beforeEach(() => {
+    list = new DoublyLinkedList();
+  });
+
+  it('should append elements to the end of the list', () => {
+    list.append(1);
+    list.append(2);
+    expect(list.get(0).data).toBe(1);
+    expect(list.get(1).data).toBe(2);
+  });
+
+  it('should prepend elements to the beginning of the list', () => {
+    list.prepend(1);
+    list.prepend(2);
+    expect(list.get(0).data).toBe(2);
+    expect(list.get(1).data).toBe(1);
+  });
+
+  it('should insert elements at a specific index', () => {
+    list.append(1);
+    list.append(3);
+    list.insert(1, 2);
+    expect(list.get(0).data).toBe(1);
+    expect(list.get(1).data).toBe(2);
+    expect(list.get(2).data).toBe(3);
+  });
+
+  it('should remove elements from the list', () => {
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.remove(2);
+    expect(list.get(0).data).toBe(1);
+    expect(list.get(1).data).toBe(3);
+  });
+
+  it('should return null for invalid indices', () => {
+    list.append(1);
+    expect(list.get(-1)).toBe(null);
+    expect(list.get(1)).toBe(null);
+  });
+
+  it('should have the correct length after operations', () => {
+    expect(list.length).toBe(0);
+    list.append(1);
+    expect(list.length).toBe(1);
+    list.prepend(2);
+    expect(list.length).toBe(2);
+    list.remove(1);
+    expect(list.length).toBe(1);
+    list.remove(2);
+    expect(list.length).toBe(0);
+  });
+
+  it('should handle inserting at the beginning and end correctly', () => {
+    list.insert(0, 1);
+    list.insert(1, 2);
+    expect(list.get(0).data).toBe(1);
+    expect(list.get(1).data).toBe(2);
+  });
+
+  it('should return true when an item is successfully removed', () => {
+    list.append(1);
+    list.append(2);
+    expect(list.remove(2)).toBe(true);
+  });
+
+  it('should return false when removing an item not in the list', () => {
+    list.append(1);
+    expect(list.remove(2)).toBe(false);
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+## Challenge: Find Pair Sum
+
+You are given an array of integers and a target sum. Implement a function called `findPairSum` that finds and returns a pair of distinct elements from the array whose sum is equal to the target sum. If no such pair exists, return `null`. You should use the `DoublyLinkedList` class/constructor to efficiently implement this function.
+
+### Function Signature
+
+```javascript
+/**
+ * Finds a pair of distinct elements from the array whose sum is equal to the target sum.
+ * @param {number[]} nums - The array of integers.
+ * @param {number} targetSum - The target sum to find.
+ * @returns {number[] | null} - An array containing the pair of elements whose sum is the target sum, or null if no such pair exists.
+ */
+function findPairSum(nums: number[], targetSum: number): number[] | null
+```
+
+### Example
+
+```javascript
+const nums = [2, 6, 3, 8, 10, 5];
+const targetSum = 12;
+
+const pair = findPairSum(nums, targetSum);
+console.log(pair); // Should print: [2, 10]
+```
+
+### Hints
+
+- Create a `DoublyLinkedList` to store the encountered numbers.
+- For each number in the array, calculate the difference between the target sum and the current number.
+- Check if the calculated difference exists in the `DoublyLinkedList`. If it does, you found a pair.
+
+## Solution
+
+<details>
+<summary>Click to reveal solution</summary>
+
+```javascript
+function findPairSum(nums, targetSum) {
+  const seen = new DoublyLinkedList();
+
+  for (const num of nums) {
+    const difference = targetSum - num;
+    if (seen.contains(difference)) {
+      return [difference, num];
+    }
+    seen.append(num);
+  }
+
+  return null;
+}
+```
+
+- Instantiate a new `DoublyLinkedList` called `seen` to store the encountered numbers.
+- Iterate through the input array `nums` using a `for...of` loop.
+- For each number `num` in the array, calculate the difference between the target sum and the current number. Store the difference in a variable called `difference`.
+- Check if the `seen` list contains the `difference`. If it does, return an array containing the `difference` and `num`.
+- Otherwise, append the `num` to the `seen` list.
+- If no such pair exists, return `null`.
+
+</details>
+
+### Test Cases
+
+```javascript
+describe('findPair', () => {
+  it('should find a pair with the given target sum', () => {
+    const nums = [2, 6, 3, 8, 10, 5];
+    const targetSum = 12;
+    const pair = findPair(nums, targetSum);
+    expect(pair).toEqual([2, 10]);
+  });
+
+  it('should return null if no such pair exists', () => {
+    const nums = [1, 2, 3, 4, 5];
+    const targetSum = 10;
+    const pair = findPair(nums, targetSum);
+    expect(pair).toBeNull();
+  });
+});
+```
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+# Tree
+
+A `tree` is a data structure that represents a hierarchical relationship between elements. Trees are widely used in various applications. Things like file systems and organization charts, implementing search algorithms (e.g., binary search tree), and providing efficient data access and manipulation such as in a heap. If you're a web developer, then you're familiar with the DOM (Document Object Model). That is actually an example of a tree structure.
+
+Here is a visual representation of a tree:
+
+<img src="../../assets/images/tree1.png" width="500" alt="" />
+
+The circles represent what are called `nodes`. These nodes contain data or information. In this example, each node just contains a number, but in a real-world application, it could be anything.
+
+The nodes have relationships to each other. These relationships are represented by the lines connecting the nodes. These lines are called `edges`. If we look at the node with the number 2 in it. It is a child of node 1 and a parent of node 4 and 5. 4 and 5 are actually siblings of each other because they share the same parent.
+
+Let's look more into the terminology of trees.
+
+<img src="./images/tree2.png" width="500" alt="" />
+
+- **Nodes**: Each node in a tree contains data or information and can have zero or more child nodes. Nodes are connected by edges, representing the relationships between them.
+
+- **Root**: The root of a tree is the topmost node and serves as the starting point for traversing the tree. It does not have any parent nodes but may have child nodes.
+
+- **Parent, Child & Sibling Nodes**: A parent node is a node that has child nodes directly connected to it. Child nodes are nodes directly connected to a parent node. Each child node has only one parent node. Nodes that share the same parent node are called sibling nodes.
+
+- **Leaf Nodes**: Leaf nodes, also known as terminal nodes, are nodes that have no child nodes. They represent the endpoints of the tree branches.
+
+- **Path**: A path in a tree refers to the sequence of nodes and edges from one node to another. It represents the route or traversal from the starting node to the destination node. In the image below, the path 1-2-5 represents the route or the path from node 1 to node 5.
+
+### Depth & Height
+
+<img src="./images/treeheightdepth.png" width="500" alt="" />
+
+The terms `depth` and `height` are used to define the structure of a tree. They help us understand how deep or how tall the tree is and provide insight into it's characteristics.
+
+#### Depth Of A Node
+
+The depth of a node refers to the **number of edges along the path from the root node to the particular node**. If we look at the tree above, the depth of node 1 is 0 as it's the root. The depth of node 2 is 1 and the depth of node 4, 5, 6 and 7 is 2.
+
+#### Height Of A Node
+
+The height of a node refers to the **number of edges along the longest path from that node to a leaf node**. It measures how far a node is from the deepest leaf node in a tree. In the tree above, the height of node 1 is 4 since the longest path to the furthest leaf is 4. Node 2 has a height of 2 and node 3 has a height of 3.
+
+#### Height Of A Tree
+
+The height of a tree is the same as the height of it's root node. This tree has a height of 4 since the longest path from the root is 4.
+
+## Bianary Tree
+
+A `binary tree` is a special type of tree that has one root node and each node can have at most two child nodes, often referred to as the `left child` and the `right child` or just left and right. 
+
+<img src="../../assets/images/binarytree.png" width="500" alt="" />
+
+The tree that we are looking at is considered a binary tree because it has one root node and each node has at most two child nodes. Node 4 would be the left child of node 2, and node 5 would be the right child of node 2. There is also a clear path between the root and any one node. Sometimes you'll see trees that are split up and there are 3 nodes off by themselves. Or you may see a tree where the nodes are jut connected in a cirlce and there is no clear root. Those are not binary trees.
+
+
+There are different types of binary trees and there is also something called a `binary search tree`, which we'll look into in a bit. For now, I want to create a `TreeNode` class that will allow us to construct nodes into a binary tree. We'll do that next.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
