@@ -1,13 +1,19 @@
 ---
 title: "JS-CellarDoor"
 author: "Brian Bauska (bbauska)"
-date created: "1/4/2024 6+pm"
-date last editted: "1/4/2024 7+pm"
+date created: "1/4/2025 6+pm"
+date last editted: "1/4/2025 7+pm"
+date last editted: "1/5/2025 7+pm"
 output:
   markdown:
 ---
+
+https://github.com/bbauska/JS-CellarDoor
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~ JS-Cellardoor of https://github.com/bbauska ~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~ readme.md for JS-Cellardoor.bauska.org ~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
   <li>01 <a href="#js01">Challenge: Count Vowels</a></li>
@@ -2426,8 +2432,13 @@ function highestScoringWord(str) {
 ## Explanation
 
 - Split the input string into an array of words using the `split` method.
-- Use the `map` method to calculate the score for each word. For each letter in a word, we get its character code using `charCodeAt(0)` and subtract 96 to get its position in the alphabet (e.g., `a` becomes 1, `b` becomes 2, and so on). We sum these positions to get the score for the word.
-- Find the index of the word with the highest score using a loop. If the current score is greater than the highest score found so far, we update the `highestScore` and `highestIndex` variables.
+- Use the `map` method to calculate the score for each word. For each letter in a word, 
+  we get its character code using `charCodeAt(0)` and subtract 96 to get its position 
+  in the alphabet (e.g., `a` becomes 1, `b` becomes 2, and so on). We sum these positions 
+  to get the score for the word.
+- Find the index of the word with the highest score using a loop. If the current score is 
+  greater than the highest score found so far, we update the `highestScore` and `highestIndex` 
+  variables.
 - Return the word with the highest score using the `highestIndex`.
 
 </details>
@@ -2435,7 +2446,9 @@ function highestScoringWord(str) {
 <details open>
   <summary>Click For Solution 2</summary>
 
-This solution looks a bit cleaner than the previous one, but it's not as efficient (difference is negligible). It uses the `reduce` method to calculate the score for each word, and the `Math.max` method to find the highest score.
+This solution looks a bit cleaner than the previous one, but it's not as efficient 
+(difference is negligible). It uses the `reduce` method to calculate the score for each 
+word, and the `Math.max` method to find the highest score.
 
 ```js
 function highestScoringWord(str) {
@@ -2459,7 +2472,10 @@ function highestScoringWord(str) {
 
 - Split the input string into an array of words using the `split` method.
 - Use the `map` method to calculate the score for each word.
-- Use the `reduce` method to sum the scores for each letter in a word. For each letter in a word, we get its character code using `charCodeAt(0)` and subtract 96 to get its position in the alphabet (e.g., `a` becomes 1, `b` becomes 2, and so on). We sum these positions to get the score for the word.
+- Use the `reduce` method to sum the scores for each letter in a word. For each letter in 
+  a word, we get its character code using `charCodeAt(0)` and subtract 96 to get its 
+  position in the alphabet (e.g., `a` becomes 1, `b` becomes 2, and so on). We sum these 
+  positions to get the score for the word.
 - Find the highest score using the `Math.max` method.
 - Find the index of the word with the highest score using the `indexOf` method.
 - Return the word with the highest score using the `highestIndex`.
@@ -2486,7 +2502,10 @@ Remember to use the provided test cases to verify your solution
 
 ## Instructions
 
-Write a function called `validAnagrams` that takes in two strings and determines whether they are valid anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+Write a function called `validAnagrams` that takes in two strings and determines whether 
+they are valid anagrams of each other. An anagram is a word or phrase formed by 
+rearranging the letters of a different word or phrase, typically using all the original 
+letters exactly once.
 
 ### Function Signature
 
@@ -2510,7 +2529,8 @@ validAnagrams('astronomer', 'moonstarer'); // true
 
 ### Hints
 
-- Split the strings into arrays of characters, then reduce each array into an object of character frequencies for the strings
+- Split the strings into arrays of characters, then reduce each array into an object of 
+  character frequencies for the strings
 - Compare the frequencies
 
 ## Solutions
@@ -2538,9 +2558,17 @@ function validAnagrams(str1, str2) {
 
 ### Explanation
 
-- Create a variable `freqCount1` and assign it to the result of calling `reduce` on `str1.split('')`. This will create an object that contains the frequency count of each character in `str1`. For example, `validAnagrams('listen', 'silent')` will return `{ l: 1, i: 1, s: 1, t: 1, e: 1, n: 1 }` for `freqCount1`.
-- Do the same for `freqCount2` and assign it to the result of calling `reduce` on `str2.split('')`. This will create an object that contains the frequency count of each character in `str2`.
-- Object.keys will check if every character in `freqCount1` has the same frequency count in `freqCount2`. If all of the frequency counts are equal, `every` will return `true`. If any of the frequency counts are not equal, `every` will return `false` and we will know that the strings are not valid anagrams.
+- Create a variable `freqCount1` and assign it to the result of calling `reduce` on 
+  `str1.split('')`. This will create an object that contains the frequency count of each 
+  character in `str1`. For example, `validAnagrams('listen', 'silent')` will return 
+  `{ l: 1, i: 1, s: 1, t: 1, e: 1, n: 1 }` for `freqCount1`.
+- Do the same for `freqCount2` and assign it to the result of calling `reduce` on 
+  `str2.split('')`. This will create an object that contains the frequency count of 
+  each character in `str2`.
+- Object.keys will check if every character in `freqCount1` has the same frequency count 
+  in `freqCount2`. If all of the frequency counts are equal, `every` will return `true`. 
+  If any of the frequency counts are not equal, `every` will return `false` and we will 
+  know that the strings are not valid anagrams.
 
 </details>
 
@@ -2561,7 +2589,10 @@ test('Checking for Valid Anagrams', () => {
 
 ## Instructions
 
-Write a function called `generateHashtag` that takes a string as input and returns a hashtag-generated string according to the rules below. If the generated hashtag string is longer than 140 characters or the input/result is an empty string, the function should return `false`.
+Write a function called `generateHashtag` that takes a string as input and returns a 
+hashtag-generated string according to the rules below. If the generated hashtag string 
+is longer than 140 characters or the input/result is an empty string, the function 
+should return `false`.
 
 ### Function Signature
 
@@ -2579,7 +2610,9 @@ function generateHashtag(str: string): string | boolean;
 ```JS
 generateHashtag("JavaScript is awesome"); // "#JavaScriptIsAwesome"
 generateHashtag("hello world"); // "#HelloWorld"
-generateHashtag("This is a very very very very very very very very very very very very very very long input that should result in a false hashtag because it exceeds the character limit of 140"); // false
+generateHashtag("This is a very very very very very very very very very very very very 
+  very very long input that should result in a false hashtag because it exceeds the character 
+  limit of 140"); // false
 generateHashtag(""); // false
 ```
 
@@ -2592,7 +2625,8 @@ generateHashtag(""); // false
 
 ### Hints
 
-- You can use the string manipulation methods `trim()`, `split()`, and `join()` to work with the input string.
+- You can use the string manipulation methods `trim()`, `split()`, and `join()` to work 
+  with the input string.
 - You can use the string method `charAt()` to get the character at a specific index.
 - Use string methods to capitalize the first letter of each word.
 
@@ -2625,9 +2659,16 @@ function generateHashtag(str) {
 ### Explanation
 
 - Check if the input string is empty or contains only whitespace characters. If so, return `false`.
-- Split the input string into an array of words using the `split()` method. The `split()` method accepts a regular expression as an argument. The regular expression `/\s+/` matches one or more whitespace characters.
-- Use the `map()` method to create a new array of capitalized words. The `map()` method accepts a callback function as an argument. The callback function is called for each element in the array. The callback function accepts the current element as an argument. The callback function returns the capitalized word.
-- Join the capitalized words into a string using the `join()` method. The `join()` method accepts a string as an argument. The string is used to join the elements of the array. In this case, we want to join the elements of the array without any characters between them.
+- Split the input string into an array of words using the `split()` method. The `split()` 
+  method accepts a regular expression as an argument. The regular expression `/\s+/` matches 
+  one or more whitespace characters.
+- Use the `map()` method to create a new array of capitalized words. The `map()` method 
+  accepts a callback function as an argument. The callback function is called for each 
+  element in the array. The callback function accepts the current element as an argument. 
+  The callback function returns the capitalized word.
+- Join the capitalized words into a string using the `join()` method. The `join()` method 
+  accepts a string as an argument. The string is used to join the elements of the array. 
+  In this case, we want to join the elements of the array without any characters between them.
 - Check if the generated hashtag string is longer than 140 characters. If so, return `false`.
 - Return the generated hashtag string.
 
@@ -2649,7 +2690,10 @@ function generateHashtag(str) {
 ### Explanation
 
 - Split the input string into an array of words using the `split()` method.
-- Use the `reduce()` method to create the hashtag string. We are passing the `#` character as the initial value of the accumulator. Then we are concatenating the accumulator with the capitalized word and then concatenating that with the rest of the word. We do this for each word in the array.
+- Use the `reduce()` method to create the hashtag string. We are passing the `#` 
+  character as the initial value of the accumulator. Then we are concatenating the 
+  accumulator with the capitalized word and then concatenating that with the rest 
+  of the word. We do this for each word in the array.
 - Check if the generated hashtag string is longer than 140 characters. If so, return `false`.
 - Return the generated hashtag string.
 
@@ -2661,7 +2705,9 @@ function generateHashtag(str) {
 
 ## Instructions
 
-Write a function called `isValidIPv4` that takes a string as input and returns `true` if the input is a valid IPv4 address in dot-decimal format, and `false` otherwise. An IPv4 address should consist of four octets, with values between 0 and 255, inclusive.
+Write a function called `isValidIPv4` that takes a string as input and returns `true` if 
+the input is a valid IPv4 address in dot-decimal format, and `false` otherwise. An IPv4 
+address should consist of four octets, with values between 0 and 255, inclusive.
 
 ### Function Signature
 
@@ -3242,7 +3288,15 @@ As you can see, the function starts returning values as it "unwinds" the recursi
 As I said above, the call stack is a LIFO (last in, first out) data structure, which means that the last function that was added to the call stack is the first one to be removed. This is why the function calls are returned in the reverse order of the function calls.
 
 When we first call `sumUpTo(5)`, it is added to the call stack. Then, `sumUpTo(4)` is added to the call stack and so on...
-
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ JS-Cellardoor.bauska.github.io ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~ 01. recursion-stack-1.png ~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<p align="center" width="100%">
+<img src="./images/image001.png"
+  style="width:500"
+  title="JavaScript logo"
+  alt="JavaScript logo." />
 <img src="../images/recursion-stack-1.png" width="500" />
 
 Once `sumUpTo(1)` is called, it returns 1 and is removed from the call stack. Then, `sumUpTo(2)` returns 3 and is removed from the call stack. This continues until `sumUpTo(5)` returns 15 and is removed from the call stack.
@@ -10215,7 +10269,9 @@ These are expressed using `Big O notation`, which we've also talked about.
 
 ### Types of Sorting Algorithms
 
-There are many different types of sorting algorithms. We're going to look at the most common ones in the next few sections. Here is an overview of the ones we'll be looking at:
+There are many different types of sorting algorithms. We're going to look at the most 
+common ones in the next few sections. Here is an overview of the ones we'll be looking 
+at:
 
 - `Bubble sort`
 - `Selection sort`
@@ -10229,11 +10285,20 @@ I will go over these in detail in the next few sections.
 
 Strategies for sorting:
 
-- Recursion - Recursion can be used in sorting algorithms. We know that recursion is when a function calls itself with a smaller version of the input. We'll see how this can be used in sorting algorithms.
+- Recursion - Recursion can be used in sorting algorithms. We know that recursion is when 
+  a function calls itself with a smaller version of the input. We'll see how this can be 
+  used in sorting algorithms.
 
-- Divide and conquer - A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem. This is very similar to recursion. We'll see how this can be used in sorting algorithms.
+- Divide and conquer - A divide and conquer algorithm works by recursively breaking down 
+  a problem into two or more sub-problems of the same or related type, until these become 
+  simple enough to be solved directly. The solutions to the sub-problems are then combined 
+  to give a solution to the original problem. This is very similar to recursion. We'll see 
+  how this can be used in sorting algorithms.
 
-- In-place sorting - An in-place sorting algorithm uses constant extra space for producing the output (modifies the given array only to produce the sorted array). It sorts the list only by modifying the order of the elements within the list. We'll see how this can be used in sorting algorithms.
+- In-place sorting - An in-place sorting algorithm uses constant extra space for producing 
+  the output (modifies the given array only to produce the sorted array). It sorts the list 
+  only by modifying the order of the elements within the list. We'll see how this can be 
+  used in sorting algorithms.
 
 Let's jump right in and look at the first sorting algorithm, `Bubble sort` in the next lesson.
 
@@ -10241,13 +10306,22 @@ Let's jump right in and look at the first sorting algorithm, `Bubble sort` in th
 <h1 id="js95">95. Bubble Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In this lesson, we're going to look at the `Bubble sort` algorithm. This is one of the simplest sorting algorithms. It's also one of the least efficient. But it's a good place to start because it's easy to understand. It is also a very common interview question.
+In this lesson, we're going to look at the `Bubble sort` algorithm. This is one of the 
+simplest sorting algorithms. It's also one of the least efficient. But it's a good place 
+to start because it's easy to understand. It is also a very common interview question.
 
 ## What is Bubble Sort?
 
-The `Bubble sort` sorting algorithm is comparison-based. Each pair of adjacent elements are compared with eachother and the elements are swapped if they are not in order. This is repeated until the list is sorted.
+The `Bubble sort` sorting algorithm is comparison-based. Each pair of adjacent elements 
+are compared with eachother and the elements are swapped if they are not in order. This 
+is repeated until the list is sorted.
 
-The algorithm gets its name from the way that smaller or larger elements "bubble" to the top of the list. Because it only uses comparisons to operate on elements, it is a `comparison sort`. Although the algorithm is simple, it is too slow and impractical for most problems even when compared to other sorting algorithms such as `insertion sort`. It can be practical if the input is usually in sort order but may occasionally have some out-of-order elements nearly in position.
+The algorithm gets its name from the way that smaller or larger elements "bubble" to the 
+top of the list. Because it only uses comparisons to operate on elements, it is a 
+`comparison sort`. Although the algorithm is simple, it is too slow and impractical 
+for most problems even when compared to other sorting algorithms such as `insertion sort`. 
+It can be practical if the input is usually in sort order but may occasionally 
+have some out-of-order elements nearly in position.
 
 ## How Does Bubble Sort Work?
 
@@ -10261,25 +10335,32 @@ I have an image that can help you visualize this process:
 
 ![Bubble Sort](../images/bubble-sort.png)
 
-We start by comparing the first two elements in the array. If the first element is larger than the second element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 4, so we swap them:
+We start by comparing the first two elements in the array. If the first element is larger 
+than the second element, we swap them. Otherwise, we leave them as is. In this case, 5 is 
+larger than 4, so we swap them:
 
 ```text
 [4, 5, 2, 1]
 ```
 
-Next, we compare the second and third elements in the array. If the second element is larger than the third element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 2, so we swap them:
+Next, we compare the second and third elements in the array. If the second element is 
+larger than the third element, we swap them. Otherwise, we leave them as is. In this 
+case, 5 is larger than 2, so we swap them:
 
 ```text
 [4, 2, 5, 1]
 ```
 
-Next, we compare the third and fourth elements in the array. If the third element is larger than the fourth element, we swap them. Otherwise, we leave them as is. In this case, 5 is larger than 1, so we swap them:
+Next, we compare the third and fourth elements in the array. If the third element is 
+larger than the fourth element, we swap them. Otherwise, we leave them as is. In this 
+case, 5 is larger than 1, so we swap them:
 
 ```text
 [4, 2, 1, 5]
 ```
 
-We have now completed one pass through the array. We repeat this process until the array is sorted. In this case, we need to repeat the process three more times:
+We have now completed one pass through the array. We repeat this process until the array 
+is sorted. In this case, we need to repeat the process three more times:
 
 ```text
 [2, 4, 1, 5]
@@ -10294,17 +10375,28 @@ We have now completed one pass through the array. We repeat this process until t
 - Average-case time complexity: O(n^2)
 - Space complexity: O(1)
 
-The worst-case time complexity is O(n^2) because we have to iterate through the array n times and for each iteration, we have to iterate through the array n times. This is because we have to compare each element with all the other elements in the array. What really makes bubble sorts inefficient is that it swaps elements multiple times per iteration. For example, in the first iteration, it swaps 5 and 4. Then, it swaps 5 and 2. Then, it swaps 5 and 1. It does this for each iteration. This is why the best-case time complexity is O(n). If the array is already sorted, we don't need to swap any elements.
+The worst-case time complexity is O(n^2) because we have to iterate through the array n 
+times and for each iteration, we have to iterate through the array n times. This is 
+because we have to compare each element with all the other elements in the array. What 
+really makes bubble sorts inefficient is that it swaps elements multiple times per 
+iteration. For example, in the first iteration, it swaps 5 and 4. Then, it swaps 5 and 2. 
+Then, it swaps 5 and 1. It does this for each iteration. This is why the best-case time 
+complexity is O(n). If the array is already sorted, we don't need to swap any elements.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js96">96. Challenge: Bubble Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-You've learned about a simple sorting algorithm called Bubble Sort. Let's put your knowledge to the test and implement the Bubble Sort algorithm in JavaScript. Obviously if you have never done anything like this and all you have to go on is the last lesson, then you may have an issue doing this on your own. That's absolutely fine. You can either try and come back or just follow along. Either way, you will learn something.
+You've learned about a simple sorting algorithm called Bubble Sort. Let's put your 
+knowledge to the test and implement the Bubble Sort algorithm in JavaScript. Obviously 
+if you have never done anything like this and all you have to go on is the last lesson, 
+then you may have an issue doing this on your own. That's absolutely fine. You can 
+either try and come back or just follow along. Either way, you will learn something.
 
 ## Instructions
 
-Implement a function called `bubbleSort` that takes an array of numbers as an argument and returns a sorted array using the Bubble Sort algorithm.
+Implement a function called `bubbleSort` that takes an array of numbers as an argument 
+and returns a sorted array using the Bubble Sort algorithm.
 
 ### Function Signature
 
@@ -10331,11 +10423,15 @@ console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 2
 
 ### Notes
 
-- The Bubble Sort algorithm works by repeatedly stepping through the list of elements, comparing each pair of adjacent items, and swapping them if they are in the wrong order. This process is repeated for each element in the list until no swaps are needed.
+- The Bubble Sort algorithm works by repeatedly stepping through the list of elements, 
+  comparing each pair of adjacent items, and swapping them if they are in the wrong 
+  order. This process is repeated for each element in the list until no swaps are needed.
 
 ### Hints
 
-- There are a ton of ways to do this, but one is to use 2 loops. One to iterate the array and one to do the swap. You can set the current element as a temp variable, assign the next element to the current and then assign the temp value to the next element
+- There are a ton of ways to do this, but one is to use 2 loops. One to iterate the array 
+  and one to do the swap. You can set the current element as a temp variable, assign the 
+  next element to the current and then assign the temp value to the next element
 
 ## Solutions
 
@@ -10359,10 +10455,17 @@ function bubbleSort(arr) {
 
 ### Explanation
 
-- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop through the entire array.
-- Inside the `for` loop, start another `for` loop. The condition of the `for` loop is `j < arr.length - i - 1`. This will loop through the array, but it will stop before the last element. This is because the last element will be sorted after the first pass through the array.
-- Inside the inner `for` loop, check if the current element is greater than the next element. If it is, then swap the elements.
-- We swap the elements by creating a temporary variable called `temp` and setting it to the current element. Then we set the current element to the next element. Finally, we set the next element to `temp`.
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop 
+  through the entire array.
+- Inside the `for` loop, start another `for` loop. The condition of the `for` loop is 
+  `j < arr.length - i - 1`. This will loop through the array, but it will stop before 
+  the last element. This is because the last element will be sorted after the first pass 
+  through the array.
+- Inside the inner `for` loop, check if the current element is greater than the next 
+  element. If it is, then swap the elements.
+- We swap the elements by creating a temporary variable called `temp` and setting it 
+  to the current element. Then we set the current element to the next element. Finally, 
+  we set the next element to `temp`.
 - Outside of the inner `for` loop, return the sorted array.
 
 To have this make a bit more sense, put this console log inside the inner `for` loop:
@@ -10383,7 +10486,8 @@ const result = bubbleSort(array);
 console.log(result);
 ```
 
-This will display every comparison that is made. You can see that the largest element will "bubble" to the top of the array. You can compare it with our image.
+This will display every comparison that is made. You can see that the largest element 
+will "bubble" to the top of the array. You can compare it with our image.
 
 <img src="../images/bubble-sort-console.png" />
 
@@ -10392,7 +10496,9 @@ This will display every comparison that is made. You can see that the largest el
 <details open>
   <summary>Click For Solution 2</summary>
 
-This solution is similar, but it uses a `while` loop instead of a `for` loop. It also uses a variable called `swapped` to keep track of whether or not we have swapped any elements. This variable will be used to determine when we can stop looping.
+This solution is similar, but it uses a `while` loop instead of a `for` loop. It also 
+uses a variable called `swapped` to keep track of whether or not we have swapped any 
+elements. This variable will be used to determine when we can stop looping.
 
 ```js
 function bubbleSort(arr) {
@@ -10417,11 +10523,19 @@ function bubbleSort(arr) {
 
 ### Explanation
 
-- Declare a variable called `swapped` and setting it to `false`. This variable will keep track of whether or not we have swapped any elements. We will use this variable to determine when we can stop looping.
-- Start a `while` loop. The condition of the `while` loop is `!swapped`. This means that the loop will continue to run as long as `swapped` is `false`. This is the same as saying that the loop will continue to run as long as we have swapped any elements.
-- Inside the `while` loop, set `swapped` to `true`. This will ensure that the loop will run at least once.
-- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This means that the loop will continue to run as long as `i` is less than the length of the array.
-- Inside the `for` loop, check if the current element is greater than the next element. If it is, then swap the elements and set `swapped` to `false`. This will ensure that the loop will run again.
+- Declare a variable called `swapped` and setting it to `false`. This variable will keep 
+  track of whether or not we have swapped any elements. We will use this variable to 
+  determine when we can stop looping.
+- Start a `while` loop. The condition of the `while` loop is `!swapped`. This means that 
+  the loop will continue to run as long as `swapped` is `false`. This is the same as 
+  saying that the loop will continue to run as long as we have swapped any elements.
+- Inside the `while` loop, set `swapped` to `true`. This will ensure that the loop will 
+  run at least once.
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This means 
+  that the loop will continue to run as long as `i` is less than the length of the array.
+- Inside the `for` loop, check if the current element is greater than the next element. 
+  If it is, then swap the elements and set `swapped` to `false`. This will ensure that 
+  the loop will run again.
 - Outside of the `for` loop, return the sorted array.
 
 </details>
@@ -10460,10 +10574,16 @@ test('Sort an empty array', () => {
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js97">97. Insertion Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+Insertion sort is similar to how you would sort playing cards. You start with an empty 
+left hand and the cards face down on the table. Then you remove one card at a time from 
+the table and insert it into the correct position in the left hand. To find the correct 
+position for a card, you compare it with each of the cards already in the hand. At all 
+times, the cards held in the left hand are sorted.
 
-Insertion sort is similar to how you would sort playing cards. You start with an empty left hand and the cards face down on the table. Then you remove one card at a time from the table and insert it into the correct position in the left hand. To find the correct position for a card, you compare it with each of the cards already in the hand. At all times, the cards held in the left hand are sorted.
-
-An array is split into two parts: `sorted` and `unsorted`. Initially, the sorted part just has one element (the first element). Then, we pick an element from the unsorted part and insert it into the sorted part at the correct position. We do this until the unsorted part becomes empty.
+An array is split into two parts: `sorted` and `unsorted`. Initially, the sorted part 
+just has one element (the first element). Then, we pick an element from the unsorted 
+part and insert it into the sorted part at the correct position. We do this until the 
+unsorted part becomes empty.
 
 Let's look at an example:
 
@@ -10473,13 +10593,17 @@ Let's look at an example:
 [4, 3, 2, 10, 12, 1, 5, 6]
 ```
 
-The first element is already sorted. So, we pick the second element (3) and compare it with the first element (4). Since 3 is smaller than 4, we swap them. Now, the first two elements are sorted.
+The first element is already sorted. So, we pick the second element (3) and compare 
+it with the first element (4). Since 3 is smaller than 4, we swap them. Now, the 
+first two elements are sorted.
 
 ```text
 [3, 4, 2, 10, 12, 1, 5, 6]
 ```
 
-Next, we pick the third element (2) and compare it with the first element (3). Since 2 is smaller than 3, we swap them. Then, we compare 2 with 4 and swap them. Now, the first three elements are sorted.
+Next, we pick the third element (2) and compare it with the first element (3). 
+Since 2 is smaller than 3, we swap them. Then, we compare 2 with 4 and swap them. 
+Now, the first three elements are sorted.
 
 ```text
 [2, 3, 4, 10, 12, 1, 5, 6]
@@ -10494,21 +10618,28 @@ We continue this process until the unsorted part becomes empty.
 - Average-case time complexity: O(n^2)
 - Space complexity: O(1)
 
-Compared to a bubble sort, insertion sort requires less number of swaps, so it is slightly more efficient, especially when the array is partially sorted. However, it still has a time complexity of O(n<sup>2</sup>) because we still have to compare each element with all the other elements in the sorted part.
+Compared to a bubble sort, insertion sort requires less number of swaps, so it is 
+slightly more efficient, especially when the array is partially sorted. However, 
+it still has a time complexity of O(n<sup>2</sup>) because we still have to compare 
+each element with all the other elements in the sorted part.
 
-Online Sorting: Insertion sort is well-suited for "online" sorting, where new elements are continuously added to a sorted list. It efficiently adds new elements to the sorted portion, while something like selection sort, which we'll look at next, requires a full traversal of the unsorted portion for each new element.
+Online Sorting: Insertion sort is well-suited for "online" sorting, where new elements 
+are continuously added to a sorted list. It efficiently adds new elements to the sorted 
+portion, while something like selection sort, which we'll look at next, requires a full 
+traversal of the unsorted portion for each new element.
 
 In the next lesson, we will implement insertion sort in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js98">98. Challenge: Insertion Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-Now that you've learned about the Insertion Sort algorithm, let's put your knowledge to the test and implement the Insertion Sort algorithm in JavaScript.
+Now that you've learned about the Insertion Sort algorithm, let's put your knowledge to 
+the test and implement the Insertion Sort algorithm in JavaScript.
 
 ## Instructions
 
-Implement a function called `insertionSort` that takes an array of numbers as an argument and returns a sorted array using the Insertion Sort algorithm.
+Implement a function called `insertionSort` that takes an array of numbers as an argument 
+and returns a sorted array using the Insertion Sort algorithm.
 
 ### Function Signature
 
@@ -10535,11 +10666,16 @@ console.log(insertionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22
 
 ### Notes
 
-- The Insertion Sort algorithm builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+- The Insertion Sort algorithm builds the final sorted array one item at a time. It is 
+  much less efficient on large lists than more advanced algorithms such as quicksort, 
+  heapsort, or merge sort.
 
 ### Hints
 
-- Divide & conquer: The main idea of this algorithm is to divide the array into a "sorted" and an "unsorted" part. Initially, the first element is considered as the "sorted" part. Then, one by one, elements from the "unsorted" part are moved to the "sorted" part while keeping the "sorted" part sorted.
+- Divide & conquer: The main idea of this algorithm is to divide the array into a 
+  "sorted" and an "unsorted" part. Initially, the first element is considered as 
+  the "sorted" part. Then, one by one, elements from the "unsorted" part are moved 
+  to the "sorted" part while keeping the "sorted" part sorted.
 
 ## Solutions
 
@@ -10566,13 +10702,20 @@ function insertionSort(arr) {
 
 ### Explanation
 
-- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop through the entire array, starting from the second element.
-- Inside the `for` loop, declare a variable called `currentElement` and set it to the element at index `i`. This is the element that we want to insert into the correct position.
-- Declare a variable called `j` and set it to `i - 1`. This is the index of the last element in the "sorted" part of the array.
-- Start a `while` loop. The condition of the `while` loop is `j >= 0` (making sure we're not going out of bounds) and `arr[j] > currentElement` (checking if the current element is greater than the element at index `j`).
-- Inside the `while` loop, shift the element at index `j` one position to the right (by assigning `arr[j]` to `arr[j + 1]`).
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop 
+  through the entire array, starting from the second element.
+- Inside the `for` loop, declare a variable called `currentElement` and set it to the 
+  element at index `i`. This is the element that we want to insert into the correct position.
+- Declare a variable called `j` and set it to `i - 1`. This is the index of the last 
+  element in the "sorted" part of the array.
+- Start a `while` loop. The condition of the `while` loop is `j >= 0` (making sure we're 
+  not going out of bounds) and `arr[j] > currentElement` (checking if the current element 
+  is greater than the element at index `j`).
+- Inside the `while` loop, shift the element at index `j` one position to the right (by 
+  assigning `arr[j]` to `arr[j + 1]`).
 - Decrement `j` by 1 to move to the previous element in the "sorted" part.
-- After the `while` loop, insert the `currentElement` at the correct position in the "sorted" part of the array (by assigning `currentElement` to `arr[j + 1]`).
+- After the `while` loop, insert the `currentElement` at the correct position in the 
+  "sorted" part of the array (by assigning `currentElement` to `arr[j + 1]`).
 - Outside of the `for` loop, return the sorted array.
 
 </details>
@@ -10614,7 +10757,10 @@ Feel free to customize the test cases according to your needs!
 <h1 id="js99">99. Selection Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-The selection sort algorithm is a simple sorting algorithm that works by repeatedly selecting the minimum (or maximum) element from the unsorted part of the array and swapping it with the first unsorted element. This gradually builds up a sorted portion of the array.
+The selection sort algorithm is a simple sorting algorithm that works by repeatedly 
+selecting the minimum (or maximum) element from the unsorted part of the array and 
+swapping it with the first unsorted element. This gradually builds up a sorted portion 
+of the array.
 
 Let's look at an example:
 
@@ -10624,31 +10770,38 @@ Let's look at an example:
 [4,3,2,10,12,1,5,6]
 ```
 
-We start by selecting the smallest element in the array, which is 1. We then swap it with the first element in the array.
+We start by selecting the smallest element in the array, which is 1. We then swap it 
+with the first element in the array.
 
 [1,3,2,10,12,4,5,6]
 
-We then select the next smallest element in the array, which is 2. We then swap it with the second element in the array.
+We then select the next smallest element in the array, which is 2. We then swap it with 
+the second element in the array.
 
 [1,2,3,10,12,4,5,6]
 
-We then select the next smallest element in the array, which is 3. 3 is already in the correct position, so we don't need to swap it.
+We then select the next smallest element in the array, which is 3. 3 is already in the 
+correct position, so we don't need to swap it.
 
 [1,2,3,10,12,4,5,6]
 
-We then select the next smallest element in the array, which is 4. We then swap it with the fourth element in the array.
+We then select the next smallest element in the array, which is 4. We then swap it with 
+the fourth element in the array.
 
 [1,2,3,4,12,10,5,6]
 
-We then select the next smallest element in the array, which is 5. We then swap it with the fifth element in the array.
+We then select the next smallest element in the array, which is 5. We then swap it with 
+the fifth element in the array.
 
 [1,2,3,4,5,10,12,6]
 
-We then select the next smallest element in the array, which is 6. We then swap it with the sixth element in the array.
+We then select the next smallest element in the array, which is 6. We then swap it with 
+the sixth element in the array.
 
 [1,2,3,4,5,6,12,10]
 
-We then select the next smallest element in the array, which is 10. We then swap it with the seventh element in the array.
+We then select the next smallest element in the array, which is 10. We then swap it with 
+the seventh element in the array.
 
 [1,2,3,4,5,6,10,12]
 
@@ -10660,29 +10813,42 @@ The array is now sorted.
 
 ### The Process
 
-- Initialization: The algorithm divides the array into two parts: a sorted portion and an unsorted portion. The sorted portion starts as an empty set, and the unsorted portion includes all the elements of the array.
+- Initialization: The algorithm divides the array into two parts: a sorted portion and an 
+  unsorted portion. The sorted portion starts as an empty set, and the unsorted portion 
+  includes all the elements of the array.
 
-- Selection of Minimum: In each iteration, the algorithm searches through the unsorted portion to find the minimum element.
+- Selection of Minimum: In each iteration, the algorithm searches through the unsorted 
+  portion to find the minimum element.
 
-- Swap and Grow Sorted Portion: Once the minimum element is found, it is swapped with the first element of the unsorted portion. This effectively grows the sorted portion of the array.
+- Swap and Grow Sorted Portion: Once the minimum element is found, it is swapped with the 
+  first element of the unsorted portion. This effectively grows the sorted portion of the 
+  array.
 
-- Repeat: The algorithm then considers the next element in the unsorted portion as the new "first" element and repeats the process of finding the minimum element, swapping, and growing the sorted portion.
+- Repeat: The algorithm then considers the next element in the unsorted portion as the new 
+  "first" element and repeats the process of finding the minimum element, swapping, and 
+  growing the sorted portion.
 
-- Termination: The algorithm continues this process until the entire array is sorted. The sorted portion gradually expands, and the unsorted portion shrinks until it becomes empty.
+- Termination: The algorithm continues this process until the entire array is sorted. 
+  The sorted portion gradually expands, and the unsorted portion shrinks until it becomes 
+  empty.
 
-- Time Complexity: Selection sort has a time complexity of O(n^2), where n is the number of elements in the array. This makes it inefficient for large arrays, but it's simple to implement and performs a fixed number of swaps, which can be advantageous in certain situations.
+- Time Complexity: Selection sort has a time complexity of O(n^2), where n is the number 
+  of elements in the array. This makes it inefficient for large arrays, but it's simple 
+  to implement and performs a fixed number of swaps, which can be advantageous in certain 
+  situations.
 
 In the next lesson, we'll look at implementing a selection sort.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js100">100. Challenge: Selection Sort Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-You've learned about the Selection Sort algorithm. Now it's time to put your knowledge into practice and implement the Selection Sort algorithm in JavaScript.
+You've learned about the Selection Sort algorithm. Now it's time to put your knowledge 
+into practice and implement the Selection Sort algorithm in JavaScript.
 
 ## Instructions
 
-Implement a function called `selectionSort` that takes an array of numbers as an argument and returns a sorted array using the Selection Sort algorithm.
+Implement a function called `selectionSort` that takes an array of numbers as an argument 
+and returns a sorted array using the Selection Sort algorithm.
 
 ### Function Signature
 
@@ -10709,13 +10875,20 @@ console.log(selectionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22
 
 ### Notes
 
-- The Selection Sort algorithm works by repeatedly finding the minimum element from the unsorted part of the array and putting it at the beginning. This process continues until the whole array is sorted.
+- The Selection Sort algorithm works by repeatedly finding the minimum element from the 
+  unsorted part of the array and putting it at the beginning. This process continues 
+  until the whole array is sorted.
 
 ### Hints
 
-- Outer Loop: The main idea of this algorithm is to divide the array into two parts: the "sorted" part and the "unsorted" part. The outer loop will iterate through the unsorted part and select the minimum element in each iteration.
-- Inner Loop: The inner loop will find the minimum element in the unsorted part and swap it with the first element in the unsorted part. This effectively moves the minimum element to the sorted part.
-- Current Minimum: Keep track of the index of the current minimum element found in the inner loop. You will need this index to perform the swap.
+- Outer Loop: The main idea of this algorithm is to divide the array into two parts: the 
+  "sorted" part and the "unsorted" part. The outer loop will iterate through the unsorted 
+  part and select the minimum element in each iteration.
+- Inner Loop: The inner loop will find the minimum element in the unsorted part and swap 
+  it with the first element in the unsorted part. This effectively moves the minimum 
+  element to the sorted part.
+- Current Minimum: Keep track of the index of the current minimum element found in the 
+  inner loop. You will need this index to perform the swap.
 
 ## Solutions
 
@@ -10744,11 +10917,17 @@ function selectionSort(arr) {
 
 ### Explanation
 
-- Start a `for` loop. The condition of the `for` loop is `i < arr.length - 1`. This will loop through the entire array, except for the last element (since the last element will be sorted automatically).
-- Inside the outer `for` loop, declare a variable called `minIndex` and set it to `i`. This will keep track of the index of the minimum element found in the inner loop.
-- Start an inner `for` loop. The condition of the inner `for` loop is `j = i + 1` and `j < arr.length`. This will loop through the unsorted part of the array.
-- Inside the inner `for` loop, check if the element at index `j` is less than the element at index `minIndex`. If it is, update `minIndex` to `j`.
-- After the inner `for` loop, check if `minIndex` is not equal to `i`. If it's not equal, swap the elements at indices `i` and `minIndex`.
+- Start a `for` loop. The condition of the `for` loop is `i < arr.length - 1`. This will 
+  loop through the entire array, except for the last element (since the last element will 
+  be sorted automatically).
+- Inside the outer `for` loop, declare a variable called `minIndex` and set it to `i`. 
+  This will keep track of the index of the minimum element found in the inner loop.
+- Start an inner `for` loop. The condition of the inner `for` loop is `j = i + 1` and 
+  `j < arr.length`. This will loop through the unsorted part of the array.
+- Inside the inner `for` loop, check if the element at index `j` is less than the element 
+  at index `minIndex`. If it is, update `minIndex` to `j`.
+- After the inner `for` loop, check if `minIndex` is not equal to `i`. If it's not equal, 
+  swap the elements at indices `i` and `minIndex`.
 - Outside of both loops, return the sorted array.
 
 </details>
@@ -10790,9 +10969,17 @@ Feel free to customize the test cases according to your needs!
 <h1 id="js101">101. Merge Sort Algorithm</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-The merge sort algorithm is a very efficient divide and conquer algorithm. It works by continuously splitting the array in half until it can no longer be divided. Then, it merges each subarray while sorting them in the process. This process continues until the whole array is sorted.
+The merge sort algorithm is a very efficient divide and conquer algorithm. It works by 
+continuously splitting the array in half until it can no longer be divided. Then, it 
+merges each subarray while sorting them in the process. This process continues until 
+the whole array is sorted.
 
-This is the most efficient solution that we've looked at so far. It has a time complexity of O(n log n), which signifies that its performance grows in a linearithmic fashion with the input size. This is different from O(log n), where the growth is purely logarithmic. So it isn't as fast as O(log n) but it's faster than O(n), especially for large data sets. It's definitely faster than the other algorithms we've looked at, which had complexities of O(n^2).
+This is the most efficient solution that we've looked at so far. It has a time complexity 
+of O(n log n), which signifies that its performance grows in a linearithmic fashion with 
+the input size. This is different from O(log n), where the growth is purely logarithmic. 
+So it isn't as fast as O(log n) but it's faster than O(n), especially for large data sets. 
+It's definitely faster than the other algorithms we've looked at, which had complexities 
+of O(n^2).
 
 Let's look at an example:
 
@@ -10814,7 +11001,8 @@ We split each subarray in half again:
 [5][3][7][1];
 ```
 
-Now that we can not go any further, we start merging each subarray while sorting them in the process:
+Now that we can not go any further, we start merging each subarray while sorting them in 
+the process:
 
 ```js
 [3, 5][(1, 7)];
@@ -10834,11 +11022,14 @@ In the next lesson, we will implement a merge sort algorithm in JavaScript.
 ## Challenge: Merge Sort Implementation
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Now that you're familiar with the Merge Sort algorithm, it's time to implement it in JavaScript. This algorithm is particularly efficient for large datasets, as it employs a divide-and-conquer strategy.
+Now that you're familiar with the Merge Sort algorithm, it's time to implement it in 
+JavaScript. This algorithm is particularly efficient for large datasets, as it employs a 
+divide-and-conquer strategy.
 
 ## Instructions
 
-Implement a function called `mergeSort` that takes an array of numbers as an argument and returns a sorted array using the Merge Sort algorithm.
+Implement a function called `mergeSort` that takes an array of numbers as an argument 
+and returns a sorted array using the Merge Sort algorithm.
 
 ### Function Signature
 
@@ -10865,13 +11056,19 @@ console.log(mergeSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
 
 ### Notes
 
-- The Merge Sort algorithm divides the input array into smaller sub-arrays, sorts them separately, and then merges them back together in the correct order.
+- The Merge Sort algorithm divides the input array into smaller sub-arrays, sorts them 
+  separately, and then merges them back together in the correct order.
 
 ### Hints
 
-- Divide & Conquer: The key idea behind this algorithm is to recursively divide the array into two halves until the base case is reached (when the array has only one or zero elements). Then, merge the smaller arrays back together while sorting them.
-- Merge Function: Implement a helper function called `merge` that takes two sorted arrays and merges them into a single sorted array. This function is crucial for the merge step of the algorithm.
-- Recursive Sorting: In the main `mergeSort` function, divide the array into two halves and recursively sort each half. Then, use the `merge` function to merge the sorted halves.
+- Divide & Conquer: The key idea behind this algorithm is to recursively divide the array 
+  into two halves until the base case is reached (when the array has only one or zero 
+  elements). Then, merge the smaller arrays back together while sorting them.
+- Merge Function: Implement a helper function called `merge` that takes two sorted arrays 
+  and merges them into a single sorted array. This function is crucial for the merge step 
+  of the algorithm.
+- Recursive Sorting: In the main `mergeSort` function, divide the array into two halves 
+  and recursively sort each half. Then, use the `merge` function to merge the sorted halves.
 
 ## Solutions
 
@@ -10966,13 +11163,23 @@ Feel free to customize the test cases according to your needs!
 ## Quick Sort Algorithm
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-The Quick Sort algorithm is a highly efficient divide-and-conquer sorting algorithm. It works by selecting a "pivot" element from the array and partitioning the other elements into two subarrays according to whether they are less than or greater than the pivot. The subarrays are then sorted recursively.
+The Quick Sort algorithm is a highly efficient divide-and-conquer sorting algorithm. It 
+works by selecting a "pivot" element from the array and partitioning the other elements 
+into two subarrays according to whether they are less than or greater than the pivot. 
+The subarrays are then sorted recursively.
 
-Quick Sort offers an average time complexity of O(n log n), making it one of the fastest sorting algorithms available. It's especially efficient for larger datasets. Quick sort has a better space complexity than a merge sort because merge Sort requires additional memory space to create temporary arrays during the merging process. When merging two subarrays, a temporary array is needed to hold the merged elements before they are placed back into the original array. This additional memory usage can be a drawback for Merge Sort, especially when dealing with very large arrays.
+Quick Sort offers an average time complexity of O(n log n), making it one of the fastest 
+sorting algorithms available. It's especially efficient for larger datasets. Quick sort 
+has a better space complexity than a merge sort because merge Sort requires additional 
+memory space to create temporary arrays during the merging process. When merging two 
+subarrays, a temporary array is needed to hold the merged elements before they are 
+placed back into the original array. This additional memory usage can be a drawback for 
+Merge Sort, especially when dealing with very large arrays.
 
 ### Example
 
-Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and choosing the pivot as `6`.
+Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and choosing 
+the pivot as `6`.
 
 <img src="../images/quicksort.png" width="600" />
 
@@ -11033,11 +11240,14 @@ Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and 
 <h1 id="js102">102. Challenge: Quick Sort Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Now that you're familiar with the Quick Sort algorithm, it's time to implement it in JavaScript. This algorithm is highly efficient and employs a divide-and-conquer strategy to sort an array.
+Now that you're familiar with the Quick Sort algorithm, it's time to implement it in 
+JavaScript. This algorithm is highly efficient and employs a divide-and-conquer strategy 
+to sort an array.
 
 ## Instructions
 
-Implement a function called `quickSort` that takes an array of numbers as an argument and returns a sorted array using the Quick Sort algorithm.
+Implement a function called `quickSort` that takes an array of numbers as an argument and 
+returns a sorted array using the Quick Sort algorithm.
 
 ### Function Signature
 
@@ -11064,14 +11274,23 @@ console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
 
 ### Notes
 
-- The Quick Sort algorithm involves selecting a pivot element, partitioning the array, and recursively sorting the subarrays on either side of the pivot.
-- While Quick Sort's average-case time complexity is O(n log n), it can have a worst-case time complexity of O(n^2) if not optimized. Optimized pivot selection methods, such as choosing the median of three random elements, help mitigate this worst-case scenario.
+- The Quick Sort algorithm involves selecting a pivot element, partitioning the array, 
+  and recursively sorting the subarrays on either side of the pivot.
+- While Quick Sort's average-case time complexity is O(n log n), it can have a worst-
+  case time complexity of O(n^2) if not optimized. Optimized pivot selection methods, 
+  such as choosing the median of three random elements, help mitigate this worst-case 
+  scenario.
 
 ### Hints
 
-- Pivot Selection: The choice of pivot significantly affects the efficiency of Quick Sort. Common pivot selection strategies include choosing the first, last, or middle element, or using the median of three random elements.
-- Partitioning: Implement a partitioning step that rearranges the elements such that elements less than the pivot are on the left, and elements greater than the pivot are on the right.
-- Recursion: Recursively apply the Quick Sort algorithm to the subarrays on either side of the pivot.
+- Pivot Selection: The choice of pivot significantly affects the efficiency of Quick 
+  Sort. Common pivot selection strategies include choosing the first, last, or middle 
+  element, or using the median of three random elements.
+- Partitioning: Implement a partitioning step that rearranges the elements such that 
+  elements less than the pivot are on the left, and elements greater than the pivot 
+  are on the right.
+- Recursion: Recursively apply the Quick Sort algorithm to the subarrays on either side 
+  of the pivot.
 
 ## Solutions
 
@@ -11104,12 +11323,17 @@ function quickSort(arr) {
 
 ### Explanation
 
-- The `quickSort` function is the main sorting function that implements the quick sort algorithm.
-- If the length of the array is 1 or less, it is already sorted, so we return the array as is.
+- The `quickSort` function is the main sorting function that implements the quick sort 
+  algorithm.
+- If the length of the array is 1 or less, it is already sorted, so we return the array 
+  as is.
 - Otherwise, we choose a pivot element (in this case, the last element of the array).
-- We create two arrays: `left` to store elements less than the pivot, and `right` to store elements greater than the pivot.
-- We iterate through the array and partition the elements into the `left` and `right` arrays based on their relationship to the pivot.
-- Finally, we recursively apply `quickSort` to the `left` and `right` arrays, and then concatenate them along with the pivot to get the sorted array.
+- We create two arrays: `left` to store elements less than the pivot, and `right` to 
+  store elements greater than the pivot.
+- We iterate through the array and partition the elements into the `left` and `right` 
+  arrays based on their relationship to the pivot.
+- Finally, we recursively apply `quickSort` to the `left` and `right` arrays, and then 
+  concatenate them along with the pivot to get the sorted array.
 
 ### Test Cases
 
@@ -11149,5 +11373,6 @@ Feel free to customize the test cases according to your needs!
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 the end...
-Created 1/4/2024 6:28pm
-Last Updated 1/4/2024 7:29pm
+Created 1/4/2025 6:28pm
+Last Updated 1/4/2025 7:29pm
+Last Updated 1/5/2025 7:47pm
