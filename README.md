@@ -124,12 +124,12 @@ https://github.com/bbauska/JS-CellarDoor
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js01">01. Challenge: Count Vowels</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-## Instructions
+<h2>Instructions</h2>
 
 Write a function called `countVowels` that takes in a string and returns the number of 
 vowels in the string.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -140,7 +140,7 @@ vowels in the string.
 function countVowels(str: string): number;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 countVowels('hello'); // 2
@@ -148,14 +148,14 @@ countVowels('why'); // 0
 countVowels('mississippi'); // 4
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - It shouldn't matter if the input string is uppercase or lowercase
 
-### Hints
+<h3>Hints</h3>
 
 
-## Solutions
+<h2>Solutions</h2>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -183,7 +183,7 @@ function countVowels(str) {
 }
 ```
 
-## Explanation
+<h2>Explanation</h2>
 
 - Make the string lowercase. This is because we want to count both uppercase and 
   lowercase vowels.
@@ -196,7 +196,7 @@ function countVowels(str) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Counting vowels in a string', () => {
@@ -212,12 +212,12 @@ test('Counting vowels in a string', () => {
 A palindrome is a word, phrase, number, or other sequence of characters which reads the 
 same backward or forward. An example of a palindrome is "madam".
 
-## Instructions
+<h2>Instructions</h2>
 
 Write a function called `isPalindrome` that takes in a string and returns `true` if the 
 string is a palindrome and `false` if it is not.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -228,7 +228,7 @@ string is a palindrome and `false` if it is not.
 function isPalindrome(str: string): boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```JS
 isPalindrome('madam') // true
@@ -237,12 +237,12 @@ isPalindrome('hello') // false
 isPalindrome('') // true
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input string will only contain lowercase letters and spaces
 - The function should ignore spaces when checking if the string is a palindrome
 
-### Hints
+<h3>Hints</h3>
 
 - You can solve this in a way that is similar to the reverse string challenge with some 
 added steps.
@@ -250,7 +250,7 @@ added steps.
 comparing it to the reversed string. There are multiple ways to do this, but one way is 
 to use the `replace` method with a regular expression of `/[^a-z0-9]/g`.
 
-## Solutions
+<h2>## Solutions</h2>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -265,7 +265,7 @@ function isPalindrome(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Take the input string and make it lowercase.
 - Use the `replace` method with a regular expression to remove any non-alphanumeric 
@@ -321,7 +321,7 @@ function reverseString(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 This solution is a bit tougher.
 
@@ -340,7 +340,7 @@ compare it to the original string to see if it is a palindrome.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Checking for palindrome strings', () => {
@@ -355,14 +355,14 @@ test('Checking for palindrome strings', () => {
 <h1 id="js03">03. Challenge: Reverse String</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h2>Instructions</h2>
 
 Write a function called `reverseString` that takes in a string and returns the reverse 
 of that string. In this section, we are really focusing on loops without using any 
 built-in methods, so try that first. If you get stuck, you can always use the built-in 
 methods to solve the problem.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -373,7 +373,7 @@ methods to solve the problem.
 function reverseString(str: string): string;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```JS
 reverseString('hello') // 'olleh'
@@ -381,16 +381,16 @@ reverseString('world') // 'dlrow'
 reverseString('') // ''
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input string will only contain lowercase letters and spaces
 
-### Hints
+<h3>Hints</h3>
 
 - You can also do this without using any of the built-in methods and just use a for loop.
 - You could also use the methods `split`, `reverse`, and `join` to solve this problem.
 
-## Solutions
+<h2>Solutions</h2>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -409,7 +409,7 @@ function reverseString(str) {
 }
 ```
 
-## Explanation
+<h2>Explanation</h2>
 
 - Create a variable called `reversed` and set it equal to an empty string.
 - Create a for loop that starts at the last index of `str` and decrements by 1 until it reaches 0.
@@ -429,7 +429,7 @@ function reverseString(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 We created a function called `reverseString` that takes in a string called `str`. We 
 then return the result of chaining the `split`, `reverse`, and `join` methods on `str`.
@@ -446,7 +446,7 @@ into a string. ('olleh')
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```JS
 test('Reversing a string', () => {
@@ -465,7 +465,7 @@ test('Reversing a string', () => {
 Write a function called `titleCase` that takes in a string and returns the string with 
 the first letter of each word capitalized.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -476,7 +476,7 @@ the first letter of each word capitalized.
 function titleCase(str: string): string;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 titleCase("I'm a little tea pot"); // I'm A Little Tea Pot
@@ -484,11 +484,11 @@ titleCase('sHoRt AnD sToUt'); // Short And Stout
 titleCase('HERE IS MY HANDLE HERE IS MY SPOUT'); // Here Is My Handle Here Is My Spout
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - You may assume that each word consists of only letters and spaces
 
-### Hints
+<h3>Hints</h3>
 
 ## Solutions
 
@@ -507,7 +507,7 @@ function titleCase(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Split the string into an array of words and put them all in lowercase.
 - Iterate through the array and capitalize the first letter of each word by using the 
@@ -541,7 +541,7 @@ matched letter.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Converting string to title case', () => {
@@ -560,7 +560,7 @@ test('Converting string to title case', () => {
 Write a function called `findMaxNumber` that takes in an array of numbers and returns 
 the largest number in the array.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -571,7 +571,7 @@ the largest number in the array.
 function findMaxNumber(arr: number[]): number;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 findMaxNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // 10
@@ -579,7 +579,7 @@ findMaxNumber([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]); // 10
 findMaxNumber([1, 2, 3, 4, 5, 10, 9, 8, 7, 6]); // 10
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - There is a very easy way to do this using a specific built-in method. I would 
   suggest not doing it that way. Try to solve this problem using a `for` loop.
@@ -599,7 +599,7 @@ function findMaxNumber(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 There is not too much explanation needed here.
 
@@ -624,7 +624,7 @@ function findMaxNumber(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Create a variable called `max` and setting it equal to the first element in the array.
 - Loop through the array starting at the second element.
@@ -634,7 +634,7 @@ function findMaxNumber(arr) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Finding the maximum number in an array', () => {
@@ -653,7 +653,7 @@ test('Finding the maximum number in an array', () => {
 Write a function called `removeDuplicates` that takes in an array and returns a new 
 array with duplicates removed.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -664,7 +664,7 @@ array with duplicates removed.
 function removeDuplicates(arr: any[]): any[];
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 removeDuplicates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -672,11 +672,11 @@ removeDuplicates([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]); // [1]
 removeDuplicates([1, 2, 3, 4, 5, true, 1, 'hello' 2, 3, 'hello', true]); // [1, 2, 3, 4, 5, true, 'hello']
 ```
 
-### Constraints
+<h3>Constraints
 
 - The array can contain any data type
 
-### Hints
+<h3>Hints
 
 - You can do this with a traditional 'for' loop, but if you are familiar with the `Set` 
   object, you can use that to solve this problem. Maybe try both ways!
@@ -702,7 +702,7 @@ function removeDuplicates(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Create a new array called `uniqueArr`.
 - Create a `for` loop that will loop through each element in the array and check if the 
@@ -723,7 +723,7 @@ function removeDuplicates(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 This solution is extremely simple. We take in an array with duplicates and we create a 
 new `Set` from that array. We then convert that `Set` back into an array and return it.
@@ -733,7 +733,7 @@ we create a `Set` from an array, it will remove all the duplicates automatically
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Removing duplicates from an array', () => {
@@ -756,7 +756,7 @@ test('Removing duplicates from an array', () => {
 Write a function called `countOccurrences()` that takes in a string and a character and 
 returns the number of occurrences of that character in the string.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -768,19 +768,19 @@ returns the number of occurrences of that character in the string.
 function countOccurrences(str: string, char: string): number;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 countOccurrences('hello', 'l'); // 2
 countOccurrences('hello', 'z'); // 0
 ```
 
-### Constraints
+<h3>Constraints
 
 - Lowercase and uppercase characters are considered different characters. If you want, 
   you can make the function case insensitive
 
-### Hints
+<h3>Hints
 
 - You can loop through a string just like you can loop through an array.
 - You can use the `++` operator to increment a variable.
@@ -823,7 +823,7 @@ function countOccurrences(str, char) {
 
 ```
 
-### Explanation
+<h3>Explanation
 
 - Initialize a `count` variable to 0.
 
@@ -844,7 +844,7 @@ function countOccurrences(str, char) {
 const countOccurrences = (str, char) => str.split(char).length - 1;
 ```
 
-### Explanation
+<h3>Explanation
 
 - Utilize the split method of the string to split it into an array of substrings based 
   on the given character.
@@ -860,7 +860,7 @@ operations. The difference is negligible, but it is still good to be aware of.
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Count Occurrences of a Character', () => {
@@ -879,7 +879,7 @@ test('Count Occurrences of a Character', () => {
 Write a function called `calculator` that takes in 2 numbers and an operator and 
 returns the result of the calculation.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -892,7 +892,7 @@ returns the result of the calculation.
 function calculator(num1: number, num2: number, operator: string): number;
 ```
 
-### Examples
+<h3>Examples
 
 ```JS
 calculator(1, 2, '+') // 3
@@ -901,12 +901,12 @@ calculator(2, 2, '*') // 4
 calculator(10, 5, '/') // 2
 ```
 
-### Constraints
+<h3>Constraints
 
 - The function must return a number
 - The function must throw or log an error if an invalid operator is given
 
-### Hints
+<h3>Hints
 
 - You can use `if` statements or `switch` statements to determine which operator was given.
 
@@ -915,7 +915,7 @@ calculator(10, 5, '/') // 2
 <details open>
   <summary>Click For Solution 1</summary>
 
-#### Using a switch:
+#<h3>Using a switch:
 
 ```js
 function calculator(num1, num2, operator) {
@@ -942,7 +942,7 @@ function calculator(num1, num2, operator) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Created a function called `calculator` that takes in three arguments: `num1`, 
   `num2`, and `operator`.
@@ -955,7 +955,7 @@ function calculator(num1, num2, operator) {
 <details open>
  <summary>Click For Solution 2</summary>
 
-#### Using an if statement:
+#<h3>Using an if statement:
 
 ```js
 function calculator(num1, num2, operator) {
@@ -977,7 +977,7 @@ function calculator(num1, num2, operator) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Create a function called `calculator` that takes in three arguments: `num1`, `num2`, 
   and `operator`.
@@ -987,7 +987,7 @@ function calculator(num1, num2, operator) {
 
  </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Performing arithmetic operations using the calculator function', () => {
@@ -1021,7 +1021,7 @@ This is another very basic practice challenge just to get you into the hang of t
 
 Write a function called `getSum` that takes in two numbers and returns the sum of those two numbers.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1033,7 +1033,7 @@ Write a function called `getSum` that takes in two numbers and returns the sum o
 function getSum(a: number, b: number): number;
 ```
 
-### Examples
+<h3>Examples
 
 ```JS
 getSum(1, 2) // 3
@@ -1042,11 +1042,11 @@ getSum(2, 2) // 4
 getSum(10, 5) // 15
 ```
 
-### Constraints
+<h3>Constraints
 
 - The function must return a number
 
-### Hints
+<h3>Hints
 
 - You can use the `+` operator to add two numbers together.
 
@@ -1061,14 +1061,14 @@ function getSum(a, b) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 This is a pretty simple challenge. We created a function that takes in two values and we 
 added those two values together. We then returned the sum of those two values.
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```JS
 test('Calculating the sum of two numbers', () => {
@@ -1094,7 +1094,7 @@ This is a practice challenge to show you how things are set up and how to test, 
 
 Write a function called `helloWorld` that returns a string of 'Hello World!'.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1104,19 +1104,19 @@ Write a function called `helloWorld` that returns a string of 'Hello World!'.
 function helloWorld(): string;
 ```
 
-### Examples
+<h3>Examples
 
 ```JS
 helloWorld() // 'Hello World!'
 ```
 
-### Constraints
+<h3>Constraints
 
 I will put any constraints here. They will vary depending on the challenge.
 
 - The function must return a string
 
-### Hints
+<h3>Hints
 
 - I will put a couple hints here. You can choose to use them or not.
 
@@ -1131,14 +1131,14 @@ function printHelloWorld() {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 I will put the explanation to the solution here. The length and depth of the explanation 
 will vary depending on the challenge.
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 The Jest tests will go here. They are already included in the course files. You just need 
 to run `npm test`. Sometimes I will also put manual tests here.
@@ -1160,7 +1160,7 @@ Write a function called `arrayIntersection` that takes in two arrays and returns
 containing the intersection of the two input arrays (i.e., the common elements that appear 
 in both arrays).
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1172,7 +1172,7 @@ in both arrays).
 function arrayIntersection(arr1: number[], arr2: number[]): number[];
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 arrayIntersection([1, 2, 3, 4, 5], [1, 3, 5, 7, 9]); // should return [1, 3, 5]
@@ -1180,12 +1180,12 @@ arrayIntersection([1, 1, 1, 1, 1], [2, 2, 2, 2, 2]); // should return []
 arrayIntersection([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]); // should return [1, 2, 3, 4, 5]
 ```
 
-### Constraints
+<h3>Constraints
 
 - The input arrays can contain any number of elements
 - The input arrays can contain any positive integer
 
-### Hints
+<h3>Hints
 
 - You could use a for loop to iterate through the first array and check if each element 
   is in the second array using the `includes` method.
@@ -1212,7 +1212,7 @@ function arrayIntersection(arr1, arr2) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Iterate through the first array
 - For each element, check if it is in the second array using the `includes` method
@@ -1244,7 +1244,7 @@ function arrayIntersection(arr1, arr2) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Create a new Set from the first array
 - Iterate through the second array and check if each element is in the set using the `has` method
@@ -1253,7 +1253,7 @@ function arrayIntersection(arr1, arr2) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Finding array intersection', () => {
@@ -1280,7 +1280,7 @@ The function should return a string formatted as follows:
 - If three people like it, it should return `'{name1}, {name2} and {name3} like this'`
 - If more than three people like it, it should return `'{name1}, {name2} and {x} others like this'`
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1291,7 +1291,7 @@ The function should return a string formatted as follows:
 function displayLikes(names: string[]): string;
 ```
 
-### Examples
+<h3>Examples
 
 ```JS
 displayLikes([]) // 'no one likes this'
@@ -1302,11 +1302,11 @@ displayLikes(['Alex', 'Jacob', 'Mark', 'Max']) // 'Alex, Jacob and 2 others like
 displayLikes(['Alex', 'Jacob', 'Mark', 'Max', 'Jill']) // 'Alex, Jacob and 3 others like this'
 ```
 
-### Constraints
+<h3>Constraints
 
 - The input array will only contain strings
 
-### Hints
+<h3>Hints
 
 ## Solutions
 
@@ -1331,7 +1331,7 @@ function displayLikes(names) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 This is pretty simple as it just requires a bunch of if statements. We could also use a switch statement here, but it would be a bit more verbose.
 
@@ -1340,7 +1340,7 @@ This is pretty simple as it just requires a bunch of if statements. We could als
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Display Likes', () => {
@@ -1368,7 +1368,7 @@ test('Display Likes', () => {
 Write a function called `findMissingNumber` that takes in an array of unique numbers from 1 to n 
 (inclusive), where one number is missing. It should return the missing number.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1379,7 +1379,7 @@ Write a function called `findMissingNumber` that takes in an array of unique num
 function findMissingNumber(arr: number[]): number;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 findMissingNumber([1, 2, 3, 4, 6, 7, 8, 9, 10]); // 5
@@ -1387,12 +1387,12 @@ findMissingNumber([10, 8, 6, 7, 5, 4, 2, 3, 1]); // 9
 findMissingNumber([10, 5, 1, 2, 4, 6, 8, 3, 9]); // 7
 ```
 
-### Constraints
+<h3>Constraints
 
 - If an empty array is passed in, it should return `1`
 - If nothing is passed in, it should return `undefined`
 
-### Hints
+<h3>Hints
 
 - Calculate the sum of the numbers from 1 to n (inclusive). The formula for this is `n * (n + 1) / 2`. `n` is the length of the array plus 1.
 - Calculate the sum of the numbers in the array.
@@ -1436,7 +1436,7 @@ function findMissingNumber(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 The `findMissingNumber` function takes in an array of unique numbers from 1 to n (inclusive), where one number is missing, and returns the missing number.
 
@@ -1452,7 +1452,7 @@ Again, you can use a for loop or the reduce method to calculate the sum of the n
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Finding the missing number', () => {
@@ -1470,7 +1470,7 @@ test('Finding the missing number', () => {
 
 Write a function called `findMissingLetter` that takes in an array of consecutive (increasing) letters as input and returns the missing letter in the array.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1481,7 +1481,7 @@ Write a function called `findMissingLetter` that takes in an array of consecutiv
 function findMissingLetter(arr: string[]): string;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 findMissingLetter(['a', 'b', 'c', 'd', 'f']); // => "e"
@@ -1489,12 +1489,12 @@ findMissingLetter(['O', 'Q', 'R', 'S']); // => "P"
 findMissingLetter(['t', 'u', 'v', 'w', 'x', 'z']); // => "y"
 ```
 
-### Constraints
+<h3>Constraints
 
 - The input array will only contain letters in one case (lower or upper)
 - If no letters are in the array, return an empty string
 
-### Hints
+<h3>Hints
 
 - You can put the alphabet in a string and use the `indexOf` method to get the index of a letter in the alphabet string.
 - Another approach would be to use the `charCodeAt` method to get the unicode value of a letter. 
@@ -1519,7 +1519,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Declare a variable `alphabet` and assign it a string of all the letters of the alphabet.
 - Declare a variable `startIndex` and assigned it the index of the first letter of the input array in the `alphabet` string.
@@ -1546,7 +1546,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Declare a variable `start` and assigned it the ASCII code of the first letter of the input array.
 - Loop through the input array and check if the ASCII code of the current letter minus the ASCII code of the previous letter is greater than 1.
@@ -1555,7 +1555,7 @@ function findMissingLetter(arr) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Find Missing Letter', () => {
@@ -1576,7 +1576,7 @@ Write a function called `areAllCharactersUnique` that takes in a string and retu
 `true` or `false` depending on whether all characters in the string are unique (i.e., 
 no character is repeated).
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1587,7 +1587,7 @@ no character is repeated).
 function areAllCharactersUnique(str: string): boolean;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 areAllCharactersUnique('abcdefg'); // true
@@ -1597,12 +1597,12 @@ areAllCharactersUnique(''); // true
 areAllCharactersUnique('a'); // true
 ```
 
-### Constraints
+<h3>Constraints
 
 - It should be case sensitive, so `a` and `A` are considered different characters
 - An empty string should return `true` by default
 
-### Hints
+<h3>Hints
 
 - You can use a for loop to iterate through the string and check if the current character is in the set or object.
 
@@ -1629,7 +1629,7 @@ function areAllCharactersUnique(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 -Initialize a new `Set` to keep track of the characters we've seen so far.
 
@@ -1662,7 +1662,7 @@ function areAllCharactersUnique(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 This solution is similar except we use an object instead of a `Set` to keep track of the 
 characters we've seen so far.
@@ -1676,7 +1676,7 @@ it means we haven't seen any characters more than once.
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Unique Characters in a String', () => {
@@ -1707,7 +1707,7 @@ The function should return an array of objects, where each object represents a s
 - `sum`: The sum of the two dice values.
 - `result`: The result of the roll, which can be "win", "lose", or "roll again".
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1718,7 +1718,7 @@ The function should return an array of objects, where each object represents a s
 function diceGameSimulation(numSimulations: number): Array;
 ```
 
-### Example
+<h3>Example
 
 ```js
 console.log(diceGameSimulation(3));
@@ -1729,7 +1729,7 @@ console.log(diceGameSimulation(3));
 */
 ```
 
-### Hints
+<h3>Hints
 
 - You can use the `Math.random()` function to simulate rolling a die. It returns a random number between 0 (inclusive) and 1 (exclusive).
 
@@ -1769,7 +1769,7 @@ function diceGameSimulation(numSimulations) {
 module.exports = diceGameSimulation;
 ```
 
-### Explanation
+<h3>Explanation
 
 - The `rollDice` function simulates rolling a single die. It uses `Math.random()` to generate a random decimal between 0 (inclusive) and 1 (exclusive), multiplies it by 6, rounds down, and adds 1 to get a random number between 1 and 6.
 - The `diceGameSimulation` function simulates the dice game for the specified number of simulations. It uses the `rollDice` function to generate random dice values and calculates the sum of the two dice.
@@ -1779,7 +1779,7 @@ module.exports = diceGameSimulation;
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Dice Game Simulation', () => {
@@ -1805,7 +1805,7 @@ test('Dice Game Simulation', () => {
 
 Write a function called `formatPhoneNumber` that takes in an array of numbers and returns a string representing the phone number formed by concatenating the numbers in the specified format.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1816,7 +1816,7 @@ Write a function called `formatPhoneNumber` that takes in an array of numbers an
 function formatPhoneNumber(numbers: number[]): string;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); // => "(123) 456-7890"
@@ -1824,12 +1824,12 @@ formatPhoneNumber([5, 1, 9, 5, 5, 5, 4, 4, 6, 8]); // => "(519) 555-4468"
 formatPhoneNumber([3, 4, 5, 5, 0, 1, 2, 5, 2, 7]); // => "(345) 501-2527"
 ```
 
-### Constraints
+<h3>Constraints
 
 - The input array will always have 10 numbers
 - The numbers can be any integer from 0 to 9
 
-### Hints
+<h3>Hints
 
 - You can use the `Array.join` method to concatenate the numbers in the array.
 - You can use the `Array.slice` method to get a subset of the array.
@@ -1849,7 +1849,7 @@ function formatPhoneNumber(numbers) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Create 3 variables to store the area code, prefix, and line number.
 - Use the `Array.slice` method to get a subset of the array.
@@ -1870,7 +1870,7 @@ function formatPhoneNumber(numbers) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 - Created a variable to store the numbers in the array concatenated together.
 - Use the `String.substring` method to get a subset of the string.
@@ -1889,13 +1889,13 @@ const formatPhoneNumber = (numbers) =>
     .join('')}`;
 ```
 
-### Explanation
+<h3>Explanation
 
 This is similar to the second solution, but we used an arrow function and Array.slice method chaining.
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Format Phone Number', () => {
@@ -1919,7 +1919,7 @@ test('Format Phone Number', () => {
 
 Write a function called `validateEmail` that takes in a string and returns whether the string is a valid email address. For the purposes of this challenge, a valid email address is defined as a string that contains an `@` symbol and a `.` symbol.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -1930,14 +1930,14 @@ Write a function called `validateEmail` that takes in a string and returns wheth
 function validateEmail(email: string): boolean;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 validateEmail('john@gmail.com'); // true
 validateEmail('john@gmail'); // false
 ```
 
-### Hints
+<h3>Hints
 
 - If you know regular expressions, this is a great place to use them. I am going to give you two solutions. One uses regular expressions and one doesn't.
 
@@ -1955,7 +1955,7 @@ function validateEmail(email) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 The regular expression is a bit complicated, but it is a good example of how powerful regular expressions can be. Let's break it down:
 
@@ -1998,7 +1998,7 @@ function validateEmail(email) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 This solution is a bit more complicated, but it doesn't use regular expressions.
 
@@ -2012,7 +2012,7 @@ Finally, if none of the conditions are false, we return `true`.
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Valid Email Addresses', () => {
@@ -2136,7 +2136,7 @@ Let's start off with a fairly simple challenge, but one that uses a few differen
 methods. Write a function called `sumOfEvenSquares` that takes an array of numbers and 
 returns the sum of the squares of the even numbers in the array.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -2147,7 +2147,7 @@ returns the sum of the squares of the even numbers in the array.
 function sumOfEvenSquares(numbers: number[]): number
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 sumOfEvenSquares([1, 2, 3, 4, 5]); // 20 (2^2 + 4^2)
@@ -2155,7 +2155,7 @@ sumOfEvenSquares([-1, 0, 1, 2, 3, 4]); // 20 (0^2 + 2^2 + 4^2)
 sumOfEvenSquares([]); // 0
 ```
 
-### Hints
+<h3>Hints
 
 - Use the `filter` method to select the even numbers from the array.
 - Then, use the `map` method to square each even number.
@@ -2176,7 +2176,7 @@ function sumOfEvenSquares(numbers) {
 }
 ```
 
-### Explanation
+<h3>Explanation
 
 You can format this so many different ways. This is just one example.
 
@@ -2207,7 +2207,7 @@ const sumOfEvenSquares = (numbers) =>
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Sum of even squares', () => {
@@ -2236,7 +2236,7 @@ const products = [
 ];
 ```
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -2252,7 +2252,7 @@ const products = [
 function calculateTotalSalesWithTax(products: { name: string, price: number, quantity: number }[], taxRate: number): number;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 calculateTotalSalesWithTax(
@@ -2275,14 +2275,14 @@ calculateTotalSalesWithTax(
 ); // 42 (40 + 5% tax)
 ```
 
-### Constraints
+<h3>Constraints
 
 - The input array will contain at least one product object.
 - The price and quantity values will be positive numbers.
 - The tax rate will be a positive number less than 100.
 - Round to 2 decimal places.
 
-### Hints
+<h3>Hints
 
 - Calculate the total sales amount before applying the tax, and then add the tax amount to it.
 
@@ -2323,7 +2323,7 @@ function calculateTotalSalesWithTax(products, taxRate) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Calculating total sales amount with tax', () => {
@@ -2369,7 +2369,7 @@ If two words score the same, return the word that appears earliest in the origin
 
 All letters will be lowercase and all inputs will be valid.
 
-### Function Signature
+<h3>Function Signature
 
 ```js
 /**
@@ -2380,7 +2380,7 @@ All letters will be lowercase and all inputs will be valid.
 function highestScoringWord(str: string): string;
 ```
 
-### Examples
+<h3>Examples
 
 ```js
 highestScoringWord('man i need a taxi up to ubud'); // 'taxi'
@@ -2388,11 +2388,11 @@ highestScoringWord('what time are we climbing up the volcano'); // 'volcano'
 highestScoringWord('take me to semynak'); // 'semynak'
 ```
 
-### Constraints
+<h3>Constraints
 
 - The input string will only contain lowercase letters and spaces. It can not include numbers, special characters, or punctuation.
 
-### Hints
+<h3>Hints
 
 - You can use the `split` method to separate the words.
 - You can use the `map` method to calculate the score for each word.
@@ -2482,7 +2482,7 @@ function highestScoringWord(str) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases
 
 ```js
 test('Finding the highest scoring word', () => {
@@ -2507,7 +2507,7 @@ they are valid anagrams of each other. An anagram is a word or phrase formed by
 rearranging the letters of a different word or phrase, typically using all the original 
 letters exactly once.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2519,7 +2519,7 @@ letters exactly once.
 function validAnagrams(str1: string, str2: string): boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 validAnagrams('listen', 'silent'); // true
@@ -2527,7 +2527,7 @@ validAnagrams('hello', 'world'); // false
 validAnagrams('astronomer', 'moonstarer'); // true
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - Split the strings into arrays of characters, then reduce each array into an object of 
   character frequencies for the strings
@@ -2556,7 +2556,7 @@ function validAnagrams(str1, str2) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a variable `freqCount1` and assign it to the result of calling `reduce` on 
   `str1.split('')`. This will create an object that contains the frequency count of each 
@@ -2572,7 +2572,7 @@ function validAnagrams(str1, str2) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Checking for Valid Anagrams', () => {
@@ -2594,7 +2594,7 @@ hashtag-generated string according to the rules below. If the generated hashtag 
 is longer than 140 characters or the input/result is an empty string, the function 
 should return `false`.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2605,7 +2605,7 @@ should return `false`.
 function generateHashtag(str: string): string | boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```JS
 generateHashtag("JavaScript is awesome"); // "#JavaScriptIsAwesome"
@@ -2616,14 +2616,14 @@ generateHashtag("This is a very very very very very very very very very very ver
 generateHashtag(""); // false
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - Return `false` if the input string is empty or contains only whitespace characters.
 - Return `false` if the generated hashtag string is longer than 140 characters.
 - Every word in the hashtag should start with a capital letter.
 - The input string may contain leading/trailing whitespace characters.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the string manipulation methods `trim()`, `split()`, and `join()` to work 
   with the input string.
@@ -2656,7 +2656,7 @@ function generateHashtag(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Check if the input string is empty or contains only whitespace characters. If so, return `false`.
 - Split the input string into an array of words using the `split()` method. The `split()` 
@@ -2687,7 +2687,7 @@ function generateHashtag(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Split the input string into an array of words using the `split()` method.
 - Use the `reduce()` method to create the hashtag string. We are passing the `#` 
@@ -2709,7 +2709,7 @@ Write a function called `isValidIPv4` that takes a string as input and returns `
 the input is a valid IPv4 address in dot-decimal format, and `false` otherwise. An IPv4 
 address should consist of four octets, with values between 0 and 255, inclusive.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2720,7 +2720,7 @@ address should consist of four octets, with values between 0 and 255, inclusive.
 function isValidIPv4(input: string): boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 isValidIPv4('1.2.3.4'); // true
@@ -2731,11 +2731,11 @@ isValidIPv4('123.456.78.90'); // false
 isValidIPv4('123.045.067.089'); // false
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input will be a single string.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the `split()` method to break the string into parts based on the dot character.
 - You can use `every()` to check if all octets are within the valid range of 0 to 255.
@@ -2769,7 +2769,7 @@ function isValidIPv4(input) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Checking Valid IPv4 Addresses', () => {
@@ -2813,7 +2813,7 @@ const cars = [
 ];
 ```
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2831,7 +2831,7 @@ Each car object will have the following properties:
 - `year`: The year the car was manufactured (number).
 - `mileage`: The mileage of the car (number).
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 const cars = [
@@ -2851,13 +2851,13 @@ console.log(analysis);
 // }
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array `cars` will contain at most 100 car objects.
 - Each car object's `mileage` property will be a positive integer.
 - Result should be rounded to 2 decimal places.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the `reduce` method for most of the calculations.
 
@@ -2888,7 +2888,7 @@ function analyzeCarMileage(cars) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a variable `totalMileage` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the sum of the accumulator and the car's mileage. The initial value of `0` will be used as the initial value of the accumulator.
 - Create a variable `averageMileage` and initialize it to the result of dividing `totalMileage` by the length of the `cars` array.
@@ -2916,7 +2916,7 @@ Whatever we return from the callback for the `reduce` method will be the new val
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Analyzing Car Mileage Data', () => {
@@ -2962,7 +2962,7 @@ Write a function called `validatePassword` that takes in a string and validates 
 
 The function should return `true` if the password is valid according to the criteria, and `false` otherwise.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2973,7 +2973,7 @@ The function should return `true` if the password is valid according to the crit
 function validatePassword(password: string): boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 validatePassword('Abc12345'); // should return true
@@ -2982,12 +2982,12 @@ validatePassword('Pass'); // should return false (length less than 8 characters)
 validatePassword('HelloWorld'); // should return false (no digit)
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input password can contain any combination of letters and digits.
 - The input password can contain both uppercase and lowercase letters.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the `split` function to convert the string into an array of characters and then use the `some` function to check if at least one character meets a certain condition.
 
@@ -3016,7 +3016,7 @@ function validatePassword(password) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a variable called `isLengthValid` and assign it the value of `true` if the password is at least 8 characters long, and `false` otherwise.
 - Create a variable called `hasUppercase` and assign it the value of `true` if the password contains at least one uppercase letter, and `false` otherwise.
@@ -3028,7 +3028,7 @@ The `some` function is used to check if at least one character in the password m
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Password Validation', () => {
@@ -3049,7 +3049,7 @@ In the last section, we created a function called`findMissingLetter` that takes 
 
 I want to do that same thing using high order array methods. It is possible to do it using `map`, `filter`, `reduce`, or `forEach`.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3060,7 +3060,7 @@ I want to do that same thing using high order array methods. It is possible to d
 function findMissingLetter(arr: string[]): string;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 findMissingLetter(['a', 'b', 'c', 'd', 'f']); // => "e"
@@ -3068,13 +3068,13 @@ findMissingLetter(['O', 'Q', 'R', 'S']); // => "P"
 findMissingLetter(['t', 'u', 'v', 'w', 'x', 'z']); // => "y"
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array will always contain at least two letters
 - The input array will only contain letters in one case (lower or upper)
 - Use only high order array methods. No for loops allowed.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use `map` to get an array of the unicode numbers (using charCodeAt) of the letters in the input array and then use `find` to find the missing character code.
 - You can also use `filter` as well as `reduce`
@@ -3103,7 +3103,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Declare a variable `start` and assigned it the ASCII code of the first letter of the input array.
 - Declare a variable `missingCharCode` and assigned it the result of calling the `map` method on the input array. The callback function passed to the `map` method takes in a letter and returns the ASCII code of that letter.
@@ -3133,7 +3133,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Declare a variable `missingCharCode` and assigned it the result of calling the `filter` method on the input array.
 - The callback function passed to the `filter` method takes in a letter and its index and checks if the current letter is the first letter in the array. If it is, it returns `false`. If it is not, it checks if the current letter's ASCII code minus the previous letter's ASCII code is greater than 1. If it is, it returns `true`. If it is not, it returns `false`.
@@ -3162,7 +3162,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Declare a variable `start` and assigned it the ASCII code of the first letter of the input array.
 - Declare a variable `missingCharCode` and assigned it the result of calling the `reduce` method on the input array. The callback function passed to the `reduce` method takes in an accumulator and a letter. The accumulator is the missing ASCII code. The callback function checks if the current ASCII code minus the previous ASCII code is greater than 1 and if the accumulator is `null`. If it is, it assigns the missing ASCII code to the accumulator. It then assigns the current ASCII code to the `start` variable. It then returns the accumulator.
@@ -3171,7 +3171,7 @@ function findMissingLetter(arr) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Find Missing Letter', () => {
@@ -3208,7 +3208,7 @@ However, recursion can really minimize the amount of code needed and can be a ve
 
 Both recursion and iteration have their strengths and weaknesses, and the choice between them depends on the problem you're trying to solve and the code readability and efficiency you're aiming for.
 
-#### When to use which
+<h4>When to use which</h4>
 
 This really depends on the problem, the developer and many other factors, but in general:
 
@@ -3327,7 +3327,7 @@ function sumUpTo(n) {
 
 Write a function called `reverseString` that takes in a string and returns the reversed version of the string. Be sure to use recursion in your solution.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3348,7 +3348,7 @@ reverseString('a'); // should return 'a'
 reverseString('racecar'); // should return 'racecar'
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - As a base case, you can check if the string is empty and return an empty string if so.
 - You can use recursion to reverse the string by recursively calling the function with the substring starting from the second character and then concatenating the first character at the end.
@@ -3369,7 +3369,7 @@ function reverseString(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 The `reverseString` function uses recursion to reverse the string.
 
@@ -3379,7 +3379,7 @@ For example, if the input is `'hello'`, the function first calls itself with `'e
 
 It is important to have that base case of an empty string, otherwise the function will continue to call itself with substrings of the original string until it runs out of memory and crashes.
 
-#### More Explanation
+<h4>More Explanation</h4>
 
 Let's break it down a little more...
 
@@ -3408,7 +3408,7 @@ const reverseString = (str) =>
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Reversing a string', () => {
@@ -3451,7 +3451,7 @@ So we can see that `F(2) = 1 + 0 = 1`, `F(3) = 1 + 1 = 2`, `F(4) = 2 + 1 = 3`, a
 
 Write a function called `fibonacci` that takes in a number and returns the number at that index of the Fibonacci sequence.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3462,7 +3462,7 @@ Write a function called `fibonacci` that takes in a number and returns the numbe
 function fibonacci(num: number): number;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 fibonacci(4); // 3
@@ -3470,11 +3470,11 @@ fibonacci(6); // 8
 fibonacci(10); // 55
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input number will always be a positive integer
 
-### Hints
+<h3>Hints</h3>
 
 - You know that the formula is `F(n) = F(n-1) + F(n-2)`. ` F`` is the function, and  `n` is the number in the sequence.
 - You know that the first two numbers in the sequence are `0` and `1`. So if the number is less than 2, you can return the number.
@@ -3494,7 +3494,7 @@ function fibonacci(num) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - We have what we call the `base case`, which is when the number is less than 2.
 - If this is true, we return the number.
@@ -3527,7 +3527,7 @@ const fibonacci = (num) =>
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 describe('fibonacci', () => {
@@ -3567,7 +3567,7 @@ The factorial function is commonly used in various mathematical and programming 
 
 Write a function called `factorial` that takes in a number and returns the factorial of that number.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3578,16 +3578,16 @@ Write a function called `factorial` that takes in a number and returns the facto
 function factorial(num: number): number;
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input number will always be a positive integer
 
-### Hints
+<h3>Hints</h3>
 
 - Check if the number is 0 or 1. If it is, return 1.
 - You can use recursion to calculate the factorial by multiplying the current number by the factorial of the previous number until you hit the base case.
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 factorial(0); // 1
@@ -3610,7 +3610,7 @@ function factorial(num) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 The factorial function calculates the factorial of a given number using recursion.
 
@@ -3641,7 +3641,7 @@ The final result is indeed 120, which is the correct factorial of 5.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Factorial of 0 should be 1', () => {
@@ -3665,7 +3665,7 @@ test('Factorial of 10 should be 3628800', () => {
 
 Write a function called `power` that takes in a `base` and an `exponent` and returns the result of raising the `base` to the power of the `exponent`. Use recursion to solve this problem.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3677,7 +3677,7 @@ Write a function called `power` that takes in a `base` and an `exponent` and ret
 function power(base: number, exponent: number): number;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 power(2, 3); // 8 (2^3 = 2 * 2 * 2 = 8)
@@ -3685,11 +3685,11 @@ power(5, 2); // 25 (5^2 = 5 * 5 = 25)
 power(3, 4); // 81 (3^4 = 3 * 3 * 3 * 3 = 81)
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The base and exponent will always be positive integers
 
-### Hints
+<h3>Hints</h3>
 
 - Remember that any number raised to the power of 0 is 1. This should give you the base case
 - Think about how you can break down the problem into smaller parts using recursion
@@ -3709,7 +3709,7 @@ function power(base, exponent) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - The base case of the recursion is when the exponent is 0. In this case, we return 1 because any number raised to the power of 0 is 1.
 - For any other value of exponent, we break down the problem into smaller parts. To raise the base to the power of exponent, we can start by multiplying the base by the result of the function called with the same base and the exponent decremented by 1. This recursive step forms the essence of the algorithm, as it continually reduces the problem until it reaches the base case.
@@ -3745,7 +3745,7 @@ return 16 * 2 = 32
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Calculate Power of Base to Exponent', () => {
@@ -3767,7 +3767,7 @@ Let's practice using recursion by creating a function that calculates the sum of
 
 Write a function called `arraySum` that takes in an array of numbers and returns their sum using recursion.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3778,17 +3778,17 @@ Write a function called `arraySum` that takes in an array of numbers and returns
 function arraySum(arr: Array): number;
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain positive and/or negative integers.
 
-### Hints
+<h3>Hints</h3>
 
 - Think about what your base case might be with an array
 - Think about how you can break down the problem of calculating the sum of an array into smaller sub-problems.
 - You can use `arr.slice(1)` to create a new array excluding the first element.
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 arraySum([1, 2, 3, 4, 5]); // should return 15 (1 + 2 + 3 + 4 + 5 = 15)
@@ -3811,7 +3811,7 @@ function arraySum(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - The `arraySum` function uses a recursive approach to calculate the sum of an array of numbers.
 - The base case is when the array is empty. In this case, the function returns 0, as the sum of an empty array is 0.
@@ -3838,7 +3838,7 @@ So, the final result is 15, which is the sum of all the numbers in the original 
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Calculate Sum of Array Using Recursion', () => {
@@ -3856,7 +3856,7 @@ test('Calculate Sum of Array Using Recursion', () => {
 
 Write a function called `numberRange` that takes in a `startNum` and an `endNum` and returns an array of numbers from `startNum` to `endNum`, inclusive. Be sure to use recursion in your solution.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3868,7 +3868,7 @@ Write a function called `numberRange` that takes in a `startNum` and an `endNum`
 function numberRange(startNum: number, endNum: number): number[];
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 numberRange(1, 5); // should return [1, 2, 3, 4, 5]
@@ -3876,7 +3876,7 @@ numberRange(3, 10); // should return [3, 4, 5, 6, 7, 8, 9, 10]
 numberRange(7, 7); // should return [7] (only one number)
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - You can construct the array by first calling `numberRange` on a smaller range and then adding the `endNum` to the array.
 
@@ -3897,7 +3897,7 @@ function numberRange(startNum, endNum) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - We first add our base case and check if the `startNum` is equal to the `endNum`. If so, we return the `startNum` in an array.
 - For the recursive case, we set the variable `numbers` to the function with the startNum and one less than the `endNum`.
@@ -3917,7 +3917,7 @@ The function follows the same recursive process to build the array of numbers, s
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Calculating the range of numbers', () => {
@@ -3935,7 +3935,7 @@ test('Calculating the range of numbers', () => {
 
 Write a function called `flattenArray` that takes in an array containing nested arrays of integers and returns a new array with all the integers from the nested arrays flattened into a single level.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -3946,7 +3946,7 @@ Write a function called `flattenArray` that takes in an array containing nested 
 function flattenArray(arr: number[]): number[];
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 flattenArray([1, [2, 3], [4, 5, [6]]]); // should return [1, 2, 3, 4, 5, 6]
@@ -3958,12 +3958,12 @@ flattenArray([
 flattenArray([1, [2, [3, [4, [5]]]]]); // should return [1, 2, 3, 4, 5]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain nested arrays of any depth
 - The input array can contain any number of nested arrays
 
-### Hints
+<h3>Hints</h3>
 
 - You can use recursion to traverse the nested arrays and flatten them.
 - If the current element is an array, you can recursively call the `flattenArray` function on that element to flatten it further.
@@ -3989,7 +3989,7 @@ function flattenArray(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a variable `result` to store the flattened array.
 - Loop through the input array using a `for...of` loop.
@@ -4003,7 +4003,7 @@ When the input array arr is empty, the loop will not execute, and the function w
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Flatten Nested Arrays', () => {
@@ -4027,7 +4027,7 @@ test('Flatten Nested Arrays', () => {
 
 Write a function called `permutations` that takes in a string as a parameter and returns an array of all possible permutations of the characters in the string.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -4038,19 +4038,19 @@ Write a function called `permutations` that takes in a string as a parameter and
 function permutations(str: string): string[];
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 permutations('abc'); // ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 permutations('dog'); // ['dog', 'dgo', 'odg', 'ogd', 'gdo', 'god']
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input string will only contain lowercase letters
 - The input string will not contain any duplicate characters
 
-### Hints
+<h3>Hints</h3>
 
 - Think about how you can break down the problem of generating permutations using recursion.
 - Consider what the base case for your recursion should be.
@@ -4085,7 +4085,7 @@ function permutations(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Intialize an empty array result to store the permutations.
 - The base case is checked at the beginning. If the input string str is empty (length is 0), it means there are no characters to permute. In this case, an empty string is added to the result array, representing the only permutation for an empty string. The function then returns the result array.
@@ -4102,7 +4102,7 @@ function permutations(str) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Permutations', () => {
@@ -4201,37 +4201,37 @@ Big O uses mathematical expressions to represent the relationship between the in
 
 I'm not going to get deep into the math here. I just want you to be able to recognize the different types of time complexity and how to describe them in Big O notation.
 
-### Constant Time Complexity - O(1)
+<h3>Constant Time Complexity - O(1)</h3>
 
 Constant time is when the runtime is always the same, no matter how big the input is.
 
 `0(1)` is the notation for constant time. It's pronounced "O of 1" or "big O of 1".
 
-### Linear Time Complexity - O(n)
+<h3>Linear Time Complexity - O(n)</h3>
 
 Linear time is when the runtime scales linearly as the input grows.
 
 `O(n)` is the notation for linear time. It's pronounced "O of n" or "big O of n".
 
-### Quadratic Time Complexity - O(n^2)
+<h3>Quadratic Time Complexity - O(n^2)</h3>
 
 Quadratic time is when the runtime scales quadratically as the input grows.
 
 `O(n^2)` is the notation for quadratic time. It's pronounced "O of n squared" or "big O of n squared".
 
-### Logarithmic Time Complexity - O(log n)
+<h3>Logarithmic Time Complexity - O(log n)</h3>
 
 Logarithmic time is when the runtime scales logarithmically as the input grows.
 
 `O(log n)` is the notation for logarithmic time. It's pronounced "O of log n" or "big O of log n".
 
-### Exponential Time Complexity - O(2^n)
+<h3>Exponential Time Complexity - O(2^n)</h3>
 
 Exponential time is when the runtime scales exponentially as the input grows.
 
 `O(2^n)` is the notation for exponential time. It's pronounced "O of 2 to the n" or "big O of 2 to the n".
 
-### Factorial Time Complexity - O(n!)
+<h3>Factorial Time Complexity - O(n!)</h3>
 
 Factorial time is when the runtime scales factorially as the input grows.
 
@@ -4721,7 +4721,7 @@ Write a function called `maxSubarraySum` that takes an array of integers and a p
 
 We will re-visit this and use the sliding window technique to use an O(n) solution.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```javascript
 /**
@@ -4733,7 +4733,7 @@ We will re-visit this and use the sliding window technique to use an O(n) soluti
 function maxSubarraySum(arr: number[], k: number): number
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```javascript
 const arr1 = [2, 5, 3, 1, 11, 7, 6, 4];
@@ -4745,15 +4745,15 @@ const k2 = 4;
 console.log(maxSubarraySum(arr2, k2)); // Output: -9
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input integer `k` will be between 1 and the length of the array.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use two nested loops to iterate through all possible subarrays of length `k` and calculate their sums.
 
-### Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -4776,7 +4776,7 @@ function maxSubarraySum(arr, k) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - The function `maxSubarraySum` uses two nested loops to iterate through all possible subarrays of length `k`.
 - For each subarray, it calculates the sum using a nested loop and keeps track of the maximum sum encountered.
@@ -4784,7 +4784,7 @@ function maxSubarraySum(arr, k) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```javascript
 test('Finding maximum subarray sum using O(n^2) solution', () => {
@@ -4847,7 +4847,7 @@ Let's talk a little bit about how this works:
 
 Write a function called `maxSubarraySum` that takes an array of integers and a positive integer `k` as input. The function should find the maximum sum of any subarray of length `k` using an O(n) solution by using the sliding window technique.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```javascript
 /**
@@ -4859,7 +4859,7 @@ Write a function called `maxSubarraySum` that takes an array of integers and a p
 function maxSubarraySum(arr: number[], k: number): number
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```javascript
 const arr1 = [2, 5, 3, 1, 11, 7, 6, 4];
@@ -4871,15 +4871,15 @@ const k2 = 4;
 console.log(maxSubarraySum(arr2, k2)); // Output: -9
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input integer `k` will be between 1 and the length of the array.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the sliding window technique to efficiently track the sum of subarrays of length k as you iterate through the array.
 
-### Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -4905,7 +4905,7 @@ function maxSubarraySum(arr, k) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - maxSum and currentSum are initialized to 0. These variables will be used to track the maximum sum and the sum of the current sliding window, respectively.
 
@@ -4925,7 +4925,7 @@ function maxSubarraySum(arr, k) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```javascript
 test('Finding maximum subarray sum using O(n^2) solution', () => {
@@ -5189,7 +5189,7 @@ Now let's try some challenges!
 
 Write a function called `wordFrequencyCounter` that takes a string as input and returns a map that represents the frequency of each word in the string. We did a similar challenge way back that counted the occurrences of a character. This function should count the occurrences of each word, ignoring case and excluding punctuation.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -5202,7 +5202,7 @@ function wordFrequencyCounter(str) {
 }
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 wordFrequencyCounter('The quick brown fox jumps over the lazy dog.');
@@ -5214,17 +5214,17 @@ wordFrequencyCounter(
 // Output: Map { 'lorem' => 1, 'ipsum' => 1, 'dolor' => 1, 'sit' => 1, 'amet' => 1, 'consectetur' => 1, 'adipiscing' => 1, 'elit' => 1 }
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input string will only contain letters, spaces, and punctuation marks.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the `toLowerCase()` method to convert the input string to lowercase, so you can ignore the case when counting word frequency.
 - Regular expressions can be helpful for splitting the string into words and removing punctuation marks.
 - You can use a map to store the word frequencies, where the word is the key, and the count is the value. Loop through each word, update the count in the map, and return the final map.
 
-### Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -5255,7 +5255,7 @@ function wordFrequencyCounter(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a variable `words` to store the lowercase version of the input string, split into an array of words. The regular expression `/W+/` matches one or more non-word characters, which includes spaces and punctuation marks. This will split the string into an array of words, ignoring spaces and punctuation marks.
 
@@ -5267,7 +5267,7 @@ function wordFrequencyCounter(str) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Counting word frequencies in a string', () => {
@@ -5306,7 +5306,7 @@ test('Counting word frequencies in a string', () => {
 
 You are building a phone number directory application. Implement a function called `phoneNumberDirectory` that takes an array of phone numbers as input and returns a Map with names as keys and corresponding phone numbers as values.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -5318,7 +5318,7 @@ You are building a phone number directory application. Implement a function call
 function phoneNumberDirectory(phoneNumbers: string[]): Map<string, string>
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 const phoneNumbers = [
@@ -5331,11 +5331,11 @@ console.log(phoneNumberDirectory(phoneNumbers));
 // Output: Map { 'John' => '123-456-7890', 'Jane' => '987-654-3210', 'Joe' => '555-555-5555' }
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array elements should be formatted as `NAME:PHONENUMBER`
 
-### Hints
+<h3>Hints</h3>
 
 - Loop through the input array and use the `split()` method to separate the name and phone number in each element of the `phoneNumbers` array before adding to the map
 
@@ -5357,7 +5357,7 @@ function phoneNumberDirectory(phoneNumbers) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a new Map called `directory`
 - Iterate through the `phoneNumbers` array using a `for...of` loop
@@ -5367,7 +5367,7 @@ function phoneNumberDirectory(phoneNumbers) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Building a phone number directory from an array of phone numbers', () => {
@@ -5399,7 +5399,7 @@ Write a function called `anagramGrouping` that takes an array of strings as inpu
 returns an array of arrays, where each sub-array contains words that are anagrams of 
 each other.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -5410,7 +5410,7 @@ each other.
 function anagramGrouping(words: string[]): string[][];
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 anagramGrouping(['cat', 'act', 'dog', 'god', 'tac']);
@@ -5420,11 +5420,11 @@ anagramGrouping(['listen', 'silent', 'enlist', 'hello', 'world']);
 // Output: [['listen', 'silent', 'enlist'], ['hello'], ['world']]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array `words` will contain only lowercase alphabetical characters.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use a map to store the anagram groups, where the key is the sorted characters 
   of each word, and the value is an array of words that have the same sorted characters.
@@ -5454,7 +5454,7 @@ function anagramGrouping(words) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a new map `anagramGroups` to store the anagram groups.
 - Iterate through each word in the input array `words`. For each word, split its 
@@ -5471,7 +5471,7 @@ function anagramGrouping(words) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Grouping anagrams', () => {
@@ -5638,7 +5638,7 @@ Let's try some challenges using sets.
 
 We'll start with a pretty simple challenge. Write a function called `symmetricDifference` that takes in two arrays and returns an array containing the symmetric difference of the two arrays. The symmetric difference of two arrays is a new array containing only the elements that are present in one of the arrays but not both, with no duplicates.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -5650,7 +5650,7 @@ We'll start with a pretty simple challenge. Write a function called `symmetricDi
 function symmetricDifference(arr1: number[], arr2: number[]): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 symmetricDifference([1, 2, 3], [3, 4, 5]);
@@ -5666,7 +5666,7 @@ symmetricDifference([1, 2, 3], [4, 5, 6]);
 // Output: [1, 2, 3, 4, 5, 6]
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - You can use two Sets to keep track of elements in both arrays and then find the elements that are present in only one of the sets.
 - Be mindful of duplicate elements and handle them appropriately.
@@ -5698,7 +5698,7 @@ function symmetricDifference(arr1, arr2) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - To find the symmetric difference, create two `Set` objects, `set1` and `set2`, from `arr1` and `arr2` respectively. The `Set` data structure allows us to efficiently check for the existence of an element.
 - Initialize an empty array called `result` to store the symmetric difference.
@@ -5708,7 +5708,7 @@ function symmetricDifference(arr1, arr2) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Symmetric Difference of Two Arrays', () => {
@@ -5727,7 +5727,7 @@ test('Symmetric Difference of Two Arrays', () => {
 
 Write a function called `twoSum` that takes an array of integers and a target integer as input and returns an array of indices of the two numbers that add up to the target.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```javascript
 /**
@@ -5739,7 +5739,7 @@ Write a function called `twoSum` that takes an array of integers and a target in
 function twoSum(nums: number[], target: number): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```javascript
 console.log(twoSum([2, 7, 11, 15], 9));
@@ -5752,15 +5752,15 @@ console.log(twoSum([3, 3], 6));
 // Output: [0, 1] (3 + 3 = 6)
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - Each input integer is unique.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use a Set to keep track of numbers you've seen so far while iterating through the array.
 
-### Solution
+<h3>Solution</h3>
 
 <details open>
   <summary>Click to reveal solution</summary>
@@ -5781,7 +5781,7 @@ function twoSum(nums, target) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a `Set` called `numSet` to store numbers that have been seen while iterating through the array.
 - Iterate through the input array `nums`. For each number, calculate its complement (the number needed to reach the target) as `target - nums[i]`.
@@ -5791,7 +5791,7 @@ function twoSum(nums, target) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```javascript
 const twoSum = require('./twoSum');
@@ -5830,7 +5830,7 @@ Write a function called `longestConsecutiveSequence` that takes an array of inte
 
 A consecutive sequence is a sequence of consecutive integers, meaning each integer in the sequence is exactly one more than the previous integer.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -5841,19 +5841,19 @@ A consecutive sequence is a sequence of consecutive integers, meaning each integ
 function longestConsecutiveSequence(nums: number[]): number
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 longestConsecutiveSequence([100, 4, 200, 1, 3, 2]); // Output: 4 (The longest consecutive sequence is [1, 2, 3, 4])
 longestConsecutiveSequence([0, 3, 7, 2, 5, 8, 4, 6, 9, 1]); // Output: 10 (The longest consecutive sequence is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array will contain only integers
 - The input array may contain duplicate integers
 
-### Hints
+<h3>Hints</h3>
 
 - You can use a Set to efficiently find consecutive sequences in the array.
 
@@ -5885,7 +5885,7 @@ function longestConsecutiveSequence(nums) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create a Set called `numSet` from the input array `nums`. The Set will allow us to efficiently check if an integer exists in the array in constant time.
 - Initialize a variable `longestSequence` to 0, which will store the length of the longest consecutive sequence found so far.
@@ -5897,7 +5897,7 @@ function longestConsecutiveSequence(nums) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Longest Consecutive Sequence', () => {
@@ -6231,7 +6231,7 @@ Now we will do a couple challenges using this class.
 
 Write a function called `wordInstanceCounter` that takes a string and a word as input and returns the number of instances of that word in the string. This function should count the occurrences of the specified word, ignoring case and excluding punctuation.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -6243,7 +6243,7 @@ Write a function called `wordInstanceCounter` that takes a string and a word as 
 function wordInstanceCounter(str: string, word: string): number
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 console.log(
@@ -6259,15 +6259,15 @@ console.log(wordInstanceCounter('Hello, world!', 'hello')); // Output: 1
 console.log(wordInstanceCounter('Hello, Hello, Hello!', 'hello')); // Output: 3
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input string will only contain letters, spaces, and punctuation marks.
 
-### Hints
+<h3>Hints</h3>
 
 - You can use a `HashTable` to store the word frequencies, where the word is the key, and the count is the value. Loop through each word, update the count in the `HashTable`, and return the count of the specified word.
 
-### Solution
+<h3>Solution</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -6299,7 +6299,7 @@ function wordInstanceCounter(str, word) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Counting instances of a word in a string', () => {
@@ -6327,7 +6327,7 @@ Extend the existing `HashTable` class with a new method called `getValues()`. Th
 
 Add the `getValues()` method to the `HashTable.js` file.
 
-### Examples
+<h3>Examples</h3>
 
 ```javascript
 const myHashTable = new HashTable();
@@ -6339,13 +6339,13 @@ myHashTable.set('city', 'New York');
 console.log(myHashTable.getValues()); // Expected output: ['Alice', 30, 'New York']
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - You need to iterate through all buckets in the storage array and all key-value pairs within each bucket.
 - Create an array to store the values, iterate through each bucket, and then iterate through each key-value pair. Push each value to the array.
 - After iterating through all the key-value pairs, return the array of values.
 
-### Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -6368,7 +6368,7 @@ console.log(myHashTable.getValues()); // Expected output: ['Alice', 30, 'New Yor
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 const HashTable = require('./HashTable');
@@ -6405,7 +6405,7 @@ describe('HashTable', () => {
 
 Create a function called `anagramGrouping` to use the `HashTable` class that we created. The function should take an array of words as input and return an array of arrays, where each inner array represents a group of anagrams.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -6416,14 +6416,14 @@ Create a function called `anagramGrouping` to use the `HashTable` class that we 
 function anagramGrouping(words: string[]): string[][];
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 anagramGrouping(['listen', 'silent', 'hello', 'world', 'act', 'cat']);
 // Output: [['listen', 'silent'], ['act', 'cat'], ['hello'], ['world']]
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - You can use the provided `HashTable` class to implement efficient anagram grouping.
 - Convert each word to a sorted string of characters to identify anagrams.
@@ -6455,19 +6455,24 @@ function anagramGrouping(words) {
 module.exports = anagramGrouping;
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 This is very similar to the anagram grouping where we used maps.
 
 - Replace the `Map` with a `HashTable` to efficiently group anagrams.
-- Iterate through each word in the input array and create a sorted version of the word's characters.
-- This sorted string is used as a key in the `HashTable`. If the key already exists in the `HashTable`, we append the current word to the list of anagrams. If the key does not exist, we create a new entry in the `HashTable` with the key and an array containing the current word.
-- After iterating through all the words, use the `getValues` method of the `HashTable` to obtain an array of arrays, where each inner array represents a group of anagrams.
+- Iterate through each word in the input array and create a sorted version of the word's 
+  characters.
+- This sorted string is used as a key in the `HashTable`. If the key already exists in the 
+  `HashTable`, we append the current word to the list of anagrams. If the key does not exist, 
+  we create a new entry in the `HashTable` with the key and an array containing the current 
+  word.
+- After iterating through all the words, use the `getValues` method of the `HashTable` to 
+  obtain an array of arrays, where each inner array represents a group of anagrams.
 - Return the array of anagram groups.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Grouping anagrams from an array of words', () => {
@@ -6494,27 +6499,48 @@ test('Grouping anagrams from an array of words', () => {
 <h1 id="js63">63. Stack</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-A `stack` is a linear data structure that works in a specific way and that is `Last In, First Out` or `LIFO`. This means that the last element added to the stack will be the first element removed from the stack. Think of a stack of plates. The last plate added to the stack will be the first plate removed from the stack.
+A `stack` is a linear data structure that works in a specific way and that is `Last In, First 
+Out` or `LIFO`. This means that the last element added to the stack will be the first element 
+removed from the stack. Think of a stack of plates. The last plate added to the stack will be 
+the first plate removed from the stack.
 
 To give you a better idea, we can look at this image:
 
 <img src="../images/stack1.png" alt="" width="500" />
 
-In this case, each element is just a number, but it could be anything. We start with a stack with 1 element, we push another one on labeled 2. After that, another one labeled 3, and so on. In this case, the last element added to the stack is 5. We use the term `push` when we add on top of the stack.
+In this case, each element is just a number, but it could be anything. We start with a stack 
+with 1 element, we push another one on labeled 2. After that, another one labeled 3, and so 
+on. In this case, the last element added to the stack is 5. We use the term `push` when we 
+add on top of the stack.
 
-If we want to remove an element from the stack, we remove the last one added, which is 5. We can't remove 3 or 2 or 1. We can only remove 5. Once we remove 5, we can then remove 4, 3, 2, and 1. The term for removing from the top of the stack is `pop`.
+If we want to remove an element from the stack, we remove the last one added, which is 5. 
+We can't remove 3 or 2 or 1. We can only remove 5. Once we remove 5, we can then remove 4, 
+3, 2, and 1. The term for removing from the top of the stack is `pop`.
 
-We know that in JavaScript, Arrays have a `push` and `pop` method. We can use an array as a stack. We can also create our own stack class that only exposes the push and pop methods or we can create our own `push` and `pop` methods via a class.
+We know that in JavaScript, Arrays have a `push` and `pop` method. We can use an array as a 
+stack. We can also create our own stack class that only exposes the push and pop methods or 
+we can create our own `push` and `pop` methods via a class.
 
 ## Call Stack
 
-A great example of a stack is the call stack. The call stack is a fundamental concept in programming and serves as an execution context for function calls.
+A great example of a stack is the call stack. The call stack is a fundamental concept in 
+programming and serves as an execution context for function calls.
 
-The JavaScript engine in the browser has a call stack. In fact, you can view it in your browser dev tools. It is a stack data structure that keeps track of function calls in the order they are made and allows for their orderly execution and return.
+The JavaScript engine in the browser has a call stack. In fact, you can view it in your 
+browser dev tools. It is a stack data structure that keeps track of function calls in the 
+order they are made and allows for their orderly execution and return.
 
-When a function is called, a new frame is added to the top of the call stack. This frame contains information such as the function's arguments, local variables, and the position in the code where the function was called from. The function's execution begins, and if it calls other functions, their frames are added on top of the stack, forming a stack of nested function calls as you can see here.
+When a function is called, a new frame is added to the top of the call stack. This frame 
+contains information such as the function's arguments, local variables, and the position 
+in the code where the function was called from. The function's execution begins, and if 
+it calls other functions, their frames are added on top of the stack, forming a stack of 
+nested function calls as you can see here.
 
-The call stack can be used to debug code and find issues. I'm not going to go over it too much here. We go over this stuff in my Modern JS From the Beginning course. I also have a series on YouTube called "JavaScript: Under The Hood" where I go over the call stack and other JavaScript engine internals. I just wanted to give you a good example where a stack is used.
+The call stack can be used to debug code and find issues. I'm not going to go over it 
+too much here. We go over this stuff in my Modern JS From the Beginning course. I also 
+have a series on YouTube called "JavaScript: Under The Hood" where I go over the call 
+stack and other JavaScript engine internals. I just wanted to give you a good example 
+where a stack is used.
 
 In the next lesson, we will create our own stack class.
 
@@ -6522,11 +6548,17 @@ In the next lesson, we will create our own stack class.
 <h1 id="js64">64. Stack Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Now that we know fundamentally how a stack works, we're going to implement one in JavaScript. We will create a `Stack` Class that has methods such as `push`, `pop` and `peek`.
+Now that we know fundamentally how a stack works, we're going to implement one in JavaScript. 
+We will create a `Stack` Class that has methods such as `push`, `pop` and `peek`.
 
 ## Stack Class & Constructor
 
-Let's start by creating a class called `Stack`. In the constructor, we'll create a property called `maxSize` and set it to 100. This is the maximum number of elements that can be in the stack. We'll also create a property called `stack` and set it to an empty array. This is where we'll store the elements in the stack. Finally, we'll create a property called `top` and set it to `-1`. This is the index of the top element in the stack. We are using -1 because the stack is empty. The first element will be at index 0.
+Let's start by creating a class called `Stack`. In the constructor, we'll create a property 
+called `maxSize` and set it to 100. This is the maximum number of elements that can be in 
+the stack. We'll also create a property called `stack` and set it to an empty array. This 
+is where we'll store the elements in the stack. Finally, we'll create a property called 
+`top` and set it to `-1`. This is the index of the top element in the stack. We are using 
+-1 because the stack is empty. The first element will be at index 0.
 
 ```js
 class Stack {
@@ -6540,7 +6572,9 @@ class Stack {
 
 ## `push` Method
 
-Create the `push` method to add to the stack. It will take in a `value` (element). First, check if the stack is full. If it is, return `false`. Increment the top index by `1`. Set the element at the top index of the stack to the value. Return `true`.
+Create the `push` method to add to the stack. It will take in a `value` (element). First, 
+check if the stack is full. If it is, return `false`. Increment the top index by `1`. Set 
+the element at the top index of the stack to the value. Return `true`.
 
 ```js
  push(value) {
@@ -6556,7 +6590,8 @@ Create the `push` method to add to the stack. It will take in a `value` (element
 
 ## `isFull` Method
 
-Of course we need to add the method to check if the stack is full. It will return `true` if the top index is equal to the maximum size minus 1. Otherwise, it will return `false`.
+Of course we need to add the method to check if the stack is full. It will return `true` 
+if the top index is equal to the maximum size minus 1. Otherwise, it will return `false`.
 
 ```js
 isFull() {
@@ -6564,7 +6599,8 @@ isFull() {
   }
 ```
 
-Let's also add a method to check if the stack is empty. It will return `true` if the top index is equal to `-1`. Otherwise, it will return `false`.
+Let's also add a method to check if the stack is empty. It will return `true` if the top 
+index is equal to `-1`. Otherwise, it will return `false`.
 
 ```js
 isEmpty() {
@@ -6572,7 +6608,8 @@ isEmpty() {
   }
 ```
 
-Now we can test it out a little bit. In the run file, create a new instance of the `Stack` class. Push a few elements to the stack. Then, log the stack to the console.
+Now we can test it out a little bit. In the run file, create a new instance of the `Stack` 
+class. Push a few elements to the stack. Then, log the stack to the console.
 
 ```js
 const stack = new Stack();
@@ -6596,9 +6633,14 @@ Stack {
 
 ## `pop` Method
 
-Now let's create the `pop` method. It will remove the top element from the stack. It is important to know that `pop` and just about any method of any structure can be implemented in many ways. Sometimes the actual data will not be removed from the array (this.stack). It will just go by what is in the top of the stack. I want the actual data to be removed, so I will use the built in `pop` method on the array.
+Now let's create the `pop` method. It will remove the top element from the stack. It is 
+important to know that `pop` and just about any method of any structure can be implemented 
+in many ways. Sometimes the actual data will not be removed from the array (this.stack). 
+It will just go by what is in the top of the stack. I want the actual data to be removed, 
+so I will use the built in `pop` method on the array.
 
-First, check if the stack is empty. If it is, return `null`. Then decrement the top by 1 and then return the result from `this.stack.pop()`.
+First, check if the stack is empty. If it is, return `null`. Then decrement the top by 1 
+and then return the result from `this.stack.pop()`.
 
 ```js
 pop() {
@@ -6613,7 +6655,9 @@ pop() {
 
 ## `peek` Method
 
-Finally, let's create the `peek` method. It will return the top element of the stack. First, check if the stack is empty. If it is, return `null`. Return the element at the top index of the stack.
+Finally, let's create the `peek` method. It will return the top element of the stack. 
+First, check if the stack is empty. If it is, return `null`. Return the element at the 
+top index of the stack.
 
 ```js
 peek() {
@@ -6648,11 +6692,14 @@ console.log(stack.pop());
 
 ## Instructions
 
-Write a function called `reverseStringStack` that takes in a string and returns the reversed version of the string. Be sure to use the `Stack` class that we created.
+Write a function called `reverseStringStack` that takes in a string and returns the reversed 
+version of the string. Be sure to use the `Stack` class that we created.
 
-I am going to have you do the reverse string challenge using a bunch of different data structures. It may seem like overkill, which it is, but it will help you understand how each data structure works.
+I am going to have you do the reverse string challenge using a bunch of different data 
+structures. It may seem like overkill, which it is, but it will help you understand how 
+each data structure works.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -6663,11 +6710,11 @@ I am going to have you do the reverse string challenge using a bunch of differen
 function reverseStringStack(str: string): string;
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The string will only contain lowercase letters and spaces
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 reverseStringStack('hello'); // olleh
@@ -6675,7 +6722,7 @@ reverseStringStack('Howdy'); // ydwoH
 reverseStringStack('Greetings from Earth'); // htraE morf sgniteerG
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - Push each character onto the stack
 - Pop the characters from the stack to construct the reversed string
@@ -6707,7 +6754,7 @@ function reverseString(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Initialize a new `Stack` instance.
 - Iterate through the string and pushed each character onto the stack.
@@ -6715,15 +6762,22 @@ function reverseString(str) {
 - Iterate through the stack and pop each character off and added it to the `reversedString` variable.
 - Return the `reversedString` variable.
 
-### Time & Space Complexity
+<h3>Time & Space Complexity</h3>
 
-The time complexity of the function `reverseString(str)` is `O(n)`, where n is the length of the input string str. This is because the function loops through the entire string once to push each character onto the stack, and then loops through the stack to pop the characters and construct the reversed string. Both operations take linear time with respect to the length of the input string.
+The time complexity of the function `reverseString(str)` is `O(n)`, where n is the length of 
+the input string str. This is because the function loops through the entire string once to 
+push each character onto the stack, and then loops through the stack to pop the characters 
+and construct the reversed string. Both operations take linear time with respect to the 
+length of the input string.
 
-The space complexity of the function is also `O(n)`, where n is the length of the input string str. This is because the function uses a stack to store each character of the input string, and the size of the stack is directly proportional to the length of the input string. Therefore, the space complexity grows linearly with the size of the input.
+The space complexity of the function is also `O(n)`, where n is the length of the input 
+string str. This is because the function uses a stack to store each character of the input 
+string, and the size of the stack is directly proportional to the length of the input string. 
+Therefore, the space complexity grows linearly with the size of the input.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Reversing a string', () => {
@@ -6739,11 +6793,13 @@ test('Reversing a string', () => {
 
 ## Instructions
 
-We are going to try one more Stack challenge. Write a function called `isBalanced` that takes in a string and checks if the parenthesis are balanced.
+We are going to try one more Stack challenge. Write a function called `isBalanced` that takes 
+in a string and checks if the parenthesis are balanced.
 
-The function should return true if the parenthesis are balanced and false if they are not. Use the stack implementation you created in the previous exercise.
+The function should return true if the parenthesis are balanced and false if they are not. Use 
+the stack implementation you created in the previous exercise.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -6754,7 +6810,7 @@ The function should return true if the parenthesis are balanced and false if the
 function isBalanced(str: string): boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```JS
 isBalanced('()'); // true
@@ -6764,11 +6820,11 @@ isBalanced('(()'); // false
 isBalanced(')('); // false
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The string will only contain parenthesis and no other characters
 
-### Hints
+<h3>Hints</h3>
 
 - Push each opening parenthesis onto the stack
 - Pop the stack when a closing parenthesis is encountered
@@ -6800,18 +6856,29 @@ return stack.isEmpty();
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Bring in our Stack implementation and initialize a new stack.
-- Iterate over each character of the input string str and check if the current character `str[i]` is an opening parenthesis (i.e., '('). If it is, the opening parenthesis is pushed onto the stack using `stack.push(str[i])`.
-- If the current character is a closing parenthesis (i.e., ')'), check if the stack is empty using stack.`isEmpty()`. If the stack is empty at this point, it means there is a closing parenthesis without a corresponding opening parenthesis, so return false indicating that the parentheses are unbalanced.
-- If the stack is not empty, it means there is a matching opening parenthesis for the current closing parenthesis. Therefore, remove the top element using `stack.pop()`, which represents the successful pairing of opening and closing parentheses.
-- After iterating over all the characters in the string, check if the stack is empty using `stack.isEmpty()`. If the stack is empty, it means all opening parentheses have been matched and popped from the stack, indicating balanced parentheses. In this case, return true.
-- If the stack is not empty after the iteration, it means there are unmatched opening parentheses remaining, indicating unbalanced parentheses. In this case, return `false`.
+- Iterate over each character of the input string str and check if the current character 
+  `str[i]` is an opening parenthesis (i.e., '('). If it is, the opening parenthesis is 
+  pushed onto the stack using `stack.push(str[i])`.
+- If the current character is a closing parenthesis (i.e., ')'), check if the stack is 
+  empty using stack.`isEmpty()`. If the stack is empty at this point, it means there is 
+  a closing parenthesis without a corresponding opening parenthesis, so return false 
+  indicating that the parentheses are unbalanced.
+- If the stack is not empty, it means there is a matching opening parenthesis for the 
+  current closing parenthesis. Therefore, remove the top element using `stack.pop()`, 
+  which represents the successful pairing of opening and closing parentheses.
+- After iterating over all the characters in the string, check if the stack is empty 
+  using `stack.isEmpty()`. If the stack is empty, it means all opening parentheses 
+  have been matched and popped from the stack, indicating balanced parentheses. In 
+  this case, return true.
+- If the stack is not empty after the iteration, it means there are unmatched opening 
+  parentheses remaining, indicating unbalanced parentheses. In this case, return `false`.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 describe('balancedParenthesis', () => {
@@ -6841,39 +6908,61 @@ describe('balancedParenthesis', () => {
 <h1 id="js67">67. Queue</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-A `queue` is a linear data structure that works in a specific way and that is `First In, First Out` or `FIFO`. This means that the first element added to the queue will be the first element removed from the queue. Think of a line at a grocery store. The first person in line will be the first person to be served.
+A `queue` is a linear data structure that works in a specific way and that is `First In, 
+First Out` or `FIFO`. This means that the first element added to the queue will be the 
+first element removed from the queue. Think of a line at a grocery store. The first person 
+in line will be the first person to be served.
 
 To give you a better idea, we can look at this image:
 
 <img src="../images/queue1.png" alt="" width="500" />
 
-When we add to the queue, we use the term `enqueue`. When we remove from the queue, we use the term `dequeue`.
+When we add to the queue, we use the term `enqueue`. When we remove from the queue, we use 
+the term `dequeue`.
 
-We start with a queue with an element labeled 1, we enqueue another one labeled 2. After that, another one labeled 3, and so on. In this case, the first element added to the queue is 1. It is also the first element removed from the queue. We dequeue 1, then 2, then 3, and so on.
+We start with a queue with an element labeled 1, we enqueue another one labeled 2. After 
+that, another one labeled 3, and so on. In this case, the first element added to the queue 
+is 1. It is also the first element removed from the queue. We dequeue 1, then 2, then 3, 
+and so on.
 
-We know that in JavaScript, Arrays have a `push` and `shift` method. We can use an array as a queue. We can also create our own queue class that only exposes the enqueue and dequeue methods or we can create our own `enqueue` and `dequeue` methods via a class.
+We know that in JavaScript, Arrays have a `push` and `shift` method. We can use an array 
+as a queue. We can also create our own queue class that only exposes the enqueue and 
+dequeue methods or we can create our own `enqueue` and `dequeue` methods via a class.
 
 ## Event Loop
 
-A great example of a queue is the event loop. The event loop is a fundamental concept in JavaScript and serves as a message queue.
+A great example of a queue is the event loop. The event loop is a fundamental concept 
+in JavaScript and serves as a message queue.
 
 <img src="../images/event-loop.png" alt="" width="500" />
 
-This is a diagram of the entire JavaScript runtime. The call stack is the first thing we talked about. The call stack is a stack data structure that keeps track of function calls in the order they are made and allows for their orderly execution and return.
+This is a diagram of the entire JavaScript runtime. The call stack is the first thing 
+we talked about. The call stack is a stack data structure that keeps track of function 
+calls in the order they are made and allows for their orderly execution and return.
 
-The event loop is a queue that waits for the call stack to be empty and then pushes messages from the queue to the call stack for execution.
+The event loop is a queue that waits for the call stack to be empty and then pushes 
+messages from the queue to the call stack for execution.
 
-Again, I go over this stuff in my Modern JS From the Beginning course. I also have a series on YouTube called "JavaScript: Under The Hood" where I go over the event loop and other JavaScript engine internals. I just wanted to give you a good example where a queue is used.
+Again, I go over this stuff in my Modern JS From the Beginning course. I also have 
+a series on YouTube called "JavaScript: Under The Hood" where I go over the event 
+loop and other JavaScript engine internals. I just wanted to give you a good example 
+where a queue is used.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js68">68. Queue Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In the last lesson, we looked at how a queue data structure works. It is `First-in, First-out` or `FIFO`. The first element added to the queue will be the first element removed from the queue. We can use an array as a queue, but we can also create our own queue class and that's what I want to do here.
+In the last lesson, we looked at how a queue data structure works. It is `First-in, 
+First-out` or `FIFO`. The first element added to the queue will be the first element 
+removed from the queue. We can use an array as a queue, but we can also create our 
+own queue class and that's what I want to do here.
 
 ## Queue Class & Constructor
 
-Let's start by creating a class called `Queue`. In the constructor, we'll create a property called `queue` and set it to an empty array. We'll also create a property called `head` and set it to 0. We'll create a property called `tail` and set it to 0. Finally, we'll create a property called `maxSize` and set it to 100 by default.
+Let's start by creating a class called `Queue`. In the constructor, we'll create a 
+property called `queue` and set it to an empty array. We'll also create a property 
+called `head` and set it to 0. We'll create a property called `tail` and set it to 0. 
+Finally, we'll create a property called `maxSize` and set it to 100 by default.
 
 ```js
 class Queue {
@@ -6918,7 +7007,9 @@ isFull() {
 
 ## `enqueue` Method
 
-Create the `enqueue` method. It will take in a value (element). First, check if the queue is full. If it is, return false. Set the tail index of the queue to the value. Increment the tail index by 1. Return true.
+Create the `enqueue` method. It will take in a value (element). First, check if the queue 
+is full. If it is, return false. Set the tail index of the queue to the value. Increment 
+the tail index by 1. Return true.
 
 ```JS
  enqueue(element) {
@@ -6933,7 +7024,8 @@ Create the `enqueue` method. It will take in a value (element). First, check if 
 
 ## `dequeue` Method
 
-Create the `dequeue` method. Get the item in the head index of the queue and store it in a variable. Increment the head by 1. Return the variable.
+Create the `dequeue` method. Get the item in the head index of the queue and store it in a 
+variable. Increment the head by 1. Return the variable.
 
 ```js
  dequeue() {
@@ -7046,7 +7138,7 @@ Write a function called `reverseStringQueue` that takes in a string and returns 
 
 The function should return the reversed string, but I want you to use the `Queue` class to do it.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -7057,7 +7149,7 @@ The function should return the reversed string, but I want you to use the `Queue
 function reverseStringQueue(str: string): string;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 reverseStringQueue('hello'); // olleh
@@ -7065,11 +7157,11 @@ reverseStringQueue('Howdy'); // ydwoH
 reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The string will only contain lowercase letters and spaces
 
-### Hints
+<h3>Hints</h3>
 
 - Enqueue all the characters in the string into the queue
 - Dequeue all the characters from the queue and add them to a new string
@@ -7098,7 +7190,7 @@ const reverseStringWithQueue = (str) => {
 };
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Bring in our queue class and initialize a new queue
 - Iterate over the str and enqueue each character into the queue.
@@ -7107,7 +7199,7 @@ const reverseStringWithQueue = (str) => {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Reversing a string', () => {
@@ -7123,13 +7215,17 @@ test('Reversing a string', () => {
 
 ## Instructions
 
-We are going to revisit the Palindrome challenge, but we are going to use BOTH the `Queue` and `Stack` data structures to solve it.
+We are going to revisit the Palindrome challenge, but we are going to use BOTH the `Queue` 
+and `Stack` data structures to solve it.
 
-Create a function called `isPalindromeQueueStack` that takes in a string and checks if it is a palindrome.
+Create a function called `isPalindromeQueueStack` that takes in a string and checks if it 
+is a palindrome.
 
-The function should return `true` if the string is a palindrome, and `false` if it is not. Again, use the `Queue` and `Stack` data structures to solve this problem. If you don't get it on your own, that's fine. This is a tough one. Just make sure you understand the solution.
+The function should return `true` if the string is a palindrome, and `false` if it is not. 
+Again, use the `Queue` and `Stack` data structures to solve this problem. If you don't get 
+it on your own, that's fine. This is a tough one. Just make sure you understand the solution.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -7140,7 +7236,7 @@ The function should return `true` if the string is a palindrome, and `false` if 
 function isPalindromeQueueStack(str: string): boolean;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 isPalindromeQueueStack('racecar'); // true
@@ -7148,7 +7244,7 @@ isPalindromeQueueStack('hello'); // false
 isPalindromeQueueStack('A man, a plan, a canal: Panama'); // true
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - Remove all non-alphanumeric characters from the string
 - Enqueue and push the characters of the string into the queue and stack respectively
@@ -7183,7 +7279,7 @@ function isPalindromeQueueStack(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Remove all non-alphanumeric characters from the string and convert it to lowercase.
 - Create a `Queue` and a `Stack` to hold the characters of the string.
@@ -7193,7 +7289,7 @@ function isPalindromeQueueStack(str) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Checking for palindrome strings', () => {
@@ -7208,35 +7304,64 @@ test('Checking for palindrome strings', () => {
 <h1 id="js71">71. Linked List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-A `linked list` is a linear data structure that is made up of a series of nodes. Each node contains a `value` and a `pointer`. A pointer can mean a lot of different things in programming, in the case of a linked list, it is a reference to another node in the list.
+A `linked list` is a linear data structure that is made up of a series of nodes. Each node 
+contains a `value` and a `pointer`. A pointer can mean a lot of different things in 
+programming, in the case of a linked list, it is a reference to another node in the list.
 
-The first node in the list is called the `head`. The last node in the list is called the `tail`. The tail's pointer points to `null` to indicate that it is the last node in the list. We looked at a queue, which also has a head and a tail, but they serve different purposes. In a queue, the head refers to the front of the queue, where elements are `dequeued` (removed) from and the tail is where elements are `enqueued` (added). In a linked list, the head refers to the first node in the list and the tail refers to the last node and always points to `null`. Elements can be added or removed from both the head and the tail.
+The first node in the list is called the `head`. The last node in the list is called 
+the `tail`. The tail's pointer points to `null` to indicate that it is the last node 
+in the list. We looked at a queue, which also has a head and a tail, but they serve 
+different purposes. In a queue, the head refers to the front of the queue, where elements 
+are `dequeued` (removed) from and the tail is where elements are `enqueued` (added). 
+In a linked list, the head refers to the first node in the list and the tail refers to 
+the last node and always points to `null`. Elements can be added or removed from both 
+the head and the tail.
 
 <img src="../images/linked-list1.png" alt="" width="500" />
 
-As you can see in this image, we have a linked list with 4 nodes. Each node has a number as the value and a pointer that points to the next node. The last node or the `tail` points to `null`. 
+As you can see in this image, we have a linked list with 4 nodes. Each node has a number 
+as the value and a pointer that points to the next node. The last node or the `tail` 
+points to `null`. 
 
-Unlike arrays, linked lists do not store elements in contiguous memory locations. Instead, each node in a linked list contains a pointer to the next node. This can be very efficient in certain ways, such as inserting and deleting data. It just involves changing a few pointers and can have an O(1) time complexity. However, there are also use cases where they're not very efficient and I'll talk more about that next.
+Unlike arrays, linked lists do not store elements in contiguous memory locations. 
+Instead, each node in a linked list contains a pointer to the next node. This can 
+be very efficient in certain ways, such as inserting and deleting data. It just 
+involves changing a few pointers and can have an O(1) time complexity. However, 
+there are also use cases where they're not very efficient and I'll talk more about 
+that next.
 
-Just know that the basic building block of a linked list is the node, which typically contains two parts:
+Just know that the basic building block of a linked list is the node, which typically 
+contains two parts:
 
-1. **Data**: It holds the value or payload that represents the information being stored in the linked list.
-2. **Next**: It is a reference to the next node in the sequence. This reference connects one node to the next, forming the link between nodes.
+1. **Data**: It holds the value or payload that represents the information being stored 
+   in the linked list.
+2. **Next**: It is a reference to the next node in the sequence. This reference connects one node 
+   to the next, forming the link between nodes.
 
 ## Advantages of Linked Lists
 
 Linked lists offer several advantages and use cases:
 
-- **Dynamic Size**: Linked lists can easily grow or shrink in size as elements are added or removed, as they do not require contiguous memory allocation.
-- **Insertion and Deletion**: Inserting or deleting elements at the beginning or end of a linked list is efficient, as it involves updating the references in the affected nodes.
-- **Flexible Memory Allocation**: Linked lists can be used when the memory allocation is not known in advance or needs to be managed dynamically.
-- **Implementation of Other Data Structures**: Linked lists serve as a foundation for implementing other complex data structures, such as stacks, queues, and graphs.
+- **Dynamic Size**: Linked lists can easily grow or shrink in size as elements are added or 
+  removed, as they do not require contiguous memory allocation.
+- **Insertion and Deletion**: Inserting or deleting elements at the beginning or end of a 
+  linked list is efficient, as it involves updating the references in the affected nodes.
+- **Flexible Memory Allocation**: Linked lists can be used when the memory allocation is 
+  not known in advance or needs to be managed dynamically.
+- **Implementation of Other Data Structures**: Linked lists serve as a foundation for 
+  implementing other complex data structures, such as stacks, queues, and graphs.
 
 ## Drawbacks of Linked Lists
 
-- **Sequential Access**: Unlike arrays, linked lists do not offer direct random access to elements. Accessing a specific element requires traversing the list from the beginning until the desired node is reached.
-- **Additional Memory Overhead**: Linked lists require additional memory to store the references between nodes, which can result in higher memory usage compared to arrays for the same number of elements.
-- **Reverse Traversal**: While singly linked lists (with references to the next node only) can be traversed in one direction, reverse traversal or accessing the previous node requires a doubly linked list (with references to both the next and previous nodes).
+- **Sequential Access**: Unlike arrays, linked lists do not offer direct random access to 
+  elements. Accessing a specific element requires traversing the list from the beginning 
+  until the desired node is reached.
+- **Additional Memory Overhead**: Linked lists require additional memory to store the 
+  references between nodes, which can result in higher memory usage compared to arrays 
+  for the same number of elements.
+- **Reverse Traversal**: While singly linked lists (with references to the next node only) 
+  can be traversed in one direction, reverse traversal or accessing the previous node 
+  requires a doubly linked list (with references to both the next and previous nodes).
 
 In the next lesson, we will implement a linked list in JavaScript.
 
@@ -7244,11 +7369,15 @@ In the next lesson, we will implement a linked list in JavaScript.
 <h1 id="js72">72. Linked List Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In the last lesson, we talked about what a linked list is and how it works. In this lesson, we'll implement one in JavaScript.
+In the last lesson, we talked about what a linked list is and how it works. In this lesson, 
+we'll implement one in JavaScript.
 
 ## `Node` Class & Constructor
 
-Before we create the linked list class, we need to create a node class. The node class will be used to create the nodes that make up the linked list. Each node will have a data property and a next property. The data property will store the data that the node holds. The next property will point to the next node in the linked list.
+Before we create the linked list class, we need to create a node class. The node class will 
+be used to create the nodes that make up the linked list. Each node will have a data property 
+and a next property. The data property will store the data that the node holds. The next 
+property will point to the next node in the linked list.
 
 ```js
 class Node {
@@ -7261,7 +7390,10 @@ class Node {
 
 ## `LinkedList` Class & Constructor
 
-Now that we have a node class, we can create the linked list class. The linked list class will have a head property and a tail property. The head property will point to the first node in the linked list. The tail property will point to the last node in the linked list. When we start out, the head and tail properties will both be null.
+Now that we have a node class, we can create the linked list class. The linked list class 
+will have a head property and a tail property. The head property will point to the first 
+node in the linked list. The tail property will point to the last node in the linked list. 
+When we start out, the head and tail properties will both be null.
 
 ```js
 class LinkedList() {
@@ -7274,9 +7406,15 @@ class LinkedList() {
 
 ## `add` Method
 
-The `add` method will add a new node to the end of the linked list. It takes in a `data` value and will get passed into the node constructor. It then checks to see if the head property is null. If it is, it sets the head property to the new node. If it isn't, it sets the next property of the tail node to the new node. It then sets the tail property to the new node.
+The `add` method will add a new node to the end of the linked list. It takes in a `data` 
+value and will get passed into the node constructor. It then checks to see if the head 
+property is null. If it is, it sets the head property to the new node. If it isn't, it 
+sets the next property of the tail node to the new node. It then sets the tail property 
+to the new node.
 
-The time complexity of this method is O(1) because it doesn't have to loop through the linked list to add the new node. It just has to set the next property of the tail node to the new node and then set the tail property to the new node.
+The time complexity of this method is O(1) because it doesn't have to loop through the 
+linked list to add the new node. It just has to set the next property of the tail node 
+to the new node and then set the tail property to the new node.
 
 ```js
 add(data) {
@@ -7294,7 +7432,10 @@ add(data) {
 
 ## `printAll` Method
 
-I want to be able to test this out, so let's add a method that will print out all of the nodes in the linked list. The `printAll` method will start at the head node and loop through each node until it reaches the tail node. It will print out the data of each node as it loops through.
+I want to be able to test this out, so let's add a method that will print out all of the 
+nodes in the linked list. The `printAll` method will start at the head node and loop 
+through each node until it reaches the tail node. It will print out the data of each 
+node as it loops through.
 
 ```js
   printAll() {
@@ -7322,7 +7463,12 @@ list.printAll();
 
 ## `get` Method
 
-The `get` method will return the data of the node at the specified index. It takes in an `index` value and loops through the linked list until it reaches the node at the specified index. It then returns the data of that node. The time complexity of this method is O(n) because it has to loop through the linked list to find the node at the specified index. Arrays are better for this because they have constant time access. The time complexity of accessing an element in an array is O(1).
+The `get` method will return the data of the node at the specified index. It takes in an 
+`index` value and loops through the linked list until it reaches the node at the specified 
+index. It then returns the data of that node. The time complexity of this method is O(n) 
+because it has to loop through the linked list to find the node at the specified index. 
+Arrays are better for this because they have constant time access. The time complexity 
+of accessing an element in an array is O(1).
 
 ```js
  get(index) {
@@ -7341,7 +7487,16 @@ The `get` method will return the data of the node at the specified index. It tak
 
 ## `insertAt` Method
 
-The `insertAt` method will insert a new node at the specified index. It takes in an `index` value and a `data` value. It then checks to see if the index is 0. If it is, it creates a new node and sets the next property of the new node to the head node. It then sets the head property to the new node. If the index is not 0, it loops through the linked list until it reaches the node at the specified index. It then creates a new node and sets the next property of the new node to the node at the specified index. It then sets the next property of the previous node to the new node. The time complexity of this method is O(n) because it has to loop through the linked list to find the node at the specified index. Arrays are better for this because they have constant time access. The time complexity of accessing an element in an array is O(1).
+The `insertAt` method will insert a new node at the specified index. It takes in an `index` 
+value and a `data` value. It then checks to see if the index is 0. If it is, it creates a 
+new node and sets the next property of the new node to the head node. It then sets the head 
+property to the new node. If the index is not 0, it loops through the linked list until it 
+reaches the node at the specified index. It then creates a new node and sets the next property 
+of the new node to the node at the specified index. It then sets the next property of the 
+previous node to the new node. The time complexity of this method is O(n) because it has to 
+loop through the linked list to find the node at the specified index. Arrays are better for 
+this because they have constant time access. The time complexity of accessing an element in 
+an array is O(1).
 
 ```js
  insertAt(index, data) {
@@ -7369,7 +7524,11 @@ The `insertAt` method will insert a new node at the specified index. It takes in
 
 ## `removeFrom` Method
 
-The `removeFrom` method will remove the node at the specified index. It takes in an `index` value and checks to see if the index is 0. If it is, it sets the head property to the next property of the head node. If it isn't, it loops through the linked list until it reaches the node at the specified index. It then sets the next property of the previous node to the next property of the current node.
+The `removeFrom` method will remove the node at the specified index. It takes in an `index` 
+value and checks to see if the index is 0. If it is, it sets the head property to the next 
+property of the head node. If it isn't, it loops through the linked list until it reaches 
+the node at the specified index. It then sets the next property of the previous node to 
+the next property of the current node.
 
 ```js
   removeFrom(index) {
@@ -7398,11 +7557,13 @@ The `removeFrom` method will remove the node at the specified index. It takes in
 
 ## Instructions
 
-Write a function called `reverseStringLinkedList` that takes in a string and returns the reverse of that string.
+Write a function called `reverseStringLinkedList` that takes in a string and returns the 
+reverse of that string.
 
-The function should return the reversed string, but I want you to use the `LinkedList` class to do it.
+The function should return the reversed string, but I want you to use the `LinkedList` 
+class to do it.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -7413,7 +7574,7 @@ The function should return the reversed string, but I want you to use the `Linke
 function reverseStringLinkedList(str: string): string;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 reverseStringQueue('hello'); // olleh
@@ -7421,7 +7582,7 @@ reverseStringQueue('Howdy'); // ydwoH
 reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - Loop through the string and add each character to the linked list.
 - Loop through the linked list and build the reversed string.
@@ -7451,17 +7612,19 @@ function reverseStringLinkedList(str) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Initialize a new `LinkedList` instance.
 - Iterate through the string and add each character to the linked list.
-- Initialize a variable called `reversedString` and set it to an empty string and a variable called `current` and set it to the head of the linked list.
-- Iterate through the linked list and build the reversed string by adding each node's data to the `reversedString` variable and then setting `current` to the next node.
+- Initialize a variable called `reversedString` and set it to an empty string and a variable 
+  called `current` and set it to the head of the linked list.
+- Iterate through the linked list and build the reversed string by adding each node's data to 
+  the `reversedString` variable and then setting `current` to the next node.
 - Return the `reversedString` variable.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Reversing a string', () => {
@@ -7475,9 +7638,16 @@ test('Reversing a string', () => {
 <h1 id="js74">74. Working With Pointers</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Before we move on to the next challenge, I want to talk more about `pointers` and how they work. In general, pointers are variables that store the memory address of another variable. This concept is more abstract in JavaScript and not as prevalent as in languages like C and C++, where special types and characters are used to declare and work with pointers, such as the `*` character for declaring a pointer variable and the `&` character to get the address of a variable.
+Before we move on to the next challenge, I want to talk more about `pointers` and how they 
+work. In general, pointers are variables that store the memory address of another variable. 
+This concept is more abstract in JavaScript and not as prevalent as in languages like C and 
+C++, where special types and characters are used to declare and work with pointers, such as 
+the `*` character for declaring a pointer variable and the `&` character to get the address 
+of a variable.
 
-In JavaScript, pointers are not explicitly used, but the underlying mechanism is still present when dealing with objects and arrays. It is different with primitive values, so I want to give you an example of both.
+In JavaScript, pointers are not explicitly used, but the underlying mechanism is still 
+present when dealing with objects and arrays. It is different with primitive values, so 
+I want to give you an example of both.
 
 Let's start with primitive, which are strings, numbers, booleans, null, undefined and symbols.
 
@@ -7489,7 +7659,13 @@ let b = a;
 console.log(b); // 1
 ```
 
-In this example, we have two variables, `a` is set to `1` and `b` is set to `a`. If we log `b` it is `1`. If we change the value of `a`, `b` is not affected. This is because primitive values in JavaScript are assigned by value, not by reference. When you assign a to b, the actual value of a (which is 1) is copied into b. As a result, b becomes an independent copy of the value stored in a, and any subsequent changes made to a will not impact the value stored in b. This behavior is consistent with primitive data types like numbers, strings, and booleans, where each variable holds its own distinct value in memory.
+In this example, we have two variables, `a` is set to `1` and `b` is set to `a`. If we log 
+`b` it is `1`. If we change the value of `a`, `b` is not affected. This is because primitive 
+values in JavaScript are assigned by value, not by reference. When you assign a to b, the 
+actual value of a (which is 1) is copied into b. As a result, b becomes an independent copy 
+of the value stored in a, and any subsequent changes made to a will not impact the value 
+stored in b. This behavior is consistent with primitive data types like numbers, strings, 
+and booleans, where each variable holds its own distinct value in memory.
 
 ```JavaScript
 let a = 1;
@@ -7498,7 +7674,12 @@ a = 2;
 console.log(b); // 1
 ```
 
-Objects and arrays, on the other hand, behave differently. When you assign an object or an array to another variable, you are actually copying the reference to the object or array, not the actual value. This means that both variables will point to the same memory location where the object or array is stored. Consequently, if you modify the contents of the object or array using one variable, the changes will be reflected when accessing the object or array through the other variable. 
+Objects and arrays, on the other hand, behave differently. When you assign an object or an 
+array to another variable, you are actually copying the reference to the object or array, 
+not the actual value. This means that both variables will point to the same memory location 
+where the object or array is stored. Consequently, if you modify the contents of the object 
+or array using one variable, the changes will be reflected when accessing the object or array 
+through the other variable. 
 
 Let's look at an example:
 
@@ -7510,7 +7691,8 @@ console.log(d.name); // John
 
 `d` now points to the same area in memory as `c`. If we log `d.name`, we get John. 
 
-If I change the value of `c.name` to Brad and then log `d.name`, you will see that `d.name` is now Brad as well. This is because we copy the reference not the actual value.
+If I change the value of `c.name` to Brad and then log `d.name`, you will see that `d.name` 
+is now Brad as well. This is because we copy the reference not the actual value.
 
 ```js
 const c = {name: 'John'};
@@ -7521,9 +7703,15 @@ console.log(d.name); // Brad
 
 ## Fast and Slow Pointer Pattern
 
-There are different patterns when it comes to pointers. One of the most common patterns is the `fast and slow pointer` pattern. This pattern is used to solve problems where you need to find a certain node or element in a linked list or array. Remember, nodes are objects, so they are passed by reference.
+There are different patterns when it comes to pointers. One of the most common patterns is 
+the `fast and slow pointer` pattern. This pattern is used to solve problems where you need 
+to find a certain node or element in a linked list or array. Remember, nodes are objects, 
+so they are passed by reference.
 
-The idea of this pattern is that the pointers start at the same point, but one pointer moves faster than the other. The faster pointer moves at twice the speed of the slower pointer. When the faster pointer reaches the end of the list, the slower pointer will be at the middle node.
+The idea of this pattern is that the pointers start at the same point, but one pointer 
+moves faster than the other. The faster pointer moves at twice the speed of the slower 
+pointer. When the faster pointer reaches the end of the list, the slower pointer will 
+be at the middle node.
 
 <img src="../images/fastslow.png" width="500" alt="" />
 
@@ -7543,27 +7731,38 @@ function findMiddle(head) {
 }
 ```
 
-This `findMiddle` function takes in the head of a linked list and returns the middle node. The function uses two pointers, `slow` and `fast`, to traverse the linked list. The `slow` pointer moves one node at a time because of the `slow.next` assignment, while the `fast` pointer moves two nodes at a time because of the `fast.next.next` assignment.
+This `findMiddle` function takes in the head of a linked list and returns the middle node. 
+The function uses two pointers, `slow` and `fast`, to traverse the linked list. The `slow` 
+pointer moves one node at a time because of the `slow.next` assignment, while the `fast` 
+pointer moves two nodes at a time because of the `fast.next.next` assignment.
 
-When the `fast` pointer reaches the end of the list, the `slow` pointer will be at the middle node.
+When the `fast` pointer reaches the end of the list, the `slow` pointer will be at the 
+middle node.
 
-In the next lesson, we are going to implement a find middle function using the `LinkedList` class that we created.
+In the next lesson, we are going to implement a find middle function using the `LinkedList` 
+class that we created.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js75">75. Challenge: Find Middle</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In the last lesson, we looked at pointers and the fast and slow pattern. This is when you use two pointers to traverse an iterable data structure at different speeds. We want to do this to find the middle node of a linked list.
+In the last lesson, we looked at pointers and the fast and slow pattern. This is when you 
+use two pointers to traverse an iterable data structure at different speeds. We want to 
+do this to find the middle node of a linked list.
 
 ## Instructions
 
 Write a function called `findMiddle` that takes in a linked list.
 
-The function should return the middle node of the linked list. If the list has an even number of nodes, return the second middle node in the list.
+The function should return the middle node of the linked list. If the list has an even 
+number of nodes, return the second middle node in the list.
 
-There are a number of ways we could have formatted this. You could add `findMiddle` as a method on the `LinkedList` class, or you could write it as a standalone function. We chose to write it as a standalone function because it's easier to test this way. The function will take in the list instance.
+There are a number of ways we could have formatted this. You could add `findMiddle` as 
+a method on the `LinkedList` class, or you could write it as a standalone function. We 
+chose to write it as a standalone function because it's easier to test this way. The 
+function will take in the list instance.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -7574,7 +7773,7 @@ There are a number of ways we could have formatted this. You could add `findMidd
 function findMiddle(list: LinkedList): Node;
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 const list = new LinkedList();
@@ -7599,7 +7798,7 @@ list.add(6);
 findMiddle(list); // returns 4
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - Use two pointers to solve this problem
 - One pointer should move at twice the speed of the other pointer
@@ -7637,20 +7836,32 @@ function findMiddle(list) {
 <details open>
   <summary>Click For Solution</summary>
   
-### Explanation
+<h3>Explanation</h3>
 
 We will use the `fast and slow pointer pattern` to find the middle node of the linked list.
 
 - Set both pointers to the head of the list.
-- Run a while loop to traverse the list. The loop condition is that the fast pointer is not null and the next node of the fast pointer is not null. This ensures that the fast pointer is always ahead of the slow pointer.
-- Inside the loop, move the fast pointer two nodes at a time by assigning `fast = fast.next.next`. Then move the slow pointer one node at a time by assigning `slow = slow.next`.
-- After the loop, check if the fast pointer is null. If it is null, then the list has an even number of nodes. In this case, return the second middle node, which is the next node of the slow pointer. If the fast pointer is not null, then the list has an odd number of nodes. In this case, return the slow pointer.
+- Run a while loop to traverse the list. The loop condition is that the fast pointer is not 
+  null and the next node of the fast pointer is not null. This ensures that the fast pointer 
+  is always ahead of the slow pointer.
+- Inside the loop, move the fast pointer two nodes at a time by assigning `fast = fast.next.next`. 
+  Then move the slow pointer one node at a time by assigning `slow = slow.next`.
+- After the loop, check if the fast pointer is null. If it is null, then the list has an even 
+  number of nodes. In this case, return the second middle node, which is the next node of the 
+  slow pointer. If the fast pointer is not null, then the list has an odd number of nodes. In 
+  this case, return the slow pointer.
 
-### Time & Space Complexity
+<h3>Time & Space Complexity</h3>
 
-The time complexity of the function `findMiddle(list)` is `O(n)`, where n is the number of nodes in the linked list. This is because the function uses a two-pointer approach to find the middle node of the linked list. The fast pointer moves twice as fast as the slow pointer, effectively iterating through the entire linked list once.
+The time complexity of the function `findMiddle(list)` is `O(n)`, where n is the number of nodes 
+in the linked list. This is because the function uses a two-pointer approach to find the middle 
+node of the linked list. The fast pointer moves twice as fast as the slow pointer, effectively 
+iterating through the entire linked list once.
 
-The space complexity of the function is `O(1)`. Regardless of the size of the linked list, the function only uses a constant amount of additional space to store the slow, fast, and prev pointers. It doesn't use any additional data structures or recursion, so the space complexity remains constant.
+The space complexity of the function is `O(1)`. Regardless of the size of the linked list, the 
+function only uses a constant amount of additional space to store the slow, fast, and prev 
+pointers. It doesn't use any additional data structures or recursion, so the space complexity 
+remains constant.
 
 </details>
 
@@ -7689,50 +7900,78 @@ describe('findMiddle', () => {
 <h1 id="js76">76. Doubly Linked List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-So we've talked about a linked list and what we have been dealing with is the most common type of linked list and that is a `singly linked list`. Where each node points to the next. Well there are other types of linked lists as well such as the `doubly linked list`. I don't want to get too far into this because it does start to get really advanced, but I at least want to introduce you to the concept of a doubly linked list.
+So we've talked about a linked list and what we have been dealing with is the most common type 
+of linked list and that is a `singly linked list`. Where each node points to the next. Well 
+there are other types of linked lists as well such as the `doubly linked list`. I don't want 
+to get too far into this because it does start to get really advanced, but I at least want to 
+introduce you to the concept of a doubly linked list.
 
-Like a linked list, a `doubly linked list` is a linear data structure made up of a sequence of nodes, but in a doubly linked list, each node contains two pointers: one to the next node and one to the previous node in the sequence. This bidirectional linking allows for more flexibility in traversal and manipulation of the list.
+Like a linked list, a `doubly linked list` is a linear data structure made up of a sequence 
+of nodes, but in a doubly linked list, each node contains two pointers: one to the next node 
+and one to the previous node in the sequence. This bidirectional linking allows for more 
+flexibility in traversal and manipulation of the list.
 
 ## Structure of a Doubly Linked List
 
 Each node in a doubly linked list contains three parts:
 
-1. **Previous**: A pointer to the previous node in the sequence, enabling traversal in reverse order.
+1. **Previous**: A pointer to the previous node in the sequence, enabling traversal in 
+   reverse order.
 2. **Data**: It holds the value or payload representing the information stored in the node.
 3. **Next**: A pointer to the next node in the sequence, facilitating forward traversal.
 
-The first node in the list is the `head`, and the last node is the `tail`. Both the `head` and `tail` pointers can be used to efficiently access the beginning and end of the list.
+The first node in the list is the `head`, and the last node is the `tail`. Both the `head` 
+and `tail` pointers can be used to efficiently access the beginning and end of the list.
 
 <img src="../images/doubly-linked-list.png" alt="" width="500" />
 
-This image depicts a doubly linked list with four nodes. Each node has pointers to the previous and next nodes. The `head` node's `prev` pointer points to `null` because there is no previous node. Similarly, the `tail` node's `next` pointer points to `null`.
+This image depicts a doubly linked list with four nodes. Each node has pointers to the 
+previous and next nodes. The `head` node's `prev` pointer points to `null` because 
+there is no previous node. Similarly, the `tail` node's `next` pointer points to `null`.
 
 ## Advantages of Doubly Linked Lists
 
 Doubly linked lists offer several advantages, building upon the features of a singly linked list:
 
-- **Bidirectional Traversal**: Doubly linked lists allow traversing in both forward and reverse directions efficiently, as each node has pointers to both the next and previous nodes.
-- **Efficient Insertion and Deletion**: Insertion or deletion of nodes at the beginning, end, or middle of the list can be more efficient than with singly linked lists, as both the previous and next pointers need to be updated.
-- **Reverse Traversal**: Accessing nodes in reverse order becomes possible without the need to reconstruct the list.
+- **Bidirectional Traversal**: Doubly linked lists allow traversing in both forward 
+  and reverse directions efficiently, as each node has pointers to both the next and 
+  previous nodes.
+- **Efficient Insertion and Deletion**: Insertion or deletion of nodes at the beginning, end, 
+  or middle of the list can be more efficient than with singly linked lists, as both the 
+  previous and next pointers need to be updated.
+- **Reverse Traversal**: Accessing nodes in reverse order becomes possible without the need 
+  to reconstruct the list.
 
 ## Drawbacks of Doubly Linked Lists
 
-- **Memory Overhead**: Each node in a doubly linked list requires extra memory to store two pointers instead of one. This can lead to increased memory consumption compared to both arrays and singly linked lists.
-- **Complexity**: The bidirectional pointers increase the complexity of implementation and maintenance compared to singly linked lists. When inserting or deleting a node in a doubly linked list, you need to update both the previous and next pointers of the affected nodes. This is necessary to maintain the integrity of the list. 
+- **Memory Overhead**: Each node in a doubly linked list requires extra memory to store two 
+  pointers instead of one. This can lead to increased memory consumption compared to both 
+  arrays and singly linked lists.
+- **Complexity**: The bidirectional pointers increase the complexity of implementation and 
+  maintenance compared to singly linked lists. When inserting or deleting a node in a doubly 
+  linked list, you need to update both the previous and next pointers of the affected nodes. 
+  This is necessary to maintain the integrity of the list. 
 
-In the next lesson, we will implement a doubly linked list in JavaScript and explore how its features can be utilized.
+In the next lesson, we will implement a doubly linked list in JavaScript and explore how its 
+features can be utilized.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js77">77. Doubly Linked List Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In this lesson, we will create a doubly linked list class in JavaScript. If you want to try this on your own, going on the knowledge that you have of a linked list and what I have explained about a doubly linked list, go ahead and try to implement this on your own. If you get stuck, you can always come back and watch this lesson.
+In this lesson, we will create a doubly linked list class in JavaScript. If you want to try 
+this on your own, going on the knowledge that you have of a linked list and what I have 
+explained about a doubly linked list, go ahead and try to implement this on your own. If 
+you get stuck, you can always come back and watch this lesson.
 
-I am going to switch it up a bit and instead of using classes, I am going to use a constructor function and some methods on the prototype.
+I am going to switch it up a bit and instead of using classes, I am going to use a constructor 
+function and some methods on the prototype.
 
 ## `Node` Function
 
-We will first create a `Node` function that will be used to create nodes for our doubly linked list. The `Node` function will take in a value and set the `value` property to the value that is passed in. It will also set the `next` and `prev` properties to `null`.
+We will first create a `Node` function that will be used to create nodes for our doubly linked 
+list. The `Node` function will take in a value and set the `value` property to the value that 
+is passed in. It will also set the `next` and `prev` properties to `null`.
 
 ```js
 function Node(data) {
@@ -7744,7 +7983,9 @@ function Node(data) {
 
 ## `DoublyLinkedList` Function
 
-Next, we will create a `DoublyLinkedList` function that will be used to create doubly linked lists. The `DoublyLinkedList` function will set the `head` and `tail` properties to `null` and the `length` property to `0`.
+Next, we will create a `DoublyLinkedList` function that will be used to create doubly linked 
+lists. The `DoublyLinkedList` function will set the `head` and `tail` properties to `null` 
+and the `length` property to `0`.
 
 ```js
 function DoublyLinkedList() {
@@ -7756,7 +7997,8 @@ function DoublyLinkedList() {
 
 ## `append` Method
 
-We will add a method called `append` to the `DoublyLinkedList` prototype. This method will add a node to the end of the doubly linked list.
+We will add a method called `append` to the `DoublyLinkedList` prototype. This method will 
+add a node to the end of the doubly linked list.
 
 ```js
 DoublyLinkedList.prototype.append = function (data) {
@@ -7775,7 +8017,11 @@ DoublyLinkedList.prototype.append = function (data) {
 };
 ```
 
-We create a new node with the data that is passed in. If the `head` property is `null`, then we set the `head` and `tail` properties to the new node. Otherwise, we set the `prev` property of the new node to the current `tail` node. We then set the `next` property of the current `tail` node to the new node. Finally, we set the `tail` property to the new node.
+We create a new node with the data that is passed in. If the `head` property is `null`, 
+then we set the `head` and `tail` properties to the new node. Otherwise, we set the `prev` 
+property of the new node to the current `tail` node. We then set the `next` property of 
+the current `tail` node to the new node. Finally, we set the `tail` property to the new 
+node.
 
 Let's try out what we have so far. Add this to your run file or the bottom of the current file:
 
@@ -7809,11 +8055,14 @@ DoublyLinkedList {
 }
 ```
 
-This shows us that we have a doubly linked list with a `head` and `tail` node. The `head` node has a `next` node and the `tail` node has a `prev` node. The `prev` of the first node and the `next` of the last node are both `null`.
+This shows us that we have a doubly linked list with a `head` and `tail` node. The `head` 
+node has a `next` node and the `tail` node has a `prev` node. The `prev` of the first node 
+and the `next` of the last node are both `null`.
 
 ## `printAll` Method
 
-Let's create a method to print out all of the data in the list. We will add a method called `printAll` to the `DoublyLinkedList` prototype.
+Let's create a method to print out all of the data in the list. We will add a method called 
+`printAll` to the `DoublyLinkedList` prototype.
 
 ```js
 DoublyLinkedList.prototype.printAll = function () {
@@ -7848,7 +8097,8 @@ You should see something like this:
 
 ## `prepend` Method
 
-Let's add a function to add a node to the beginning of the list. We will call this function `prepend`. It will take in a value and add a node to the beginning of the list.
+Let's add a function to add a node to the beginning of the list. We will call this function 
+`prepend`. It will take in a value and add a node to the beginning of the list.
 
 ```js
 DoublyLinkedList.prototype.prepend = function (data) {
@@ -7867,7 +8117,11 @@ DoublyLinkedList.prototype.prepend = function (data) {
 };
 ```
 
-We create a new node with the data that is passed in. If the `head` property is `null`, then we set the `head` and `tail` properties to the new node. Otherwise, we set the `next` property of the new node to the current `head` node. We then set the `prev` property of the current `head` node to the new node. Finally, we set the `head` property to the new node.
+We create a new node with the data that is passed in. If the `head` property is `null`, 
+then we set the `head` and `tail` properties to the new node. Otherwise, we set the 
+`next` property of the new node to the current `head` node. We then set the `prev` 
+property of the current `head` node to the new node. Finally, we set the `head` 
+property to the new node.
 
 You can try with:
 
@@ -7893,7 +8147,8 @@ Hello
 
 ## `insert` Method
 
-Let's add a function to insert a node at a specific index. We will call this function `insert`. It will take in an index and a value and insert a node at that index.
+Let's add a function to insert a node at a specific index. We will call this function 
+`insert`. It will take in an index and a value and insert a node at that index.
 
 ```js
 DoublyLinkedList.prototype.insert = function (index, data) {
@@ -7925,9 +8180,16 @@ DoublyLinkedList.prototype.insert = function (index, data) {
 };
 ```
 
-We first check if the index is valid. If it is, we check if the index is `0`. If it is, we call the `prepend` method. We then check if the index is the same as the length of the list. If it is, we call the `append` method. Otherwise, we create a new node with the data that is passed in.
+We first check if the index is valid. If it is, we check if the index is `0`. If it 
+is, we call the `prepend` method. We then check if the index is the same as the length 
+of the list. If it is, we call the `append` method. Otherwise, we create a new node 
+with the data that is passed in.
 
-We then loop through the list until we get to the node before the index. We set the `next` property of the new node to the `next` property of the current node. We set the `prev` property of the new node to the current node. We set the `prev` property of the node after the new node to the new node. We set the `next` property of the current node to the new node.
+We then loop through the list until we get to the node before the index. We set the 
+`next` property of the new node to the `next` property of the current node. We set 
+the `prev` property of the new node to the current node. We set the `prev` property 
+of the node after the new node to the new node. We set the `next` property of the 
+current node to the new node.
 
 You can try with:
 
@@ -7955,7 +8217,8 @@ World
 
 ## `get` Method
 
-Let's add a function to get a node at a specific index. We will call this function `get`. It will take in an index and return the node at that index.
+Let's add a function to get a node at a specific index. We will call this function 
+`get`. It will take in an index and return the node at that index.
 
 ```js
 DoublyLinkedList.prototype.get = function (index) {
@@ -7972,7 +8235,8 @@ DoublyLinkedList.prototype.get = function (index) {
 };
 ```
 
-We first check if the index is valid. If it is, we loop through the list until we get to the node at the index and return it.
+We first check if the index is valid. If it is, we loop through the list until we get 
+to the node at the index and return it.
 
 You can try with:
 
@@ -7996,7 +8260,8 @@ You should see something like this:
 
 ## `remove` Method
 
-Let's add a function to remove a node at a specific index. We will call this function `remove`. It will take in an index and remove the node at that index.
+Let's add a function to remove a node at a specific index. We will call this function 
+`remove`. It will take in an index and remove the node at that index.
 
 ```js
 DoublyLinkedList.prototype.remove = function (data) {
@@ -8033,11 +8298,17 @@ We first check if the list is empty by checking if the `head` is `null`. If it i
 
 If it is not empty, we continue and set the `currentNode` to the `head`.
 
-We then loop through the list until we find the node with the data that we want to remove. If we find it, we check if it is the `head` node. If it is, we set the `head` to the `next` node. We also check if the `head` is not `null`. If it is not, we set the `prev` of the `head` to `null` because it is now the first node.
+We then loop through the list until we find the node with the data that we want to 
+remove. If we find it, we check if it is the `head` node. If it is, we set the `head` 
+to the `next` node. We also check if the `head` is not `null`. If it is not, we set 
+the `prev` of the `head` to `null` because it is now the first node.
 
-If the node is not the `head`, we check if it is the `tail` node. If it is, we set the `tail` to the `prev` node. We also set the `next` of the `tail` to `null` because it is now the last node.
+If the node is not the `head`, we check if it is the `tail` node. If it is, we set 
+the `tail` to the `prev` node. We also set the `next` of the `tail` to `null` because 
+it is now the last node.
 
-If the node is neither the `head` nor the `tail`, we set the `next` of the `prev` node to the `next` node. We also set the `prev` of the `next` node to the `prev` node.
+If the node is neither the `head` nor the `tail`, we set the `next` of the `prev` node 
+to the `next` node. We also set the `prev` of the `next` node to the `prev` node.
 
 We then decrement the `length` and return `true`.
 
@@ -8152,21 +8423,26 @@ describe('DoublyLinkedList', () => {
 <h1 id="js78">78. Challenge: Find Pair Sum</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-You are given an array of integers and a target sum. Implement a function called `findPairSum` that finds and returns a pair of distinct elements from the array whose sum is equal to the target sum. If no such pair exists, return `null`. You should use the `DoublyLinkedList` class/constructor to efficiently implement this function.
+You are given an array of integers and a target sum. Implement a function called 
+`findPairSum` that finds and returns a pair of distinct elements from the array 
+whose sum is equal to the target sum. If no such pair exists, return `null`. You 
+should use the `DoublyLinkedList` class/constructor to efficiently implement this 
+function.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```javascript
 /**
  * Finds a pair of distinct elements from the array whose sum is equal to the target sum.
  * @param {number[]} nums - The array of integers.
  * @param {number} targetSum - The target sum to find.
- * @returns {number[] | null} - An array containing the pair of elements whose sum is the target sum, or null if no such pair exists.
+ * @returns {number[] | null} - An array containing the pair of elements whose sum is 
+   the target sum, or null if no such pair exists.
  */
 function findPairSum(nums: number[], targetSum: number): number[] | null
 ```
 
-### Example
+<h3>Example</h3>
 
 ```javascript
 const nums = [2, 6, 3, 8, 10, 5];
@@ -8176,7 +8452,7 @@ const pair = findPairSum(nums, targetSum);
 console.log(pair); // Should print: [2, 10]
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - Create a `DoublyLinkedList` to store the encountered numbers.
 - For each number in the array, calculate the difference between the target sum and the current number.
@@ -8205,14 +8481,16 @@ function findPairSum(nums, targetSum) {
 
 - Instantiate a new `DoublyLinkedList` called `seen` to store the encountered numbers.
 - Iterate through the input array `nums` using a `for...of` loop.
-- For each number `num` in the array, calculate the difference between the target sum and the current number. Store the difference in a variable called `difference`.
-- Check if the `seen` list contains the `difference`. If it does, return an array containing the `difference` and `num`.
+- For each number `num` in the array, calculate the difference between the target sum and the 
+  current number. Store the difference in a variable called `difference`.
+- Check if the `seen` list contains the `difference`. If it does, return an array containing 
+  the `difference` and `num`.
 - Otherwise, append the `num` to the `seen` list.
 - If no such pair exists, return `null`.
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```javascript
 describe('findPair', () => {
@@ -8260,21 +8538,21 @@ Let's look more into the terminology of trees.
 
 - **Path**: A path in a tree refers to the sequence of nodes and edges from one node to another. It represents the route or traversal from the starting node to the destination node. In the image below, the path 1-2-5 represents the route or the path from node 1 to node 5.
 
-### Depth & Height
+<h3>Depth & Height</h3>
 
 <img src="./images/treeheightdepth.png" width="500" alt="" />
 
 The terms `depth` and `height` are used to define the structure of a tree. They help us understand how deep or how tall the tree is and provide insight into it's characteristics.
 
-#### Depth Of A Node
+<h4>Depth Of A Node</h4>
 
 The depth of a node refers to the **number of edges along the path from the root node to the particular node**. If we look at the tree above, the depth of node 1 is 0 as it's the root. The depth of node 2 is 1 and the depth of node 4, 5, 6 and 7 is 2.
 
-#### Height Of A Node
+<h4>Height Of A Node</h4>
 
 The height of a node refers to the **number of edges along the longest path from that node to a leaf node**. It measures how far a node is from the deepest leaf node in a tree. In the tree above, the height of node 1 is 4 since the longest path to the furthest leaf is 4. Node 2 has a height of 2 and node 3 has a height of 3.
 
-#### Height Of A Tree
+<h4>Height Of A Tree</h4>
 
 The height of a tree is the same as the height of it's root node. This tree has a height of 4 since the longest path from the root is 4.
 
@@ -8305,7 +8583,7 @@ Then use that class to create the following binary tree:
 
 <img src="../images/tree5.png" width="500" alt="" />
 
-### Hints
+<h3>Hints</h3>
 
 - The constructor will take a `value` parameter.
 - Initialize the `left` and `right` properties to `null` in the constructor.
@@ -8339,7 +8617,7 @@ b.right = e;
 c.right = f;
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Create the `TreeNode` class with a constructor that takes a `value` parameter.
 - Initialize the `left` and `right` properties to `null`. This is because we don't know what the left and right children will be when we create the node. We will assign them later.
@@ -8409,19 +8687,25 @@ module.exports = {
 };
 ```
 
-We did exactly what I described above. We first check if the `root` node exists. If it doesn't, we return an empty array.
+We did exactly what I described above. We first check if the `root` node exists. If it doesn't, we 
+return an empty array.
 
 We then create a `result` array and a `stack` array. We then push the `root` node onto the stack.
 
-We then start a `while` loop that will run as long as the `stack` array has a length greater than `0`. Inside the `while` loop, we pop the last node off the stack and add it to the `result` array.
+We then start a `while` loop that will run as long as the `stack` array has a length greater than 
+`0`. Inside the `while` loop, we pop the last node off the stack and add it to the `result` array.
 
-We then check if the `current` node has a right child. If it does, we add it to the stack. We then check if the `current` node has a left child. If it does, we add it to the stack.
+We then check if the `current` node has a right child. If it does, we add it to the stack. We then 
+check if the `current` node has a left child. If it does, we add it to the stack.
 
-We then repeat the process until the `stack` array has a length of `0`. We then return the `result` array.
+We then repeat the process until the `stack` array has a length of `0`. We then return the `result` 
+array.
 
 ## Using the Stack Class
 
-Now, let's refactor this code to use the `Stack` class we created a few lessons ago. You can do this as a challenge, or you can look at the code below. I will also add a test to make sure the code works.
+Now, let's refactor this code to use the `Stack` class we created a few lessons ago. You can do 
+this as a challenge, or you can look at the code below. I will also add a test to make sure the 
+code works.
 
 ```js
 const Stack = require('./stack');
@@ -8461,7 +8745,8 @@ function depthFirstTraversal(root) {
 }
 ```
 
-This code is very similar, except we used a pre-defined `Stack` class instead of a standard array. We also used the `isEmpty()` method instead of checking the length of the array.
+This code is very similar, except we used a pre-defined `Stack` class instead of a standard array. 
+We also used the `isEmpty()` method instead of checking the length of the array.
 
 ## Test Cases
 
@@ -8510,9 +8795,13 @@ describe('Depth First Traversal', () => {
 
 ## Instructions
 
-Write a function called `recDepthFirstTraversal` that takes the root node of a binary tree as input and returns an array containing the nodes visited in depth-first order. You can use the last lesson as a reference, but you must use recursion to solve this problem.
+Write a function called `recDepthFirstTraversal` that takes the root node of a binary tree as 
+input and returns an array containing the nodes visited in depth-first order. You can use the 
+last lesson as a reference, but you must use recursion to solve this problem.
 
-Depth-first traversal is an algorithm that starts at the root node and explores as far as possible along each branch before backtracking. The nodes are visited in the order they are encountered during the traversal.
+Depth-first traversal is an algorithm that starts at the root node and explores as far as possible 
+along each branch before backtracking. The nodes are visited in the order they are encountered 
+during the traversal.
 
 The `Node` class is provided for you:
 
@@ -8528,7 +8817,7 @@ class Node {
 
 You can assume that the binary tree is not empty.
 
-### Example
+<h3>Example</h3>
 
 ```js
 const root = new Node('a');
@@ -8541,9 +8830,10 @@ root.right.left = new Node('f');
 depthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
 ```
 
-### Hints
+<h3>Hints</h3>
 
-- You can implement the depth-first traversal recursively using a helper function that is called on the left and right subtrees of the current node.
+- You can implement the depth-first traversal recursively using a helper function that is called 
+on the left and right subtrees of the current node.
 - The base case is when the node is `null`, in which case we simply return from the function.
 
 ## Solutions
@@ -8576,7 +8866,7 @@ function recDepthFirstTraversal(root) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Initialize an empty array called `result` to store the nodes visited in depth-first order.
 - Define a helper function called `traverse` that takes in a node as input.
@@ -8588,7 +8878,7 @@ function recDepthFirstTraversal(root) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 const { Node, recDepthFirstTraversal } = require('./recursive-depth-traversal');
@@ -8616,17 +8906,28 @@ test('Depth First Traversal', () => {
 <h1 id="js83">83. Breadth-First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Now, let's explore another traversal algorithm for binary trees called `Breadth-First Traversal`. Unlike depth-first traversal, which explores as far as possible along each branch before backtracking, breadth-first traversal explores all the nodes at the current depth level before moving to the next level.
+Now, let's explore another traversal algorithm for binary trees called `Breadth-First Traversal`. 
+Unlike depth-first traversal, which explores as far as possible along each branch before 
+backtracking, breadth-first traversal explores all the nodes at the current depth level 
+before moving to the next level.
 
-To illustrate this algorithm, let's consider the same binary tree we used in the depth-first traversal example:
+To illustrate this algorithm, let's consider the same binary tree we used in the depth-first 
+traversal example:
 
 <img src=".../images/breadth-first.png" width="500" alt="" />
 
-For breadth-first traversal, we start at the root node `a` and visit its children, `b` and `c`, in order. Then, we move down to the next level and visit the children of `b` and `c`, which are `d`, `e`, and `f`. We continue this pattern, visiting all nodes at the current level before moving to the next level.
+For breadth-first traversal, we start at the root node `a` and visit its children, `b` and 
+`c`, in order. Then, we move down to the next level and visit the children of `b` and `c`, 
+which are `d`, `e`, and `f`. We continue this pattern, visiting all nodes at the current 
+level before moving to the next level.
 
 So the order of traversal in this example would be `a`, `b`, `c`, `d`, `e`, `f`.
 
-To implement the breadth-first traversal algorithm, we'll use a queue data structure. A queue is a `FIFO` (First In First Out) data structure, which means the first node we add to the queue will be the first node we remove from the queue. We'll start by pushing the root node onto the queue and then iterate through the queue, adding the children of each node to the queue as we visit them.
+To implement the breadth-first traversal algorithm, we'll use a queue data structure. A 
+queue is a `FIFO` (First In First Out) data structure, which means the first node we add 
+to the queue will be the first node we remove from the queue. We'll start by pushing the 
+root node onto the queue and then iterate through the queue, adding the children of each 
+node to the queue as we visit them.
 
 Let's implement the breadth-first traversal in JavaScript:
 
@@ -8671,19 +8972,24 @@ module.exports = {
 };
 ```
 
-In this implementation, we first check if the `root` node exists. If it doesn't, we return an empty array.
+In this implementation, we first check if the `root` node exists. If it doesn't, we return 
+an empty array.
 
 We then create a `result` array and a `queue` array. We push the `root` node onto the queue.
 
-We then start a `while` loop that runs as long as the `queue` array has a length greater than `0`.
+We then start a `while` loop that runs as long as the `queue` array has a length greater 
+than `0`.
 
-Inside the loop, we dequeue the first node from the queue (using `shift()`) and add it to the `result` array.
+Inside the loop, we dequeue the first node from the queue (using `shift()`) and add it to 
+the `result` array.
 
-We then enqueue the left and right children of the current node, if they exist. We continue this process until the `queue` array is empty, and then we return the `result` array.
+We then enqueue the left and right children of the current node, if they exist. We continue 
+this process until the `queue` array is empty, and then we return the `result` array.
 
 ## Using the Queue Class
 
-Now, let's refactor this code to use the `Queue` class. You can do this as a challenge, or you can look at the code below. I will also add tests to ensure the code works correctly.
+Now, let's refactor this code to use the `Queue` class. You can do this as a challenge, or 
+you can look at the code below. I will also add tests to ensure the code works correctly.
 
 ```js
 const Queue = require('./queue');
@@ -8728,7 +9034,9 @@ module.exports = {
 };
 ```
 
-In this refactored code, we used the `Queue` class instead of a standard array for the queue data structure. We also used the `isEmpty()` method instead of checking the length of the array. We then added tests to ensure that the breadth-first traversal algorithm works correctly.
+In this refactored code, we used the `Queue` class instead of a standard array for the queue 
+data structure. We also used the `isEmpty()` method instead of checking the length of the 
+array. We then added tests to ensure that the breadth-first traversal algorithm works correctly.
 
 ## Test Cases
 
@@ -8768,7 +9076,11 @@ describe('Breadth-First Traversal', () => {
 });
 ```
 
-There is not really a straightforward way to solve this problem recursively without using a queue data structure. You could use a stack data structure, but you would have to keep track of the current level of the tree and the next level of the tree. This would make the code more complicated and less efficient. So in my opinion, this is the best way to do breadth-first traversal.
+There is not really a straightforward way to solve this problem recursively without using a 
+queue data structure. You could use a stack data structure, but you would have to keep track 
+of the current level of the tree and the next level of the tree. This would make the code 
+more complicated and less efficient. So in my opinion, this is the best way to do breadth-first 
+traversal.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js84">84. Challenge: Binary Tree Maximum Depth</h1>
@@ -8776,9 +9088,11 @@ There is not really a straightforward way to solve this problem recursively with
 
 ## Instructions
 
-Write a function called `maxDepth` that takes the root of a binary tree as input and returns the maximum depth of the tree. The maximum depth is defined as the number of nodes along the longest path from the root node down to the farthest leaf node.
+Write a function called `maxDepth` that takes the root of a binary tree as input and returns 
+the maximum depth of the tree. The maximum depth is defined as the number of nodes along the 
+longest path from the root node down to the farthest leaf node.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -8789,7 +9103,7 @@ Write a function called `maxDepth` that takes the root of a binary tree as input
 function maxDepth(root: Node): number;) {}
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 // Explanation: The binary tree is as follows:
@@ -8811,12 +9125,13 @@ function maxDepth(root: Node): number;) {}
 // Explanation: An empty tree has a maximum depth of 0.
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - You can solve this problem using a depth-first traversal approach.
-- Use recursion to explore the left and right subtrees of each node and return the maximum depth between them.
+- Use recursion to explore the left and right subtrees of each node and return the maximum 
+  depth between them.
 
-### Binary Tree Node
+<h3>Binary Tree Node</h3>
 
 Here's the definition of the binary tree node:
 
@@ -8856,7 +9171,7 @@ function maxDepth(root) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Check if the root node is `null`. If it is, return `0` since the tree is empty.
 - Recursively calculate the maximum depth of the left and right subtrees of the current node.
@@ -8864,7 +9179,7 @@ function maxDepth(root) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 const { Node, maxDepth } = require('./maximum-depth');
@@ -8920,17 +9235,28 @@ describe('Binary Tree Maximum Depth', () => {
 
 ```
 
-The test cases ensure that the `maxDepth` function correctly calculates the maximum depth of various binary trees, including edge cases of empty trees and trees with a single root node.
+The test cases ensure that the `maxDepth` function correctly calculates the maximum depth of 
+various binary trees, including edge cases of empty trees and trees with a single root node.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js85">85. Binary Search Tree (BST)</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Now that you know what a binary tree data structure is, we are going to look at `binary search trees` or `BST`. A binary search tree (BST) is a specific type of binary tree that follows a particular ordering and sorting property. 
+Now that you know what a binary tree data structure is, we are going to look at `binary search 
+trees` or `BST`. A binary search tree (BST) is a specific type of binary tree that follows a 
+particular ordering and sorting property. 
 
-While the ordering rule is commonly associated with numeric values, it's important to note that binary search trees can handle various types of data, not just numbers. One of the key advantages of binary search trees are that they're versatile enough to accommodate any data type that can be compared for ordering.
+While the ordering rule is commonly associated with numeric values, it's important to note that 
+binary search trees can handle various types of data, not just numbers. One of the key advantages 
+of binary search trees are that they're versatile enough to accommodate any data type that can be 
+compared for ordering.
 
-For instance, consider a binary search tree that stores strings representing names in alphabetical order. The tree's structure ensures that names are organized in a way that allows for efficient searches, insertions, and deletions. Similarly, binary search trees can be used for custom objects, where the ordering is determined by specific attributes or properties of the objects such as the price of a product. So we'll be using numeric values just for simplicity and so you can wrap your head around it.
+For instance, consider a binary search tree that stores strings representing names in 
+alphabetical order. The tree's structure ensures that names are organized in a way that 
+allows for efficient searches, insertions, and deletions. Similarly, binary search trees 
+can be used for custom objects, where the ordering is determined by specific attributes 
+or properties of the objects such as the price of a product. So we'll be using numeric 
+values just for simplicity and so you can wrap your head around it.
 
 Let's look at the following tree and go over the rules for a BST:
 
@@ -8940,31 +9266,60 @@ Let's look at the following tree and go over the rules for a BST:
 2. The left child's value is less than the parent node's value.
 3. The right child's value is greater than or equal to the parent node's value.
 
-The image above is a valid BST. Everything on the left is less than it's parent and everything on the right is greater than the parent.
+The image above is a valid BST. Everything on the left is less than it's parent and 
+everything on the right is greater than the parent.
 
-This does not only apply to immediate child nodes. Let's look at the image on the following image:
+This does not only apply to immediate child nodes. Let's look at the image on the 
+following image:
 
 <img src="../images/binary-search-tree.png" alt="" />
 
-If we look at the tree on the right-hand side, it is a valid binary tree, but it is not a valid binary search tree. The reason being that 3 is on the right side of 4, but 3 is less than 4. Everything on the right side of a node must be greater than or equal to the node's value.
+If we look at the tree on the right-hand side, it is a valid binary tree, but it is not a valid 
+binary search tree. The reason being that 3 is on the right side of 4, but 3 is less than 4. 
+Everything on the right side of a node must be greater than or equal to the node's value.
 
-This ordering makes searching very efficient. Let's say we are searching for the value 7. We start at the root node of 9. 7 is less than 9, so we move to the left child node of 4. 7 is greater than 4, so we move to the right child node of 4 and we find 7.
+This ordering makes searching very efficient. Let's say we are searching for the value 7. We 
+start at the root node of 9. 7 is less than 9, so we move to the left child node of 4. 7 is 
+greater than 4, so we move to the right child node of 4 and we find 7.
 
-The time complexity of search, insertion, and deletion operations in a binary search tree is `O(log n)`, where `n` is the number of nodes in the tree. This is because the search space is reduced by half at each step. This type of searching is much more efficient than a linear search, which instead goes through each element one by one and has a time complexity of `O(n)`.
+The time complexity of search, insertion, and deletion operations in a binary search tree 
+is `O(log n)`, where `n` is the number of nodes in the tree. This is because the search 
+space is reduced by half at each step. This type of searching is much more efficient than a 
+linear search, which instead goes through each element one by one and has a time complexity 
+of `O(n)`.
 
-### Operations on a Binary Search Tree
+<h3>Operations on a Binary Search Tree</h3>
 
-These are the three main operations on a binary search tree. I'm just going to give you a quick summary on the process for all three. It most likely won't be completely cleat until we actually code it out.
+These are the three main operations on a binary search tree. I'm just going to give you a 
+quick summary on the process for all three. It most likely won't be completely cleat until 
+we actually code it out.
 
-1. **Insertion**: To insert a new node into a binary search tree, we start at the root and compare the new node's value with the current node's value. If the value is less, we move to the left subtree; if it is greater or equal, we move to the right subtree. This process continues recursively until we find an empty spot, where we insert the new node.
+1. **Insertion**: To insert a new node into a binary search tree, we start at the root and 
+compare the new node's value with the current node's value. If the value is less, we move 
+to the left subtree; if it is greater or equal, we move to the right subtree. This process 
+continues recursively until we find an empty spot, where we insert the new node.
 
-2. **Search**: Searching for a value in a binary search tree follows a similar process as insertion. Starting at the root, we compare the value with the current node's value. If it matches, the search is successful. If it is less, we move to the left subtree; if it is greater, we move to the right subtree. This process continues recursively until we find the value or reach a null reference, indicating that the value is not in the tree.
+2. **Search**: Searching for a value in a binary search tree follows a similar process as 
+insertion. Starting at the root, we compare the value with the current node's value. If it 
+matches, the search is successful. If it is less, we move to the left subtree; if it is 
+greater, we move to the right subtree. This process continues recursively until we find 
+the value or reach a null reference, indicating that the value is not in the tree.
 
-3. **Deletion**: Deleting a node in a binary search tree involves several cases, depending on the node's children. If the node to be deleted has no children (a leaf node), it can be simply removed. If it has one child, that child replaces the deleted node. If it has two children, it can be replaced by either the largest node in its left subtree (called its predecessor) or the smallest node in its right subtree (called its successor). This process maintains the binary search tree property.
+3. **Deletion**: Deleting a node in a binary search tree involves several cases, depending 
+on the node's children. If the node to be deleted has no children (a leaf node), it can be 
+simply removed. If it has one child, that child replaces the deleted node. If it has two 
+children, it can be replaced by either the largest node in its left subtree (called its 
+predecessor) or the smallest node in its right subtree (called its successor). This 
+process maintains the binary search tree property.
 
-Binary search trees are used in various applications where efficient search and retrieval of data are essential. However, it's crucial to ensure that the tree remains balanced to avoid degradation of its performance. There are different balancing techniques like `AVL` trees and `Red-Black` trees to achieve this.
+Binary search trees are used in various applications where efficient search and retrieval of 
+data are essential. However, it's crucial to ensure that the tree remains balanced to avoid 
+degradation of its performance. There are different balancing techniques like `AVL` trees 
+and `Red-Black` trees to achieve this.
 
-There are online tools that you can use to create a binary search tree and visualize the operations on it such as https://www.cs.usfca.edu/~galles/visualization/BST.html and http://btv.melezinek.cz/binary-search-tree.html.
+There are online tools that you can use to create a binary search tree and visualize the 
+operations on it such as https://www.cs.usfca.edu/~galles/visualization/BST.html and 
+http://btv.melezinek.cz/binary-search-tree.html.
 
 In the next lesson, let's implement a binary search tree in JavaScript.
 
@@ -8972,7 +9327,10 @@ In the next lesson, let's implement a binary search tree in JavaScript.
 <h1 id="js86">86. Binary Search Tree Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In this lesson, we will implement a binary search tree in JavaScript. We will start by creating a `Node` class, which will represent each node in the tree. Each node will have a `value`, a `left` property, and a `right` property. The `left` and `right` properties will point to other nodes, or be `null` if there is no left or right child.
+In this lesson, we will implement a binary search tree in JavaScript. We will start by 
+creating a `Node` class, which will represent each node in the tree. Each node will 
+have a `value`, a `left` property, and a `right` property. The `left` and `right` 
+properties will point to other nodes, or be `null` if there is no left or right child.
 
 ```js
 class Node {
@@ -8984,7 +9342,8 @@ class Node {
 }
 ```
 
-Next, we will create a `BinarySearchTree` class. This class will have a `root` property, which will point to the root node of the tree. Initially, the root node will be `null`.
+Next, we will create a `BinarySearchTree` class. This class will have a `root` property, 
+which will point to the root node of the tree. Initially, the root node will be `null`.
 
 ```js
 class BinarySearchTree {
@@ -8996,7 +9355,8 @@ class BinarySearchTree {
 
 ## `insert` Method
 
-Next, we will implement the `insert` method. This method will take a value as an argument, and insert a new node with that value into the tree.
+Next, we will implement the `insert` method. This method will take a value as an argument, 
+and insert a new node with that value into the tree.
 
 ```js
 insert(value) {
@@ -9031,15 +9391,20 @@ insert(value) {
 
 We start by creating a new node with the given value.
 
-If the tree is empty, we set the root node to be the new node. Otherwise, we start at the root node, and traverse the tree until we find a node without a left or right child.
+If the tree is empty, we set the root node to be the new node. Otherwise, we start at the root 
+node, and traverse the tree until we find a node without a left or right child.
 
-If the new value is less than the current node's value, we move on to the left child. If the new value is greater than or equal to the current node's value, we move on to the right child.
+If the new value is less than the current node's value, we move on to the left child. If the 
+new value is greater than or equal to the current node's value, we move on to the right child.
 
-We continue this process until we find a node without a left or right child, and then we insert the new node at that location.
+We continue this process until we find a node without a left or right child, and then we insert 
+the new node at that location.
 
 ## `lookup` Method
 
-Next, we will implement the `lookup` method. This method will take a value as an argument, and return the node with that value if it exists in the tree. If the value does not exist in the tree, we will return `null`.
+Next, we will implement the `lookup` method. This method will take a value as an argument, and 
+return the node with that value if it exists in the tree. If the value does not exist in the 
+tree, we will return `null`.
 
 ```js
 lookup(value) {
@@ -9067,15 +9432,19 @@ lookup(value) {
 
 We set the current node to be the root node.
 
-If the tree is empty, we return `null`. Otherwise, we traverse the tree until we find a node with the given value.
+If the tree is empty, we return `null`. Otherwise, we traverse the tree until we find a node 
+with the given value.
 
-If the value is less than the current node's value, we move on to the left child. If the value is greater than the current node's value, we move on to the right child. If the value is equal to the current node's value, we return the current node.
+If the value is less than the current node's value, we move on to the left child. If the value 
+is greater than the current node's value, we move on to the right child. If the value is equal 
+to the current node's value, we return the current node.
 
 If we reach a node that does not have a left or right child, we return `null`.
 
 ## `remove` Method
 
-Next, we will implement the `remove` method. This method will take a value as an argument, and remove the node with that value from the tree.
+Next, we will implement the `remove` method. This method will take a value as an argument, 
+and remove the node with that value from the tree.
 
 ```js
 remove(value) {
@@ -9121,11 +9490,16 @@ remove(value) {
 }
 ```
 
-This one is pretty tough. We start by creating a helper function called `removeNode`. This function will take a node and a value as arguments, and return the node with the given value removed from the tree.
+This one is pretty tough. We start by creating a helper function called `removeNode`. This 
+function will take a node and a value as arguments, and return the node with the given value 
+removed from the tree.
 
-If the node is `null`, we return `null`. Otherwise, we traverse the tree until we find the node with the given value.
+If the node is `null`, we return `null`. Otherwise, we traverse the tree until we find the 
+node with the given value.
 
-If the value is less than the current node's value, we move on to the left child. If the value is greater than the current node's value, we move on to the right child. If the value is equal to the current node's value, we have found the node we want to remove.
+If the value is less than the current node's value, we move on to the left child. If the 
+value is greater than the current node's value, we move on to the right child. If the value 
+is equal to the current node's value, we have found the node we want to remove.
 
 There are three cases we need to consider:
 
@@ -9133,21 +9507,27 @@ There are three cases we need to consider:
 2. The node has two children
 3. The node is the root node
 
-### Case 1: Node with no child or only one child
+<h3>Case 1: Node with no child or only one child</h3>
 
-If the node has no children or only one child, we can simply return the node's left or right child. This will remove the node from the tree.
+If the node has no children or only one child, we can simply return the node's left or right 
+child. This will remove the node from the tree.
 
-### Case 2: Node with two children
+<h3>Case 2: Node with two children</h3>
 
-If the node has two children, we need to find the smallest value in the right subtree. This value will be the node's successor. We will replace the node's value with the successor's value, and then remove the successor from the tree.
+If the node has two children, we need to find the smallest value in the right subtree. This 
+value will be the node's successor. We will replace the node's value with the successor's 
+value, and then remove the successor from the tree.
 
-### Case 3: Node is the root node
+<h3>Case 3: Node is the root node</h3>
 
-If the node is the root node, we need to replace the root node with the successor. We will replace the root node's value with the successor's value, and then remove the successor from the tree.
+If the node is the root node, we need to replace the root node with the successor. We will 
+replace the root node's value with the successor's value, and then remove the successor 
+from the tree.
 
 ## `printTree` Method
 
-Finally, we will implement the `printTree` method. This method will print the tree in a human-readable format.
+Finally, we will implement the `printTree` method. This method will print the tree in a 
+human-readable format.
 
 ```js
  printTree() {
@@ -9165,7 +9545,10 @@ Finally, we will implement the `printTree` method. This method will print the tr
 
 ## Binary Search Tree Runtime Analysis
 
-BST's are very efficient data structures. They are very fast at inserting, looking up, and deleting values and have a runtime of O(log n) for each of these operations except for printing the tree, which has a runtime of O(n). This is because we have to visit every node in the tree to print it.
+BST's are very efficient data structures. They are very fast at inserting, looking up, and 
+deleting values and have a runtime of O(log n) for each of these operations except for 
+printing the tree, which has a runtime of O(n). This is because we have to visit every 
+node in the tree to print it.
 
 | Operation | Runtime  |
 | --------- | -------- |
@@ -9208,7 +9591,8 @@ This will log the following:
 }
 ```
 
-You can see that the node with the value 4 has a left child with the value 2, and a right child with the value 7.
+You can see that the node with the value 4 has a left child with the value 2, and a right child 
+with the value 7.
 
 Let's remove the node with the value 7 from the tree.
 
@@ -9232,7 +9616,8 @@ This will log the following:
 }
 ```
 
-You can see that the node with the value 4 now has a right child with the value 8 instead of 7. So it essentially replaced the node with the one that was to the right of it.
+You can see that the node with the value 4 now has a right child with the value 8 instead of 7. 
+So it essentially replaced the node with the one that was to the right of it.
 
 Let's print the tree to make sure it looks like the one we created.
 
@@ -9252,9 +9637,12 @@ This will print it in order minus the node with the value 7, which we removed.
 15
 ```
 
-I know this may have been very overwhelming, but don't expect to master this in a day. It takes time and practice. I recommend you go through this article again and try to understand it better. I also recommend you try to implement this data structure yourself as well as others without looking at the videos or documentation.
+I know this may have been very overwhelming, but don't expect to master this in a day. It takes 
+time and practice. I recommend you go through this article again and try to understand it better. 
+I also recommend you try to implement this data structure yourself as well as others without 
+looking at the videos or documentation.
 
-### Test Cases
+<h3>Test Cases</h3>
 
 Here is the testing suite that you can use for the binary search tree data structure.
 
@@ -9377,9 +9765,12 @@ Write a function called `isValidBST` that takes in the following parameters:
 
 The function should return a boolean indicating whether the binary tree is a valid binary search tree (BST).
 
-You want to check ALL subtrees, not just the right and left of the root node. I would suggest creating a helper function to call recursively that takes in a `min` and `max` value. Make sure that anything on the left of the node is less than the max (parent node) and anything on the right is more than the min (parent node).
+You want to check ALL subtrees, not just the right and left of the root node. I would suggest 
+creating a helper function to call recursively that takes in a `min` and `max` value. Make sure 
+that anything on the left of the node is less than the max (parent node) and anything on the 
+right is more than the min (parent node).
 
-### Binary Tree Node
+<h3>Binary Tree Node</h3>
 
 Here's the definition of the binary tree node:
 
@@ -9393,11 +9784,14 @@ class Node {
 }
 ```
 
-### Valid Binary Search Tree (BST)
+<h3>Valid Binary Search Tree (BST)</h3>
 
-A binary search tree (BST) is a binary tree where each node has a value, and all the nodes in the left subtree have values less than the current node's value, while all the nodes in the right subtree have values greater than the current node's value. Additionally, the left and right subtrees must also be valid binary search trees.
+A binary search tree (BST) is a binary tree where each node has a value, and all the nodes in the 
+left subtree have values less than the current node's value, while all the nodes in the right 
+subtree have values greater than the current node's value. Additionally, the left and right 
+subtrees must also be valid binary search trees.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -9414,7 +9808,7 @@ function isValidBST(
 ): boolean {}
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 // Input: root = [2,1,3]
@@ -9433,13 +9827,15 @@ function isValidBST(
 //    1   4
 //       / \
 //      3   6
-// The node with a value of 4 has its left child with a value of 3, which violates the BST property, so it is not a valid BST.
+// The node with a value of 4 has its left child with a value of 3, which violates the BST 
+// property, so it is not a valid BST.
 ```
 
-### Hints
+<h3>Hints</h3>
 
 - You can solve this problem using a depth-first traversal approach.
-- Use recursion to explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
+- Use recursion to explore the left and right subtrees of each node and check if the current 
+  node's value is within the valid range based on its position in the binary search tree.
 
 ## Solutions
 
@@ -9474,17 +9870,26 @@ function isValidBST(root, min = null, max = null) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
-The solution to this problem is to use a depth-first traversal approach to recursively explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
+The solution to this problem is to use a depth-first traversal approach to recursively explore 
+the left and right subtrees of each node and check if the current node's value is within the 
+valid range based on its position in the binary search tree.
 
-- Check if the current node is `null`. If it is, return `true` because an empty tree is a valid binary search tree.
-- Check if the current node's value is less than or equal to the `min` value or greater than or equal to the `max` value. If it is, return `false` because the current node's value is not within the valid range based on its position in the binary search tree.
-- Recursively call the `isValidBST` function on the current node's left subtree, passing in the `min` value and the current node's value as the `max` value.
-- Recursively call the `isValidBST` function on the current node's right subtree, passing in the current node's value as the `min` value and the `max` value.
-- If the current node's value is within the valid range based on its position in the binary search tree and both the left and right subtrees are valid binary search trees, return `true`. Otherwise, return `false`.
+- Check if the current node is `null`. If it is, return `true` because an empty tree is a 
+  valid binary search tree.
+- Check if the current node's value is less than or equal to the `min` value or greater than or 
+  equal to the `max` value. If it is, return `false` because the current node's value is not 
+  within the valid range based on its position in the binary search tree.
+- Recursively call the `isValidBST` function on the current node's left subtree, passing in the 
+  `min` value and the current node's value as the `max` value.
+- Recursively call the `isValidBST` function on the current node's right subtree, passing in the 
+  current node's value as the `min` value and the `max` value.
+- If the current node's value is within the valid range based on its position in the binary 
+  search tree and both the left and right subtrees are valid binary search trees, return 
+  `true`. Otherwise, return `false`.
 
-### Try It Out
+<h3>Try It Out</h3>
 
 Let's test out our solution with the following binary search tree:
 
@@ -9517,7 +9922,7 @@ console.log(isValidBST(root));
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 const { Node, isValidBST } = require('./validate-bst');
@@ -9562,9 +9967,14 @@ describe('isValidBST', () => {
 <h1 id="js88">88. Graph</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-A `graph` is a versatile data structure that is similar to a tree. It consists of nodes (also called vertices) and edges (also called links). Each node represents an entity, and each edge represents a connection or relationship between two nodes. Graphs are used to represent many real-world applications: social networks, maps, routing algorithms, and more.
+A `graph` is a versatile data structure that is similar to a tree. It consists of nodes (also 
+called vertices) and edges (also called links). Each node represents an entity, and each edge 
+represents a connection or relationship between two nodes. Graphs are used to represent many 
+real-world applications: social networks, maps, routing algorithms, and more.
 
-You may hear the phrase "graph theory" in computer science. Graph theory is the study of graphs and their properties. It's a vast field of study with many applications in computer science and other fields.
+You may hear the phrase "graph theory" in computer science. Graph theory is the study of 
+graphs and their properties. It's a vast field of study with many applications in computer 
+science and other fields.
 
 ## Visual Representation of a Graph
 
@@ -9572,53 +9982,75 @@ Here is a visual representation of a few graphs:
 
 <img src="../images/graph.png"  alt="" />
 
-The circles represent `nodes`, also called `vertex` or `vertices` (plural) and the lines connecting the nodes represent `edges`. If you think of a social network, you can think of the users as nodes and the connections or friendships between users as edges.
+The circles represent `nodes`, also called `vertex` or `vertices` (plural) and the lines 
+connecting the nodes represent `edges`. If you think of a social network, you can think 
+of the users as nodes and the connections or friendships between users as edges.
 
 ## Types of Graphs
 
 Graphs can be categorized into several types based on their properties:
 
-- **Undirected Graph**: In an undirected graph, the edges have no direction. If there is an edge between node A and node B, it implies a connection between both nodes in both directions. The top one is an undirected graph.
+- **Undirected Graph**: In an undirected graph, the edges have no direction. If there is 
+an edge between node A and node B, it implies a connection between both nodes in both 
+directions. The top one is an undirected graph.
 
-- **Directed Graph (Digraph)**: In a directed graph, each edge has a specific direction. An edge from node A to node B indicates a one-way connection from A to B. The bottom one is a directed graph.
+- **Directed Graph (Digraph)**: In a directed graph, each edge has a specific direction. 
+An edge from node A to node B indicates a one-way connection from A to B. The bottom one 
+is a directed graph.
 
-- **Weighted Graph**: In a weighted graph, each edge has a weight or cost associated with it. These weights represent the strength of the relationship or the distance between nodes.
+- **Weighted Graph**: In a weighted graph, each edge has a weight or cost associated with 
+it. These weights represent the strength of the relationship or the distance between nodes.
 
-- **Cyclic Graph**: A cyclic graph contains at least one cycle, which means there is a closed path in the graph. I will give you an example of a cycle in a minute.
+- **Cyclic Graph**: A cyclic graph contains at least one cycle, which means there is a closed 
+path in the graph. I will give you an example of a cycle in a minute.
 
 - **Acyclic Graph**: An acyclic graph is a graph that does not contain any cycles.
 
-- **Connected Graph**: A connected graph is one where there is a path between any two nodes. In other words, every node in the graph can be reached from any other node.
+- **Connected Graph**: A connected graph is one where there is a path between any two nodes. 
+In other words, every node in the graph can be reached from any other node.
 
-- **Disconnected Graph**: A disconnected graph is one that consists of two or more separate subgraphs, and there is no path between nodes in different subgraphs.
+- **Disconnected Graph**: A disconnected graph is one that consists of two or more separate 
+subgraphs, and there is no path between nodes in different subgraphs.
 
 ## Graph cycles
 
-A cycle is a closed path in a graph. In other words, a cycle is a path that starts and ends at the same node. Here is an example of a cycle in a graph:
+A cycle is a closed path in a graph. In other words, a cycle is a path that starts and ends 
+at the same node. Here is an example of a cycle in a graph:
 
 <img src="../images/graph-cycle.png"  alt="" />
 
-A cycle starts and ends at the same node. In this example, the cycle is `b -> c -> e -> d -> b`. The cycle can be of any length, and it can contain any number of nodes.
+A cycle starts and ends at the same node. In this example, the cycle is `b -> c -> e -> d -> b`. 
+The cycle can be of any length, and it can contain any number of nodes.
 
-So that is the gist of a graph. In the next lesson, we will learn about 2 ways to represent a graph and those are an adjacency matrix and adjacency list.
+So that is the gist of a graph. In the next lesson, we will learn about 2 ways to represent a 
+graph and those are an adjacency matrix and adjacency list.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js89">89. Adjacency Matrix & Adjacency List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-There are two main ways to implement a graph: an `adjacency matrix` and an `adjacency list`. In this lesson, we'll look at both of these approaches.
+There are two main ways to implement a graph: an `adjacency matrix` and an `adjacency list`. 
+In this lesson, we'll look at both of these approaches.
 
 ## Adjacency Matrix
 
-An adjacency matrix is a two-dimensional array that stores the edges between two vertices as boolean values. The rows and columns of the matrix represent the vertices of the graph.
+An adjacency matrix is a two-dimensional array that stores the edges between two vertices as 
+boolean values. The rows and columns of the matrix represent the vertices of the graph.
 
 Let's look at an example:
 
 <img src="../images/adjacency-matrix.png" width="700"  alt="" />
 
-At the top we have a graph with some vertices and edges. At the bottom we have the adjacency matrix representation of the graph. The rows and columns represent the vertices of the graph. If we look at the vertex with the value of 1, we can see that it has edges to vertices 2 and 4. So we put a 1 in the first row for 2 and 4. This is an undirected graph, so it goes the other way as well. So we can put a 1 in the 2 row and the 4 row for 1. If this were a directed graph, we would only put a 1 in the 1 row for 2 and 4.
+At the top we have a graph with some vertices and edges. At the bottom we have the adjacency 
+matrix representation of the graph. The rows and columns represent the vertices of the graph. 
+If we look at the vertex with the value of 1, we can see that it has edges to vertices 2 and 4. 
+So we put a 1 in the first row for 2 and 4. This is an undirected graph, so it goes the other 
+way as well. So we can put a 1 in the 2 row and the 4 row for 1. If this were a directed graph, 
+we would only put a 1 in the 1 row for 2 and 4.
 
-The formula to see if a vertex `i` is connected to vertex `j` is `matrix[i][j]`. `i` is the row and `j` is the column. So `matrix[1][2]` is 1, which means that vertex 1 is connected to vertex 2. `matrix[2][1]` is also 1, which means that vertex 2 is connected to vertex 1.
+The formula to see if a vertex `i` is connected to vertex `j` is `matrix[i][j]`. `i` is the 
+row and `j` is the column. So `matrix[1][2]` is 1, which means that vertex 1 is connected to 
+vertex 2. `matrix[2][1]` is also 1, which means that vertex 2 is connected to vertex 1.
 
 To represent this adjacency matrix with a two dimensional array in JavaScript, we can do this:
 
@@ -9652,17 +10084,25 @@ If you wanted to represent this list with a JavaScript object, you could do this
 
 ## Which one is better?
 
-The answer is: it depends. It depends on the type of graph and the type of operations you want to perform on the graph. If you have a graph with a lot of edges, then the adjacency matrix might be better. If you have a graph with a lot of vertices, then the adjacency list might be better. If you want to be able to quickly tell if there is an edge between two vertices, then the adjacency matrix might be better. If you want to be able to quickly iterate over all the edges of a vertex, then the adjacency list might be better. I think overall, in my own opinion, the adjacency list is easier and more commonly used. But it really depends on the situation.
+The answer is: it depends. It depends on the type of graph and the type of operations you want 
+to perform on the graph. If you have a graph with a lot of edges, then the adjacency matrix 
+might be better. If you have a graph with a lot of vertices, then the adjacency list might be 
+better. If you want to be able to quickly tell if there is an edge between two vertices, then 
+the adjacency matrix might be better. If you want to be able to quickly iterate over all the 
+edges of a vertex, then the adjacency list might be better. I think overall, in my own opinion, 
+the adjacency list is easier and more commonly used. But it really depends on the situation.
 
-In the next lesson, we will take what we have learned about graphs and implement a graph class in JavaScript.
+In the next lesson, we will take what we have learned about graphs and implement a graph class 
+in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <h1 id="js90">90. Graph Implementation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-We are now going to create a graph class in JavaScript. Again, you can do this in any language you want. We will use an adjacency list in the form of an object.
+We are now going to create a graph class in JavaScript. Again, you can do this in any language 
+you want. We will use an adjacency list in the form of an object.
 
-### Constructor
+<h3>Constructor</h3>
 
 ```JavaScript
 class Graph {
@@ -9672,9 +10112,10 @@ class Graph {
 }
 ```
 
-### `addVertex` Method
+<h3>`addVertex` Method</h3>
 
-We will have a method called `addVertex` that takes a name of a vertex as a parameter. We will set the adjacency list at that vertex to be an empty array.
+We will have a method called `addVertex` that takes a name of a vertex as a parameter. We will 
+set the adjacency list at that vertex to be an empty array.
 
 ```JavaScript
 addVertex(vertex) {
@@ -9682,9 +10123,11 @@ addVertex(vertex) {
 }
 ```
 
-### `addEdge` Method
+<h3>`addEdge` Method</h3>
 
-We will also have a method called `addEdge` that takes two vertices as parameters. We will find in the adjacency list the key of vertex1 and push vertex2 to the array. Then we will find in the adjacency list the key of vertex2 and push vertex1 to the array.
+We will also have a method called `addEdge` that takes two vertices as parameters. We will find 
+in the adjacency list the key of vertex1 and push vertex2 to the array. Then we will find in the 
+adjacency list the key of vertex2 and push vertex1 to the array.
 
 ```JavaScript
 addEdge(vertex1, vertex2) {
@@ -9693,9 +10136,10 @@ addEdge(vertex1, vertex2) {
 }
 ```
 
-### `printAdjacencyList` Method
+<h3>`printAdjacencyList` Method</h3>
 
-Let's create a method to give us a visual representation of our adjacency list so that we can see all of the vertices and their edges/connections.
+Let's create a method to give us a visual representation of our adjacency list so that we can see 
+all of the vertices and their edges/connections.
 
 ```JS
 printAdjacencyList() {
@@ -9727,9 +10171,11 @@ Dallas -> Tokyo, Aspen
 Aspen -> Dallas, Tokyo
 ```
 
-### `removeEdge` Method
+<h3>`removeEdge` Method</h3>
 
-We will also have a method called `removeEdge` that takes two vertices as parameters. We will reassign the key of vertex1 to be an array that does not contain vertex2. We will reassign the key of vertex2 to be an array that does not contain vertex1.
+We will also have a method called `removeEdge` that takes two vertices as parameters. We will 
+reassign the key of vertex1 to be an array that does not contain vertex2. We will reassign the 
+key of vertex2 to be an array that does not contain vertex1.
 
 ```JavaScript
 removeEdge(vertex1, vertex2) {
@@ -9742,9 +10188,13 @@ removeEdge(vertex1, vertex2) {
 }
 ```
 
-### `removeVertex` Method
+<h3>`removeVertex` Method</h3>
 
-We will also have a method called `removeVertex` that takes a vertex as a parameter. We will loop as long as there are any other vertices in the adjacency list for that vertex. Inside the loop, we will call `removeEdge` and pass in the vertex we are removing and any values in the adjacency list for that vertex. Then we will delete the key in the adjacency list for that vertex.
+We will also have a method called `removeVertex` that takes a vertex as a parameter. We will 
+loop as long as there are any other vertices in the adjacency list for that vertex. Inside the 
+loop, we will call `removeEdge` and pass in the vertex we are removing and any values in the 
+adjacency list for that vertex. Then we will delete the key in the adjacency list for that 
+vertex.
 
 ```JavaScript
 removeVertex(vertex) {
@@ -9774,7 +10224,9 @@ g.removeVertex('Aspen');
 g.printAdjacencyList();
 ```
 
-We created a graph with three vertices. We added edges between Tokyo and Dallas, Dallas and Aspen, and Tokyo and Aspen. We removed the edge between Dallas and Aspen. We removed the vertex Aspen.
+We created a graph with three vertices. We added edges between Tokyo and Dallas, Dallas and 
+Aspen, and Tokyo and Aspen. We removed the edge between Dallas and Aspen. We removed the 
+vertex Aspen.
 
 You should see:
 
@@ -9856,49 +10308,67 @@ In the next lesson, we will look at graph traversal.
 <h1 id="js91">91. Graph Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-There are a few ways to traverse a graph. The two most common ways are **depth-first traversal** and **breadth-first traversal**.
+There are a few ways to traverse a graph. The two most common ways are **depth-first traversal** 
+and **breadth-first traversal**.
 
 We have already looked at these using trees, but the same concepts apply to graphs.
 
 ## Depth-First Traversal
 
-In depth-first traversal, we start at a vertex/node. In a tree, you would start at the root node. In a graph, you can start at any vertex. We then explore as far along each branch as possible before backtracking. We continue this process until we have visited all of the vertices in the graph.
+In depth-first traversal, we start at a vertex/node. In a tree, you would start at the root node. 
+In a graph, you can start at any vertex. We then explore as far along each branch as possible 
+before backtracking. We continue this process until we have visited all of the vertices in the 
+graph.
 
-One common way to implement depth-first traversal is to use a `stack`. We start by pushing the starting vertex onto the stack. We then pop the vertex off the stack and visit it. We then push all of its neighbors onto the stack. We continue this process until the stack is empty.
+One common way to implement depth-first traversal is to use a `stack`. We start by pushing the 
+starting vertex onto the stack. We then pop the vertex off the stack and visit it. We then push 
+all of its neighbors onto the stack. We continue this process until the stack is empty.
 
 So take this graph for example:
 
 <img src="../images/graph-depth-first.png">
 
-We have 5 vertices labeled `a` through `e` with 6 edges connecting them. We are going to traverse this graph using depth-first traversal. We could start at any vertex, but let's start at `a` and walk through the process.
+We have 5 vertices labeled `a` through `e` with 6 edges connecting them. We are going to 
+traverse this graph using depth-first traversal. We could start at any vertex, but let's 
+start at `a` and walk through the process.
 
-- We start at vertex `a` and put it on the stack and mark it as visited
+- We start at vertex `a` and put it on the stack and mark it as visited.
 
-- From here, we can go to vertex `b` or `c`. Let's go to `b`. We put `b` on the stack and mark it as visited
+- From here, we can go to vertex `b` or `c`. Let's go to `b`. We put `b` on the stack and
+  mark it as visited.
 
-- From `b`, we can go to `e`. We put `e` on the stack and mark it as visited
+- From `b`, we can go to `e`. We put `e` on the stack and mark it as visited.
 
-- From `e`, let's go to `c`. We put `c` on the stack and mark it as visited
+- From `e`, let's go to `c`. We put `c` on the stack and mark it as visited.
 
-- At this point, in both our stack and in the visited table, we have `a`, `b`, `e`, and `c`. `c` does not have any neighbors that we haven't already visited, so we pop it off the stack
+- At this point, in both our stack and in the visited table, we have `a`, `b`, `e`, and `c`. 
+  `c` does not have any neighbors that we haven't already visited, so we pop it off the stack.
 
-- We look at the top of the stack and see that `e` is next. Does `e` have any neighbors that we haven't already visited? Yes, `d`. We put `d` on the stack and mark it as visited
+- We look at the top of the stack and see that `e` is next. Does `e` have any neighbors that 
+  we haven't already visited? Yes, `d`. We put `d` on the stack and mark it as visited.
 
-- `d` is now at the top of the stack and does not have any neighbors that we haven't already visited, so we pop it off the stack
+- `d` is now at the top of the stack and does not have any neighbors that we haven't already 
+  visited, so we pop it off the stack
 
-- Now `e` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack
+- Now `e` is on top of the stack. It has no neighbors that we have not visited, so we pop it 
+  off the stack.
 
-- Now `b` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack
+- Now `b` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack.
 
-- Now `a` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack
+- Now `a` is on top of the stack. It has no neighbors that we have not visited, so we pop it off the stack.
 
-- The stack is now empty, so we are done
+- The stack is now empty, so we are done.
 
 ## Breadth-First Traversal
 
-Now let's explore another graph traversal technique called breadth-first traversal. In contrast to depth-first traversal, which explores as far as possible along each branch before backtracking, breadth-first traversal visits all the vertices at the current level before moving on to the next level.
+Now let's explore another graph traversal technique called breadth-first traversal. In contrast 
+to depth-first traversal, which explores as far as possible along each branch before backtracking, 
+breadth-first traversal visits all the vertices at the current level before moving on to the next 
+level.
 
-In order to implement breadth-first traversal, we utilize a queue data structure. Starting from a given vertex, we enqueue it into the queue and mark it as visited. Then, while the queue is not empty, we perform the following steps:
+In order to implement breadth-first traversal, we utilize a queue data structure. Starting from a 
+given vertex, we enqueue it into the queue and mark it as visited. Then, while the queue is not 
+empty, we perform the following steps:
 
 - Dequeue a vertex from the front of the queue.
 - Visit the dequeued vertex.
@@ -9914,17 +10384,27 @@ Let's apply breadth-first traversal to the same graph we used for depth-first tr
 
 - Then we dequeue `a` from the front of the queue and mark it as visited.
 
-- Now we enqueue all of `a`'s unvisited neighbors into the queue. `a` has three neighbors: `b`, `c`, and `d`. We enqueue them in that order. The queue now looks like this: `b`, `c`, `d`. With the `b` to the right because that is the start.
+- Now we enqueue all of `a`'s unvisited neighbors into the queue. `a` has three neighbors: `b`, 
+  `c`, and `d`. We enqueue them in that order. The queue now looks like this: `b`, `c`, `d`. With 
+  the `b` to the right because that is the start.
 
-- Now we dequeue `b` from the front of the queue. We visit `b` and enqueue all of its unvisited neighbors into the queue. 
+- Now we dequeue `b` from the front of the queue. We visit `b` and enqueue all of its unvisited 
+  neighbors into the queue. 
 
-- `b` has one unvisited neighbor: `e`. We enqueue `e` into the queue. The queue now looks like this: `c`, `d`, `e`.
+- `b` has one unvisited neighbor: `e`. We enqueue `e` into the queue. The queue now looks like 
+  this: `c`, `d`, `e`.
 
-- We dequeue `c` from the front of the queue. We visit `c` and enqueue all of its unvisited neighbors into the queue. `c` has no unvisited neighbors, so we do not enqueue anything. The queue now looks like this: `d`, `e`.
+- We dequeue `c` from the front of the queue. We visit `c` and enqueue all of its unvisited 
+  neighbors into the queue. `c` has no unvisited neighbors, so we do not enqueue anything. 
+  The queue now looks like this: `d`, `e`.
 
-- We dequeue `d` from the front of the queue. We visit `d` and enqueue all of its unvisited neighbors into the queue. `d` has no unvisited neighbors, so we do not enqueue anything. The queue now looks like this: `e`.
+- We dequeue `d` from the front of the queue. We visit `d` and enqueue all of its unvisited 
+  neighbors into the queue. `d` has no unvisited neighbors, so we do not enqueue anything. 
+  The queue now looks like this: `e`.
 
-- We dequeue `e` from the front of the queue. We visit `e` and enqueue all of its unvisited neighbors into the queue. `e` has no unvisited neighbors, so we do not enqueue anything. The queue is now empty, so we are done.
+- We dequeue `e` from the front of the queue. We visit `e` and enqueue all of its unvisited 
+  neighbors into the queue. `e` has no unvisited neighbors, so we do not enqueue anything. 
+  The queue is now empty, so we are done.
 
 The order in which we visited the vertices is: `a`, `b`, `c`, `d`, `e`.
 
@@ -9934,7 +10414,10 @@ The order in which we visited the vertices is: `a`, `b`, `c`, `d`, `e`.
 
 ## Instructions
 
-Write a function called `depthFirstTraversal` that performs a Depth First Traversal of a graph starting from a specified vertex and returns an array containing the vertices visited in the order they were traversed. Use the `Graph` class as well as the `Stack` class from the previous lessons.
+Write a function called `depthFirstTraversal` that performs a Depth First Traversal of a graph 
+starting from a specified vertex and returns an array containing the vertices visited in the 
+order they were traversed. Use the `Graph` class as well as the `Stack` class from the previous 
+lessons.
 
 ## Function Signature
 
@@ -9986,7 +10469,8 @@ depthFirstTraversal(g, 'A');
 ## Hints
 
 - The `Graph` class has an `adjacencyList` property that stores the vertices and their neighbors.
-- The `Stack` class has a `push` method that adds an element to the top of the stack and a `pop` method that removes the top element from the stack.
+- The `Stack` class has a `push` method that adds an element to the top of the stack and a `pop` 
+  method that removes the top element from the stack.
 - Use a results array to store the vertices visited in the order they were traversed
 
 ## Solutions
@@ -9994,7 +10478,7 @@ depthFirstTraversal(g, 'A');
 <details open>
   <summary>Click For Solution</summary>
 
-#### Using an adjacency list:
+<h4>Using an adjacency list:</h4>
 
 ```js
 function depthFirstTraversal(graph, startingVertex) {
@@ -10024,7 +10508,7 @@ function depthFirstTraversal(graph, startingVertex) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Check if the starting vertex exists in the graph's adjacency list. If it doesn't, return an empty array.
 - Initialize an empty object called `visited` to store the vertices visited.
@@ -10098,7 +10582,9 @@ describe('Graph Depth-First Traversal', () => {
 
 ## Instructions
 
-Write a function called `breadthFirstTraversal` that performs a Breadth First Traversal of a graph starting from a specified vertex and returns an array containing the vertices visited in the order they were traversed. Use the `Queue` class from the previous lessons.
+Write a function called `breadthFirstTraversal` that performs a Breadth First Traversal 
+of a graph starting from a specified vertex and returns an array containing the vertices 
+visited in the order they were traversed. Use the `Queue` class from the previous lessons.
 
 ## Function Signature
 
@@ -10149,10 +10635,13 @@ console.log(result);
 
 ## Hints
 
-- You can use the provided `Queue` class to keep track of the vertices to be visited in a breadth-first order.
+- You can use the provided `Queue` class to keep track of the vertices to be visited in a breadth-
+  first order.
 - Start by enqueuing the `startingVertex` onto the queue and mark it as visited.
-- Use a visited set to keep track of the visited vertices to avoid enqueuing the same vertex multiple times.
-- In the traversal loop, dequeue a vertex from the queue, add it to the result array, and enqueue all its neighbors that have not been visited yet.
+- Use a visited set to keep track of the visited vertices to avoid enqueuing the same vertex 
+  multiple times.
+- In the traversal loop, dequeue a vertex from the queue, add it to the result array, and enqueue 
+  all its neighbors that have not been visited yet.
 
 ## Solutions
 
@@ -10184,11 +10673,14 @@ function breadthFirstTraversal(graph, startingVertex) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
-- Create a `visited` set to keep track of the visited vertices, a `result` array to store the vertices visited in the order they were traversed, and a `queue` to keep track of the vertices to be visited in a breadth-first order.
+- Create a `visited` set to keep track of the visited vertices, a `result` array to store the 
+  vertices visited in the order they were traversed, and a `queue` to keep track of the vertices 
+  to be visited in a breadth-first order.
 - Enqueue the `startingVertex` onto the queue and mark it as visited.
-- In a loop, dequeue a vertex from the queue, add it to the result array, and enqueue all its neighbors that have not been visited yet.
+- In a loop, dequeue a vertex from the queue, add it to the result array, and enqueue all its 
+  neighbors that have not been visited yet.
 - Continue this process until the queue becomes empty.
 - Return the result array.
 
@@ -10246,17 +10738,29 @@ describe('Breadth First Traversal', () => {
 <h1 id="js94">94. What Are Sorting Algorithms?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-In this section, we're going to get into `sorting algorithms`. This stuff tends to get pretty advanced so I'm going to be teaching as if you've never heard the words `sorting algorithm` before. If you have, that's great, but I want everyone to be able to follow along.
+In this section, we're going to get into `sorting algorithms`. This stuff tends to get pretty 
+advanced so I'm going to be teaching as if you've never heard the words `sorting algorithm` 
+before. If you have, that's great, but I want everyone to be able to follow along.
 
-We looked at `Binary search trees` in the last section. So you know that in order to use a `Binary search tree`, you need to insert the data in a sorted order. But how do you sort the data? Well, you use a `sorting algorithm`.
+We looked at `Binary search trees` in the last section. So you know that in order to use a 
+`Binary search tree`, you need to insert the data in a sorted order. But how do you sort the 
+data? Well, you use a `sorting algorithm`.
 
-A `sorting algorithm` is an algorithm that puts elements of a list in a certain order. The most frequently used orders are numerical order and alphabetical order. Efficient sorting is important for optimizing the use of other algorithms such as `searching` (as in a binary tree search) and `merging`. Both require input data to be in sorted lists.
+A `sorting algorithm` is an algorithm that puts elements of a list in a certain order. The 
+most frequently used orders are numerical order and alphabetical order. Efficient sorting 
+is important for optimizing the use of other algorithms such as `searching` (as in a binary 
+tree search) and `merging`. Both require input data to be in sorted lists.
 
-### Efficiency of Sorting Algorithms
+<h3>Efficiency of Sorting Algorithms</h3>
 
-There are many different sorting algorithms and each has its own advantages and limitations. As I said, sorting is a basic building block that many other algorithms are built on. Therefore, it is important to know how sorting algorithms work and their relative efficiency.
+There are many different sorting algorithms and each has its own advantages and limitations. 
+As I said, sorting is a basic building block that many other algorithms are built on. 
+Therefore, it is important to know how sorting algorithms work and their relative efficiency.
 
-Efficiency in an algorithm is defined in terms of the `time complexity` and `space complexity`, which we've already talked about. As a reminder, `time complexity` is a measure of the amount of time it takes for the algorithm to run. `Space complexity` is a measure of the amount of memory space it takes for the algorithm to run.
+Efficiency in an algorithm is defined in terms of the `time complexity` and `space complexity`, 
+which we've already talked about. As a reminder, `time complexity` is a measure of the amount 
+of time it takes for the algorithm to run. `Space complexity` is a measure of the amount of 
+memory space it takes for the algorithm to run.
 
 Sorting algorithm performance can be classified by:
 
@@ -10267,7 +10771,7 @@ Sorting algorithm performance can be classified by:
 
 These are expressed using `Big O notation`, which we've also talked about.
 
-### Types of Sorting Algorithms
+<h3>Types of Sorting Algorithms</h3>
 
 There are many different types of sorting algorithms. We're going to look at the most 
 common ones in the next few sections. Here is an overview of the ones we'll be looking 
@@ -10368,7 +10872,7 @@ is sorted. In this case, we need to repeat the process three more times:
 [1, 2, 4, 5]
 ```
 
-### Complexity & Efficiency
+<h3>Complexity & Efficiency</h3>
 
 - Worst-case time complexity: O(n^2)
 - Best-case time complexity: O(n)
@@ -10398,7 +10902,7 @@ either try and come back or just follow along. Either way, you will learn someth
 Implement a function called `bubbleSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Bubble Sort algorithm.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -10409,25 +10913,25 @@ and returns a sorted array using the Bubble Sort algorithm.
 function bubbleSort(array: number[]): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 console.log(bubbleSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
 console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain any number of elements.
 - The elements in the input array are unique and positive integers.
 
-### Notes
+<h3>Notes</h3>
 
 - The Bubble Sort algorithm works by repeatedly stepping through the list of elements, 
   comparing each pair of adjacent items, and swapping them if they are in the wrong 
   order. This process is repeated for each element in the list until no swaps are needed.
 
-### Hints
+<h3>Hints</h3>
 
 - There are a ton of ways to do this, but one is to use 2 loops. One to iterate the array 
   and one to do the swap. You can set the current element as a temp variable, assign the 
@@ -10453,7 +10957,7 @@ function bubbleSort(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop 
   through the entire array.
@@ -10521,7 +11025,7 @@ function bubbleSort(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Declare a variable called `swapped` and setting it to `false`. This variable will keep 
   track of whether or not we have swapped any elements. We will use this variable to 
@@ -10540,7 +11044,7 @@ function bubbleSort(arr) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Sort an array in ascending order', () => {
@@ -10611,7 +11115,7 @@ Now, the first three elements are sorted.
 
 We continue this process until the unsorted part becomes empty.
 
-### Complexity & Efficiency
+<h3>Complexity & Efficiency</h3>
 
 - Worst-case time complexity: O(n^2)
 - Best-case time complexity: O(n^2)
@@ -10641,7 +11145,7 @@ the test and implement the Insertion Sort algorithm in JavaScript.
 Implement a function called `insertionSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Insertion Sort algorithm.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -10652,25 +11156,25 @@ and returns a sorted array using the Insertion Sort algorithm.
 function insertionSort(arr: number[]): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 console.log(insertionSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
 console.log(insertionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain any number of elements.
 - The elements in the input array are unique and positive integers.
 
-### Notes
+<h3>Notes</h3>
 
 - The Insertion Sort algorithm builds the final sorted array one item at a time. It is 
   much less efficient on large lists than more advanced algorithms such as quicksort, 
   heapsort, or merge sort.
 
-### Hints
+<h3>Hints</h3>
 
 - Divide & conquer: The main idea of this algorithm is to divide the array into a 
   "sorted" and an "unsorted" part. Initially, the first element is considered as 
@@ -10700,7 +11204,7 @@ function insertionSort(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop 
   through the entire array, starting from the second element.
@@ -10720,7 +11224,7 @@ function insertionSort(arr) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Sort an array in ascending order', () => {
@@ -10811,7 +11315,7 @@ the seventh element in the array.
 
 The array is now sorted.
 
-### The Process
+<h3>The Process</h3>
 
 - Initialization: The algorithm divides the array into two parts: a sorted portion and an 
   unsorted portion. The sorted portion starts as an empty set, and the unsorted portion 
@@ -10850,7 +11354,7 @@ into practice and implement the Selection Sort algorithm in JavaScript.
 Implement a function called `selectionSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Selection Sort algorithm.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -10861,25 +11365,25 @@ and returns a sorted array using the Selection Sort algorithm.
 function selectionSort(array: number[]): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 console.log(selectionSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
 console.log(selectionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain any number of elements.
 - The elements in the input array are unique and positive integers.
 
-### Notes
+<h3>Notes</h3>
 
 - The Selection Sort algorithm works by repeatedly finding the minimum element from the 
   unsorted part of the array and putting it at the beginning. This process continues 
   until the whole array is sorted.
 
-### Hints
+<h3>Hints</h3>
 
 - Outer Loop: The main idea of this algorithm is to divide the array into two parts: the 
   "sorted" part and the "unsorted" part. The outer loop will iterate through the unsorted 
@@ -10915,7 +11419,7 @@ function selectionSort(arr) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - Start a `for` loop. The condition of the `for` loop is `i < arr.length - 1`. This will 
   loop through the entire array, except for the last element (since the last element will 
@@ -10932,7 +11436,7 @@ function selectionSort(arr) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Sort an array in ascending order', () => {
@@ -11031,7 +11535,7 @@ divide-and-conquer strategy.
 Implement a function called `mergeSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Merge Sort algorithm.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -11042,24 +11546,24 @@ and returns a sorted array using the Merge Sort algorithm.
 function mergeSort(array: number[]): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 console.log(mergeSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
 console.log(mergeSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain any number of elements.
 - The elements in the input array are unique and positive integers.
 
-### Notes
+<h3>Notes</h3>
 
 - The Merge Sort algorithm divides the input array into smaller sub-arrays, sorts them 
   separately, and then merges them back together in the correct order.
 
-### Hints
+<h3>Hints</h3>
 
 - Divide & Conquer: The key idea behind this algorithm is to recursively divide the array 
   into two halves until the base case is reached (when the array has only one or zero 
@@ -11107,7 +11611,7 @@ function merge(left, right) {
 }
 ```
 
-### Explanation
+<h3>Explanation</h3>
 
 - The `mergeSort` function is the main sorting function that implements the merge sort algorithm.
 - If the length of the array is 1 or less, it is already sorted, so we return the array as is.
@@ -11126,7 +11630,7 @@ function merge(left, right) {
 
 </details>
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Sort an array in ascending order', () => {
@@ -11176,7 +11680,7 @@ subarrays, a temporary array is needed to hold the merged elements before they a
 placed back into the original array. This additional memory usage can be a drawback for 
 Merge Sort, especially when dealing with very large arrays.
 
-### Example
+<h3>Example</h3>
 
 Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and choosing 
 the pivot as `6`.
@@ -11249,7 +11753,7 @@ to sort an array.
 Implement a function called `quickSort` that takes an array of numbers as an argument and 
 returns a sorted array using the Quick Sort algorithm.
 
-### Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -11260,19 +11764,19 @@ returns a sorted array using the Quick Sort algorithm.
 function quickSort(array: number[]): number[]
 ```
 
-### Examples
+<h3>Examples</h3>
 
 ```js
 console.log(quickSort([5, 4, 3, 2, 1])); // Output: [1, 2, 3, 4, 5]
 console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25, 34, 64, 90]
 ```
 
-### Constraints
+<h3>Constraints</h3>
 
 - The input array can contain any number of elements.
 - The elements in the input array are unique and positive integers.
 
-### Notes
+<h3>Notes</h3>
 
 - The Quick Sort algorithm involves selecting a pivot element, partitioning the array, 
   and recursively sorting the subarrays on either side of the pivot.
@@ -11281,7 +11785,7 @@ console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
   such as choosing the median of three random elements, help mitigate this worst-case 
   scenario.
 
-### Hints
+<h3>Hints</h3>
 
 - Pivot Selection: The choice of pivot significantly affects the efficiency of Quick 
   Sort. Common pivot selection strategies include choosing the first, last, or middle 
@@ -11321,7 +11825,7 @@ function quickSort(arr) {
 
 </details>
 
-### Explanation
+<h3>Explanation</h3>
 
 - The `quickSort` function is the main sorting function that implements the quick sort 
   algorithm.
@@ -11335,7 +11839,7 @@ function quickSort(arr) {
 - Finally, we recursively apply `quickSort` to the `left` and `right` arrays, and then 
   concatenate them along with the pivot to get the sorted array.
 
-### Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Sort an array in ascending order', () => {
@@ -11376,3 +11880,5 @@ the end...
 Created 1/4/2025 6:28pm
 Last Updated 1/4/2025 7:29pm
 Last Updated 1/5/2025 7:47pm
+Last Updated 4/22/2025 3:39pm
+ 
