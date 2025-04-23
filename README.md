@@ -3,7 +3,7 @@ title: "JS-CellarDoor"
 author: "Brian Bauska (bbauska)"
 date created: "1/4/2025 6+pm"
 date last editted: "1/4/2025 7+pm"
-date last editted: "1/5/2025 7+pm"
+date last editted: "4/22/2025 4+pm"
 output:
   markdown:
 ---
@@ -250,7 +250,7 @@ added steps.
 comparing it to the reversed string. There are multiple ways to do this, but one way is 
 to use the `replace` method with a regular expression of `/[^a-z0-9]/g`.
 
-<h2>## Solutions</h2>
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -460,7 +460,7 @@ test('Reversing a string', () => {
 <h1 id="js04">04. Challenge: Title Case</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `titleCase` that takes in a string and returns the string with 
 the first letter of each word capitalized.
@@ -490,7 +490,7 @@ titleCase('HERE IS MY HANDLE HERE IS MY SPOUT'); // Here Is My Handle Here Is My
 
 <h3>Hints</h3>
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -525,7 +525,7 @@ function titleCase(str) {
 }
 ```
 
-## Explanation
+<h3>Explanation</h3>
 
 In this example, we are using the replace method to find the first letter of each word 
 and replace it with the uppercase version of itself.
@@ -555,7 +555,7 @@ test('Converting string to title case', () => {
 <h1 id="js05">05. Challenge: Find Max Number</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `findMaxNumber` that takes in an array of numbers and returns 
 the largest number in the array.
@@ -584,7 +584,7 @@ findMaxNumber([1, 2, 3, 4, 5, 10, 9, 8, 7, 6]); // 10
 - There is a very easy way to do this using a specific built-in method. I would 
   suggest not doing it that way. Try to solve this problem using a `for` loop.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -624,7 +624,7 @@ function findMaxNumber(arr) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Create a variable called `max` and setting it equal to the first element in the array.
 - Loop through the array starting at the second element.
@@ -634,7 +634,7 @@ function findMaxNumber(arr) {
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Finding the maximum number in an array', () => {
@@ -648,12 +648,12 @@ test('Finding the maximum number in an array', () => {
 <h1 id="js06">06. Challenge: Remove Duplicates</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `removeDuplicates` that takes in an array and returns a new 
 array with duplicates removed.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -664,7 +664,7 @@ array with duplicates removed.
 function removeDuplicates(arr: any[]): any[];
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 removeDuplicates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -672,16 +672,16 @@ removeDuplicates([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]); // [1]
 removeDuplicates([1, 2, 3, 4, 5, true, 1, 'hello' 2, 3, 'hello', true]); // [1, 2, 3, 4, 5, true, 'hello']
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The array can contain any data type
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can do this with a traditional 'for' loop, but if you are familiar with the `Set` 
   object, you can use that to solve this problem. Maybe try both ways!
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -702,7 +702,7 @@ function removeDuplicates(arr) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Create a new array called `uniqueArr`.
 - Create a `for` loop that will loop through each element in the array and check if the 
@@ -723,7 +723,7 @@ function removeDuplicates(arr) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 This solution is extremely simple. We take in an array with duplicates and we create a 
 new `Set` from that array. We then convert that `Set` back into an array and return it.
@@ -733,7 +733,7 @@ we create a `Set` from an array, it will remove all the duplicates automatically
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Removing duplicates from an array', () => {
@@ -751,12 +751,12 @@ test('Removing duplicates from an array', () => {
 <h1 id="js07">07. Challenge: Count Occurrences</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `countOccurrences()` that takes in a string and a character and 
 returns the number of occurrences of that character in the string.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -768,26 +768,26 @@ returns the number of occurrences of that character in the string.
 function countOccurrences(str: string, char: string): number;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 countOccurrences('hello', 'l'); // 2
 countOccurrences('hello', 'z'); // 0
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - Lowercase and uppercase characters are considered different characters. If you want, 
   you can make the function case insensitive
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can loop through a string just like you can loop through an array.
 - You can use the `++` operator to increment a variable.
 - You could take another approach and use the `split()` method to split the string into 
   an array of substrings based on the given character.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -823,7 +823,7 @@ function countOccurrences(str, char) {
 
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Initialize a `count` variable to 0.
 
@@ -844,7 +844,7 @@ function countOccurrences(str, char) {
 const countOccurrences = (str, char) => str.split(char).length - 1;
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Utilize the split method of the string to split it into an array of substrings based 
   on the given character.
@@ -860,7 +860,7 @@ operations. The difference is negligible, but it is still good to be aware of.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Count Occurrences of a Character', () => {
@@ -874,12 +874,12 @@ test('Count Occurrences of a Character', () => {
 <h1 id="js08">08. Challenge: Calculator</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `calculator` that takes in 2 numbers and an operator and 
 returns the result of the calculation.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -892,7 +892,7 @@ returns the result of the calculation.
 function calculator(num1: number, num2: number, operator: string): number;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```JS
 calculator(1, 2, '+') // 3
@@ -901,21 +901,21 @@ calculator(2, 2, '*') // 4
 calculator(10, 5, '/') // 2
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The function must return a number
 - The function must throw or log an error if an invalid operator is given
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can use `if` statements or `switch` statements to determine which operator was given.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
 
-#<h3>Using a switch:
+<h4>Using a switch:</h4>
 
 ```js
 function calculator(num1, num2, operator) {
@@ -942,7 +942,7 @@ function calculator(num1, num2, operator) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Created a function called `calculator` that takes in three arguments: `num1`, 
   `num2`, and `operator`.
@@ -955,7 +955,7 @@ function calculator(num1, num2, operator) {
 <details open>
  <summary>Click For Solution 2</summary>
 
-#<h3>Using an if statement:
+<h4>Using an if statement:</h4>
 
 ```js
 function calculator(num1, num2, operator) {
@@ -977,7 +977,7 @@ function calculator(num1, num2, operator) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Create a function called `calculator` that takes in three arguments: `num1`, `num2`, 
   and `operator`.
@@ -987,7 +987,7 @@ function calculator(num1, num2, operator) {
 
  </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Performing arithmetic operations using the calculator function', () => {
@@ -1017,11 +1017,11 @@ test('Performing arithmetic operations using the calculator function', () => {
 
 This is another very basic practice challenge just to get you into the hang of things.
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `getSum` that takes in two numbers and returns the sum of those two numbers.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1033,7 +1033,7 @@ Write a function called `getSum` that takes in two numbers and returns the sum o
 function getSum(a: number, b: number): number;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```JS
 getSum(1, 2) // 3
@@ -1042,15 +1042,15 @@ getSum(2, 2) // 4
 getSum(10, 5) // 15
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The function must return a number
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can use the `+` operator to add two numbers together.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -1061,14 +1061,14 @@ function getSum(a, b) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 This is a pretty simple challenge. We created a function that takes in two values and we 
 added those two values together. We then returned the sum of those two values.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```JS
 test('Calculating the sum of two numbers', () => {
@@ -1090,11 +1090,11 @@ test('Calculating the sum of two numbers', () => {
 
 This is a practice challenge to show you how things are set up and how to test, etc.
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `helloWorld` that returns a string of 'Hello World!'.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1104,23 +1104,23 @@ Write a function called `helloWorld` that returns a string of 'Hello World!'.
 function helloWorld(): string;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```JS
 helloWorld() // 'Hello World!'
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 I will put any constraints here. They will vary depending on the challenge.
 
 - The function must return a string
 
-<h3>Hints
+<h3>Hints</h3>
 
 - I will put a couple hints here. You can choose to use them or not.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -1131,14 +1131,14 @@ function printHelloWorld() {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 I will put the explanation to the solution here. The length and depth of the explanation 
 will vary depending on the challenge.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 The Jest tests will go here. They are already included in the course files. You just need 
 to run `npm test`. Sometimes I will also put manual tests here.
@@ -1154,13 +1154,13 @@ test("Returning 'Hello, World!' as a string", () => {
 <h1 id="js11">11. Challenge: Array Intersection</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `arrayIntersection` that takes in two arrays and returns an array 
 containing the intersection of the two input arrays (i.e., the common elements that appear 
 in both arrays).
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1172,7 +1172,7 @@ in both arrays).
 function arrayIntersection(arr1: number[], arr2: number[]): number[];
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 arrayIntersection([1, 2, 3, 4, 5], [1, 3, 5, 7, 9]); // should return [1, 3, 5]
@@ -1180,12 +1180,12 @@ arrayIntersection([1, 1, 1, 1, 1], [2, 2, 2, 2, 2]); // should return []
 arrayIntersection([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]); // should return [1, 2, 3, 4, 5]
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The input arrays can contain any number of elements
 - The input arrays can contain any positive integer
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You could use a for loop to iterate through the first array and check if each element 
   is in the second array using the `includes` method.
@@ -1193,7 +1193,7 @@ arrayIntersection([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]); // should return [1, 2, 3, 
   array and then iterate through the second array and check if each element is in the 
   Set using the `has` method.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -1212,7 +1212,7 @@ function arrayIntersection(arr1, arr2) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Iterate through the first array
 - For each element, check if it is in the second array using the `includes` method
@@ -1244,7 +1244,7 @@ function arrayIntersection(arr1, arr2) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Create a new Set from the first array
 - Iterate through the second array and check if each element is in the set using the `has` method
@@ -1253,7 +1253,7 @@ function arrayIntersection(arr1, arr2) {
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Finding array intersection', () => {
@@ -1268,7 +1268,7 @@ test('Finding array intersection', () => {
 <h1 id="js12">12. Challenge: Display Likes</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `displayLikes` that takes in an array of names and returns a string of who likes the post.
 
@@ -1280,7 +1280,7 @@ The function should return a string formatted as follows:
 - If three people like it, it should return `'{name1}, {name2} and {name3} like this'`
 - If more than three people like it, it should return `'{name1}, {name2} and {x} others like this'`
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1291,7 +1291,7 @@ The function should return a string formatted as follows:
 function displayLikes(names: string[]): string;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```JS
 displayLikes([]) // 'no one likes this'
@@ -1302,13 +1302,13 @@ displayLikes(['Alex', 'Jacob', 'Mark', 'Max']) // 'Alex, Jacob and 2 others like
 displayLikes(['Alex', 'Jacob', 'Mark', 'Max', 'Jill']) // 'Alex, Jacob and 3 others like this'
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The input array will only contain strings
 
-<h3>Hints
+<h3>Hints</h3>
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -1331,7 +1331,7 @@ function displayLikes(names) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 This is pretty simple as it just requires a bunch of if statements. We could also use a switch statement here, but it would be a bit more verbose.
 
@@ -1340,7 +1340,7 @@ This is pretty simple as it just requires a bunch of if statements. We could als
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Display Likes', () => {
@@ -1363,12 +1363,12 @@ test('Display Likes', () => {
 <h1 id="js13">13. Challenge: Find The Missing Number</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `findMissingNumber` that takes in an array of unique numbers from 1 to n 
 (inclusive), where one number is missing. It should return the missing number.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1379,7 +1379,7 @@ Write a function called `findMissingNumber` that takes in an array of unique num
 function findMissingNumber(arr: number[]): number;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 findMissingNumber([1, 2, 3, 4, 6, 7, 8, 9, 10]); // 5
@@ -1387,19 +1387,19 @@ findMissingNumber([10, 8, 6, 7, 5, 4, 2, 3, 1]); // 9
 findMissingNumber([10, 5, 1, 2, 4, 6, 8, 3, 9]); // 7
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - If an empty array is passed in, it should return `1`
 - If nothing is passed in, it should return `undefined`
 
-<h3>Hints
+<h3>Hints</h3>
 
 - Calculate the sum of the numbers from 1 to n (inclusive). The formula for this is `n * (n + 1) / 2`. `n` is the length of the array plus 1.
 - Calculate the sum of the numbers in the array.
 - Subtract the sum of the numbers in the array from the sum of the numbers from 1 to n (inclusive).
 - You could use a for loop or the reduce method to calculate the sum of the numbers in the array. We will be focusing on methods like reduce in the next section, but I will still show you both ways.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -1436,23 +1436,31 @@ function findMissingNumber(arr) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
-The `findMissingNumber` function takes in an array of unique numbers from 1 to n (inclusive), where one number is missing, and returns the missing number.
+The `findMissingNumber` function takes in an array of unique numbers from 1 to n (inclusive), 
+where one number is missing, and returns the missing number.
 
-We first calculate the sum of the numbers from 1 to n (inclusive) using the formula `n * (n + 1) / 2`. This is called the gauss formula. We store this value in a variable called `expectedSum`.
+We first calculate the sum of the numbers from 1 to n (inclusive) using the formula `n * 
+(n + 1) / 2`. This is called the gauss formula. We store this value in a variable called 
+`expectedSum`.
 
-To be more clear, let's look at an example. If we have an array of numbers from 1 to 10, the sum of those numbers is 55. We can calculate this using the gauss formula. `10 * (10 + 1) / 2 = 55`. We can also calculate this using a for loop or the reduce method.
+To be more clear, let's look at an example. If we have an array of numbers from 1 to 10, 
+the sum of those numbers is 55. We can calculate this using the gauss formula. `10 * 
+(10 + 1) / 2 = 55`. We can also calculate this using a for loop or the reduce method.
 
-Next, we calculate the sum of the numbers in the array. We store this value in a variable called `actualSum`.
+Next, we calculate the sum of the numbers in the array. We store this value in a variable 
+called `actualSum`.
 
-We then return the difference between the expected sum and the actual sum. This will be the missing number.
+We then return the difference between the expected sum and the actual sum. This will be 
+the missing number.
 
-Again, you can use a for loop or the reduce method to calculate the sum of the numbers in the array.
+Again, you can use a for loop or the reduce method to calculate the sum of the numbers 
+in the array.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Finding the missing number', () => {
@@ -1466,11 +1474,11 @@ test('Finding the missing number', () => {
 <h1 id="js14">14. Challenge: Find Missing Letter</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `findMissingLetter` that takes in an array of consecutive (increasing) letters as input and returns the missing letter in the array.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1481,7 +1489,7 @@ Write a function called `findMissingLetter` that takes in an array of consecutiv
 function findMissingLetter(arr: string[]): string;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 findMissingLetter(['a', 'b', 'c', 'd', 'f']); // => "e"
@@ -1489,17 +1497,17 @@ findMissingLetter(['O', 'Q', 'R', 'S']); // => "P"
 findMissingLetter(['t', 'u', 'v', 'w', 'x', 'z']); // => "y"
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The input array will only contain letters in one case (lower or upper)
 - If no letters are in the array, return an empty string
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can put the alphabet in a string and use the `indexOf` method to get the index of a letter in the alphabet string.
 - Another approach would be to use the `charCodeAt` method to get the unicode value of a letter. 
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1 </summary>
@@ -1519,7 +1527,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Declare a variable `alphabet` and assign it a string of all the letters of the alphabet.
 - Declare a variable `startIndex` and assigned it the index of the first letter of the input array in the `alphabet` string.
@@ -1546,7 +1554,7 @@ function findMissingLetter(arr) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Declare a variable `start` and assigned it the ASCII code of the first letter of the input array.
 - Loop through the input array and check if the ASCII code of the current letter minus the ASCII code of the previous letter is greater than 1.
@@ -1555,7 +1563,7 @@ function findMissingLetter(arr) {
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Find Missing Letter', () => {
@@ -1570,13 +1578,13 @@ test('Find Missing Letter', () => {
 <h1 id="js15">15. Challenge: Are all characters unique?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `areAllCharactersUnique` that takes in a string and returns 
 `true` or `false` depending on whether all characters in the string are unique (i.e., 
 no character is repeated).
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1587,7 +1595,7 @@ no character is repeated).
 function areAllCharactersUnique(str: string): boolean;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 areAllCharactersUnique('abcdefg'); // true
@@ -1597,16 +1605,16 @@ areAllCharactersUnique(''); // true
 areAllCharactersUnique('a'); // true
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - It should be case sensitive, so `a` and `A` are considered different characters
 - An empty string should return `true` by default
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can use a for loop to iterate through the string and check if the current character is in the set or object.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -1629,7 +1637,7 @@ function areAllCharactersUnique(str) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 -Initialize a new `Set` to keep track of the characters we've seen so far.
 
@@ -1662,7 +1670,7 @@ function areAllCharactersUnique(str) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 This solution is similar except we use an object instead of a `Set` to keep track of the 
 characters we've seen so far.
@@ -1676,7 +1684,7 @@ it means we haven't seen any characters more than once.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Unique Characters in a String', () => {
@@ -1692,7 +1700,7 @@ test('Unique Characters in a String', () => {
 <h1 id="js16">16. Challenge: Dice Game Simulation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `diceGameSimulation` that simulates this dice game. The function should take one argument:
 
@@ -1707,7 +1715,7 @@ The function should return an array of objects, where each object represents a s
 - `sum`: The sum of the two dice values.
 - `result`: The result of the roll, which can be "win", "lose", or "roll again".
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1718,7 +1726,7 @@ The function should return an array of objects, where each object represents a s
 function diceGameSimulation(numSimulations: number): Array;
 ```
 
-<h3>Example
+<h3>Example</h3>
 
 ```js
 console.log(diceGameSimulation(3));
@@ -1729,11 +1737,11 @@ console.log(diceGameSimulation(3));
 */
 ```
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can use the `Math.random()` function to simulate rolling a die. It returns a random number between 0 (inclusive) and 1 (exclusive).
 
-## Solution
+<h3>Solution</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -1769,7 +1777,7 @@ function diceGameSimulation(numSimulations) {
 module.exports = diceGameSimulation;
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - The `rollDice` function simulates rolling a single die. It uses `Math.random()` to generate a random decimal between 0 (inclusive) and 1 (exclusive), multiplies it by 6, rounds down, and adds 1 to get a random number between 1 and 6.
 - The `diceGameSimulation` function simulates the dice game for the specified number of simulations. It uses the `rollDice` function to generate random dice values and calculates the sum of the two dice.
@@ -1779,7 +1787,7 @@ module.exports = diceGameSimulation;
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Dice Game Simulation', () => {
@@ -1801,11 +1809,11 @@ test('Dice Game Simulation', () => {
 <h1 id="js17">17. Challenge: Format Phone Number</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `formatPhoneNumber` that takes in an array of numbers and returns a string representing the phone number formed by concatenating the numbers in the specified format.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1816,7 +1824,7 @@ Write a function called `formatPhoneNumber` that takes in an array of numbers an
 function formatPhoneNumber(numbers: number[]): string;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]); // => "(123) 456-7890"
@@ -1824,17 +1832,17 @@ formatPhoneNumber([5, 1, 9, 5, 5, 5, 4, 4, 6, 8]); // => "(519) 555-4468"
 formatPhoneNumber([3, 4, 5, 5, 0, 1, 2, 5, 2, 7]); // => "(345) 501-2527"
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The input array will always have 10 numbers
 - The numbers can be any integer from 0 to 9
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can use the `Array.join` method to concatenate the numbers in the array.
 - You can use the `Array.slice` method to get a subset of the array.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -1849,7 +1857,7 @@ function formatPhoneNumber(numbers) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Create 3 variables to store the area code, prefix, and line number.
 - Use the `Array.slice` method to get a subset of the array.
@@ -1870,7 +1878,7 @@ function formatPhoneNumber(numbers) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 - Created a variable to store the numbers in the array concatenated together.
 - Use the `String.substring` method to get a subset of the string.
@@ -1889,13 +1897,13 @@ const formatPhoneNumber = (numbers) =>
     .join('')}`;
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 This is similar to the second solution, but we used an arrow function and Array.slice method chaining.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Format Phone Number', () => {
@@ -1915,11 +1923,13 @@ test('Format Phone Number', () => {
 <h1 id="js18">18. Challenge: Validate Email</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
-Write a function called `validateEmail` that takes in a string and returns whether the string is a valid email address. For the purposes of this challenge, a valid email address is defined as a string that contains an `@` symbol and a `.` symbol.
+Write a function called `validateEmail` that takes in a string and returns whether the 
+string is a valid email address. For the purposes of this challenge, a valid email 
+address is defined as a string that contains an `@` symbol and a `.` symbol.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -1930,18 +1940,19 @@ Write a function called `validateEmail` that takes in a string and returns wheth
 function validateEmail(email: string): boolean;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 validateEmail('john@gmail.com'); // true
 validateEmail('john@gmail'); // false
 ```
 
-<h3>Hints
+<h3>Hints</h3>
 
-- If you know regular expressions, this is a great place to use them. I am going to give you two solutions. One uses regular expressions and one doesn't.
+- If you know regular expressions, this is a great place to use them. I am going to 
+  give you two solutions. One uses regular expressions and one doesn't.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -1955,16 +1966,22 @@ function validateEmail(email) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
-The regular expression is a bit complicated, but it is a good example of how powerful regular expressions can be. Let's break it down:
+The regular expression is a bit complicated, but it is a good example of how powerful regular 
+expressions can be. Let's break it down:
 
 - ^ asserts the start of the string.
-- [A-Za-z0-9._%+-]+ matches one or more occurrences of letters (both uppercase and lowercase), digits, dots, underscores, percent signs, plus signs, and hyphens. This represents the local part of the email address before the "@" symbol.
+- [A-Za-z0-9._%+-]+ matches one or more occurrences of letters (both uppercase and lowercase), 
+  digits, dots, underscores, percent signs, plus signs, and hyphens. This represents the local 
+  part of the email address before the "@" symbol.
 - @ matches the "@" symbol.
-- [A-Za-z0-9.-]+ matches one or more occurrences of letters, digits, dots, and dashes. This represents the domain name of the email address.
-- \. matches the dot (".") character. It needs to be escaped with a backslash because the dot has a special meaning in regular expressions.
-- [A-Za-z]{2,} matches two or more occurrences of letters. This represents the top-level domain (TLD) of the email address.
+- [A-Za-z0-9.-]+ matches one or more occurrences of letters, digits, dots, and dashes. This 
+  represents the domain name of the email address.
+- \. matches the dot (".") character. It needs to be escaped with a backslash because the 
+  dot has a special meaning in regular expressions.
+- [A-Za-z]{2,} matches two or more occurrences of letters. This represents the top-level 
+  domain (TLD) of the email address.
 - $ asserts the end of the string.
 
 </details>
@@ -1998,21 +2015,25 @@ function validateEmail(email) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 This solution is a bit more complicated, but it doesn't use regular expressions.
 
-- Use the `indexOf` method to check if the email address contains the "@" symbol. If it doesn't, it returns `false`.
-- Use the `split` method to split the email address into two parts: the local part and the domain. We use destructuring to assign the two parts to variables.
-- Check if the local part is empty or if the domain is less than three characters long. If either of these conditions is true, we return `false`.
-  Split the domain into parts using the `split` method. We check if the domain has at least two parts and if the last part is at least two characters long.
+- Use the `indexOf` method to check if the email address contains the "@" symbol. If it doesn't, 
+  it returns `false`.
+- Use the `split` method to split the email address into two parts: the local part and the domain. 
+  We use destructuring to assign the two parts to variables.
+- Check if the local part is empty or if the domain is less than three characters long. If either 
+  of these conditions is true, we return `false`.
+  Split the domain into parts using the `split` method. We check if the domain has at least two 
+  parts and if the last part is at least two characters long.
 - If either of these conditions is false, return `false`.
 
 Finally, if none of the conditions are false, we return `true`.
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Valid Email Addresses', () => {
@@ -2031,11 +2052,21 @@ test('Invalid Email Addresses', () => {
 <h1 id="js19">19. What Are High Order Array Methods?</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Most of the challenges that we have done so far have used loops. Loops are one of the biggest fundamentals in computer science in general. It's important that you know how to use them. For the next batch of challenges, I want to utilize some of the high order array methods in JavaScript, such as `map` and `filter`. These methods are very useful and can help you write cleaner code. Using loops is usually a bit more efficient, but the difference is negligible unless you are dealing with a very very large data set. In everyday code, it's better to write clean code that is easy to read and understand.
+Most of the challenges that we have done so far have used loops. Loops are one of the biggest 
+fundamentals in computer science in general. It's important that you know how to use them. 
+For the next batch of challenges, I want to utilize some of the high order array methods in 
+JavaScript, such as `map` and `filter`. These methods are very useful and can help you write 
+cleaner code. Using loops is usually a bit more efficient, but the difference is negligible 
+unless you are dealing with a very very large data set. In everyday code, it's better to 
+write clean code that is easy to read and understand.
 
-Most of you probably know what high order array methods are, but I just want to quickly go over some of the common ones before we jump into the challenges.
+Most of you probably know what high order array methods are, but I just want to quickly go 
+over some of the common ones before we jump into the challenges.
 
-A high order array method is a method that takes in a function as an argument or returns a function as a result. The most common high order array methods are `map`, `filter`, and `reduce`. There are a few others, but these are the ones that I use the most. They allow us to iterate over an array and perform some sort of operation on each element.
+A high order array method is a method that takes in a function as an argument or returns a 
+function as a result. The most common high order array methods are `map`, `filter`, and 
+`reduce`. There are a few others, but these are the ones that I use the most. They allow 
+us to iterate over an array and perform some sort of operation on each element.
 
 Let's use the following array for our examples:
 
@@ -2043,9 +2074,10 @@ Let's use the following array for our examples:
 const numbers = [1, 2, 3, 4, 5];
 ```
 
-## Map
+<h3>Map</h3>
 
-The `map` method takes in a function as an argument and returns a new array with the result of calling the function on each element in the array. Here is an example:
+The `map` method takes in a function as an argument and returns a new array with the result of 
+calling the function on each element in the array. Here is an example:
 
 ```js
 
@@ -2058,13 +2090,17 @@ console.log(doubledNumbers);
 // Output: [2, 4, 6, 8, 10]
 ```
 
-In the example above, we have an array of numbers. We call the `map` method on the array and pass in a function as an argument. The function takes in a number as an argument and returns the number multiplied by 2. The `map` method then returns a new array with the result of calling the function on each element in the array.
+In the example above, we have an array of numbers. We call the `map` method on the array and 
+pass in a function as an argument. The function takes in a number as an argument and returns 
+the number multiplied by 2. The `map` method then returns a new array with the result of 
+calling the function on each element in the array.
 
 In this example I multiplied each number by 2, but you can do whatever you want in the function.
 
-## Filter
+<h3>Filter</h3>
 
-The `filter` method takes in a function as an argument and returns a new array with all the elements that pass the test implemented by the function. Here is an example:
+The `filter` method takes in a function as an argument and returns a new array with all the 
+elements that pass the test implemented by the function. Here is an example:
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
@@ -2078,11 +2114,14 @@ console.log(evenNumbers);
 // Output: [2, 4]
 ```
 
-In the example above, we have an array of numbers. We call the `filter` method on the array and pass in a function as an argument. The function takes in a number as an argument and returns `true` if the number is even and `false` if the number is odd. The `filter` method then returns a new array with all the elements that pass the test implemented by the function.
+In the example above, we have an array of numbers. We call the `filter` method on the array 
+and pass in a function as an argument. The function takes in a number as an argument and 
+returns `true` if the number is even and `false` if the number is odd. The `filter` method 
+then returns a new array with all the elements that pass the test implemented by the function.
 
 Again, in this example I filtered out all the odd numbers, but you can do whatever you want in the function.
 
-## Reduce
+<h3>Reduce</h3>
 
 The `reduce` method takes in a function as an argument and returns a single value. Here is an example:
 
@@ -2100,7 +2139,7 @@ console.log(sum);
 
 In the example above, we have an array of numbers. We call the `reduce` method on the array and pass in a function as an argument. The function takes in two arguments, `total` and `num`. The `total` argument is the value that we are accumulating. The `num` argument is the current value in the array. The function returns the sum of the `total` and `num`. The `reduce` method then returns a single value.
 
-## forEach
+<h3>forEach</h3>
 
 The `forEach` method takes in a function as an argument and executes the function on each element in the array. Here is an example:
 
@@ -2130,13 +2169,13 @@ Here are some other high order array methods that you might see:
 <h1 id="js20">20. Challenge: Sum of Squares of Even Numbers</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Let's start off with a fairly simple challenge, but one that uses a few different array 
 methods. Write a function called `sumOfEvenSquares` that takes an array of numbers and 
 returns the sum of the squares of the even numbers in the array.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2147,7 +2186,7 @@ returns the sum of the squares of the even numbers in the array.
 function sumOfEvenSquares(numbers: number[]): number
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 sumOfEvenSquares([1, 2, 3, 4, 5]); // 20 (2^2 + 4^2)
@@ -2155,13 +2194,13 @@ sumOfEvenSquares([-1, 0, 1, 2, 3, 4]); // 20 (0^2 + 2^2 + 4^2)
 sumOfEvenSquares([]); // 0
 ```
 
-<h3>Hints
+<h3>Hints</h3>
 
 - Use the `filter` method to select the even numbers from the array.
 - Then, use the `map` method to square each even number.
 - Finally, use the `reduce` method to sum up the squared even numbers.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -2176,7 +2215,7 @@ function sumOfEvenSquares(numbers) {
 }
 ```
 
-<h3>Explanation
+<h3>Explanation</h3>
 
 You can format this so many different ways. This is just one example.
 
@@ -2207,7 +2246,7 @@ const sumOfEvenSquares = (numbers) =>
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Sum of even squares', () => {
@@ -2221,7 +2260,7 @@ test('Sum of even squares', () => {
 <h1 id="js21">21. Challenge: Calculate Total Sales</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Use the given array of product objects below, each with their name, price, and quantity 
 sold. Additionally, you are given a tax rate as a percentage. Write a function called 
@@ -2236,7 +2275,7 @@ const products = [
 ];
 ```
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2252,7 +2291,7 @@ const products = [
 function calculateTotalSalesWithTax(products: { name: string, price: number, quantity: number }[], taxRate: number): number;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 calculateTotalSalesWithTax(
@@ -2275,18 +2314,18 @@ calculateTotalSalesWithTax(
 ); // 42 (40 + 5% tax)
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
 - The input array will contain at least one product object.
 - The price and quantity values will be positive numbers.
 - The tax rate will be a positive number less than 100.
 - Round to 2 decimal places.
 
-<h3>Hints
+<h3>Hints</h3>
 
 - Calculate the total sales amount before applying the tax, and then add the tax amount to it.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -2313,7 +2352,7 @@ function calculateTotalSalesWithTax(products, taxRate) {
 }
 ```
 
-## Explanation
+<h3>Explanation</h3>
 
 - Calculate the total sales by using the `reduce` method to iterate through the products 
   array, summing up the product of price and quantity for each product.
@@ -2323,7 +2362,7 @@ function calculateTotalSalesWithTax(products, taxRate) {
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Calculating total sales amount with tax', () => {
@@ -2359,7 +2398,7 @@ questions or need additional assistance, please let me know!
 <h1 id="js22">22. Challenge: Highest Scoring Word</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Given a string of words, you need to find the highest scoring word. Each letter of a word scores points according to its position in the alphabet: `a` = 1, `b` = 2, `c` = 3, and so on.
 
@@ -2369,7 +2408,7 @@ If two words score the same, return the word that appears earliest in the origin
 
 All letters will be lowercase and all inputs will be valid.
 
-<h3>Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -2380,7 +2419,7 @@ All letters will be lowercase and all inputs will be valid.
 function highestScoringWord(str: string): string;
 ```
 
-<h3>Examples
+<h3>Examples</h3>
 
 ```js
 highestScoringWord('man i need a taxi up to ubud'); // 'taxi'
@@ -2388,17 +2427,18 @@ highestScoringWord('what time are we climbing up the volcano'); // 'volcano'
 highestScoringWord('take me to semynak'); // 'semynak'
 ```
 
-<h3>Constraints
+<h3>Constraints</h3>
 
-- The input string will only contain lowercase letters and spaces. It can not include numbers, special characters, or punctuation.
+- The input string will only contain lowercase letters and spaces. It can not include numbers, 
+  special characters, or punctuation.
 
-<h3>Hints
+<h3>Hints</h3>
 
 - You can use the `split` method to separate the words.
 - You can use the `map` method to calculate the score for each word.
 - You can use the `reduce` method to find the word with the highest score.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -2429,7 +2469,7 @@ function highestScoringWord(str) {
 }
 ```
 
-## Explanation
+<h3>Explanation</h3>
 
 - Split the input string into an array of words using the `split` method.
 - Use the `map` method to calculate the score for each word. For each letter in a word, 
@@ -2468,7 +2508,7 @@ function highestScoringWord(str) {
 }
 ```
 
-## Explanation
+<h3>Explanation</h3>
 
 - Split the input string into an array of words using the `split` method.
 - Use the `map` method to calculate the score for each word.
@@ -2482,7 +2522,7 @@ function highestScoringWord(str) {
 
 </details>
 
-<h3>Test Cases
+<h3>Test Cases</h3>
 
 ```js
 test('Finding the highest scoring word', () => {
@@ -2500,7 +2540,7 @@ Remember to use the provided test cases to verify your solution
 <h1 id="js23">23. Challenge: Valid Anagrams</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `validAnagrams` that takes in two strings and determines whether 
 they are valid anagrams of each other. An anagram is a word or phrase formed by 
@@ -2533,7 +2573,7 @@ validAnagrams('astronomer', 'moonstarer'); // true
   character frequencies for the strings
 - Compare the frequencies
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -2587,7 +2627,7 @@ test('Checking for Valid Anagrams', () => {
 <h1 id="js24">24. Challenge: Hashtag Generator</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `generateHashtag` that takes a string as input and returns a 
 hashtag-generated string according to the rules below. If the generated hashtag string 
@@ -2630,7 +2670,7 @@ generateHashtag(""); // false
 - You can use the string method `charAt()` to get the character at a specific index.
 - Use string methods to capitalize the first letter of each word.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -2703,7 +2743,7 @@ function generateHashtag(str) {
 <h1 id="js25">25. Challenge: Valid IPv4 Addresses</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `isValidIPv4` that takes a string as input and returns `true` if 
 the input is a valid IPv4 address in dot-decimal format, and `false` otherwise. An IPv4 
@@ -2740,7 +2780,7 @@ isValidIPv4('123.045.067.089'); // false
 - You can use the `split()` method to break the string into parts based on the dot character.
 - You can use `every()` to check if all octets are within the valid range of 0 to 255.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -2758,7 +2798,7 @@ function isValidIPv4(input) {
 }
 ```
 
-## Explanation
+<h3>Explanation</h3>
 
 - Split the input string into an array of strings using the `split()` method.
 - Check if the array has exactly four elements. If not, return `false`.
@@ -2788,7 +2828,7 @@ You can use this template for your challenge to validate IPv4 addresses in dot-d
 <h1 id="js26">26. Challenge: Car Mileage Analysis</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 You are given an array of car objects, each containing information about a car's make, model, year, and mileage. Your goal is to perform some analysis on the car mileage data using high order array methods.
 
@@ -2861,7 +2901,7 @@ console.log(analysis);
 
 - You can use the `reduce` method for most of the calculations.
 
-## Solution
+<h3>Solution</h3>
 
 <details open>
   <summary>Click to view solution</summary>
@@ -2951,7 +2991,7 @@ Feel free to add more test cases to verify the correctness of your `analyzeCarMi
 <h1 id="js27">27. Challenge: Password Validation</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `validatePassword` that takes in a string and validates it based on the following criteria:
 
@@ -2991,7 +3031,7 @@ validatePassword('HelloWorld'); // should return false (no digit)
 
 - You can use the `split` function to convert the string into an array of characters and then use the `some` function to check if at least one character meets a certain condition.
 
-## Solution
+<h3>Solution</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -3043,7 +3083,7 @@ test('Password Validation', () => {
 <h1 id="js28">28. Challenge: Find Missing Letter Refactor</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 In the last section, we created a function called`findMissingLetter` that takes in an array of consecutive (increasing) letters as input and returns the missing letter in the array.
 
@@ -3079,7 +3119,7 @@ findMissingLetter(['t', 'u', 'v', 'w', 'x', 'z']); // => "y"
 - You can use `map` to get an array of the unicode numbers (using charCodeAt) of the letters in the input array and then use `find` to find the missing character code.
 - You can also use `filter` as well as `reduce`
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1 </summary>
@@ -3186,27 +3226,50 @@ test('Find Missing Letter', () => {
 <h1 id="js29">29. Recursion Intro (countDown)</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-For the next few challenges, we're going to be looking at and using `recursion`, which is a popular topic in computer science. I know a lot of people struggle with recursion, so I'm going to try and explain it in really simple terms and we'll start off with some really simple examples and break them down. Understanding at least the basic concpet of recursion is important and it's something that is often asked about in job interviews.
+For the next few challenges, we're going to be looking at and using `recursion`, which is 
+a popular topic in computer science. I know a lot of people struggle with recursion, so 
+I'm going to try and explain it in really simple terms and we'll start off with some really 
+simple examples and break them down. Understanding at least the basic concpet of recursion 
+is important and it's something that is often asked about in job interviews.
 
-In programming terms, `recursion` is a function that calls itself until a "base case" or a "base condition" is true. In most recursive functions, we break the problem down into smaller instances and then use that solution to solve the original problem. Ill show you what I mean with an example in a few minutes.
+In programming terms, `recursion` is a function that calls itself until a "base case" or a 
+"base condition" is true. In most recursive functions, we break the problem down into 
+smaller instances and then use that solution to solve the original problem. Ill show you 
+what I mean with an example in a few minutes.
 
-When we call a function it gets added to what we call the call stack and when it comes to returning values, there's a concept called `unwinding`. I'm going to go over those in the next lesson. i don't want to throw too much at you at once.
+When we call a function it gets added to what we call the call stack and when it comes 
+to returning values, there's a concept called `unwinding`. I'm going to go over those 
+in the next lesson. i don't want to throw too much at you at once.
 
-One example that I like is the analogy of a Russian doll. A Russian doll is a set of wooden dolls of decreasing size placed one inside another. To get to the smallest doll, you have to open each doll one by one until you get to the prize or whatever is in the smallest doll or the smallest box. This is a recursive process.
+One example that I like is the analogy of a Russian doll. A Russian doll is a set of 
+wooden dolls of decreasing size placed one inside another. To get to the smallest doll, 
+you have to open each doll one by one until you get to the prize or whatever is in the 
+smallest doll or the smallest box. This is a recursive process.
 
-With the Russian doll example, you could use a for loop if you knew how many dolls there were, but if you don't know the exact amount of iterations, as you often don't in programming, recursion can be a better option.
+With the Russian doll example, you could use a for loop if you knew how many dolls 
+there were, but if you don't know the exact amount of iterations, as you often don't 
+in programming, recursion can be a better option.
 
-## Recursion vs iteration
+<h2>Recursion vs iteration</h2>
 
-At first glance, recursion and iteration (loops) seem to be very similar. They both can be used to solve the same problems, but there are some differences between them. There are also pros and cons to both.
+At first glance, recursion and iteration (loops) seem to be very similar. They both can be used 
+to solve the same problems, but there are some differences between them. There are also pros and 
+cons to both.
 
-As we've established, recursion  is a function that calles itself until a base case is met and solves a smaller version of the same problem, while iteration is just a block of code that is executed a specific number of times.
+As we've established, recursion  is a function that calles itself until a base case is met and 
+solves a smaller version of the same problem, while iteration is just a block of code that is 
+executed a specific number of times.
 
-When using recursion, you're adding function calls to the call stack and that takes up memory and can affect performance. Iteration doesn't because you aren't adding function instances. So that's one pro for iteration over recursion.
+When using recursion, you're adding function calls to the call stack and that takes up memory 
+and can affect performance. Iteration doesn't because you aren't adding function instances. 
+So that's one pro for iteration over recursion.
 
-However, recursion can really minimize the amount of code needed and can be a very elegant solution and minimize complex problems.
+However, recursion can really minimize the amount of code needed and can be a very elegant 
+solution and minimize complex problems.
 
-Both recursion and iteration have their strengths and weaknesses, and the choice between them depends on the problem you're trying to solve and the code readability and efficiency you're aiming for.
+Both recursion and iteration have their strengths and weaknesses, and the choice between 
+them depends on the problem you're trying to solve and the code readability and efficiency 
+you're aiming for.
 
 <h4>When to use which</h4>
 
@@ -3216,7 +3279,7 @@ This really depends on the problem, the developer and many other factors, but in
 
 - Use iteration when you need to repeat a block of code a specific number of times or until a condition is met. Iteration is generally simpler to implement and understand for simpler repetitive tasks.
 
-## Code example
+<h3>Code example</h3>
 
 Let's look at a really simple example of recursion:
 
@@ -3249,11 +3312,18 @@ In the next batch of challenges, we will be using recursion to solve some proble
 <h1 id="js30">30. Unwinding</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-We talked about the basics of recursion and looked at a simple example in the last lesson. In this lesson, I want to look at a key concept in recursion called "unwinding".
+We talked about the basics of recursion and looked at a simple example in the last lesson. In 
+this lesson, I want to look at a key concept in recursion called "unwinding".
 
-We know that when we run a function recursively, it calls itself until it reaches a base case. After it reaches that base is when it starts returning values as it "unwinds" the recursion. The order in which the function calls are returned is the reverse order of the function calls. This is because the function calls are added to the call stack, which is a LIFO (last in, first out) data structure.
+We know that when we run a function recursively, it calls itself until it reaches a base case. 
+After it reaches that base is when it starts returning values as it "unwinds" the recursion. 
+The order in which the function calls are returned is the reverse order of the function calls. 
+This is because the function calls are added to the call stack, which is a LIFO (last in, first 
+out) data structure.
 
-We're actually going to look at stacks and other data structures later. In fact we will create our own implementation of a stack. I do want to explain the basics now though so that you can understand how recursion and unwinding work.
+We're actually going to look at stacks and other data structures later. In fact we will create 
+our own implementation of a stack. I do want to explain the basics now though so that you can 
+understand how recursion and unwinding work.
 
 Let's look at an example of this. Consider the following function:
 
@@ -3267,9 +3337,13 @@ function sumUpTo(n) {
 }
 ```
 
-This function uses recursion to calculate the sum of positive integers up to `n`. For example, if the input is 5, the function should return 15 (1 + 2 + 3 + 4 + 5).
+This function uses recursion to calculate the sum of positive integers up to `n`. For 
+example, if the input is 5, the function should return 15 (1 + 2 + 3 + 4 + 5).
 
-Let's see how this function works. When we call `sumUpTo(5)`, it executes `sumUpTo(4) + 5`. Now, `sumUpTo(4)` calls `sumUpTo(3) + 4`. Continuing, `sumUpTo(3)` calls `sumUpTo(2) + 3`. In the next call, `sumUpTo(2)` calls `sumUpTo(1) + 2`. Finally, `sumUpTo(1)` returns 1.
+Let's see how this function works. When we call `sumUpTo(5)`, it executes `sumUpTo(4) 
++ 5`. Now, `sumUpTo(4)` calls `sumUpTo(3) + 4`. Continuing, `sumUpTo(3)` calls 
+`sumUpTo(2) + 3`. In the next call, `sumUpTo(2)` calls `sumUpTo(1) + 2`. Finally, 
+`sumUpTo(1)` returns 1.
 
 Now, we can start "unwinding" the recursion and adding the numbers to form the sum:
 
@@ -3281,13 +3355,17 @@ sumUpTo(4) returns 1 + 2 + 3 + 4 = 10
 sumUpTo(5) returns 1 + 2 + 3 + 4 + 5 = 15
 ```
 
-As you can see, the function starts returning values as it "unwinds" the recursion. It returns in the reverse order of the function calls, which is why it's called "unwinding".
+As you can see, the function starts returning values as it "unwinds" the recursion. It returns 
+in the reverse order of the function calls, which is why it's called "unwinding".
 
-## A Look At The Call Stack
+<h3>A Look At The Call Stack</h3>
 
-As I said above, the call stack is a LIFO (last in, first out) data structure, which means that the last function that was added to the call stack is the first one to be removed. This is why the function calls are returned in the reverse order of the function calls.
+As I said above, the call stack is a LIFO (last in, first out) data structure, which means that 
+the last function that was added to the call stack is the first one to be removed. This is why 
+the function calls are returned in the reverse order of the function calls.
 
-When we first call `sumUpTo(5)`, it is added to the call stack. Then, `sumUpTo(4)` is added to the call stack and so on...
+When we first call `sumUpTo(5)`, it is added to the call stack. Then, `sumUpTo(4)` is added to 
+the call stack and so on...
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ JS-Cellardoor.bauska.github.io ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -3299,7 +3377,9 @@ When we first call `sumUpTo(5)`, it is added to the call stack. Then, `sumUpTo(4
   alt="JavaScript logo." />
 <img src="../images/recursion-stack-1.png" width="500" />
 
-Once `sumUpTo(1)` is called, it returns 1 and is removed from the call stack. Then, `sumUpTo(2)` returns 3 and is removed from the call stack. This continues until `sumUpTo(5)` returns 15 and is removed from the call stack.
+Once `sumUpTo(1)` is called, it returns 1 and is removed from the call stack. Then, `sumUpTo(2)` 
+returns 3 and is removed from the call stack. This continues until `sumUpTo(5)` returns 15 and 
+is removed from the call stack.
 
 <img src="../images/recursion-stack-2.png" width="500" />
 
@@ -3323,9 +3403,10 @@ function sumUpTo(n) {
 <h1 id="js31">31. Challenge: Reverse String Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions
 
-Write a function called `reverseString` that takes in a string and returns the reversed version of the string. Be sure to use recursion in your solution.
+Write a function called `reverseString` that takes in a string and returns the reversed 
+version of the string. Be sure to use recursion in your solution.
 
 <h3>Function Signature</h3>
 
@@ -3338,7 +3419,7 @@ Write a function called `reverseString` that takes in a string and returns the r
 function reverseString(str: string): string;
 ```
 
-## Examples
+<h3>Examples
 
 ```js
 reverseString('hello'); // should return 'olleh'
@@ -3354,7 +3435,7 @@ reverseString('racecar'); // should return 'racecar'
 - You can use recursion to reverse the string by recursively calling the function with the substring starting from the second character and then concatenating the first character at the end.
 - Remember how unwinding works and how function returns are added to the call stack in the reverse order of the function calls.
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -3424,7 +3505,7 @@ test('Reversing a string', () => {
 
 We looked at a very simple example of recursion in the last lesson. Now I want to look at a very popular example that is often used with recursion: the Fibonacci sequence. This could very well be a question you get asked in an interview, so it's important to understand how it works. You can also use loops to solve this problem, but recursion is a more elegant solution. Later we will also look at using a binary tree to solve this problem.
 
-## What is the Fibonacci sequence?
+<h3>What is the Fibonacci sequence?
 
 The Fibonacci sequence is a series of numbers where the sequence starts with 0 and 1, and then each number is the sum of the previous two numbers. So the sequence would look like this:
 
@@ -3447,7 +3528,7 @@ So if we wanted to find the 5th number in the sequence, we would do this:
 
 So we can see that `F(2) = 1 + 0 = 1`, `F(3) = 1 + 1 = 2`, `F(4) = 2 + 1 = 3`, and `F(5) = 3 + 2 = 5`. So the 5th number in the sequence is 5.
 
-## Instructions
+<h3>Instructions
 
 Write a function called `fibonacci` that takes in a number and returns the number at that index of the Fibonacci sequence.
 
@@ -3479,7 +3560,7 @@ fibonacci(10); // 55
 - You know that the formula is `F(n) = F(n-1) + F(n-2)`. ` F`` is the function, and  `n` is the number in the sequence.
 - You know that the first two numbers in the sequence are `0` and `1`. So if the number is less than 2, you can return the number.
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -3548,7 +3629,7 @@ describe('fibonacci', () => {
 <h1 id="js33">33. Challenge: Factorial Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Description
+<h3>Description</h3>
 
 The factorial of a number/integer is the product of that number and all of the numbers below it. It is denoted as `5!` (factorial of 5).
 
@@ -3563,7 +3644,7 @@ The factorial of a number/integer is the product of that number and all of the n
 
 The factorial function is commonly used in various mathematical and programming applications. It grows very quickly as `n` increases, which makes it a suitable challenge for exploring recursive functions.
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `factorial` that takes in a number and returns the factorial of that number.
 
@@ -3595,7 +3676,7 @@ factorial(5); // 120 (5! = 5 * 4 * 3 * 2 * 1 = 120)
 factorial(10); // 3628800 (10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3628800)
 ```
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution </summary>
@@ -3661,7 +3742,7 @@ test('Factorial of 10 should be 3628800', () => {
 <h1 id="js34">34. Power</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions
 
 Write a function called `power` that takes in a `base` and an `exponent` and returns the result of raising the `base` to the power of the `exponent`. Use recursion to solve this problem.
 
@@ -3694,7 +3775,7 @@ power(3, 4); // 81 (3^4 = 3 * 3 * 3 * 3 = 81)
 - Remember that any number raised to the power of 0 is 1. This should give you the base case
 - Think about how you can break down the problem into smaller parts using recursion
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -3759,11 +3840,11 @@ test('Calculate Power of Base to Exponent', () => {
 <h1 id="js35">35. Challenge: Array Sum Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Description
+<h3>Description
 
 Let's practice using recursion by creating a function that calculates the sum of an array of numbers. Write a function called `arraySum` that takes in an array of numbers and returns their sum using recursion.
 
-## Instructions
+<h3>Instructions
 
 Write a function called `arraySum` that takes in an array of numbers and returns their sum using recursion.
 
@@ -3796,7 +3877,7 @@ arraySum([-1, -2, -3, -4, -5]); // should return -15 (-1 + -2 + -3 + -4 + -5 = -
 arraySum([]); // should return 0 (empty array)
 ```
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -3852,7 +3933,7 @@ test('Calculate Sum of Array Using Recursion', () => {
 <h1 id="js36">36. Challenge: Number Range Using Recursion</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions
 
 Write a function called `numberRange` that takes in a `startNum` and an `endNum` and returns an array of numbers from `startNum` to `endNum`, inclusive. Be sure to use recursion in your solution.
 
@@ -3880,7 +3961,7 @@ numberRange(7, 7); // should return [7] (only one number)
 
 - You can construct the array by first calling `numberRange` on a smaller range and then adding the `endNum` to the array.
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -3931,7 +4012,7 @@ test('Calculating the range of numbers', () => {
 <h1 id="js37">37. Challenge: Flatten Array</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions
 
 Write a function called `flattenArray` that takes in an array containing nested arrays of integers and returns a new array with all the integers from the nested arrays flattened into a single level.
 
@@ -3968,7 +4049,7 @@ flattenArray([1, [2, [3, [4, [5]]]]]); // should return [1, 2, 3, 4, 5]
 - You can use recursion to traverse the nested arrays and flatten them.
 - If the current element is an array, you can recursively call the `flattenArray` function on that element to flatten it further.
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -4023,7 +4104,7 @@ test('Flatten Nested Arrays', () => {
 <h1 id="js38">38. Challenge: Permutations</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions
 
 Write a function called `permutations` that takes in a string as a parameter and returns an array of all possible permutations of the characters in the string.
 
@@ -4057,7 +4138,7 @@ permutations('dog'); // ['dog', 'dgo', 'odg', 'ogd', 'gdo', 'god']
 - You can use the `slice` method to remove a character from a string.
 - you can use a for loop to iterate over the characters in the string and another for loop to iterate over the sub-permutations.
 
-## Solutions
+<h3>Solutions
 
 <details open>
   <summary>Click For Solution</summary>
@@ -4136,7 +4217,7 @@ Don't get overwhelmed. If you don't understand some of this stuff right away, th
 
 There are several different types of time complexity. I am going to go over the most common ones in this course.
 
-## Runtime vs Time Complexity
+<h3>Runtime vs Time Complexity
 
 When we talk about `runtime`, runtime pertains to how long it takes for a function to run. We can measure this in seconds, milliseconds, or any other unit of time.
 
@@ -4159,26 +4240,26 @@ Let's look at a chart to help us visualize these different types of time complex
 
 We are going to go through most of these by example, but for now, I'll give you a quick explanation of each one.
 
-## Constant Time Complexity
+<h3>Constant Time Complexity</h3>
 
 Constant time is when the runtime is always the same, no matter how big the input is. So if the input, meaning the function parameter is 1 number or 1 million numbers, the runtime will always be around the same. 
 
 If we look at the chart, we can see that the constant line is flat. So the runtime is constant. It doesn't matter how big the input is. The runtime will always be around the same. This is the most efficient type of time complexity, however achieving constant time complexity is not usually possible due to the nature of computation and is typically associated with simple operations or data structures that can be accessed directly in a single step.
 
-## Linear Time Complexity
+<h3>Linear Time Complexity</h3>
 
 Linear time is when the runtime scales linearly as the input grows. So if the input is 1 number, the runtime will be 1 step. If the input is 1 million numbers, the runtime will be 1 million steps. That's why the orange line is at a 45 degree angle in the chart. As the input grows, the runtime grows at the same rate.
 
 I would say linear is the most common type of complexity that you'll see. It accounts for about 95% or more of the challeneges that we've done in this course. As far as efficiency, it is fairly efficient as it's a one to one growth. It's more efficient than quadratic time complexity, which we'll talk about next.
 
 
-## Quadratic Time Complexity
+<h3>Quadratic Time Complexity</h3>
 
 Quadratic time is when the runtime scales quadratically as the input grows. “Quadratic” is the fancy adjective used to describe squaring, or raising to the power of 2. So if the input size is 1, the runtime is 1 step. If the input size is 10, the runtime is 100 steps. If the input size is 100, the runtime is 10,000 steps. And so on.
 
 If we look at the chart, we can see that the quadratic line is a curve. So the runtime is growing at a much faster rate compared to linear growth. This is not very efficient. We want to avoid quadratic time complexity if possible.
 
-## Logarithmic Time Complexity
+<h3>Logarithmic Time Complexity</h3>
 
 Logarithmic time is when the runtime scales logarithmically as the input grows. So as the input size increases, the time taken by the algorithm increases, but at a much slower rate compared to linear or quadratic growth.
 
@@ -4237,7 +4318,7 @@ Factorial time is when the runtime scales factorially as the input grows.
 
 `O(n!)` is the notation for factorial time. It's pronounced "O of n factorial" or "big O of n factorial".
 
-## Array operations and time complexity
+<h3>Array operations and time complexity</h3>
 
 Just about every operation in your code has some kind of time complexity, not just entire functions or algorithms. Time complexity refers to how the execution time of an operation scales as the size of the data it operates on increases. This concept doesn't only apply to complete functions with input parameters but also to the individual actions performed on data structures like arrays. So I want to go over the different operations of an array and their time complexity. 
 
@@ -4399,7 +4480,7 @@ is `O(n)` because it has to iterate over the string. We did not write a loop, bu
 
 There are other complexities that we will look at later, but for now, we will focus on `O(1)` and `O(n)`.
 
-## Dice Game Complexity
+<h3>Dice Game Complexity</h3>
 
 Remember the dice game that we made? Let's look at the complexity of that. Here is the function:
 
@@ -4532,13 +4613,18 @@ You may have to right click in the `Output` in VS Code and select "Stop Code Run
 <h1 id="js44">44. Logarithmic Time Complexity `O(log n)`</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-Logarithmic time complexity is when the runtime grows logarithmically with the input size. As the input size increases, the runtime of the algorithm increases, but at a much slower rate compared to linear or quadratic time complexities. In a logarithmic time algorithm, the number of operations scales logarithmically with the input size.
+Logarithmic time complexity is when the runtime grows logarithmically with the input size. As 
+the input size increases, the runtime of the algorithm increases, but at a much slower rate 
+compared to linear or quadratic time complexities. In a logarithmic time algorithm, the number 
+of operations scales logarithmically with the input size.
 
-Logarithmic time complexity is denoted by Big O notation as O(log n) or "O of log n", where n represents the size of the input.
+Logarithmic time complexity is denoted by Big O notation as O(log n) or "O of log n", where n 
+represents the size of the input.
 
-## Example: Logarithmic Time Complexity Function
+<h3>Example: Logarithmic Time Complexity Function</h3>
 
-Consider a function called `findPower` that calculates the power of a number using recursion. The function takes two parameters:
+Consider a function called `findPower` that calculates the power of a number using recursion. 
+The function takes two parameters:
 
 - `base` - the base number.
 - `exponent` - the exponent to which the base is raised.
@@ -4563,13 +4649,13 @@ function findPower(base, exponent) {
 
 In the `findPower` function, we use recursion to efficiently calculate the power of a number. The function exploits the property that any number raised to an even exponent can be split into two halves, and the result is the square of the number raised to half the exponent. For odd exponents, the function reduces the exponent by 1 and repeats the process.
 
-## Efficiency and Best Use Cases
+<h3>Efficiency and Best Use Cases</h3>
 
 Logarithmic time complexity is highly efficient and desirable for large datasets or problems that can be divided into smaller sub-problems. It is often encountered in algorithms that utilize divide-and-conquer strategies or binary search, which we will talk about soon when we get to data structures and algorithms.
 
 In the example of `findPower`, the algorithm efficiently computes the power of a number by reducing the number of multiplications required, making it ideal for calculations with large exponents.
 
-## Testing the Runtime
+<h3>Testing the Runtime</h3>
 
 Testing the runtime of logarithmic time algorithms can be done with larger input sizes and observing the relatively slow growth of runtime compared to linear or quadratic algorithms. However, keep in mind that logarithmic time algorithms are already highly efficient, and the difference in runtime for moderately large input sizes may not be significant.
 
@@ -4604,7 +4690,7 @@ There are a lot of similarities between time and space complexity. We can use th
 
 In many cases, the space complexity of a function will be the same as the time complexity. If a function takes `O(n)` time, it will also take `O(n)` space. If a function takes `O(n^2)` time, it will also take `O(n^2)` space. This is because the amount of memory used by a function is often directly related to the number of operations it performs. However, this is not always the case. Sometimes a function will take up more memory than time, or vice versa.
 
-## Rules for Calculating Space Complexity
+<h3>Rules for Calculating Space Complexity</h3>
 
 1. **Variables and data structures take up space:** When you declare variables or use data structures (arrays, objects, etc.) in your code, they occupy memory space based on their size and data type. The space complexity increases with the number and size of variables and data structures used in your program.
 
@@ -4612,11 +4698,11 @@ In many cases, the space complexity of a function will be the same as the time c
 
 3. **The space complexity of a function is the sum of the space complexities of all the variables, data structures, and function calls inside the function:** This means that to calculate the space complexity of a function, you need to consider all the variables and data structures used within the function and their space requirements. Additionally, if the function makes any recursive or nested function calls, you need to account for the space used by those function calls as well.
 
-## Examples of Space Complexity
+<h3>Examples of Space Complexity</h3>
 
 Let's take a look at some examples:
 
-## Constant Space `O(1)`
+<h3>Constant Space `O(1)`</h3>
 
 ```js
 function add(num1, num2) {
@@ -4628,7 +4714,7 @@ The space complexity of this function is `constant`. The function does not creat
 
 We can describe this function as `O(1)` in Big O notation.
 
-## Linear Space `O(n)`
+<h3>Linear Space `O(n)`</h3>
 
 ```js
 function createArray(num) {
@@ -4646,7 +4732,7 @@ The space complexity of the function createArray(num) is `linear`. This is becau
 
 We can describe this function as `O(n)` in Big O notation.
 
-## Quadratic Space `O(n^2)`
+<h3>Quadratic Space `O(n^2)`</h3>
 
 ```js
 function createMatrix(num) {
@@ -4668,7 +4754,7 @@ The space complexity of the function createMatrix(num) is `quadratic`. This is b
 
 We can describe this function as `O(n^2)` in Big O notation.
 
-## Logarithmic Space `O(log n)`
+<h3>Logarithmic Space `O(log n)`</h3>
 
 ```js
 function findPower(base, exponent) {
@@ -4692,7 +4778,7 @@ We can describe this function as `O(log n)` in Big O notation.
 
 In these examples, the time and space complexity are the same. However, this is not always the case. Let's look at an example where the space complexity is different from the time complexity.
 
-## Constant Time `O(1)` and Linear Space `O(n)`
+<h3>Constant Time `O(1)` and Linear Space `O(n)`</h3>
 
 ```js
 function findSum(arr) {
@@ -4715,7 +4801,7 @@ The space complexity of the function is `O(1)`, which is `constant`. This is bec
 <h1 id="js46">46. Challenge: Maximum Subarray Sum - O(n^2) Solution</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `maxSubarraySum` that takes an array of integers and a positive integer `k` as input. The function should find the maximum sum of any subarray of length `k` using an O(n^2) solution by using nested for loops.
 
@@ -4810,7 +4896,7 @@ The sliding window technique is a powerful algorithmic approach used to solve va
 
 This technique can be used to maximize the time complexity of your algorithms. In the last video, we did a sub array sum algorithm that used nested for loops and had a time and space complexity of O(n^2), which is not very efficient. In the next video, we're going to refactor that solution and make it linear O(n) by using this sliding window technique. The reason I'm showing you this technique is to give you an example of doing the same thing and improving efficiency and complexity.
 
-## How it Works
+<h3>How it Works</h3>
 
 Let's talk a little bit about how this works:
 
@@ -4824,7 +4910,7 @@ Let's talk a little bit about how this works:
 
 5. **Repeat:** Continue sliding and adjusting the window until the `right` pointer reaches the end of the array or string. During this process, keep track of the desired information (maximum/minimum, frequency, substring, etc.).
 
-## Advantages
+<h3>Advantages</h3>
 
 - **Optimized Time Complexity:** Sliding window reduces the time complexity by avoiding redundant calculations. It's particularly beneficial for situations where brute-force solutions would require nested loops.
 
@@ -4832,7 +4918,7 @@ Let's talk a little bit about how this works:
 
 - **Simplicity:** Once understood, sliding window problems often become easier to solve compared to their naive counterparts.
 
-## Notes
+<h3>Notes</h3>
 
 - Sliding window is best suited for problems that involve contiguous subarrays or substrings.
 - The technique can have variations such as dynamic window size or two-pointer sliding.
@@ -4843,7 +4929,7 @@ Let's talk a little bit about how this works:
 <h1 id="js48">48. Challenge: Maximum Subarray Sum - O(n) Solution</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `maxSubarraySum` that takes an array of integers and a positive integer `k` as input. The function should find the maximum sum of any subarray of length `k` using an O(n) solution by using the sliding window technique.
 
@@ -4949,21 +5035,21 @@ Please note that the provided solution has a time complexity of O(n^2) due to th
 
 Now that we've done some challenges and looked at time complexity and Big O notation, I want to start to look at data structures. Data structures are used in every programming language. All a data structure is is a way of storing and organizing data so that it can be used effectively. They're not only used for storing data but they're also used for accessing and manipulating data. If we have a list of 1000 items, and we want to find a specific item in that list, we can use a data structure to store the data in a way that makes it easy to find the item we're looking for.
 
-## Built-In Data Structures
+<h3>Built-In Data Structures</h3>
 
 Every language has data structures built in. JavaScript has arrays and objects as well as maps and sets. Python has lists, tuples, dictionaries, and sets. Java has arrays, lists, maps, and sets. And so on. This is a JavaScript course, so I'm looking at data structures from a JavaScript perspective, but the concepts are the same no matter what language you're using.
 
-## More Targeted Data Structures
+<h3>More Targeted Data Structures</h3>
 
 In addition to the built-in data structures, we have more targeted structures that work in a specific way. When look at an array in JavaScript, it can be used in many different ways using all types of methods and properties. A linked list, on the other hand, is a very specific data structure that has a very specific way of working. It's not as flexible as an array, but it's more efficient in certain situations. When creating a linked list or a stack or a queue, we can use a JavaScript array as the base and then only expose specific methods and properties that make sense for that data structure. This is what we'll be doing in this course.
 
 You probably haven't seen a linked list used in everyday code very often. You've seen arrays and objects as they're built in and very flexible. Linked lists can be used in certain situations where they're more efficient than arrays. Also, data structures are a huge topic when it comes to technical interviews. You'll be asked to implement a linked list or a stack or a queue in an interview. You'll also be asked to use a specific data structure to solve a problem. So, it's important to know how they work and when to use them.
 
-## Data Structures and Algorithms
+<h3>Data Structures and Algorithms</h3>
 
 Data structures and algorithms go hand in hand. An algorithm is a set of instructions for solving a problem. You can look at the challenges that we've so far as algorithms. A data structure is a way of storing and organizing data so that it can be used effectively. We've used arrays, objects and maps in the challenges that we've done so far. What I want to start to do now is create our own custom classes that implement specific data structures. We'll start with some built in data structures like `maps` and `sets` as well as a custom hash table. Then we'll move to stacks, queues, linked lists and some of the more difficult to grasp like trees, and graphs. We can then use these data structures to solve problems.
 
-## Common Data Structures
+<h3>Common Data Structures</h3>
 
 These are some of the most common data structures that you'll see in programming. We'll be looking at each of these in this course.
 
@@ -4980,7 +5066,7 @@ These are some of the most common data structures that you'll see in programming
 - Graphs
 - Hash Tables
 
-## Linear vs Non-Linear Data Structures
+<h3>Linear vs Non-Linear Data Structures</h3>
 
 Data structures can be linear or non-linear. A linear data structure is a structure where data is organized sequentially, where each element is attached to its previous and next adjacent element. Some examples are arrays, stacks, queues and linked lists. A non-linear data structure is a structure where data is not organized sequentially. Some examples are trees and graphs. We'll be looking at both linear and non-linear data structures in this course.
 
@@ -4998,19 +5084,19 @@ Here is a visual representation of a hash table:
 
 We have our keys on the left, which are names of people, and we have our stored values on the right, which in this case, are their phone numbers. In the middle is the hash function.
 
-## Hash Function
+<h3>Hash Function</h3>
 
 A `hash function` is a function that takes in a key and returns an index. The index is used to determine where the key-value pair should be stored in the hash table. The hash function should always return the same index for the same key.
 
-## Hash Collisions
+<h3>Hash Collisions</h3>
 
 There is something called a hash collision that can occur when using hash tables. A collision occurs when two keys are mapped to the same index in the array. A good hash function will evenly distribute the keys across the hash table. This will minimize collisions and improve the time complexity of the hash table, which I'll talk about in a minute.
 
-## Hash Tables in JavaScript
+<h3>Hash Tables in JavaScript</h3>
 
 Hash tables are used in many different languages. In JavaScript, we actually have some built in structures that use hash tables. Even an object is an example of a hash table because data is represented in key-value pairs. We also have a `Map` and a `Set` data structure that use hash tables. In this section, I want to do some challenges that use maps and sets, but I also want to learn how to implement a hash table from scratch.
 
-## Time & Space Complexity
+<h3>Time & Space Complexity</h3>
 
 When it comes to time complexity, hash tables are a great data structure for fast lookups. The average time complexity for lookups, insertions, and deletions is O(1). Collisions can slow down the time complexity to O(n).
 
@@ -5023,7 +5109,7 @@ Space complexity is O(n) because we have to store all of the keys and values in 
 | Insertion | O(1)            | O(n)             |
 | Deletion  | O(1)            | O(n)             |
 
-## Hash Methods
+<h3>Hash Methods</h3>
 
 Here are some of the methods that are available on a hash table:
 
@@ -5042,13 +5128,13 @@ We will get to implementing our own custom hash table, but first I want to look 
 
 Maps were added as a data structure to JavaScript in the `ES2015` update. In JavaScript, a `map` is a collection of key-value pairs. Maps are also known as dictionaries, hashmaps, and associative arrays in other programming languages. Maps are used to store data in a way that uniquely identifies each element in the collection. This is done by using a key, which is a unique identifier for each element in the collection. The key is used to retrieve the associated value.
 
-## Maps vs Objects
+<h3>Maps vs Objects</h3>
 
 Maps are similar to objects in that both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. Objects are used more because they have been around longer, but maps are preferred in certain cases. The biggest difference between maps and objects is that maps allow keys of any type, while objects only allow strings, numbers, and symbols as keys. This means that maps can use functions, objects, and any primitive type as a key.
 
 Maps can also have better performance in scenarios involving frequent additions and removals of key-value pairs. On the other hand, objects have better performance for the case of looking up key-value pairs.
 
-## Creating a Map
+<h3>Creating a Map</h3>
 
 To create a map, we use the `new` keyword and the `Map()` constructor. let's create a map called `nameMap`:
 
@@ -5088,7 +5174,7 @@ const map2 = new Map([
 ]);
 ```
 
-## Retrieving Data
+<h3>Retrieving Data</h3>
 
 To retrieve data from a map, we use the `get()` method. Let's retrieve the value associated with the key `1` from the `nameMap` map:
 
@@ -5103,7 +5189,7 @@ console.log(map2.get(myFunction));
 console.log(map2.get(emptyObj));
 ```
 
-## Setting Data
+<h3>Setting Data</h3>
 
 To set data in a map, we use the `set()` method. Let's set some new key-value pairs in the `nameMap` map:
 
@@ -5118,7 +5204,7 @@ Let's log the map:
 console.log(nameMap); // Map(5) { 1 => 'John', 2 => 'Jane', 3 => 'Joe', 4 => 'Jack', 5 => 'Jill' }
 ```
 
-## Checking if a Key Exists
+<h3>Checking if a Key Exists</h3>
 
 To check if a key exists in a map, we use the `has()` method. Let's check if the key `1` exists in the `nameMap` map:
 
@@ -5127,7 +5213,7 @@ console.log(nameMap.has(1)); // true
 console.log(nameMap.has(6)); // false
 ```
 
-## Deleting Data
+<h3>Deleting Data</h3>
 
 To delete data from a map, we use the `delete()` method. Let's delete the key-value pair with the key `1` from the `nameMap` map:
 
@@ -5136,7 +5222,7 @@ nameMap.delete(1);
 console.log(nameMap.has(1)); // false
 ```
 
-## Getting the Size of a Map
+<h3>Getting the Size of a Map</h3>
 
 To get the size of a map, we use the `size` property. Let's log the size of the `nameMap` map:
 
@@ -5144,7 +5230,7 @@ To get the size of a map, we use the `size` property. Let's log the size of the 
 console.log(nameMap.size); // 4
 ```
 
-## Iterating Through a Map
+<h3>Iterating Through a Map</h3>
 
 To iterate/loop through a map, we can use the `for...of` loop. Let's loop through the `nameMap` map and log each key-value pair:
 
@@ -5169,7 +5255,7 @@ console.log(nameMap.keys()); // MapIterator { 2, 3, 4, 5 }
 console.log(nameMap.values()); // MapIterator { 'Jane', 'Joe', 'Jack', 'Jill' }
 ```
 
-## Clearing a Map
+<h3>Clearing a Map</h3>
 
 To clear a map, we use the `clear()` method. Let's clear the `nameMap` map:
 
@@ -5185,7 +5271,7 @@ Now let's try some challenges!
 <h1 id="js52">52. Challenge: Word Frequency Counter</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `wordFrequencyCounter` that takes a string as input and returns a map that represents the frequency of each word in the string. We did a similar challenge way back that counted the occurrences of a character. This function should count the occurrences of each word, ignoring case and excluding punctuation.
 
@@ -5302,7 +5388,7 @@ test('Counting word frequencies in a string', () => {
 <h1 id="js53">53. Challenge: Phone Number Directory</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 You are building a phone number directory application. Implement a function called `phoneNumberDirectory` that takes an array of phone numbers as input and returns a Map with names as keys and corresponding phone numbers as values.
 
@@ -5339,7 +5425,7 @@ console.log(phoneNumberDirectory(phoneNumbers));
 
 - Loop through the input array and use the `split()` method to separate the name and phone number in each element of the `phoneNumbers` array before adding to the map
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -5393,7 +5479,7 @@ test('Building a phone number directory from an array of phone numbers', () => {
 Anagrams are words or phrases formed by rearranging the letters of another word or phrase. 
 For example, `cinema` is an anagram of `iceman`.
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `anagramGrouping` that takes an array of strings as input and 
 returns an array of arrays, where each sub-array contains words that are anagrams of 
@@ -5432,7 +5518,7 @@ anagramGrouping(['listen', 'silent', 'enlist', 'hello', 'world']);
   then `join()` it back to a string.
 - You can use `Array.from()` to convert a map to an array.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -5502,7 +5588,7 @@ test('Grouping anagrams', () => {
 
 Now we are going to move on to `sets`. A set is a collection of unique values. A set can contain any data type. You can loop through a set in insertion order. Insertion order is the order in which the values were added to the set. A set is similar to an array, but a set is not indexed and does not contain duplicate values.
 
-## Creating a Set
+<h3>Creating a Set</h3>
 
 To create a set, we use the `new` keyword and the `Set()` constructor. Let's create a set called `nameSet`:
 
@@ -5536,7 +5622,7 @@ console.log(nameSet); // Set { 'John', 'Jane', 'Joe' }
 
 We can see that even though we added duplicate values to the set, the set does not contain any duplicate values. The set only contains unique values, which can be very useful.
 
-## Adding Data
+<h3>Adding Data</h3>
 
 To add data to a set, we use the `add()` method. Let's add some values to the `nameSet` set:
 
@@ -5551,7 +5637,7 @@ Let's log the set:
 console.log(nameSet); // Set { 'John', 'Jane', 'Joe', 'Jack', 'Jill' }
 ```
 
-## Check for a Value
+<h3>Check for a Value</h3>
 
 To check for a value in a set, we use the `has()` method. Let's check if the set contains the value `'Jack'`:
 
@@ -5559,7 +5645,7 @@ To check for a value in a set, we use the `has()` method. Let's check if the set
 console.log(nameSet.has('Jack')); // true
 ```
 
-## Deleting Data
+<h3>Deleting Data</h3>
 
 To delete data from a set, we use the `delete()` method. Let's delete the value `'Jack'` from the set:
 
@@ -5573,7 +5659,7 @@ Let's log the set:
 console.log(nameSet); // Set { 'John', 'Jane', 'Joe', 'Jill' }
 ```
 
-## Getting the Size of a Set
+<h3>Getting the Size of a Set</h3>
 
 To get the size of a set, we use the `size` property. Let's log the size of the `nameSet` set:
 
@@ -5581,7 +5667,7 @@ To get the size of a set, we use the `size` property. Let's log the size of the 
 console.log(nameSet.size); // 4
 ```
 
-## Getting All Values from a Set
+<h3>Getting All Values from a Set</h3>
 
 To get all values from a set, we use the `values()` method. Let's log all values from the `nameSet` set:
 
@@ -5591,7 +5677,7 @@ console.log(nameSet.values()); // [Set Iterator] { 'John', 'Jane', 'Joe', 'Jill'
 
 We can see that the `values()` method returns a set iterator. A set iterator is an object that contains the values from the set. We can use a `for...of` loop to loop through the set iterator and log each value
 
-## Looping Through a Set
+<h3>Looping Through a Set</h3>
 
 To loop through a set, we can use the `for...of` loop. Let's loop through the `nameSet` set and log each value:
 
@@ -5601,7 +5687,7 @@ for (const value of nameSet) {
 }
 ```
 
-## Converting a Set to an Array
+<h3>Converting a Set to an Array</h3>
 
 To convert a set to an array, we use the `Array.from()` method. Let's convert the `nameSet` set to an array:
 
@@ -5610,7 +5696,7 @@ const nameArray = Array.from(nameSet);
 console.log(nameArray); // [ 'John', 'Jane', 'Joe', 'Jill' ]
 ```
 
-## Converting an Array to a Set
+<h3>Converting an Array to a Set</h3>
 
 To convert an array to a set, we use the `Set()` constructor. Let's convert the `nameArray` array to a set:
 
@@ -5619,7 +5705,7 @@ const nameSet = new Set(nameArray);
 console.log(nameSet); // Set { 'John', 'Jane', 'Joe', 'Jill' }
 ```
 
-## Deleting All Data from a Set
+<h3>Deleting All Data from a Set</h3>
 
 To delete all data from a set, we use the `clear()` method. Let's delete all data from the `nameSet` set:
 
@@ -5634,7 +5720,7 @@ Let's try some challenges using sets.
 <h1 id="js56">56. Challenge: Symmetric Difference Challenge</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 We'll start with a pretty simple challenge. Write a function called `symmetricDifference` that takes in two arrays and returns an array containing the symmetric difference of the two arrays. The symmetric difference of two arrays is a new array containing only the elements that are present in one of the arrays but not both, with no duplicates.
 
@@ -5671,7 +5757,7 @@ symmetricDifference([1, 2, 3], [4, 5, 6]);
 - You can use two Sets to keep track of elements in both arrays and then find the elements that are present in only one of the sets.
 - Be mindful of duplicate elements and handle them appropriately.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -5723,7 +5809,7 @@ test('Symmetric Difference of Two Arrays', () => {
 <h1 id="js57">57. Challenge: Two Sum</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `twoSum` that takes an array of integers and a target integer as input and returns an array of indices of the two numbers that add up to the target.
 
@@ -5824,7 +5910,7 @@ describe('Two Sum', () => {
 <h1 id="js58">58. Challenge: Longest Consecutive Sequence</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `longestConsecutiveSequence` that takes an array of integers as input and returns the length of the longest consecutive sequence of integers in the array.
 
@@ -5857,7 +5943,7 @@ longestConsecutiveSequence([0, 3, 7, 2, 5, 8, 4, 6, 9, 1]); // Output: 10 (The l
 
 - You can use a Set to efficiently find consecutive sequences in the array.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -5914,7 +6000,7 @@ test('Longest Consecutive Sequence', () => {
 
 We looked at the built-in `Map` class, which is a hash table, but now I want to implement our own custom hash table from scratch. This is not going to be a very advanced implementation. It can get much more complex where it can handle collisions better and dynamically resize, but this will be a good starting point.
 
-## Class & constructor
+<h3>Class &amp; constructor</h3>
 
 I'll start by creating a `HashTable` class and then I'll add some methods to it.
 
@@ -5930,7 +6016,7 @@ The constructor will take in a `limit` parameter, which will be the size of the 
 
 I'll also initialize a `storage` array, which will be the hash table. I'll set it to an empty array for now.
 
-## `_hash` function
+<h3>`_hash` function</h3>
 
 Next, I'll create a hash function. This will take in a key and return an index.
 
@@ -5956,7 +6042,7 @@ Then I'll return the hash modulo the max, which will be the size of the hash tab
 
 I added the underscore to the beginning of the function name because this is a private function. It is not meant to be called outside of the class.
 
-## `print` Method
+<h3>`print` Method</h3>
 
 We will create a very simple method that just logs the table. You probably wouldn't want to do this in a real application, but it will be useful for us to see what is going on.
 
@@ -5974,7 +6060,7 @@ const ht = new HashTable();
 ht.printTable(); // []
 ```
 
-## `set` Method
+<h3>`set` Method</h3>
 
 Let's create a method to add a key-value pair to the hash table. This will take in a key and a value. We will use the `_hash()` function to get the index where we will store the key-value pair.
 
@@ -6036,7 +6122,7 @@ Remember this image?
 
 It looks very similar to what we have done here. We have an array with 8 items. We have 4 items in the array and 4 empty items. The items in the array are also arrays. Each of those arrays has a key-value pair inside of it. The key is the name and the value is the phone number.
 
-## `get` Method
+<h3>`get` Method</h3>
 
 Now let's create a method to get a value from the hash table. This will take in a key and return the value.
 
@@ -6080,7 +6166,7 @@ You should get the following:
 555 - 234 - 3544;
 ```
 
-## `remove` Method
+<h3>`remove` Method</h3>
 
 Now let's create a method to remove a key-value pair from the hash table. This will take in a key and remove the key-value pair.
 
@@ -6121,7 +6207,7 @@ You should get something like the following:
 ]
 ```
 
-## `getValues` Method
+<h3>`getValues` Method</h3>
 
 Now let's create a method to get all the values from the hash table. This will return an array of all the values.
 
@@ -6145,7 +6231,7 @@ Let's test it out. Add this to your run file:
 console.log(ht.getValues()); // [ '555-234-3544', '555-384-5523', '555-384-9933', '555-390-0034' ]
 ```
 
-## Test Cases
+<h3>Test Cases</h3>
 
 Here is a Jest test that should pass if you have done everything correctly. You do not have to understand this, just run it and make sure it passes.
 
@@ -6216,7 +6302,7 @@ describe('HashTable', () => {
 });
 ```
 
-## Conclusion
+<h3>Conclusion</h3>
 
 That's it! We have create our own hash table. We can now add, get, and remove key-value pairs from our hash table. We can also print out the hash table to see what it looks like.
 
@@ -6227,7 +6313,7 @@ Now we will do a couple challenges using this class.
 <h1 id="js60">60. Challenge: Word Frequency Counter using HashTable</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `wordInstanceCounter` that takes a string and a word as input and returns the number of instances of that word in the string. This function should count the occurrences of the specified word, ignoring case and excluding punctuation.
 
@@ -6321,7 +6407,7 @@ test('Counting instances of a word in a string', () => {
 <h1 id="js61">61. Challenge: HashTable getValues Method</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Extend the existing `HashTable` class with a new method called `getValues()`. This method should return an array containing all the values stored in the hash table, irrespective of the keys.
 
@@ -6401,7 +6487,7 @@ describe('HashTable', () => {
 <h1 id="js62">62. Challenge: Anagram Grouping Challenge</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Create a function called `anagramGrouping` to use the `HashTable` class that we created. The function should take an array of words as input and return an array of arrays, where each inner array represents a group of anagrams.
 
@@ -6429,7 +6515,7 @@ anagramGrouping(['listen', 'silent', 'hello', 'world', 'act', 'cat']);
 - Convert each word to a sorted string of characters to identify anagrams.
 - For each sorted string, store anagrams in the HashTable with the sorted string as the key.
 
-## Solution
+<h3>Solution</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -6521,7 +6607,7 @@ We know that in JavaScript, Arrays have a `push` and `pop` method. We can use an
 stack. We can also create our own stack class that only exposes the push and pop methods or 
 we can create our own `push` and `pop` methods via a class.
 
-## Call Stack
+<h3>Call Stack</h3>
 
 A great example of a stack is the call stack. The call stack is a fundamental concept in 
 programming and serves as an execution context for function calls.
@@ -7555,7 +7641,7 @@ the next property of the current node.
 <h1 id="js73">73. Challenge: Reverse String Using Linked List</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `reverseStringLinkedList` that takes in a string and returns the 
 reverse of that string.
@@ -7587,7 +7673,7 @@ reverseStringQueue('Greetings from Earth'); // htraE morf sgniteerG
 - Loop through the string and add each character to the linked list.
 - Loop through the linked list and build the reversed string.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -7701,7 +7787,7 @@ c.name = 'Brad';
 console.log(d.name); // Brad
 ```
 
-## Fast and Slow Pointer Pattern
+<h3>Fast and Slow Pointer Pattern</h3>
 
 There are different patterns when it comes to pointers. One of the most common patterns is 
 the `fast and slow pointer` pattern. This pattern is used to solve problems where you need 
@@ -7750,7 +7836,7 @@ In the last lesson, we looked at pointers and the fast and slow pattern. This is
 use two pointers to traverse an iterable data structure at different speeds. We want to 
 do this to find the middle node of a linked list.
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `findMiddle` that takes in a linked list.
 
@@ -7804,7 +7890,7 @@ findMiddle(list); // returns 4
 - One pointer should move at twice the speed of the other pointer
 - When the faster pointer reaches the end of the list, the slower pointer will be at the middle node
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -7865,7 +7951,7 @@ remains constant.
 
 </details>
 
-## Test Cases
+<h3>Test Cases</h3>
 
 ```js
 describe('findMiddle', () => {
@@ -7911,7 +7997,7 @@ of nodes, but in a doubly linked list, each node contains two pointers: one to t
 and one to the previous node in the sequence. This bidirectional linking allows for more 
 flexibility in traversal and manipulation of the list.
 
-## Structure of a Doubly Linked List
+<h3>Structure of a Doubly Linked List</h3>
 
 Each node in a doubly linked list contains three parts:
 
@@ -7929,7 +8015,7 @@ This image depicts a doubly linked list with four nodes. Each node has pointers 
 previous and next nodes. The `head` node's `prev` pointer points to `null` because 
 there is no previous node. Similarly, the `tail` node's `next` pointer points to `null`.
 
-## Advantages of Doubly Linked Lists
+<h3>Advantages of Doubly Linked Lists</h3>
 
 Doubly linked lists offer several advantages, building upon the features of a singly linked list:
 
@@ -7942,7 +8028,7 @@ Doubly linked lists offer several advantages, building upon the features of a si
 - **Reverse Traversal**: Accessing nodes in reverse order becomes possible without the need 
   to reconstruct the list.
 
-## Drawbacks of Doubly Linked Lists
+<h3>Drawbacks of Doubly Linked Lists</h3>
 
 - **Memory Overhead**: Each node in a doubly linked list requires extra memory to store two 
   pointers instead of one. This can lead to increased memory consumption compared to both 
@@ -7967,7 +8053,7 @@ you get stuck, you can always come back and watch this lesson.
 I am going to switch it up a bit and instead of using classes, I am going to use a constructor 
 function and some methods on the prototype.
 
-## `Node` Function
+<h3>`Node` Function</h3>
 
 We will first create a `Node` function that will be used to create nodes for our doubly linked 
 list. The `Node` function will take in a value and set the `value` property to the value that 
@@ -7981,7 +8067,7 @@ function Node(data) {
 }
 ```
 
-## `DoublyLinkedList` Function
+<h3>`DoublyLinkedList` Function</h3>
 
 Next, we will create a `DoublyLinkedList` function that will be used to create doubly linked 
 lists. The `DoublyLinkedList` function will set the `head` and `tail` properties to `null` 
@@ -7995,7 +8081,7 @@ function DoublyLinkedList() {
 }
 ```
 
-## `append` Method
+<h3>`append` Method</h3>
 
 We will add a method called `append` to the `DoublyLinkedList` prototype. This method will 
 add a node to the end of the doubly linked list.
@@ -8059,7 +8145,7 @@ This shows us that we have a doubly linked list with a `head` and `tail` node. T
 node has a `next` node and the `tail` node has a `prev` node. The `prev` of the first node 
 and the `next` of the last node are both `null`.
 
-## `printAll` Method
+<h3>`printAll` Method</h3>
 
 Let's create a method to print out all of the data in the list. We will add a method called 
 `printAll` to the `DoublyLinkedList` prototype.
@@ -8095,7 +8181,7 @@ You should see something like this:
 3
 ```
 
-## `prepend` Method
+<h3>`prepend` Method</h3>
 
 Let's add a function to add a node to the beginning of the list. We will call this function 
 `prepend`. It will take in a value and add a node to the beginning of the list.
@@ -8145,7 +8231,7 @@ Hello
 3
 ```
 
-## `insert` Method
+<h3>`insert` Method</h3>
 
 Let's add a function to insert a node at a specific index. We will call this function 
 `insert`. It will take in an index and a value and insert a node at that index.
@@ -8215,7 +8301,7 @@ World
 3
 ```
 
-## `get` Method
+<h3>`get` Method</h3>
 
 Let's add a function to get a node at a specific index. We will call this function 
 `get`. It will take in an index and return the node at that index.
@@ -8258,7 +8344,7 @@ You should see something like this:
 }
 ```
 
-## `remove` Method
+<h3>`remove` Method</h3>
 
 Let's add a function to remove a node at a specific index. We will call this function 
 `remove`. It will take in an index and remove the node at that index.
@@ -8339,7 +8425,7 @@ World
 3
 ```
 
-## Test Cases
+<h3>Test Cases</h3>
 
 ```js
 describe('DoublyLinkedList', () => {
@@ -8458,7 +8544,7 @@ console.log(pair); // Should print: [2, 10]
 - For each number in the array, calculate the difference between the target sum and the current number.
 - Check if the calculated difference exists in the `DoublyLinkedList`. If it does, you found a pair.
 
-## Solution
+<h3>Solution</h3>
 
 <details open>
 <summary>Click to reveal solution</summary>
@@ -8556,7 +8642,7 @@ The height of a node refers to the **number of edges along the longest path from
 
 The height of a tree is the same as the height of it's root node. This tree has a height of 4 since the longest path from the root is 4.
 
-## Bianary Tree
+<h3>Bianary Tree</h3>
 
 A `binary tree` is a special type of tree that has one root node and each node can have at most two child nodes, often referred to as the `left child` and the `right child` or just left and right. 
 
@@ -8575,7 +8661,7 @@ In this lesson, we will create a `TreeNode` class that will allow us to create a
 
 I'm going to set this up as a challenge. If you just want to follow along without trying it yourself, that is absolutely fine. You know what a binary tree is and you know how to create a class. If you want to try it yourself, here are the instructions.
 
-## Instructions
+<h3>Instructions</h3>
 
 Create a class called `TreeNode`. This will represent a node in the tree. It will have a `value` property and a `left` and `right` property that will point to the left and right child nodes respectively. They will be initialized to `null` when the node is created.
 
@@ -8589,7 +8675,7 @@ Then use that class to create the following binary tree:
 - Initialize the `left` and `right` properties to `null` in the constructor.
 - Create an instance for each node in the tree and assign the appropriate values to the `left` and `right` properties.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -8701,7 +8787,7 @@ check if the `current` node has a left child. If it does, we add it to the stack
 We then repeat the process until the `stack` array has a length of `0`. We then return the `result` 
 array.
 
-## Using the Stack Class
+<h3>Using the Stack Class</h3>
 
 Now, let's refactor this code to use the `Stack` class we created a few lessons ago. You can do 
 this as a challenge, or you can look at the code below. I will also add a test to make sure the 
@@ -8748,7 +8834,7 @@ function depthFirstTraversal(root) {
 This code is very similar, except we used a pre-defined `Stack` class instead of a standard array. 
 We also used the `isEmpty()` method instead of checking the length of the array.
 
-## Test Cases
+<h3>Test Cases</h3>
 
 ```js
 const { Node, depthFirstTraversal } = require('./depth-first-traversal');
@@ -8793,7 +8879,7 @@ describe('Depth First Traversal', () => {
 <h1 id="js82">82. Challenge: Recursive Depth First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `recDepthFirstTraversal` that takes the root node of a binary tree as 
 input and returns an array containing the nodes visited in depth-first order. You can use the 
@@ -8836,7 +8922,7 @@ depthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
 on the left and right subtrees of the current node.
 - The base case is when the node is `null`, in which case we simply return from the function.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -8986,7 +9072,7 @@ the `result` array.
 We then enqueue the left and right children of the current node, if they exist. We continue 
 this process until the `queue` array is empty, and then we return the `result` array.
 
-## Using the Queue Class
+<h3>Using the Queue Class</h3>
 
 Now, let's refactor this code to use the `Queue` class. You can do this as a challenge, or 
 you can look at the code below. I will also add tests to ensure the code works correctly.
@@ -9038,7 +9124,7 @@ In this refactored code, we used the `Queue` class instead of a standard array f
 data structure. We also used the `isEmpty()` method instead of checking the length of the 
 array. We then added tests to ensure that the breadth-first traversal algorithm works correctly.
 
-## Test Cases
+<h3>Test Cases</h3>
 
 ```js
 describe('Breadth-First Traversal', () => {
@@ -9086,7 +9172,7 @@ traversal.
 <h1 id="js84">84. Challenge: Binary Tree Maximum Depth</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `maxDepth` that takes the root of a binary tree as input and returns 
 the maximum depth of the tree. The maximum depth is defined as the number of nodes along the 
@@ -9145,7 +9231,7 @@ class Node {
 }
 ```
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -9353,7 +9439,7 @@ class BinarySearchTree {
 }
 ```
 
-## `insert` Method
+<h3>`insert` Method</h3>
 
 Next, we will implement the `insert` method. This method will take a value as an argument, 
 and insert a new node with that value into the tree.
@@ -9400,7 +9486,7 @@ new value is greater than or equal to the current node's value, we move on to th
 We continue this process until we find a node without a left or right child, and then we insert 
 the new node at that location.
 
-## `lookup` Method
+<h3>`lookup` Method</h3>
 
 Next, we will implement the `lookup` method. This method will take a value as an argument, and 
 return the node with that value if it exists in the tree. If the value does not exist in the 
@@ -9441,7 +9527,7 @@ to the current node's value, we return the current node.
 
 If we reach a node that does not have a left or right child, we return `null`.
 
-## `remove` Method
+<h3>`remove` Method</h3>
 
 Next, we will implement the `remove` method. This method will take a value as an argument, 
 and remove the node with that value from the tree.
@@ -9524,7 +9610,7 @@ If the node is the root node, we need to replace the root node with the successo
 replace the root node's value with the successor's value, and then remove the successor 
 from the tree.
 
-## `printTree` Method
+<h3>`printTree` Method</h3>
 
 Finally, we will implement the `printTree` method. This method will print the tree in a 
 human-readable format.
@@ -9543,7 +9629,7 @@ human-readable format.
   }
 ```
 
-## Binary Search Tree Runtime Analysis
+<h3>Binary Search Tree Runtime Analysis</h3>
 
 BST's are very efficient data structures. They are very fast at inserting, looking up, and 
 deleting values and have a runtime of O(log n) for each of these operations except for 
@@ -9557,7 +9643,7 @@ node in the tree to print it.
 | Delete    | O(log n) |
 | Print     | O(n)     |
 
-## Binary Search Tree Example
+<h3>Binary Search Tree Example</h3>
 
 <img src="../images/binary-search-tree1.png" width="600" />
 
@@ -9757,7 +9843,7 @@ describe('BinarySearchTree', () => {
 <h1 id="js87">87. Challenge: Validate Binary Search Tree</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `isValidBST` that takes in the following parameters:
 
@@ -9837,7 +9923,7 @@ function isValidBST(
 - Use recursion to explore the left and right subtrees of each node and check if the current 
   node's value is within the valid range based on its position in the binary search tree.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -9976,7 +10062,7 @@ You may hear the phrase "graph theory" in computer science. Graph theory is the 
 graphs and their properties. It's a vast field of study with many applications in computer 
 science and other fields.
 
-## Visual Representation of a Graph
+<h3>Visual Representation of a Graph</h3>
 
 Here is a visual representation of a few graphs:
 
@@ -9986,7 +10072,7 @@ The circles represent `nodes`, also called `vertex` or `vertices` (plural) and t
 connecting the nodes represent `edges`. If you think of a social network, you can think 
 of the users as nodes and the connections or friendships between users as edges.
 
-## Types of Graphs
+<h3>Types of Graphs</h3>
 
 Graphs can be categorized into several types based on their properties:
 
@@ -10012,7 +10098,7 @@ In other words, every node in the graph can be reached from any other node.
 - **Disconnected Graph**: A disconnected graph is one that consists of two or more separate 
 subgraphs, and there is no path between nodes in different subgraphs.
 
-## Graph cycles
+<h3>Graph cycles</h3>
 
 A cycle is a closed path in a graph. In other words, a cycle is a path that starts and ends 
 at the same node. Here is an example of a cycle in a graph:
@@ -10032,7 +10118,7 @@ graph and those are an adjacency matrix and adjacency list.
 There are two main ways to implement a graph: an `adjacency matrix` and an `adjacency list`. 
 In this lesson, we'll look at both of these approaches.
 
-## Adjacency Matrix
+<h3>Adjacency Matrix</h3>
 
 An adjacency matrix is a two-dimensional array that stores the edges between two vertices as 
 boolean values. The rows and columns of the matrix represent the vertices of the graph.
@@ -10064,7 +10150,7 @@ To represent this adjacency matrix with a two dimensional array in JavaScript, w
 ];
 ```
 
-## Adjacency List
+<h3>Adjacency List</h3>
 
 An adjacency list is a collection of linked lists or arrays that lists all of the other vertices that are connected. Let's look at an example that uses linked lists. Every vertex has a linked list of all the vertices that it is connected to:
 
@@ -10082,7 +10168,7 @@ If you wanted to represent this list with a JavaScript object, you could do this
 };
 ```
 
-## Which one is better?
+<h3>Which one is better?</h3>
 
 The answer is: it depends. It depends on the type of graph and the type of operations you want 
 to perform on the graph. If you have a graph with a lot of edges, then the adjacency matrix 
@@ -10206,7 +10292,7 @@ removeVertex(vertex) {
 }
 ```
 
-## Try It Out
+<h3>Try It Out</h3>
 
 Let's test out our graph class.
 
@@ -10235,7 +10321,7 @@ Tokyo -> Dallas
 Dallas -> Tokyo
 ```
 
-## Test Cases
+<h3>Test Cases</h3>
 
 ```JavaScript
 describe('Graph', () => {
@@ -10313,7 +10399,7 @@ and **breadth-first traversal**.
 
 We have already looked at these using trees, but the same concepts apply to graphs.
 
-## Depth-First Traversal
+<h3>Depth-First Traversal</h3>
 
 In depth-first traversal, we start at a vertex/node. In a tree, you would start at the root node. 
 In a graph, you can start at any vertex. We then explore as far along each branch as possible 
@@ -10359,7 +10445,7 @@ start at `a` and walk through the process.
 
 - The stack is now empty, so we are done.
 
-## Breadth-First Traversal
+<h2>Breadth-First Traversal</h2>
 
 Now let's explore another graph traversal technique called breadth-first traversal. In contrast 
 to depth-first traversal, which explores as far as possible along each branch before backtracking, 
@@ -10412,14 +10498,14 @@ The order in which we visited the vertices is: `a`, `b`, `c`, `d`, `e`.
 <h1 id="js92">92. Challenge: Graph Depth-First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `depthFirstTraversal` that performs a Depth First Traversal of a graph 
 starting from a specified vertex and returns an array containing the vertices visited in the 
 order they were traversed. Use the `Graph` class as well as the `Stack` class from the previous 
 lessons.
 
-## Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -10431,7 +10517,7 @@ lessons.
 function depthFirstTraversal(graph: Graph, startingVertex: string): string[];
 ```
 
-## Example
+<h3>Example</h3>
 
 ```js
 // Example Graph
@@ -10466,14 +10552,14 @@ depthFirstTraversal(g, 'A');
 // ['A', 'C', 'E', 'F', 'D', 'B'];
 ```
 
-## Hints
+<h3>Hints</h3>
 
 - The `Graph` class has an `adjacencyList` property that stores the vertices and their neighbors.
 - The `Stack` class has a `push` method that adds an element to the top of the stack and a `pop` 
   method that removes the top element from the stack.
 - Use a results array to store the vertices visited in the order they were traversed
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -10525,7 +10611,7 @@ function depthFirstTraversal(graph, startingVertex) {
 
 </details>
 
-## Test Cases
+<h3>Test Cases</h3>
 
 ```js
 describe('Graph Depth-First Traversal', () => {
@@ -10580,13 +10666,13 @@ describe('Graph Depth-First Traversal', () => {
 <h1 id="js93">93. Challenge: Graph Breadth First Traversal</h1>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-## Instructions
+<h3>Instructions</h3>
 
 Write a function called `breadthFirstTraversal` that performs a Breadth First Traversal 
 of a graph starting from a specified vertex and returns an array containing the vertices 
 visited in the order they were traversed. Use the `Queue` class from the previous lessons.
 
-## Function Signature
+<h3>Function Signature</h3>
 
 ```js
 /**
@@ -10598,7 +10684,7 @@ visited in the order they were traversed. Use the `Queue` class from the previou
 function breadthFirstTraversal(graph: Graph, startingVertex: string): string[];
 ```
 
-## Example
+<h3>Example</h3>
 
 ```js
 // Example Graph
@@ -10633,7 +10719,7 @@ console.log(result);
 // [ 'A', 'B', 'C', 'D', 'E', 'F' ]
 ```
 
-## Hints
+<h3>Hints</h3>
 
 - You can use the provided `Queue` class to keep track of the vertices to be visited in a breadth-
   first order.
@@ -10643,7 +10729,7 @@ console.log(result);
 - In the traversal loop, dequeue a vertex from the queue, add it to the result array, and enqueue 
   all its neighbors that have not been visited yet.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -10686,7 +10772,7 @@ function breadthFirstTraversal(graph, startingVertex) {
 
 </details>
 
-## Test
+<h3>Test</h3>
 
 ```js
 const Graph = require('./graph');
@@ -10814,7 +10900,7 @@ In this lesson, we're going to look at the `Bubble sort` algorithm. This is one 
 simplest sorting algorithms. It's also one of the least efficient. But it's a good place 
 to start because it's easy to understand. It is also a very common interview question.
 
-## What is Bubble Sort?
+<h3>What is Bubble Sort?</h3>
 
 The `Bubble sort` sorting algorithm is comparison-based. Each pair of adjacent elements 
 are compared with eachother and the elements are swapped if they are not in order. This 
@@ -10827,7 +10913,7 @@ for most problems even when compared to other sorting algorithms such as `insert
 It can be practical if the input is usually in sort order but may occasionally 
 have some out-of-order elements nearly in position.
 
-## How Does Bubble Sort Work?
+<h3>How Does Bubble Sort Work?</h3>
 
 Let`s look at an example. We have the following array of numbers:
 
@@ -10897,7 +10983,7 @@ if you have never done anything like this and all you have to go on is the last 
 then you may have an issue doing this on your own. That's absolutely fine. You can 
 either try and come back or just follow along. Either way, you will learn something.
 
-## Instructions
+<h3>Instructions</h3>
 
 Implement a function called `bubbleSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Bubble Sort algorithm.
@@ -10937,7 +11023,7 @@ console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 2
   and one to do the swap. You can set the current element as a temp variable, assign the 
   next element to the current and then assign the temp value to the next element
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution 1</summary>
@@ -11140,7 +11226,7 @@ In the next lesson, we will implement insertion sort in JavaScript.
 Now that you've learned about the Insertion Sort algorithm, let's put your knowledge to 
 the test and implement the Insertion Sort algorithm in JavaScript.
 
-## Instructions
+<h3>Instructions</h3>
 
 Implement a function called `insertionSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Insertion Sort algorithm.
@@ -11181,7 +11267,7 @@ console.log(insertionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22
   the "sorted" part. Then, one by one, elements from the "unsorted" part are moved 
   to the "sorted" part while keeping the "sorted" part sorted.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -11349,7 +11435,7 @@ In the next lesson, we'll look at implementing a selection sort.
 You've learned about the Selection Sort algorithm. Now it's time to put your knowledge 
 into practice and implement the Selection Sort algorithm in JavaScript.
 
-## Instructions
+<h3>Instructions</h3>
 
 Implement a function called `selectionSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Selection Sort algorithm.
@@ -11394,7 +11480,7 @@ console.log(selectionSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22
 - Current Minimum: Keep track of the index of the current minimum element found in the 
   inner loop. You will need this index to perform the swap.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -11523,14 +11609,14 @@ And we are done!
 In the next lesson, we will implement a merge sort algorithm in JavaScript.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-## Challenge: Merge Sort Implementation
+<h2>Challenge: Merge Sort Implementation</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 Now that you're familiar with the Merge Sort algorithm, it's time to implement it in 
 JavaScript. This algorithm is particularly efficient for large datasets, as it employs a 
 divide-and-conquer strategy.
 
-## Instructions
+<h3>Instructions</h3>
 
 Implement a function called `mergeSort` that takes an array of numbers as an argument 
 and returns a sorted array using the Merge Sort algorithm.
@@ -11574,7 +11660,7 @@ console.log(mergeSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
 - Recursive Sorting: In the main `mergeSort` function, divide the array into two halves 
   and recursively sort each half. Then, use the `merge` function to merge the sorted halves.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -11664,7 +11750,7 @@ test('Sort an empty array', () => {
 Feel free to customize the test cases according to your needs!
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-## Quick Sort Algorithm
+<h2>Quick Sort Algorithm</h2>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 The Quick Sort algorithm is a highly efficient divide-and-conquer sorting algorithm. It 
@@ -11748,7 +11834,7 @@ Now that you're familiar with the Quick Sort algorithm, it's time to implement i
 JavaScript. This algorithm is highly efficient and employs a divide-and-conquer strategy 
 to sort an array.
 
-## Instructions
+<h3>Instructions</h3>
 
 Implement a function called `quickSort` that takes an array of numbers as an argument and 
 returns a sorted array using the Quick Sort algorithm.
@@ -11796,7 +11882,7 @@ console.log(quickSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 25
 - Recursion: Recursively apply the Quick Sort algorithm to the subarrays on either side 
   of the pivot.
 
-## Solutions
+<h3>Solutions</h3>
 
 <details open>
   <summary>Click For Solution</summary>
@@ -11881,4 +11967,3 @@ Created 1/4/2025 6:28pm
 Last Updated 1/4/2025 7:29pm
 Last Updated 1/5/2025 7:47pm
 Last Updated 4/22/2025 3:39pm
- 
